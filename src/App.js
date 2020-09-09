@@ -35,7 +35,7 @@ function App() {
       <main>
         <Container className={classes.cardGrid} maxWidth="md">
           <Grid container spacing={4}>
-            {data.sections.map((section, index) => {
+            {data.map((section, index) => {
               return <Grid item key={section} xs={12} sm={6} md={4}>
                   <Cards section={section} steps={section.steps}/>
               </Grid>
