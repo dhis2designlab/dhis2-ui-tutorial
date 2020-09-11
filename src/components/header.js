@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import { HeaderBar } from '@dhis2/ui-widgets'
+
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -17,7 +17,6 @@ function Header() {
 
   return (
     <>
-      <HeaderBar appName="Example!" />
       <div className={classes.heroContent}>
         <Container maxWidth="sm">
           <h1>DHIS2 UI tutorial</h1>

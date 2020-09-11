@@ -1,56 +1,53 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-import Header from './components/header.js'
-import Cards from './components/card.js'
-import Copyright from './components/copyright.js'
-import Footer from './components/footer.js'
+import Signup from './components/signup.js'
+import Login from './components/login.js'
+import Home from './components/home.js'
 
-import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
-import { makeStyles } from '@material-ui/core/styles';
+import { HeaderBar } from '@dhis2/ui-widgets'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams,
+  Redirect
+} from "react-router-dom";
+
 
 import data from "./data.js"
+import { db } from './firebase';
 
-
-const useStyles = makeStyles((theme) => ({
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-  },
-
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
-  },
-}));
+db.collection("times").add({
+  title: "Rubiks jkjlnncubgfdgfdge",
+})
 
 function App() {
-  const classes = useStyles();
-
   return (
     <React.Fragment>
-      <header>
-        <Header />
-      </header>
-      <main>
-        <Container className={classes.cardGrid} maxWidth="md">
-          <Grid container spacing={4}>
-            {data.map((section, index) => {
-              return <Grid item key={section} xs={12} sm={6} md={4}>
-                  <Cards section={section} steps={section.steps}/>
-              </Grid>
-            })}
-          </Grid>
-        </Container>
-      </main>
-      <footer className={classes.footer}>
-          <Footer />
-          <Copyright />
-      </footer>
-    </React.Fragment>
+        <HeaderBar appName="Example!" />
+        <Router>
+         <div>
+           <Switch>
+             <Route path="/signup">
+               <Signup />
+             </Route>
+             <Route path="/login">
+               <Login />
+             </Route>
+             <Route path="/home">
+               <Home />
+             </Route>
+             <Route path="/">
+               <Redirect to="/signup" />
+             </Route>
+           </Switch>
+         </div>
+       </Router>
+   </React.Fragment>
   );
 }
 
 export default App;
-
-  //<TourView value={isOpen} steps={section.steps} handleChange={handleChange}/>
