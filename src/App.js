@@ -63,7 +63,7 @@ function App() {
 
   function logout() {
     auth.signOut();
-}
+  }
 
   function signup(email, pass){
     auth.createUserWithEmailAndPassword(email, pass)
@@ -72,9 +72,9 @@ function App() {
  const requestLogin = useCallback((username, password) => {login(username, password);});
 
  const requestLogout = useCallback(() => {
-   console.log("logout")
    logout();
  }, []);
+ 
 
  const requestSignup = useCallback((username, password) => {signup(username, password);});
 
