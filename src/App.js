@@ -21,11 +21,7 @@ import {
 
 
 import data from "./data.js"
-import { db, auth } from './firebase';
-
-db.collection("times").add({
-  title: "Rubiks jkjlnncubgfdgfdge",
-})
+import { auth } from './firebase';
 
 
 function onAuthStateChange(callback) {
