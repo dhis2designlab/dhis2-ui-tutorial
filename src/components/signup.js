@@ -6,6 +6,7 @@ import { Input } from '@dhis2/ui-core'
 import { Button } from '@dhis2/ui-core'
 import { makeStyles } from '@material-ui/core/styles';
 import Login from './login.js'
+import HeaderBar from './headerbar.js'
 import {fire } from '../firebase'
 
 import {
@@ -34,6 +35,8 @@ function Signup({onClick}) {
   const [password, setPassword] = useState("h");
 
   return (
+    <>
+    <HeaderBar />
     <Container className={classes.cardGrid} maxWidth="xs">
       <h2 className={classes.heading}>Signup</h2>
       <Input
@@ -68,6 +71,7 @@ function Signup({onClick}) {
         </Button>
         <p>Do you already have an account? Sign in <Link to={`/login`}>here</Link></p>
     </Container>
+    </>
   );
 }
 

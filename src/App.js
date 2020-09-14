@@ -29,10 +29,8 @@ db.collection("times").add({
 
 
 function onAuthStateChange(callback) {
-
   return auth.onAuthStateChanged(user => {
     if (user) {
-      console.log("USEERA" + user.username)
       callback({loggedIn: true, username: 'test' });
     } else {
       callback({loggedIn: false, username: ''});
@@ -122,7 +120,7 @@ function App() {
                         !user.loggedIn ? (
                           <Redirect to="/signup"/>
                         ) : (
-                          <Settings />
+                          <Settings onClick={requestLogout}/>
                         )
                         )}/>
              </Switch>

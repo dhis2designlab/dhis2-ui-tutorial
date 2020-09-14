@@ -1,12 +1,17 @@
 import React from 'react';
 
+import HeaderBar from './headerbar.js'
 
-function Settings(props) {
-
+function Settings({ onClick }) {
   return (
-    <div >
-      <h1>SettingsPage</h1>
-    </div>
+    <>
+      <HeaderBar />
+      <div >
+        <h1>SettingsPage</h1>
+        <span>You are logged in</span>
+        <button onClick={onClick}>Logout</button>
+      </div>
+    </>
 
 )
 }
