@@ -19,14 +19,14 @@ import {
 
 
 import data from "./data.js"
-import { db, fire } from './firebase';
+import { db, auth } from './firebase';
 
 db.collection("times").add({
   title: "Rubiks jkjlnncubgfdgfdge",
 })
 
 function onAuthStateChange(callback) {
-  return fire.auth().onAuthStateChanged(user => {
+  return auth.onAuthStateChanged(user => {
     if (user) {
       callback({loggedIn: true });
     } else {
@@ -35,15 +35,15 @@ function onAuthStateChange(callback) {
   });
 }
 function login(username, password) {
-  fire.auth().signInWithEmailAndPassword(username, password);
+  auth.signInWithEmailAndPassword(username, password);
 }
 
 function logout() {
-  fire.auth().signOut();
+  auth.signOut();
 }
 
 function signup(email, pass){
-  fire.auth().createUserWithEmailAndPassword(email, pass)
+  auth.createUserWithEmailAndPassword(email, pass)
       .then(res => {
         console.log("Sign-out Success", res)
         console.log(email)
@@ -64,11 +64,11 @@ function App() {
   }, []);
 
   function logout() {
-  fire.auth().signOut();
+    auth.signOut();
 }
 
   function signup(email, pass){
-    fire.auth().createUserWithEmailAndPassword(email, pass)
+    auth.createUserWithEmailAndPassword(email, pass)
   }
 
  const requestLogin = useCallback((username, password) => {login(username, password);});
@@ -81,7 +81,6 @@ function App() {
 
 
   if(! user.loggedIn){
-    console.log("User is logged out")
     return <React.Fragment>
           <HeaderBar appName="Example!" />
           <Router>
