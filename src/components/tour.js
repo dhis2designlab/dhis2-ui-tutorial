@@ -15,7 +15,6 @@ function TourView(props) {
   return (
     <div >
       <Tour
-
         steps={steps}
         isOpen={isOpen}
         value={isOpen}
