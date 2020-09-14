@@ -13,24 +13,35 @@ const useStyles = makeStyles((theme) => ({
     padding: '20px 20px',
     background: '#2d6692',
     display: 'flex',
-    flexDirection: 'column',
-    textAlign: 'right'
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    minHeight: '15px',
   },
   icon: {
     fill: 'white',
+  },
+  name: {
+    color: 'white',
+  },
+  link: {
+    textDecoration: 'none',
   }
 }));
 
 
-function HeaderBar() {
+function HeaderBar({user}) {
   const classes = useStyles();
+  const name = user ? 'Logged in as ' + user.username : ''
+
   return (
     <div className={classes.nav}>
-      <div>
-        <Link to={`/settings`}><Account className={classes.icon}/></Link>
-      </div>
+        <Link className={classes.link} to={`/settings`}>
+            <span className={classes.name}>{name}</span>
+        </Link>
     </div>
   );
 }
 
 export default HeaderBar;
+
+//<Account className={classes.icon}/>

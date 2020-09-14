@@ -26,12 +26,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Home(){
+function Home({user}){
   const classes = useStyles();
+  console.log("home " + user)
 
   return (
     <>
-      <HeaderBar />
+      <HeaderBar user={user}/>
       <Header />
       <main>
         <Container className={classes.cardGrid} maxWidth="md">

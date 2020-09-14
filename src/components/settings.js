@@ -2,10 +2,10 @@ import React from 'react';
 
 import HeaderBar from './headerbar.js'
 
-function Settings({ onClick }) {
+function Settings({ onClick, user }) {
   return (
     <>
-      <HeaderBar />
+      <HeaderBar user={user}/>
       <div >
         <h1>SettingsPage</h1>
         <span>You are logged in</span>

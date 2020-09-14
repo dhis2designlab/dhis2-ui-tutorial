@@ -27,7 +27,7 @@ import { auth } from './firebase';
 function onAuthStateChange(callback) {
   return auth.onAuthStateChanged(user => {
     if (user) {
-      callback({loggedIn: true, username: 'test' });
+      callback({loggedIn: true, username: user.email});
     } else {
       callback({loggedIn: false, username: ''});
     }
@@ -72,6 +72,7 @@ function App() {
  const requestLogin = useCallback((username, password) => {login(username, password);});
 
  const requestLogout = useCallback(() => {
+   console.log("logout")
    logout();
  }, []);
 
@@ -109,14 +110,14 @@ function App() {
                         !user.loggedIn ? (
                           <Redirect to="/signup"/>
                         ) : (
-                          <Home user={user.loggedIn}/>
+                          <Home user={user}/>
                         )
                         )}/>
                 <Route path="/settings" render={() => (
                         !user.loggedIn ? (
                           <Redirect to="/signup"/>
                         ) : (
-                          <Settings onClick={requestLogout}/>
+                          <Settings user={user} onClick={requestLogout}/>
                         )
                         )}/>
              </Switch>
