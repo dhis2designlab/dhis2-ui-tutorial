@@ -59,7 +59,6 @@ function Login({ onClick }) {
           <Button
             dataTest="dhis2-uicore-button"
             name="Primary button"
-            onClick={console.log("Hei")}
             primary
             type="button"
             value="default"

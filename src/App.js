@@ -6,7 +6,8 @@ import Logout from './components/logout.js'
 import Home from './components/home.js'
 import Settings from './components/settings.js'
 
-import { HeaderBar } from '@dhis2/ui-widgets'
+import HeaderBar from './components/headerbar.js'
+import { AlertBar } from '@dhis2/ui'
 
 import {
   BrowserRouter as Router,
@@ -28,21 +29,17 @@ db.collection("times").add({
 
 
 function onAuthStateChange(callback) {
+
   return auth.onAuthStateChanged(user => {
     if (user) {
-      callback({loggedIn: true });
+      console.log("USEERA" + user.username)
+      callback({loggedIn: true, username: 'test' });
     } else {
-      callback({loggedIn: false});
+      callback({loggedIn: false, username: ''});
     }
   });
 }
-function login(username, password) {
-  auth.signInWithEmailAndPassword(username, password);
-}
 
-function logout() {
-  auth.signOut();
-}
 
 function signup(email, pass){
   auth.createUserWithEmailAndPassword(email, pass)
@@ -55,19 +52,8 @@ function signup(email, pass){
       })
   }
 
-  function PrivateRoute ({component: Component, authed, ...rest}) {
-    return (
-      <Route
-        {...rest}
-        render={(props) => authed === true
-          ? <Component {...props} />
-          : <Redirect to={{pathname: '/signup', state: {from: props.location}}} />}
-      />
-    )
-  }
-
 function App() {
-  const [user, setUser] = useState({ loggedIn: false });
+  const [user, setUser] = useState({ loggedIn: false, username: '' });
 
   useEffect(() => {
     const unsubscribe = onAuthStateChange(setUser);
@@ -75,6 +61,11 @@ function App() {
       unsubscribe();
     };
   }, []);
+
+  function login(username, password) {
+    auth.signInWithEmailAndPassword(username, password);
+
+  }
 
   function logout() {
     auth.signOut();
@@ -94,7 +85,6 @@ function App() {
 
 
     return <React.Fragment>
-          <HeaderBar appName="Example!" />
           <Router>
            <div>
              <Switch>
@@ -125,7 +115,7 @@ function App() {
                         !user.loggedIn ? (
                           <Redirect to="/signup"/>
                         ) : (
-                          <Home />
+                          <Home user={user.loggedIn}/>
                         )
                         )}/>
                 <Route path="/settings" render={() => (

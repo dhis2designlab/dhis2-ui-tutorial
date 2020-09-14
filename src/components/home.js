@@ -10,6 +10,7 @@ import Signup from './signup.js'
 import Header from './header.js'
 import Copyright from './copyright.js'
 import Footer from './footer.js'
+import HeaderBar from './headerbar.js'
 
 import data from "../data.js"
 
@@ -30,6 +31,7 @@ function Home(){
 
   return (
     <>
+      <HeaderBar />
       <Header />
       <main>
         <Container className={classes.cardGrid} maxWidth="md">
