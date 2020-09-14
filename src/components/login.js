@@ -37,7 +37,7 @@ function Login({ onClick }) {
     <>
     <HeaderBar />
     <Container className={classes.cardGrid} maxWidth="xs">
-      <h2 className={classes.heading}>Login</h2>
+      <h2 className={classes.heading}>Log In</h2>
       <Input
           className={classes.input}
           dataTest="dhis2-uiwidgets-inputfield"
@@ -69,7 +69,7 @@ function Login({ onClick }) {
               onClick(username, password)
             }}
           >
-            Log in
+            Log In
           </Button>
         <p>Do you not have an account? Create an account <Link to={`/signup`}>here</Link></p>
     </Container>
