@@ -177,6 +177,8 @@ function Quiz(props) {
 
   const [ points, setPoints ] = useState(0)
 
+  const [ finished, setFinished ] = useState(false)
+
   const [isChecked, setIsChecked] = useState([]);
 
 
@@ -199,7 +201,8 @@ function Quiz(props) {
   };
 
     const handleAnswer = event => {
-        setPoints(points+1)
+        console.log(event)
+        console.log(points)
     }
 
     const handleClick = event => {
@@ -216,6 +219,12 @@ function Quiz(props) {
     const handleNextClick = event => {
         if(indexState + 1 < currentQuiz[index].steps.length){
             setIndex(indexState + 1)
+        }
+        else {
+            setFinished(true)
+        }
+        if(isChecked.includes(correct)){
+            setPoints(points+1)
         }
         setIsChecked([])
     }
@@ -286,6 +295,7 @@ function Quiz(props) {
         Next
       </Button>
     </ButtonStrip>
+    {finished ? <p>points: {points}</p>: <p>ikke ferdig</p>}
   </ModalActions>
 </Modal> : <p>Not clicked</p>}
     </div>
