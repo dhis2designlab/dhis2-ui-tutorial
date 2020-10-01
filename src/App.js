@@ -74,7 +74,7 @@ function App() {
  const requestLogout = useCallback(() => {
    logout();
  }, []);
- 
+
 
  const requestSignup = useCallback((username, password) => {signup(username, password);});
 

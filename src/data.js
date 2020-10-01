@@ -16,7 +16,7 @@ const classes = makeStyles((theme) => ({
 const data = [
     {
       title: "Content and communication",
-      short_info: "This is contains a walkthrough about best practices for DHIS2",
+      short_info: "Learn about content and communication in DHIS2",
       id: 0,
       steps: [
         {
@@ -34,13 +34,13 @@ const data = [
       ]
     },
     {
-      title: "Layout, Spacing, Stacking",
+      title: "Layout, Spacing and Stacking",
       short_info: "Learn about the visual architecture of DHIS2 applications",
       id: 1,
       steps: [
         {
           selector: '.first-step',
-          content: <div><h4>Layout, Spacing, Stacking</h4> <p>The visual architecture of an application is made up of layout, spacing and stacking. The visual architecture of DHIS2 applications should follow some basic rules to provide a consistent user experience across different types of apps. Click next to learn how to make layouts in DHIS2! </p></div>,
+          content: <div><h3>Layout, Spacing, Stacking</h3> <p>The visual architecture of an application is made up of layout, spacing and stacking. The visual architecture of DHIS2 applications should follow some basic rules to provide a consistent user experience across different types of apps. Click next to learn how to make layouts in DHIS2! </p></div>,
         },
 
         {

@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
   cardGrid: {
     paddingTop: theme.spacing(30),
     paddingBottom: theme.spacing(30),
+    fontFamily: 'Roboto, sans-serif',
   },
   input: {
     paddingBottom: theme.spacing(6),
@@ -54,6 +55,7 @@ function Login({ onClick }) {
           label="Default label"
           name="Default"
           placeholder="password"
+          type="password"
           onChange={event => {
             setPassword(event.value);
           }}

@@ -15,6 +15,7 @@
     "firebase": "^7.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-quiz-component": "^0.3.6",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "reactour": "^1.18.0",

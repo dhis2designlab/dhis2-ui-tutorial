@@ -11,6 +11,8 @@ import Header from './header.js'
 import Copyright from './copyright.js'
 import Footer from './footer.js'
 import HeaderBar from './headerbar.js'
+import Quiz from 'react-quiz-component';
+import { quiz } from '../quiz';
 
 import data from "../data.js"
 
@@ -18,38 +20,45 @@ const useStyles = makeStyles((theme) => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
+
   },
 
   footer: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
+
+  font: {
+    fontFamily: 'Roboto, sans-serif',
+  }
+
 }));
 
 function Home({user}){
   const classes = useStyles();
-  console.log("home " + user)
 
   return (
-    <>
+    <div className={classes.font}>
       <HeaderBar user={user}/>
       <Header />
       <main>
         <Container className={classes.cardGrid} maxWidth="md">
           <Grid container spacing={4}>
             {data.map((section, index) => {
+              console.log("index " + index)
               return <Grid item key={section} xs={12} sm={6} md={4}>
-                  <Cards section={section} steps={section.steps}/>
+                  <Cards index={index} section={section} steps={section.steps}/>
               </Grid>
             })}
           </Grid>
         </Container>
+        <Quiz quiz={quiz} />
       </main>
       <footer className={classes.footer}>
           <Footer />
           <Copyright />
       </footer>
-    </>
+    </div>
   );
 }
 
