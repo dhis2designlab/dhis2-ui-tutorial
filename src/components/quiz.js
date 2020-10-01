@@ -238,10 +238,12 @@ function Quiz(props) {
   small
 >
   <ModalTitle dataTest="dhis2-uicore-modaltitle">
-        {question}
+        {finished ? <p>Congratulation you have finished the course</p> : question}
   </ModalTitle>
         <ModalContent dataTest="dhis2-uicore-modalcontent">
-            {information ? <p>{information}</p> : <p></p>}
+             {finished ? <p>points: {points}</p>: 
+            
+            <>{information ? <p>{information}</p> : <p></p>}
             {alternatives ? alternatives.map((value, index) => {
                 const choice = Object.keys(value)
                 const value_choice = Object.values(value)
@@ -264,7 +266,7 @@ function Quiz(props) {
             Check answer
             </Button> : <p></p>}
             {image ? <img src={colors} width="100%" alt="image" /> : <></>}
-        </ModalContent>
+        </>}</ModalContent>
   <ModalActions dataTest="dhis2-uicore-modalactions">
     <ButtonStrip
       dataTest="dhis2-uicore-buttonstrip"
@@ -295,7 +297,6 @@ function Quiz(props) {
         Next
       </Button>
     </ButtonStrip>
-    {finished ? <p>points: {points}</p>: <p>ikke ferdig</p>}
   </ModalActions>
 </Modal> : <p>Not clicked</p>}
     </div>
