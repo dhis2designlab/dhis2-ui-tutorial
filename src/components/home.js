@@ -12,10 +12,10 @@ import Copyright from './copyright.js'
 import Footer from './footer.js'
 import HeaderBar from './headerbar.js'
 import Quiz from 'react-quiz-component';
-import { quiz } from '../quiz';
 
 import data from "../data.js"
 
+const iframe = '<iframe src="https://codesandbox.io/embed/bold-sun-l4upt?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="bold-sun-l4upt" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -52,7 +52,7 @@ function Home({user}){
             })}
           </Grid>
         </Container>
-        <Quiz quiz={quiz} />
+        <div dangerouslySetInnerHTML={{__html: iframe}} />
       </main>
       <footer className={classes.footer}>
           <Footer />

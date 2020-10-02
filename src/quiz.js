@@ -1,98 +1,164 @@
-export const quiz =  {
-  "quizTitle": "React Quiz Component Demo",
-  "quizSynopsis": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim",
-  "questions": [
-    {
-      "question": "How can you access the state of a component from inside of a member function?",
-      "questionType": "text",
-      "questionPic": "https://dummyimage.com/600x400/000/fff&text=X", // if you need to display Picture in Question
-      "answerSelectionType": "single",
-      "answers": [
-        "this.getState()",
-        "this.prototype.stateValue",
-        "this.state",
-        "this.values"
-      ],
-      "correctAnswer": "3",
-      "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
-      "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "20"
-    },
-    {
-      "question": "ReactJS is developed by _____?",
-      "questionType": "text",
-      "answerSelectionType": "single",
-      "answers": [
-        "Google Engineers",
-        "Facebook Engineers"
-      ],
-      "correctAnswer": "2",
-      "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
-      "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "20"
-    },
-    {
-      "question": "ReactJS is an MVC based framework?",
-      "questionType": "text",
-      "answerSelectionType": "single",
-      "answers": [
-        "True",
-        "False"
-      ],
-      "correctAnswer": "2",
-      "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
-      "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "10"
-    },
-    {
-      "question": "Which of the following concepts is/are key to ReactJS?",
-      "questionType": "text",
-      "answerSelectionType": "single",
-      "answers": [
-        "Component-oriented design",
-        "Event delegation model",
-        "Both of the above",
-      ],
-      "correctAnswer": "3",
-      "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
-      "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "30"
-    },
-    {
-      "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-      "questionType": "photo",
-      "answerSelectionType": "single",
-      "answers": [
-        "https://dummyimage.com/600x400/000/fff&text=A",
-        "https://dummyimage.com/600x400/000/fff&text=B",
-        "https://dummyimage.com/600x400/000/fff&text=C",
-        "https://dummyimage.com/600x400/000/fff&text=D"
-      ],
-      "correctAnswer": "1",
-      "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
-      "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "20"
-    },
-    {
-      "question": "What are the advantages of React JS?",
-      "questionType": "text",
-      "answerSelectionType": "multiple",
-      "answers": [
-        "React can be used on client and as well as server side too",
-        "Using React increases readability and makes maintainability easier. Component, Data patterns improves readability and thus makes it easier for manitaining larger apps",
-        "React components have lifecycle events that fall into State/Property Updates",
-        "React can be used with any other framework (Backbone.js, Angular.js) as it is only a view layer"
-      ],
-      "correctAnswer": [1, 2, 4],
-      "messageForCorrectAnswer": "Correct answer. Good job.",
-      "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
-      "explanation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "point": "20"
-    },
-  ]
-}
+const iframe = '<iframe src="https://codesandbox.io/embed/bold-sun-l4upt?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="bold-sun-l4upt" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
+
+export const quiz_data = [
+  {
+      title: "Title",
+      about: "Content and communitcation",
+      steps: [
+          {
+              header: "header1",
+              question: "What is blabla?",
+              alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+              correct: 'a',
+          },
+          {
+              header: "header2",
+              question: "What is blabla?",
+              alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+              correct: 'b',
+          },
+          {
+              header: "header2",
+              question: "What is blabla?",
+              alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+              correct: 'c',
+          },
+          
+      ]
+  },
+  {
+      title: "Layout, Spacing and Stacking",
+      about: "this is a quiz about blablabl",
+      steps: [
+          {
+              header: "header1",
+              question: "What is blabla?",
+              alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+              correct: 'a',
+          },
+          {
+              header: "header2",
+              question: "What is blabla?",
+              alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+              correct: 'b',
+          },
+          {
+              header: "header2",
+              question: "What is blabla?",
+              alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+              correct: 'c',
+          },
+          
+      ]
+  },
+  {
+      title: "Forms",
+      about: "this is a quiz about blablabl",
+      steps: [
+          {
+              header: "header1",
+              question: "What is blabla?",
+              alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+              correct: 'a',
+          },
+          {
+              header: "header2",
+              question: "What is blabla?",
+              alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+              correct: 'b',
+          },
+          {
+              header: "header2",
+              question: "What is blabla?",
+              alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+              correct: 'c',
+          },
+          
+      ]
+  },
+  {
+      title: "Color",
+      about: "this is a quiz about blablabl",
+      steps: [
+          {
+              header: "Color",
+              question: "Color",
+              information: "In section we will take you through how to use colors when developing applications for DHIS2. Some examples and explanations will be given as well as some coding tasks for you to try out, and some quizzes to check that you have understood the topics correctly",
+              correct: 'a',
+          },
+          {
+              header: "DHIS2 color scale",
+              question: "DHIS2 color scale",
+              information: "The DHIS2 color scale contains 7 colors. Each color has 10 shades. This color system provides enough colors for all situations",
+              image: "../images/colours.png",
+          },
+          {
+              header: "General, simplified principles",
+              question: "General, simplified principles",
+              information: "Each color in the DHIS2 color scale has a purpose. Put simply: Grey: general interface elements, neutral information, Blue: important neutral information, primary actions, Teal: selected or active element, Red: danger, error, destructive action, Yellow: warning, non-blocking error, Green: positive feedback, valid, success",
+          },
+          {
+              header: "Qu",
+              question: "Test it out!",
+              iframe: iframe,
+          },
+          {
+              header: "Qu",
+              question: "Quiz: When should you use the color red?",
+              alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+              correct: 'a',
+          },
+          
+      ]
+  },
+  {
+      title: "Typography",
+      about: "this is a quiz about blablabl",
+      steps: [
+          {
+              header: "header1",
+              question: "What is blabla?",
+              alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+              correct: 'a',
+          },
+          {
+              header: "header2",
+              question: "What is blabla?",
+              alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+              correct: 'b',
+          },
+          {
+              header: "header2",
+              question: "What is blabla?",
+              alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+              correct: 'c',
+          },
+          
+      ]
+  },
+  {
+      title: "Icons",
+      about: "this is a quiz about blablabl",
+      steps: [
+          {
+              header: "header1",
+              question: "What is blabla?",
+              alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+              correct: 'a',
+          },
+          {
+              header: "header2",
+              question: "What is blabla?",
+              alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+              correct: 'b',
+          },
+          {
+              header: "header2",
+              question: "What is blabla?",
+              alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+              correct: 'c',
+          },
+          
+      ]
+  }
+]
