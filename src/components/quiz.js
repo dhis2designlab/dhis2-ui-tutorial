@@ -60,7 +60,7 @@ function Quiz({isOpen, setIsOpen, index}) {
         }
     
         if(isChecked.includes(correct)){
-        setPoints(points+1)
+            setPoints(points+1)
     }
     }
 
