@@ -9,25 +9,13 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import Button from '@material-ui/core/Button';
+import { Button } from '@dhis2/ui';
+
+import Quiz from "./quiz";
 
 import TourView from "./tour"
 
 const useStyles = makeStyles((theme) => ({
-  icon: {
-    marginRight: theme.spacing(2),
-  },
-  heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
-  },
-  heroButtons: {
-    marginTop: theme.spacing(4),
-  },
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-  },
   card: {
     height: '100%',
     display: 'flex',
@@ -39,12 +27,8 @@ const useStyles = makeStyles((theme) => ({
   cardContent: {
     flexGrow: 1,
   },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
-  },
-  toolBar: {
-    backgroundColor: '#2d6692'
+  tour: {
+    width: '700px',
   }
 }));
 
@@ -55,7 +39,13 @@ function Cards(props) {
 
   const {title, short_info } = props.section
 
+  const index = props.index;
+
+  console.log("index card" + index)
+
   const {steps} = props
+
+
 
   function handleChange(newValue){
     setIsOpen(newValue);
@@ -68,8 +58,10 @@ function Cards(props) {
           image="https://source.unsplash.com/random"
           title="Image title"
         />
+
+
         <CardContent className={classes.cardContent}>
-          <h2>{title}</h2>
+          <h3>{title}</h3>
           <p>{short_info}</p>
         </CardContent>
         <CardActions>
@@ -82,7 +74,7 @@ function Cards(props) {
             value={isOpen}>
             Start the tour
         </Button>
-        <TourView isOpen={isOpen} setIsOpen={setIsOpen} onRequestClose={handleChange} steps={steps}/>
+        <Quiz index={index} className={classes.cardContent} isOpen={isOpen} setIsOpen={setIsOpen} />
         </CardActions>
       </Card>
 )}
