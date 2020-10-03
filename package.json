@@ -28,7 +28,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-
   "browserslist": {
     "production": [
       ">0.2%",
@@ -45,7 +44,6 @@
     "styled-jsx": "^3.3.0"
   },
   "devDependencies": {
-    "json-loader": "^0.5.7",
-   
+    "json-loader": "^0.5.7"
   }
 }

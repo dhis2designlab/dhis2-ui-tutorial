@@ -80,5 +80,3 @@ function Cards(props) {
 )}
 
 export default Cards;
-
-//<TourView className={classes.cardContent} isOpen={isOpen} setIsOpen={setIsOpen} onRequestClose={handleChange} steps={steps}/>
