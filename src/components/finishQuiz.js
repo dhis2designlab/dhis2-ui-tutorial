@@ -4,6 +4,7 @@ import { ModalTitle, ModalContent} from '@dhis2/ui';
 
 
 function FinishQuiz({points}) {
+    console.log("Finish quiz points " + points)
   return (
     <>
         <ModalTitle>
