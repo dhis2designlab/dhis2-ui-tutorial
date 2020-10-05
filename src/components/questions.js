@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import { ModalTitle, ModalContent, Radio} from '@dhis2/ui';
+import { ModalTitle, ModalContent, Checkbox, Radio} from '@dhis2/ui';
 
 
 import colors from '../images/colours.png';
@@ -19,8 +19,7 @@ function Questions({question, alternatives, image, information, handleSingleChec
                 {alternatives ? alternatives.map((value, index) => {
                     const choice = Object.keys(value)
                     const value_choice = Object.values(value)
-                    return <>
-                    <Radio
+                    return <><Radio
                     dataTest="dhis2-uicore-radio"
                     label={value_choice}
                     name={choice}
@@ -41,3 +40,10 @@ function Questions({question, alternatives, image, information, handleSingleChec
 export default Questions;
 
 
+/**<Checkbox
+dataTest="dhis2-uicore-checkbox"
+label={value_choice}
+name={choice}
+onChange={handleSingleCheck}
+checked={isChecked.includes(String(choice))}
+/>**/
