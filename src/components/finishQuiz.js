@@ -1,10 +1,11 @@
 import React from 'react';
 
-import { ModalTitle, ModalContent} from '@dhis2/ui';
+import { ModalTitle, ModalContent, Button} from '@dhis2/ui';
 
 
-function FinishQuiz({points}) {
+function FinishQuiz({points, setIndex}) {
     console.log("Finish quiz points " + points)
+    
   return (
     <>
         <ModalTitle>
@@ -12,6 +13,14 @@ function FinishQuiz({points}) {
         </ModalTitle>
         <ModalContent>
             <p>You got {points} point</p>
+            <Button
+            dataTest="dhis2-uicore-button"
+            onClick={setIndex}
+            primary
+            type="button"
+            >
+            Start over
+        </Button>
         </ModalContent>
     </>
   );

@@ -63,6 +63,10 @@ function Quiz({isOpen, setIsOpen, index}) {
             setPoints(points+1)
     }
     }
+    const handleStartOver = () => {
+        setIndex(0)
+        setFinished(false)
+    }
 
   return (
     <div> 
@@ -72,7 +76,7 @@ function Quiz({isOpen, setIsOpen, index}) {
         position="top"
         >
         <div>
-        {finished ? <FinishQuiz  points={points}/> :
+        {finished ? <FinishQuiz  setIndex={handleStartOver} points={points}/> :
         <>
         <Questions isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information}/>
         <Button
