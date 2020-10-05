@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Settings({ onClick, user }) {
   const classes = useStyles();
-  console.log(Account)
 
   return (
     <>
