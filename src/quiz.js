@@ -7,19 +7,19 @@ export const quiz_data = [
       steps: [
           {
               header: "header1",
-              question: "What is blabla?",
+              question: "What is blabla1?",
               alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
               correct: 'a',
           },
           {
               header: "header2",
-              question: "What is blabla?",
+              question: "What is blabla2?",
               alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
               correct: 'b',
           },
           {
               header: "header2",
-              question: "What is blabla?",
+              question: "What is blabla3?",
               alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
               correct: 'c',
           },
