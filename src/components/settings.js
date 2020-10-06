@@ -1,12 +1,10 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 
 import HeaderBar from './headerbar.js'
 import Grid from  '@material-ui/core/Grid';
-import Paper from  '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@dhis2/ui-core'
 import { Account } from '@dhis2/ui-icons'
-import { db } from '../firebase';
 import { UserContext } from "../userContext"
 
 const useStyles = makeStyles((theme) => ({
@@ -28,10 +26,7 @@ const useStyles = makeStyles((theme) => ({
 function Settings({ onClick, user }) {
   const classes = useStyles();
 
-  let {currentUser} = useContext(UserContext)
-
- 
-  
+  let { currentUser } = useContext(UserContext)
 
   return (
     <>

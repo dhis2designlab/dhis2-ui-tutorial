@@ -1,15 +1,15 @@
 import React, {useState, useContext} from 'react';
 
 
-import { Modal, ModalTitle, ModalContent, ModalActions, ButtonStrip, Button, Checkbox} from '@dhis2/ui';
+import { Modal, ModalActions, ButtonStrip, Button} from '@dhis2/ui';
 
 import { makeStyles } from '@material-ui/core/styles';
-import {quiz_data} from '../quiz.js';
+import { quiz_data } from '../quiz.js';
 import FinishQuiz from './finishQuiz';
 import Questions from './questions';
 import { UserContext } from "../userContext"
 
-import {db} from '../firebase'
+import { db } from '../firebase'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -86,8 +86,6 @@ function Quiz({isOpen, setIsOpen, index}) {
            }
         
            setFinished(true)
-          
-      
          }
 
         if(isChecked.includes(correct)){

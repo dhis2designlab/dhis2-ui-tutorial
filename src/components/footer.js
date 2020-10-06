@@ -5,7 +5,6 @@ import Typography from '@material-ui/core/Typography';
 
 
 function Footer() {
-
   return (
     <>
       <Typography variant="h6" align="center" gutterBottom>

@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-import { ModalTitle, ModalContent, Checkbox, Radio} from '@dhis2/ui';
+import { ModalTitle, ModalContent, Radio} from '@dhis2/ui';
 
 
 import colors from '../images/colours.png';

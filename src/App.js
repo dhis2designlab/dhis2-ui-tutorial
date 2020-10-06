@@ -20,7 +20,6 @@ import { auth } from './firebase';
 
 function App() {
   const {currentUser, setCurrentUser} = useContext(UserContext)
-  const [loading, setLoading] = useState(false);
 
   function login(username, password) {
     auth.signInWithEmailAndPassword(username, password);
