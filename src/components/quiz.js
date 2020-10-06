@@ -63,18 +63,30 @@ function Quiz({isOpen, setIsOpen, index}) {
         else {
            let ref = db.collection('users').doc(currentUser.uid)
 
-           
-           currentUser.points.push({title: currentQuiz[index].title, points: points})
+           let present = false
+
+           for(let points in currentUser.points){
+               if(currentQuiz[index].title == currentUser.points[points].title){
+                   present = true
+                   return;
+               }
+           }
+
+           if(!present){
+            currentUser.points.push({title: currentQuiz[index].title, points: points})
             ref.update({
                 points: [...currentUser.points]
             }).then(function() {
                 setCurrentUser({...currentUser})
-                setFinished(true)
             })
             .catch(function(error) {
                 // The document probably doesn't exist.
                 console.error("Error updating document: ", error);
             });    
+           }
+        
+           setFinished(true)
+          
       
          }
 
