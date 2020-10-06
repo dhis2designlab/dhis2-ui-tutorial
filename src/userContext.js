@@ -6,8 +6,6 @@ export const UserContext = createContext();
 
 const UserProvider = ({children}) => {
     const [currentUser, setCurrentUser] = useState(null);
-    const [points, setPoints] = useState(0);
-
  
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((user => {

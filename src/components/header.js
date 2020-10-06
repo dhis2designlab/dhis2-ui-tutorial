@@ -27,8 +27,7 @@ function Header() {
       <div className={classes.heroContent}>
         <Container maxWidth="sm">
           <h1 className={classes.title}>DHIS2 UI tutorial</h1>
-          <p>Get on board with the best practices for developing user friendly applications
-          for DHIS2 </p>
+          <p>In these tutorials you will get design knowledge about how to develop applications in align with the UI guidelines. In addition to some theoretical material, you will also be given real life code examples that you can try out directly in the browser</p>
         </Container>
       </div>
     </>

@@ -33,7 +33,7 @@ function Quiz({isOpen, setIsOpen, index}) {
 
   const currentQuiz = quiz_data.map(q => q);
 
-  const {question, alternatives, information, image, correct, iframe } = currentQuiz[index].steps[indexState]
+  const {question, alternatives, information, image, correct } = currentQuiz[index].steps[indexState]
 
     const handleClick = event => {
         setIsOpen(false)

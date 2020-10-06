@@ -30,7 +30,7 @@ function Questions({question, alternatives, image, information, handleSingleChec
                 </>
 
                     }): <p></p>}
-            {image ? <img src={colors} width="100%" alt="image" /> : <></>}
+            {image ? <img src={colors} width="100%" alt="" /> : <></>}
             </></ModalContent>
     </div>
     </>

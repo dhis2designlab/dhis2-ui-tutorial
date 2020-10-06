@@ -4,8 +4,6 @@ import Grid from '@material-ui/core/Grid';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import { Button } from '@dhis2/ui';
-
 import storybook from "../images/sb.png";
 
 import github from "../images/github_logo.png";

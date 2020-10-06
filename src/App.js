@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useContext } from 'react';
+import React, { useCallback, useContext } from 'react';
 
 import Signup from './components/signup.js'
 import Login from './components/login.js'
@@ -19,7 +19,7 @@ import { auth } from './firebase';
 
 
 function App() {
-  const {currentUser, setCurrentUser} = useContext(UserContext)
+  const { currentUser } = useContext(UserContext)
 
   function login(username, password) {
     auth.signInWithEmailAndPassword(username, password);

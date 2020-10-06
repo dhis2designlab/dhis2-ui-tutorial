@@ -1,11 +1,8 @@
 import React, {useContext} from 'react';
 
 import { ModalTitle, ModalContent, Button} from '@dhis2/ui';
-import { UserContext } from '../userContext'
-
 
 function FinishQuiz({points, setIndex}) {
-    const {currentUser} = useContext(UserContext)
   
   return (
     <>
