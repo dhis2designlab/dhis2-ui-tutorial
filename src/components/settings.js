@@ -48,7 +48,7 @@ function Settings({ onClick, user }) {
             <div className={classes.paper}><p>Firstname Lastname</p></div>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <div className={classes.paper}><p>points: {currentUser.points}</p></div>
+            <div className={classes.paper}><p>points: </p></div>
           </Grid>
           <Grid item xs={6} sm={3}>
             <div className={classes.paper}>Badge 2</div>

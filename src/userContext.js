@@ -9,8 +9,6 @@ const UserProvider = ({children}) => {
     const [points, setPoints] = useState(0);
 
  
-
-    
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((user => {
             if (user) {
@@ -18,11 +16,12 @@ const UserProvider = ({children}) => {
                 userReference.get().then(function(doc){
                     if(doc.exists){
                         //TODO: find better way to get userid
-                         setCurrentUser({...doc.data(), loggedIn: true, uid: user.uid});
+                        console.log(doc.data())
+                         setCurrentUser({...doc.data(), loggedIn: true, ...user});
                     }
                     else{
-                        userReference.set({username: user.email, points: 0, email: user.email, displayName: "name"})
-                        setCurrentUser({...user, username: user.email, points: 0, email: user.email, loggedIn: true});
+                        userReference.set({username: user.email, points: [], email: user.email, displayName: "name"})
+                        setCurrentUser({...user, username: user.email, points: [], email: user.email, loggedIn: true});
                     }
                 }).catch(function(error){
                     console.log("error getting document", error)

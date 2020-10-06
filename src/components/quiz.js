@@ -61,26 +61,27 @@ function Quiz({isOpen, setIsOpen, index}) {
             setIndex(indexState + 1)
         }
         else {
-            console.log(currentUser.uid)
-            let ref = db.collection("users").doc(currentUser.uid);
-            let newPoints = points + currentUser.points
-            return ref.update({
-                points: newPoints
-            })
-            .then(function() {
-                setCurrentUser({...currentUser, points: newPoints})
+           let ref = db.collection('users').doc(currentUser.uid)
+
+           currentUser.points.push({title: currentQuiz[index].title, points: points})
+            ref.update({
+                points: [...currentUser.points]
+            }).then(function() {
+                setCurrentUser({...currentUser})
                 setFinished(true)
             })
             .catch(function(error) {
                 // The document probably doesn't exist.
                 console.error("Error updating document: ", error);
             });    
-        }
-    
+      
+         }
+
         if(isChecked.includes(correct)){
             setPoints(points+1)
     }
     }
+
     const handleStartOver = () => {
         setIndex(0)
         setFinished(false)
@@ -135,4 +136,38 @@ function Quiz({isOpen, setIsOpen, index}) {
 
     )
 }
+
 export default Quiz;
+
+
+    /** for(let p in currentUser.points){
+             console.log("index " + p)
+             if(p !== undefined){
+                console.log(currentUser.points[p].title)
+                console.log(currentQuiz[index].title)
+                if(currentUser.points[p].title == currentQuiz[index].title){
+                    newPoints.push({title: currentQuiz[index].title, points: points})
+                }
+                else{
+                    console.log(currentUser.points[p].title)
+                    newPoints.push({title: currentQuiz[index].title, points: 4})
+                }
+             }
+            } 
+
+
+        
+         console.log(newPoints)
+            ref.update({
+                points: newPoints
+            })
+            .then(function() {
+                setCurrentUser({...currentUser, points: newPoints})
+                setFinished(true)
+            })
+            .catch(function(error) {
+                // The document probably doesn't exist.
+                console.error("Error updating document: ", error);
+            });    
+        } */
+    
