@@ -17,7 +17,10 @@ const useStyles = makeStyles((theme) => ({
         marginRight: 'auto' 
     },
     header: {
-        textAlign: 'center'
+        textAlign: 'center',
+    },
+    container: {
+        marginBottom: '20px'
     }
   
   }));
@@ -25,42 +28,24 @@ const useStyles = makeStyles((theme) => ({
 function Links() {
 const classes = useStyles();
   return (
-    <Grid container spacing={4}>
+    <Grid className={classes.container} container spacing={10}>
         <Grid  item xs={12} sm={4} md={4}>
             <img className={classes.link} src={storybook} width="30%" alt="Storybook"></img>
             <h3 className={classes.header}>Storybook</h3>
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p>
-            <Button
-                name="Basic button"
-                //onClick={() => setIsOpen(!isOpen)}
-                //onClick={handleChange}
-                type="button">
-                Go to Storybook
-            </Button>
+            <a href="https://ui.dhis2.nu/demo/?path=/story/inputfieldff--default">Link to storybook</a>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
             <img className={classes.link} src={github} width="30%" alt="Github"></img>
             <h3 className={classes.header} >Github</h3>
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium voluptatem accusantium doloremque laudantium</p>
-            <Button
-                name="Basic button"
-                //onClick={() => setIsOpen(!isOpen)}
-                //onClick={handleChange}
-                type="button">
-                Go to Github
-            </Button>
+            <a href="https://github.com/dhis2">Link to Github</a>
         </Grid>
         <Grid item xs={12} sm={4} md={4}>
             <img className={classes.link} src={github} width="30%" alt="Github"></img>
             <h3 className={classes.header}>Blabla</h3>
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
-            <Button
-                name="Basic button"
-                //onClick={() => setIsOpen(!isOpen)}
-                //onClick={handleChange}
-                type="button">
-                Go to X
-            </Button>
+            <a href="https://ui.dhis2.nu/demo/?path=/story/inputfieldff--default">Link to X</a>
         </Grid>
   </Grid>  
 

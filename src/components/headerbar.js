@@ -7,7 +7,6 @@ import {
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import { Account } from '@dhis2/ui-icons'
 const useStyles = makeStyles((theme) => ({
   nav: {
     padding: '20px 20px',
@@ -43,5 +42,3 @@ function HeaderBar({user}) {
 }
 
 export default HeaderBar;
-
-//<Account className={classes.icon}/>
