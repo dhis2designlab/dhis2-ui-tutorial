@@ -141,7 +141,7 @@ function Quiz({isOpen, setIsOpen, index}) {
             </Button>
         </ButtonStrip>
         </ModalActions></div>
-    </Modal> : <p>Not clicked</p>}
+    </Modal> : <></>}
 
         </div>
 
