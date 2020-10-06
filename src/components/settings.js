@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
 import HeaderBar from './headerbar.js'
 import Grid from  '@material-ui/core/Grid';
@@ -28,12 +28,10 @@ const useStyles = makeStyles((theme) => ({
 function Settings({ onClick, user }) {
   const classes = useStyles();
 
-  const {currentUser} = useContext(UserContext)
-  console.log(currentUser.points)
+  let {currentUser} = useContext(UserContext)
 
-  const [points, setPoints] = useState(0)
-
-
+ 
+  
 
   return (
     <>
@@ -50,7 +48,7 @@ function Settings({ onClick, user }) {
             <div className={classes.paper}><p>Firstname Lastname</p></div>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <div className={classes.paper}><p>points: {currentUser.points[0]}</p></div>
+            <div className={classes.paper}><p>points: {currentUser.points}</p></div>
           </Grid>
           <Grid item xs={6} sm={3}>
             <div className={classes.paper}>Badge 2</div>

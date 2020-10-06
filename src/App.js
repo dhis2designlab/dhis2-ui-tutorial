@@ -43,13 +43,14 @@ function App() {
 
   const requestSignup = useCallback((username, password) => {signup(username, password);});
 
+  const user = currentUser == null ? false : currentUser.loggedIn
 
     return <React.Fragment>
           <Router>
            <div>
              <Switch>
                <Route path="/signup" render={() => (
-                      !currentUser.loggedIn ? (
+                      !user  ? (
                          <Signup onClick={requestSignup} />
                        ) : (
                           <Redirect to="/home" />
@@ -57,7 +58,7 @@ function App() {
                        )}/>
 
                <Route path="/login" render={() => (
-                   !currentUser.loggedIn ? (
+                   !user ? (
                        <Login onClick={requestLogin}/>
                    ) : (
                      <Redirect to="/home" />
@@ -65,21 +66,21 @@ function App() {
                    )}/>
 
                <Route path="/logout" render={() => (
-                   !currentUser.loggedIn ? (
+                   !user ? (
                       <Redirect to="/signup" />
                    ) : (
                      <Logout onClick={requestLogout}/>
                    )
                    )}/>
                 <Route path="/home" render={() => (
-                        !currentUser.loggedIn ? (
+                        !user ? (
                           <Redirect to="/signup"/>
                         ) : (
                           <Home user={currentUser}/>
                         )
                         )}/>
                 <Route path="/settings" render={() => (
-                        !currentUser.loggedIn ? (
+                        !user ? (
                           <Redirect to="/signup"/>
                         ) : (
                           <Settings user={currentUser} onClick={requestLogout}/>

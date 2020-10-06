@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 
 
 import { Modal, ModalTitle, ModalContent, ModalActions, ButtonStrip, Button, Checkbox} from '@dhis2/ui';
@@ -7,6 +7,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import {quiz_data} from '../quiz.js';
 import FinishQuiz from './finishQuiz';
 import Questions from './questions';
+import { UserContext } from "../userContext"
+
+import {db} from '../firebase'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,6 +23,8 @@ const useStyles = makeStyles((theme) => ({
 function Quiz({isOpen, setIsOpen, index}) {
 
   const classes = useStyles();  
+  
+  const {currentUser, setCurrentUser} = useContext(UserContext)
 
   const [ indexState, setIndex ] = useState(0)
   const [ points, setPoints ] = useState(0)
@@ -56,7 +61,20 @@ function Quiz({isOpen, setIsOpen, index}) {
             setIndex(indexState + 1)
         }
         else {
-            setFinished(true)
+            console.log(currentUser.uid)
+            let ref = db.collection("users").doc(currentUser.uid);
+            let newPoints = points + currentUser.points
+            return ref.update({
+                points: newPoints
+            })
+            .then(function() {
+                setCurrentUser({...currentUser, points: newPoints})
+                setFinished(true)
+            })
+            .catch(function(error) {
+                // The document probably doesn't exist.
+                console.error("Error updating document: ", error);
+            });    
         }
     
         if(isChecked.includes(correct)){
