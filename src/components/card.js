@@ -2,7 +2,6 @@
 import React, {useState} from 'react';
 
 import Card from '@material-ui/core/Card';
-
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -13,7 +12,6 @@ import { Button } from '@dhis2/ui';
 
 import Quiz from "./quiz";
 
-import TourView from "./tour"
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -41,12 +39,6 @@ function Cards(props) {
 
   const index = props.index;
 
-  console.log("index card" + index)
-
-  const {steps} = props
-
-
-
   function handleChange(newValue){
     setIsOpen(newValue);
   }
@@ -58,8 +50,6 @@ function Cards(props) {
           image="https://source.unsplash.com/random"
           title="Image title"
         />
-
-
         <CardContent className={classes.cardContent}>
           <h3>{title}</h3>
           <p>{short_info}</p>
