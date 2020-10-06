@@ -47,8 +47,11 @@ function Settings({ onClick, user }) {
           <Grid item xs={12} sm={6}>
             <div className={classes.paper}><p>Firstname Lastname</p></div>
           </Grid>
-          <Grid item xs={6} sm={3}>
-            <div className={classes.paper}><p>points: </p></div>
+          <Grid item xs={12} sm={12}>
+            <div className={classes.paper}><p>Completed courses</p></div>
+            {currentUser.points.map(index => {
+            return <p>{index.title} {index.points}</p>
+            })}
           </Grid>
           <Grid item xs={6} sm={3}>
             <div className={classes.paper}>Badge 2</div>

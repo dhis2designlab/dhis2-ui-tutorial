@@ -63,6 +63,7 @@ function Quiz({isOpen, setIsOpen, index}) {
         else {
            let ref = db.collection('users').doc(currentUser.uid)
 
+           
            currentUser.points.push({title: currentQuiz[index].title, points: points})
             ref.update({
                 points: [...currentUser.points]
