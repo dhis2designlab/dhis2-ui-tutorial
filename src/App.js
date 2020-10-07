@@ -5,6 +5,7 @@ import Login from './components/login.js'
 import Logout from './components/logout.js'
 import Home from './components/home.js'
 import Settings from './components/settings.js'
+import Course from './components/courseIntroduction.js'
 import { UserContext } from "./userContext"
 
 import {
@@ -85,6 +86,13 @@ function App() {
                           <Settings user={currentUser} onClick={requestLogout}/>
                         )
                         )}/>
+                 <Route path="/course" render={() => (
+                    !user ? (
+                      <Redirect to="/signup"/>
+                    ) : (
+                      <Course user={currentUser} />
+                    )
+                    )}/>
              </Switch>
            </div>
          </Router>
