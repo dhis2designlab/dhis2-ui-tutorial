@@ -11,6 +11,7 @@ import { Button } from '@dhis2/ui';
 import { quiz_data } from '../quiz.js';
 import { UserContext } from "../userContext"
 import Questions from './questions';
+import FinishQuiz from './finishQuiz';
 
 import { db } from '../firebase'
 
@@ -56,13 +57,71 @@ function CourseIntroduction() {
   console.log(about)
 
 
- // const {question, alternatives, information, image, correct } = currentQuiz[0].steps[indexState]
+  const {question, alternatives, information, image, correct } = currentQuiz[0].steps[indexState]
 
- const handleClick=() =>{
-  setIndex(indexState + 1)
- }
+  const handleClick=() =>{
+    setIndex(indexState + 1)
+  }
 
-  
+  const handleStartOver = () => {
+    setIndex(0)
+    setFinished(false)
+  }
+
+  const handleBackClick = () => {
+    if(indexState - 1>= 0){
+        setFinished(false)
+        setIndex(indexState - 1)
+    }
+}
+  //TODO: FIX THIS.
+  const handleNextClick = ()=> {
+    if(indexState + 1 < currentQuiz[0].steps.length){
+        setIndex(indexState + 1)
+    }
+    else {
+       let ref = db.collection('users').doc(currentUser.uid)
+
+       let present = false
+
+       for(let points in currentUser.points){
+           if(currentQuiz[0].title == currentUser.points[points].title){
+               present = true
+               return;
+           }
+       }
+
+       if(!present){
+        currentUser.points.push({title: currentQuiz[0].title, points: points})
+        ref.update({
+            points: [...currentUser.points]
+        }).then(function() {
+            setCurrentUser({...currentUser})
+        })
+        .catch(function(error) {
+            // The document probably doesn't exist.
+            console.error("Error updating document: ", error);
+        });
+       }
+
+       setFinished(true)
+     }
+
+    if(isChecked.includes(correct)){
+        setPoints(points+1)
+}
+}
+
+  const handleSingleCheck = e => {
+    const name = e.name;
+    if (isChecked.includes(name[0])) {
+      setIsChecked(isChecked.filter(checked_name => checked_name !== name[0]));
+      return;
+    }
+    isChecked.push(name[0]);
+    setIsChecked([...isChecked]);
+  };
+
   return (
     <div className={classes.font}>
     <HeaderBar user={currentUser}/>
@@ -99,7 +158,28 @@ function CourseIntroduction() {
             >
             Start Course
         </Button>
-        </>:  <p>hei</p>}
+        </>: <Grid  item xs={12} sm={12} md={12}>
+                {finished ? <FinishQuiz  setIndex={handleStartOver} points={points}/> :
+                <>
+                <Questions isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information}/>
+                <Button
+                    dataTest="dhis2-uicore-button"
+                    onClick={handleBackClick}
+                    primary
+                    type="button"
+                    >
+                    Back
+                </Button>
+                <Button
+                    dataTest="dhis2-uicore-button"
+                    onClick={handleNextClick}
+                    primary
+                    type="button"
+                    >
+                    Next
+                </Button>
+                </>
+     } </Grid>}
         </Grid>
       </Container>
     </main>
