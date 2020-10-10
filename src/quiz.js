@@ -2,8 +2,25 @@ const iframe = '<iframe src="https://codesandbox.io/embed/bold-sun-l4upt?fontsiz
 
 export const quiz_data = [
   {
-      title: "Title",
-      about: "Content and communitcation",
+      title: "Content and communication",
+      about: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinction At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
+      topics: [
+          {
+              title: "title 1",
+              info: "learn about blablabla",
+              taskType: "text",
+          },
+          {
+              title: "title 2",
+              info: "learn about blablabla",
+              taskType: "coding",
+          },
+          {
+              title: "title 3",
+              info: "learn about blablabla",
+              taskType: "quiz",
+          }
+      ],
       steps: [
           {
               header: "header1",
@@ -28,7 +45,24 @@ export const quiz_data = [
   },
   {
       title: "Layout, Spacing and Stacking",
-      about: "this is a quiz about blablabl",
+      about: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
+      topics: [
+        {
+            title: "title 1",
+            info: "learn about blablabla",
+            taskType: "text",
+        },
+        {
+            title: "title 2",
+            info: "learn about blablabla",
+            taskType: "coding",
+        },
+        {
+            title: "title 3",
+            info: "learn about blablabla",
+            taskType: "quiz",
+        }
+    ],
       steps: [
           {
               header: "header1",
@@ -54,6 +88,23 @@ export const quiz_data = [
   {
       title: "Forms",
       about: "this is a quiz about blablabl",
+      topics: [
+        {
+            title: "title 1",
+            info: "learn about blablabla",
+            taskType: "text",
+        },
+        {
+            title: "title 2",
+            info: "learn about blablabla",
+            taskType: "coding",
+        },
+        {
+            title: "title 3",
+            info: "learn about blablabla",
+            taskType: "quiz",
+        }
+    ],
       steps: [
           {
               header: "header1",
@@ -79,6 +130,23 @@ export const quiz_data = [
   {
       title: "Color",
       about: "this is a quiz about blablabl",
+      topics: [
+            {
+                title: "title 1",
+                info: "learn about blablabla",
+                taskType: "text",
+            },
+            {
+                title: "title 2",
+                info: "learn about blablabla",
+                taskType: "coding",
+            },
+            {
+                title: "title 3",
+                info: "learn about blablabla",
+                taskType: "quiz",
+            }
+        ],
       steps: [
           {
               header: "Color",
@@ -114,6 +182,23 @@ export const quiz_data = [
   {
       title: "Typography",
       about: "this is a quiz about blablabl",
+      topics: [
+        {
+            title: "title 1",
+            info: "learn about blablabla",
+            taskType: "text",
+        },
+        {
+            title: "title 2",
+            info: "learn about blablabla",
+            taskType: "coding",
+        },
+        {
+            title: "title 3",
+            info: "learn about blablabla",
+            taskType: "quiz",
+        }
+    ],
       steps: [
           {
               header: "header1",
@@ -139,6 +224,23 @@ export const quiz_data = [
   {
       title: "Icons",
       about: "this is a quiz about blablabl",
+      topics: [
+        {
+            title: "title 1",
+            info: "learn about blablabla",
+            taskType: "text",
+        },
+        {
+            title: "title 2",
+            info: "learn about blablabla",
+            taskType: "coding",
+        },
+        {
+            title: "title 3",
+            info: "learn about blablabla",
+            taskType: "quiz",
+        }
+    ],
       steps: [
           {
               header: "header1",
