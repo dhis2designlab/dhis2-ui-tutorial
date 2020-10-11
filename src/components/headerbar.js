@@ -6,6 +6,11 @@ import {
 } from "react-router-dom";
 
 import { makeStyles } from '@material-ui/core/styles';
+import logo from "../images/dhis2-logo.png";
+import Grid from '@material-ui/core/Grid';
+import { spacing } from '@material-ui/system';
+import Container from '@material-ui/core/Container';
+
 
 const useStyles = makeStyles((theme) => ({
   nav: {
@@ -24,6 +29,17 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     textDecoration: 'none',
+    maxHeight: '45px',
+    marginTop: 'auto',
+    marginBottom: 'auto',
+
+  },
+  img: {
+    maxHeight: '30px',
+    marginTop: 'auto',
+    marginBottom: 'auto',
+    paddingLeft: '45px',
+
   }
 }));
 
@@ -33,11 +49,17 @@ function HeaderBar({user}) {
   const name = user ? 'Logged in as ' + user.username : ''
 
   return (
-    <div className={classes.nav}>
+
+    <Grid container className={classes.nav}>
+      <Grid className={classes.img} xs={5} sm={5} md={5}>
+        <img src={logo} className={classes.img}/>
+      </Grid>
+      <Grid xs={5} sm={5} md={5}>
         <Link className={classes.link} to={`/settings`}>
             <div className={classes.name}>{name}</div>
         </Link>
-    </div>
+        </Grid>
+    </Grid>
   );
 }
 

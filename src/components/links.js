@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -20,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
     container: {
         marginBottom: '20px',
         marginTop: '20px',
+        marginLeft: '0',
+        marginRight: '0',
+    },
+    cont: {
         backgroundColor: '#E8EDF2',
     }
   
@@ -28,6 +33,8 @@ const useStyles = makeStyles((theme) => ({
 function Links() {
 const classes = useStyles();
   return (
+    <div className={classes.cont}>
+    <Container>
     <Grid className={classes.container} container spacing={10}>
         <Grid item xs={12} sm={12} md={12} className={classes.header}>
             <h2>Resources</h2>
@@ -50,7 +57,9 @@ const classes = useStyles();
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
             <a href="https://ui.dhis2.nu/demo/?path=/story/inputfieldff--default">Link to X</a>
         </Grid>
-  </Grid>  
+  </Grid>
+  </Container> 
+  </div> 
 
 )}
 
