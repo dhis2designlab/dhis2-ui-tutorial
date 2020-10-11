@@ -9,6 +9,9 @@ import CardMedia from '@material-ui/core/CardMedia';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { Button } from '@dhis2/ui';
+import {
+  Link,
+} from "react-router-dom";    
 
 import Quiz from "./quiz";
 
@@ -43,6 +46,7 @@ function Cards(props) {
     setIsOpen(newValue);
   }
 
+
   return (
       <Card className={classes.card}>
         <CardMedia
@@ -64,9 +68,15 @@ function Cards(props) {
             value={isOpen}>
             Start the tour
         </Button>
-        <Quiz index={index} className={classes.cardContent} isOpen={isOpen} setIsOpen={setIsOpen} />
+        <Link key={index}
+          to={{
+            pathname: `/course/${index}`,
+          }}>Link to course</Link>
+       
         </CardActions>
       </Card>
 )}
 
 export default Cards;
+
+// <Quiz index={index} className={classes.cardContent} isOpen={isOpen} setIsOpen={setIsOpen} />

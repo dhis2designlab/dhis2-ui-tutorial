@@ -5,6 +5,7 @@ import Login from './components/login.js'
 import Logout from './components/logout.js'
 import Home from './components/home.js'
 import Settings from './components/settings.js'
+import Course from './components/courseIntroduction.js'
 import { UserContext } from "./userContext"
 
 import {
@@ -39,6 +40,7 @@ function App() {
     logout();
   }, []);
 
+  
 
   const requestSignup = useCallback((username, password) => {signup(username, password);});
 
@@ -85,6 +87,7 @@ function App() {
                           <Settings user={currentUser} onClick={requestLogout}/>
                         )
                         )}/>
+                 <Route path="/course/:id" children={<Course user={currentUser} />} />
              </Switch>
            </div>
          </Router>

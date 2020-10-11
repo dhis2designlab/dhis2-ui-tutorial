@@ -10,12 +10,20 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6),
 
-    fontFamily: 'Roboto, sans-serif',
-
   },
   title: {
     textAlign: 'center',
-    paddingBottom: '35px'
+    paddingBottom: '35px',
+    fontWeight: '700',
+  
+    fontFamily: 'Roboto, sans-serif',
+  
+  },
+  testing: {
+ 
+    color: 'blue',
+    fontSize: '150%'
+    
   }
 }));
 
@@ -27,7 +35,7 @@ function Header() {
       <div className={classes.heroContent}>
         <Container maxWidth="sm">
           <h1 className={classes.title}>DHIS2 UI tutorial</h1>
-          <p>In these tutorials you will get design knowledge about how to develop applications in align with the UI guidelines. In addition to some theoretical material, you will also be given real life code examples that you can try out directly in the browser</p>
+          <p classname={classes.testing}>In these tutorials you will get design knowledge about how to develop applications in align with the UI guidelines. In addition to some theoretical material, you will also be given real life code examples that you can try out directly in the browser</p>
         </Container>
       </div>
     </>

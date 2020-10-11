@@ -9,16 +9,13 @@ import Copyright from './copyright.js'
 import Footer from './footer.js'
 import HeaderBar from './headerbar.js'
 import Links from './links.js'
+import { spacers } from '@dhis2/ui-constants'
+import { colors } from '@dhis2/ui-constants'
 
 import data from "../data.js"
 
 const iframe = '<iframe src="https://codesandbox.io/embed/bold-sun-l4upt?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="bold-sun-l4upt" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
 const useStyles = makeStyles((theme) => ({
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-
-  },
 
   footer: {
     backgroundColor: theme.palette.background.paper,
@@ -26,13 +23,19 @@ const useStyles = makeStyles((theme) => ({
   },
 
   font: {
-    fontFamily: 'Roboto, sans-serif',
+    lineHeight: 2
   }
+
+
 
 }));
 
 function Home({user}){
   const classes = useStyles();
+  console.log("spacers " + spacers.dp8)
+
+  console.log(colors)
+  console.log("colours " + colors.blue800)
 
   return (
     <div className={classes.font}>
@@ -41,7 +44,7 @@ function Home({user}){
       <main>
         <Container className={classes.cardGrid} maxWidth="md">
           <Links />  
-          <Grid container spacing={4}>
+          <Grid container spacing={8}>
             {data.map((section, index) => {
               console.log("index " + index)
               return <Grid item key={section} xs={12} sm={6} md={4}>
