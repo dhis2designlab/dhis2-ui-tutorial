@@ -49,7 +49,7 @@ function Quiz({isOpen, setIsOpen, index}) {
     const handleSingleCheck = e => {
         const name = e.name;
         if (isChecked.includes(name[0])) {
-           setIsChecked(isChecked.filter(checked_name => checked_name !== name[0]));
+           setIsChecked(isChecked.filter(checked_name => checked_name !== name[index]));
           return;
         }
         isChecked.push(name[0]);

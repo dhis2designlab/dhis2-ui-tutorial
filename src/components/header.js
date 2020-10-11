@@ -9,21 +9,20 @@ const useStyles = makeStyles((theme) => ({
   heroContent: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6),
-
+    height: '300px',
+    fontFamily: 'Roboto, sans-serif',
   },
+
   title: {
     textAlign: 'center',
     paddingBottom: '35px',
     fontWeight: '700',
-  
     fontFamily: 'Roboto, sans-serif',
-  
   },
+
   testing: {
- 
-    color: 'blue',
-    fontSize: '150%'
-    
+    fontSize: '450%',
+    fontFamily: 'Roboto, sans-serif',    
   }
 }));
 

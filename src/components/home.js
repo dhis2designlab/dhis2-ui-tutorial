@@ -23,7 +23,11 @@ const useStyles = makeStyles((theme) => ({
   },
 
   font: {
-    lineHeight: 2
+    lineHeight: 2,
+  },
+
+  header: {
+    textAlign: 'center',
   }
 
 
@@ -45,6 +49,7 @@ function Home({user}){
         <Container className={classes.cardGrid} maxWidth="md">
           <Links />  
           <Grid container spacing={8}>
+            <Grid className={classes.header} item xs={12} sm={12} md={12}><h2>Courses</h2></Grid>
             {data.map((section, index) => {
               console.log("index " + index)
               return <Grid item key={section} xs={12} sm={6} md={4}>

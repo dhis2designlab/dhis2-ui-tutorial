@@ -18,7 +18,9 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
     },
     container: {
-        marginBottom: '20px'
+        marginBottom: '20px',
+        marginTop: '20px',
+        backgroundColor: '#E8EDF2',
     }
   
   }));
@@ -27,6 +29,9 @@ function Links() {
 const classes = useStyles();
   return (
     <Grid className={classes.container} container spacing={10}>
+        <Grid item xs={12} sm={12} md={12} className={classes.header}>
+            <h2>Resources</h2>
+        </Grid>
         <Grid  item xs={12} sm={4} md={4}>
             <img className={classes.link} src={storybook} width="30%" alt="Storybook"></img>
             <h3 className={classes.header}>Storybook</h3>
