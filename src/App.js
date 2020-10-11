@@ -6,7 +6,11 @@ import Logout from './components/logout.js'
 import Home from './components/home.js'
 import Settings from './components/settings.js'
 import Course from './components/courseIntroduction.js'
+import HeaderBar from './components/headerbar.js'
+import Footer from './components/footer.js'
+import Copyright from './components/copyright'
 import { UserContext } from "./userContext"
+import { makeStyles } from '@material-ui/core/styles';
 
 import {
   BrowserRouter as Router,
@@ -18,9 +22,18 @@ import {
 
 import { auth } from './firebase';
 
+const useStyles = makeStyles((theme) => ({
+
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(6),
+  },
+
+}));
 
 function App() {
   const { currentUser } = useContext(UserContext)
+  const classes = useStyles();
 
   function login(username, password) {
     auth.signInWithEmailAndPassword(username, password);
@@ -49,6 +62,7 @@ function App() {
     return <React.Fragment>
           <Router>
            <div>
+             <HeaderBar user={currentUser}/>
              <Switch>
                <Route path="/signup" render={() => (
                       !user  ? (
@@ -89,6 +103,10 @@ function App() {
                         )}/>
                  <Route path="/course/:id" children={<Course user={currentUser} />} />
              </Switch>
+             <footer className={classes.footer}>
+                <Footer />
+                <Copyright />
+            </footer>
            </div>
          </Router>
      </React.Fragment>

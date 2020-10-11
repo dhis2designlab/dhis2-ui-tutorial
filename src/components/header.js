@@ -8,7 +8,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   heroContent: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
+    paddingTop: '150px',
+    paddingBottom: '100px',
     height: '300px',
     fontFamily: 'Roboto, sans-serif',
   },

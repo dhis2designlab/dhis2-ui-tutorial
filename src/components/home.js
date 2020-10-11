@@ -39,11 +39,10 @@ function Home({user}){
 
   return (
     <div className={classes.font}>
-      <HeaderBar user={user}/>
       <Header />
       <Links /> 
       <main>
-     
+
         <Container className={classes.cardGrid} >
           <Grid container spacing={8}>
             <Grid className={classes.header} item xs={12} sm={12} md={12}><h2>Courses</h2></Grid>
@@ -56,10 +55,6 @@ function Home({user}){
           </Grid>
         </Container>
       </main>
-      <footer className={classes.footer}>
-          <Footer />
-          <Copyright />
-      </footer>
     </div>
   );
 }

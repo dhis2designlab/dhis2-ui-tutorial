@@ -131,7 +131,6 @@ function CourseIntroduction() {
 
   return (
     <div className={classes.font}>
-    <HeaderBar user={currentUser}/>
     <main>
       <p>go back to mainpage</p>
       <Container className={classes.cardGrid} maxWidth="md"> 
@@ -190,10 +189,6 @@ function CourseIntroduction() {
         </Grid>
       </Container>
     </main>
-    <footer className={classes.footer}>
-        <Footer />
-        <Copyright />
-    </footer>
 </div>
   );
 }
