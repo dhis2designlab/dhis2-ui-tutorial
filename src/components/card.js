@@ -46,6 +46,7 @@ function Cards(props) {
     setIsOpen(newValue);
   }
 
+
   return (
       <Card className={classes.card}>
         <CardMedia
@@ -67,7 +68,10 @@ function Cards(props) {
             value={isOpen}>
             Start the tour
         </Button>
-        <Link to="/course">Link to course</Link>
+        <Link key={index}
+          to={{
+            pathname: `/course/${index}`,
+          }}>Link to course</Link>
        
         </CardActions>
       </Card>

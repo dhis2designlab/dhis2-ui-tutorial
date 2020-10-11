@@ -1,6 +1,8 @@
 
 import React, { useContext, useState} from 'react';
 
+import { useParams } from "react-router-dom";
+
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
@@ -41,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
 
 function CourseIntroduction() {
  const classes = useStyles(); 
+ let { id } = useParams();
+
+ console.log(id)
 
  const {currentUser, setCurrentUser} = useContext(UserContext)
 
@@ -51,13 +56,13 @@ function CourseIntroduction() {
 
   const currentQuiz = quiz_data.map(q => q);
 
-  const {title, about, topics} = currentQuiz[0]
+  const {title, about, topics} = currentQuiz[id]
   console.log(indexState)
   console.log(title);
   console.log(about)
 
 
-  const {question, alternatives, information, image, correct } = currentQuiz[0].steps[indexState]
+  const {question, alternatives, information, image, correct } = currentQuiz[id].steps[indexState]
 
   const handleClick=() =>{
     setIndex(indexState + 1)

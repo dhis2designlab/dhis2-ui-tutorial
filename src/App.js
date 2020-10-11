@@ -40,6 +40,7 @@ function App() {
     logout();
   }, []);
 
+  
 
   const requestSignup = useCallback((username, password) => {signup(username, password);});
 
@@ -86,13 +87,7 @@ function App() {
                           <Settings user={currentUser} onClick={requestLogout}/>
                         )
                         )}/>
-                 <Route path="/course" render={() => (
-                    !user ? (
-                      <Redirect to="/signup"/>
-                    ) : (
-                      <Course user={currentUser} />
-                    )
-                    )}/>
+                 <Route path="/course/:id" children={<Course user={currentUser} />} />
              </Switch>
            </div>
          </Router>
