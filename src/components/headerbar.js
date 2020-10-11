@@ -9,18 +9,18 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   nav: {
-    padding: '20px 20px',
-    background: '#2d6692',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    minHeight: '15px',
+    background: 'white',
+    height: '45px',
+    position: 'fixed',
+    width: '100%',
+    boxShadow: '0 2px 4px -1px rgba(0,0,0,0.25)',
   },
   icon: {
     fill: 'white',
   },
   name: {
-    color: 'white',
+    color: 'black',
+    textAlign: 'right',
   },
   link: {
     textDecoration: 'none',
@@ -35,7 +35,7 @@ function HeaderBar({user}) {
   return (
     <div className={classes.nav}>
         <Link className={classes.link} to={`/settings`}>
-            <span className={classes.name}>{name}</span>
+            <div className={classes.name}>{name}</div>
         </Link>
     </div>
   );
