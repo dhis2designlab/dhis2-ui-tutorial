@@ -129,11 +129,11 @@ export const quiz_data = [
   },
   {
       title: "Color",
-      about: "this is a quiz about blablabl",
+      about: "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. The colors used in an application should not be chosen based primarily on how they look, but how they convey information and aid understanding. It is important to maintain consistent usage of colors throughout the DHIS2 platform. Globally, color meanings are relative. It is not possible to say 'red = danger'. However, using a consistent color palette we can establish that 'red in DHIS2 = danger'. Color alone should not be relied upon to communicate effectively. Read more about color accessibility.",
       topics: [
             {
-                title: "title 1",
-                info: "learn about blablabla",
+                title: "DHIS2 color scale",
+                info: "learn about the color scale used in DHIS2",
                 taskType: "text",
             },
             {
@@ -149,7 +149,7 @@ export const quiz_data = [
         ],
       steps: [
           {
-              header: "Color",
+              header: "",
               question: "Color",
               information: "In section we will take you through how to use colors when developing applications for DHIS2. Some examples and explanations will be given as well as some coding tasks for you to try out, and some quizzes to check that you have understood the topics correctly",
               correct: 'a',
@@ -157,7 +157,7 @@ export const quiz_data = [
           {
               header: "DHIS2 color scale",
               question: "DHIS2 color scale",
-              information: "The DHIS2 color scale contains 7 colors. Each color has 10 shades. This color system provides enough colors for all situations",
+              information: "The DHIS2 color scale contains 7 colors. Each color has 10 shades. This color system provides enough colors for all situations. Reference: Color codes and #hex values for the DHIS2 color scale.",
               image: "../images/colours.png",
           },
           {
@@ -168,7 +168,8 @@ export const quiz_data = [
           {
               header: "Qu",
               question: "Test it out!",
-              iframe: iframe,
+              information: "Want to test it out?",
+            //  iframe: iframe,
           },
           {
               header: "Qu",
@@ -223,11 +224,11 @@ export const quiz_data = [
   },
   {
       title: "Icons",
-      about: "this is a quiz about blablabl",
+      about: "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. The colors used in an application should not be chosen based primarily on how they look, but how they convey information and aid understanding. It is important to maintain consistent usage of colors throughout the DHIS2 platform. Globally, color meanings are relative. It is not possible to say 'red = danger'. However, using a consistent color palette we can establish that 'red in DHIS2 = danger'. Color alone should not be relied upon to communicate effectively. Read more about color accessibility.",
       topics: [
         {
-            title: "title 1",
-            info: "learn about blablabla",
+            title: "DHIS2 color Scale",
+            info: "Learn about the color scale in DHIS2",
             taskType: "text",
         },
         {

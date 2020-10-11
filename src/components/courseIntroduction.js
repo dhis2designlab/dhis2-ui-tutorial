@@ -81,7 +81,7 @@ function CourseIntroduction() {
 }
   //TODO: FIX THIS.
   const handleNextClick = ()=> {
-    if(indexState + 1 < currentQuiz[0].steps.length){
+    if(indexState + 1 < currentQuiz[id].steps.length){
         setIndex(indexState + 1)
     }
     else {
@@ -90,14 +90,14 @@ function CourseIntroduction() {
        let present = false
 
        for(let points in currentUser.points){
-           if(currentQuiz[0].title == currentUser.points[points].title){
+           if(currentQuiz[id].title == currentUser.points[points].title){
                present = true
                return;
            }
        }
 
        if(!present){
-        currentUser.points.push({title: currentQuiz[0].title, points: points})
+        currentUser.points.push({title: currentQuiz[id].title, points: points})
         ref.update({
             points: [...currentUser.points]
         }).then(function() {
@@ -119,6 +119,8 @@ function CourseIntroduction() {
 
   const handleSingleCheck = e => {
     const name = e.name;
+    console.log(name)
+    console.log(isChecked)
     if (isChecked.includes(name[0])) {
       setIsChecked(isChecked.filter(checked_name => checked_name !== name[0]));
       return;
