@@ -30,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
   },
   tour: {
     width: '700px',
+  },
+  link: {
+    textDecoration: 'none',
   }
 }));
 
@@ -59,20 +62,18 @@ function Cards(props) {
           <p>{short_info}</p>
         </CardContent>
         <CardActions>
-        <Button
+          <Link className={classes.link} key={index}
+            to={{
+              pathname: `/course/${index}`,
+            }}> <Button
             dataTest="dhis2-uicore-button"
             name="Basic button"
             //onClick={() => setIsOpen(!isOpen)}
             type="button"
             onClick={handleChange}
             value={isOpen}>
-            Start the tour
-        </Button>
-        <Link key={index}
-          to={{
-            pathname: `/course/${index}`,
-          }}>Link to course</Link>
-       
+            Read more
+          </Button></Link>
         </CardActions>
       </Card>
 )}

@@ -18,14 +18,13 @@ const useStyles = makeStyles((theme) => ({
     header: {
         textAlign: 'center',
     },
-    container: {
-        marginBottom: '20px',
-        marginTop: '20px',
-        marginLeft: '0',
-        marginRight: '0',
-    },
+ 
     cont: {
         backgroundColor: '#E8EDF2',
+        marginLeft: '0',
+        marginRight: '0',
+        paddingTop: '80px',
+        paddingBottom: '80px',
     }
   
   }));
@@ -35,7 +34,7 @@ const classes = useStyles();
   return (
     <div className={classes.cont}>
     <Container>
-    <Grid className={classes.container} container spacing={10}>
+    <Grid className={classes.container} container spacing={16}>
         <Grid item xs={12} sm={12} md={12} className={classes.header}>
             <h2>Resources</h2>
         </Grid>

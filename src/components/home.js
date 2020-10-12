@@ -28,10 +28,12 @@ const useStyles = makeStyles((theme) => ({
 
   header: {
     textAlign: 'center',
+  },
+
+  cardGrid: {
+    paddingTop: '80px',
+    paddingBottom: '80px',
   }
-
-
-
 }));
 
 function Home({user}){
