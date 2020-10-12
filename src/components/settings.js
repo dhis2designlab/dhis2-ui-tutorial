@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 
 import HeaderBar from './headerbar.js'
 import Grid from  '@material-ui/core/Grid';
+import Container from  '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@dhis2/ui-core'
 import { Account } from '@dhis2/ui-icons'
@@ -9,9 +10,8 @@ import { UserContext } from "../userContext"
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-    fontFamily: 'Roboto, sans-serif',
+    paddingTop: '80px',
+    paddingBottom: '80px',
   },
   root: {
     flexGrow: 1,
@@ -29,10 +29,7 @@ function Settings({ onClick, user }) {
   let { currentUser } = useContext(UserContext)
 
   return (
-    <>
-      <HeaderBar user={user}/>
-      <div className={classes.root}>
-        <Grid container spacing={6}>
+      <Container className={classes.cardGrid} >
           <Grid item xs={12}>
             <div className={classes.paper}><h1>Settings</h1></div>
           </Grid>
@@ -69,10 +66,7 @@ function Settings({ onClick, user }) {
                 Log out
               </Button></div>
           </Grid>
-        </Grid>
-      </div>
-    </>
-
+      </Container>
 )
 }
 export default Settings;

@@ -57,10 +57,6 @@ function CourseIntroduction() {
   const currentQuiz = quiz_data.map(q => q);
 
   const {title, about, topics} = currentQuiz[id]
-  console.log(indexState)
-  console.log(title);
-  console.log(about)
-
 
   const {question, alternatives, information, image, correct } = currentQuiz[id].steps[indexState]
 
@@ -119,8 +115,6 @@ function CourseIntroduction() {
 
   const handleSingleCheck = e => {
     const name = e.name;
-    console.log(name)
-    console.log(isChecked)
     if (isChecked.includes(name[0])) {
       setIsChecked(isChecked.filter(checked_name => checked_name !== name[0]));
       return;
@@ -136,7 +130,6 @@ function CourseIntroduction() {
       <Container className={classes.cardGrid} maxWidth="md"> 
         <Grid container spacing={4}>
           {indexState == 0 ? 
-
           <>
           <Grid  item xs={12} sm={12} md={12}>
              <h2 className={classes.title}>{title}</h2>
@@ -171,7 +164,7 @@ function CourseIntroduction() {
                 <Button
                     dataTest="dhis2-uicore-button"
                     onClick={handleBackClick}
-                    primary
+                    secondary
                     type="button"
                     >
                     Back
@@ -179,7 +172,7 @@ function CourseIntroduction() {
                 <Button
                     dataTest="dhis2-uicore-button"
                     onClick={handleNextClick}
-                    primary
+                    secondary
                     type="button"
                     >
                     Next
