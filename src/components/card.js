@@ -13,8 +13,6 @@ import {
   Link,
 } from "react-router-dom";    
 
-import Quiz from "./quiz";
-
 
 const useStyles = makeStyles((theme) => ({
   card: {

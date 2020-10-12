@@ -5,12 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Cards from './card.js'
 import { makeStyles } from '@material-ui/core/styles';
 import Header from './header.js'
-import Copyright from './copyright.js'
-import Footer from './footer.js'
-import HeaderBar from './headerbar.js'
 import Links from './links.js'
-import { spacers } from '@dhis2/ui-constants'
-import { colors } from '@dhis2/ui-constants'
 
 import data from "../data.js"
 
@@ -44,7 +39,6 @@ function Home({user}){
       <Header />
       <Links /> 
       <main>
-
         <Container className={classes.cardGrid} >
           <Grid container spacing={8}>
             <Grid className={classes.header} item xs={12} sm={12} md={12}><h2>Courses</h2></Grid>
@@ -62,5 +56,3 @@ function Home({user}){
 }
 
 export default Home;
-
-//  <div dangerouslySetInnerHTML={{__html: iframe}} />

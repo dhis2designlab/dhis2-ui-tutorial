@@ -67,7 +67,7 @@ function CourseIntroduction() {
 
   const {title, about, topics} = currentQuiz[id]
 
-  const {question, alternatives, information, image, correct } = currentQuiz[id].steps[indexState]
+  const {question, alternatives, information, image, correct, iframe } = currentQuiz[id].steps[indexState]
 
   const handleClick=() =>{
     setIndex(indexState + 1)
@@ -169,7 +169,7 @@ function CourseIntroduction() {
         </>: <Grid  item xs={12} sm={12} md={12}>
                 {finished ? <FinishQuiz  setIndex={handleStartOver} points={points}/> :
                 <>
-                <Questions isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information}/>
+                <Questions frame={iframe} isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information}/>
                 <div className={classes.buttons}>
                   <Button
                       className={classes.button}
