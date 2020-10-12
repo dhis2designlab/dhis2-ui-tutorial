@@ -36,7 +36,18 @@ const useStyles = makeStyles((theme) => ({
 
   title: {
     textAlign: 'center',
-  }
+  },
+  
+  buttons: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    display: 'block',
+    width: '15%',
+  },
+
+  button: {
+    margin: '5px',
+  },
 
 }));
 
@@ -44,8 +55,6 @@ const useStyles = makeStyles((theme) => ({
 function CourseIntroduction() {
  const classes = useStyles(); 
  let { id } = useParams();
-
- console.log(id)
 
  const {currentUser, setCurrentUser} = useContext(UserContext)
 
@@ -152,7 +161,7 @@ function CourseIntroduction() {
           <Button
             dataTest="dhis2-uicore-button"
             onClick={handleClick}
-            secondary
+            primary
             type="button"
             >
             Start Course
@@ -161,22 +170,26 @@ function CourseIntroduction() {
                 {finished ? <FinishQuiz  setIndex={handleStartOver} points={points}/> :
                 <>
                 <Questions isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information}/>
-                <Button
-                    dataTest="dhis2-uicore-button"
-                    onClick={handleBackClick}
-                    secondary
-                    type="button"
-                    >
-                    Back
-                </Button>
-                <Button
-                    dataTest="dhis2-uicore-button"
-                    onClick={handleNextClick}
-                    secondary
-                    type="button"
-                    >
-                    Next
-                </Button>
+                <div className={classes.buttons}>
+                  <Button
+                      className={classes.button}
+                      dataTest="dhis2-uicore-button"
+                      onClick={handleBackClick}
+                      secondary
+                      type="button"
+                      >
+                      Back
+                  </Button>
+                  <Button
+                      className={classes.button}
+                      dataTest="dhis2-uicore-button"
+                      onClick={handleNextClick}
+                      secondary
+                      type="button"
+                      >
+                      Next
+                  </Button>
+                </div>
                 </>
      } </Grid>}
         </Grid>
