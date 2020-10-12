@@ -4,26 +4,30 @@ import React from 'react';
 
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
+import DesignSystem from "../images/design_systems_header.png";
+import AtomicDesign from "../images/atomic_design.png";
+import Grid from '@material-ui/core/Grid';
+import IMG from "../images/img.png";
+import Png2 from "../images/pngguru2.png";
+import Png3 from "../images/pngguru3.png";
+import { Button } from '@dhis2/ui';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
-
+    padding: '190px',
+    minHeight: '300px',
+    fontFamily: 'Roboto, sans-serif',
   },
+
   title: {
     textAlign: 'center',
-    paddingBottom: '35px',
-    fontWeight: '700',
-  
     fontFamily: 'Roboto, sans-serif',
-  
   },
+
   testing: {
- 
-    color: 'blue',
-    fontSize: '150%'
-    
+    fontSize: '450%',
+    fontFamily: 'Roboto, sans-serif',  
   }
 }));
 
@@ -33,10 +37,23 @@ function Header() {
   return (
     <>
       <div className={classes.heroContent}>
-        <Container maxWidth="sm">
-          <h1 className={classes.title}>DHIS2 UI tutorial</h1>
-          <p classname={classes.testing}>In these tutorials you will get design knowledge about how to develop applications in align with the UI guidelines. In addition to some theoretical material, you will also be given real life code examples that you can try out directly in the browser</p>
-        </Container>
+        <Grid container>
+          <Grid item xs={12} sm={12} md={6}>
+            <h1 className={classes.title}>DHIS2 UI tutorial</h1>
+            <p classname={classes.testing}>In these tutorials you will get design knowledge about how to develop applications in align with the UI guidelines. In addition to some theoretical material, you will also be given real life code examples that you can try out directly in the browser</p>
+            <Button
+                dataTest="dhis2-uicore-button"
+                primary
+                type="button"
+                >
+                Go to courses
+           </Button>
+          </Grid>
+          <Grid item xs={12} sm={12} md={6}>
+              <img src={Png2} style={{maxWidth: '100%'}}/>
+          </Grid>
+          </Grid>
+    
       </div>
     </>
 

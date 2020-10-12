@@ -6,38 +6,64 @@ import {
 } from "react-router-dom";
 
 import { makeStyles } from '@material-ui/core/styles';
+import logo from "../images/dhis2-logo.png";
+import Grid from '@material-ui/core/Grid';
+import { spacing } from '@material-ui/system';
+import Container from '@material-ui/core/Container';
+import { Settings } from '@dhis2/ui-icons';
+
 
 const useStyles = makeStyles((theme) => ({
   nav: {
-    padding: '20px 20px',
-    background: '#2d6692',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    minHeight: '15px',
+    background: 'white',
+    height: '85px',
+    position: 'fixed',
+    boxShadow: '0 2px 4px -1px rgba(0,0,0,0.25)',
   },
   icon: {
-    fill: 'white',
+    width: '40px',
+  },
+  settings: {
+    textAlign: 'right',
+    display: 'inline-block',
+    margin: 'auto',
   },
   name: {
-    color: 'white',
+    color: 'black',
+    textAlign: 'right',
+    display: 'inline-block',
   },
   link: {
     textDecoration: 'none',
+    textAlign: 'left',
+
+  },
+  img: {
+    margin: 'auto',
+  },
+  logo: {
+    maxHeight: '30px',
   }
+
 }));
 
 
 function HeaderBar({user}) {
   const classes = useStyles();
-  const name = user ? 'Logged in as ' + user.username : ''
+  const name = user ? user.username : ''
 
   return (
-    <div className={classes.nav}>
+    <Grid container  spacing={2} className={classes.nav}>
+      <Grid item className={classes.img} xs={5} sm={5} md={5}>
+        <img src={logo} className={classes.logo}/>
+      </Grid>
+      <Grid item className={classes.settings} xs={5} sm={5} md={5}>
         <Link className={classes.link} to={`/settings`}>
-            <span className={classes.name}>{name}</span>
+          <p className={classes.name}>{name}</p>
+          <Settings className={classes.icon}/>  
         </Link>
-    </div>
+        </Grid>
+    </Grid>
   );
 }
 

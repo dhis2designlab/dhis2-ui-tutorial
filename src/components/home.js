@@ -23,28 +23,31 @@ const useStyles = makeStyles((theme) => ({
   },
 
   font: {
-    lineHeight: 2
+    lineHeight: 2,
+  },
+
+  header: {
+    textAlign: 'center',
+  },
+
+  cardGrid: {
+    paddingTop: '80px',
+    paddingBottom: '80px',
   }
-
-
-
 }));
 
 function Home({user}){
   const classes = useStyles();
-  console.log("spacers " + spacers.dp8)
-
-  console.log(colors)
-  console.log("colours " + colors.blue800)
 
   return (
     <div className={classes.font}>
-      <HeaderBar user={user}/>
       <Header />
+      <Links /> 
       <main>
-        <Container className={classes.cardGrid} maxWidth="md">
-          <Links />  
+
+        <Container className={classes.cardGrid} >
           <Grid container spacing={8}>
+            <Grid className={classes.header} item xs={12} sm={12} md={12}><h2>Courses</h2></Grid>
             {data.map((section, index) => {
               console.log("index " + index)
               return <Grid item key={section} xs={12} sm={6} md={4}>
@@ -53,14 +56,11 @@ function Home({user}){
             })}
           </Grid>
         </Container>
-        <div dangerouslySetInnerHTML={{__html: iframe}} />
       </main>
-      <footer className={classes.footer}>
-          <Footer />
-          <Copyright />
-      </footer>
     </div>
   );
 }
 
 export default Home;
+
+//  <div dangerouslySetInnerHTML={{__html: iframe}} />
