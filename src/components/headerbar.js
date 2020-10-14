@@ -8,8 +8,6 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import logo from "../images/dhis2-logo.png";
 import Grid from '@material-ui/core/Grid';
-import { spacing } from '@material-ui/system';
-import Container from '@material-ui/core/Container';
 import { Settings } from '@dhis2/ui-icons';
 
 

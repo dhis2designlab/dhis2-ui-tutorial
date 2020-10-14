@@ -15,38 +15,25 @@ import {
 
 
 const useStyles = makeStyles((theme) => ({
-  card: {
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-  },
   cardMedia: {
     paddingTop: '56.25%', // 16:9
   },
-  cardContent: {
-    flexGrow: 1,
-  },
-  tour: {
-    width: '700px',
-  },
+
   link: {
     textDecoration: 'none',
   }
 }));
 
-function Cards(props) {
+function Cards({section, index}) {
   const classes = useStyles();
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const {title, short_info } = props.section
-
-  const index = props.index;
+  const {title, short_info } = section
 
   function handleChange(newValue){
     setIsOpen(newValue);
   }
-
 
   return (
       <Card className={classes.card}>
@@ -66,7 +53,6 @@ function Cards(props) {
             }}> <Button
             dataTest="dhis2-uicore-button"
             name="Basic button"
-            //onClick={() => setIsOpen(!isOpen)}
             type="button"
             onClick={handleChange}
             value={isOpen}>
@@ -77,5 +63,3 @@ function Cards(props) {
 )}
 
 export default Cards;
-
-// <Quiz index={index} className={classes.cardContent} isOpen={isOpen} setIsOpen={setIsOpen} />

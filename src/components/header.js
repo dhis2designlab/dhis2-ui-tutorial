@@ -9,21 +9,14 @@ import { Button } from '@dhis2/ui';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
-    backgroundColor: theme.palette.background.paper,
     padding: '190px',
     minHeight: '300px',
-    fontFamily: 'Roboto, sans-serif',
   },
 
   title: {
     textAlign: 'center',
-    fontFamily: 'Roboto, sans-serif',
   },
 
-  testing: {
-    fontSize: '450%',
-    fontFamily: 'Roboto, sans-serif',  
-  }
 }));
 
 function Header() {

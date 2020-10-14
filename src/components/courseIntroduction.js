@@ -14,6 +14,8 @@ import { quiz_data } from '../quiz.js';
 import { UserContext } from "../userContext"
 import Questions from './questions';
 import FinishQuiz from './finishQuiz';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
 import { db } from '../firebase'
 
@@ -30,10 +32,6 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(6),
   },
 
-  font: {
-    fontFamily: 'Roboto, sans-serif',
-  },
-
   title: {
     textAlign: 'center',
   },
@@ -48,6 +46,14 @@ const useStyles = makeStyles((theme) => ({
   button: {
     margin: '5px',
   },
+
+  list: {
+    listStyleType: 'none',
+  },
+
+  listElement: {
+    paddingBottom: '16px',
+  }
 
 }));
 
@@ -67,7 +73,7 @@ function CourseIntroduction() {
 
   const {title, about, topics} = currentQuiz[id]
 
-  const {question, alternatives, information, image, correct, iframe } = currentQuiz[id].steps[indexState]
+  const {question, alternatives, information, image, correct, iframe, sections, images } = currentQuiz[id].steps[indexState]
 
   const handleClick=() =>{
     setIndex(indexState + 1)
@@ -133,7 +139,7 @@ function CourseIntroduction() {
   };
 
   return (
-    <div className={classes.font}>
+    <div>
     <main>
       <p>go back to mainpage</p>
       <Container className={classes.cardGrid} maxWidth="md"> 
@@ -143,16 +149,20 @@ function CourseIntroduction() {
           <Grid  item xs={12} sm={12} md={12}>
              <h2 className={classes.title}>{title}</h2>
           </Grid>
-          <Grid  item xs={6} sm={6} md={6}>
-             <p>{about}</p>
+          <Grid  item xs={12} sm={8} md={8}>
+             <p> {about}</p>
           </Grid>
-          <Grid  item xs={6} sm={6} md={6}>
-            <ul>
-                <li><b>Key:</b> Blabla</li>
-                <li><b>Key:</b> Blabla</li>
-                <li><b>Key:</b> Blabla</li>
-                <li><b>Key:</b> Blabla</li>
-            </ul>
+          <Grid  item xs={12} sm={4} md={4}>
+          <Card className={classes.card}>
+            <CardContent className={classes.cardContent}>
+              <ul className={classes.list}>
+                  <li className={classes.listElement}><b>Expected duration:</b> 20 minutes</li>
+                  <li className={classes.listElement}><b>Key:</b> Blabla</li>
+                  <li className={classes.listElement}><b>Key:</b> Blabla</li>
+                  <li className={classes.listElement}><b>Key:</b> Blabla</li>
+              </ul>
+            </CardContent>
+          </Card>
           </Grid>
           <Grid item xs={12} sm={12} md={12}>{topics ? <><p>The topics that will be covered in this module:</p><ul>
             {topics.map(index => <li>{index.title}</li>)}
@@ -169,7 +179,7 @@ function CourseIntroduction() {
         </>: <Grid  item xs={12} sm={12} md={12}>
                 {finished ? <FinishQuiz  setIndex={handleStartOver} points={points}/> :
                 <>
-                <Questions frame={iframe} isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information}/>
+                <Questions images={images} sections={sections} frame={iframe} isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information}/>
                 <div className={classes.buttons}>
                   <Button
                       className={classes.button}

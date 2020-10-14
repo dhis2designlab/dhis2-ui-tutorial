@@ -1,3 +1,10 @@
+import React from 'react';
+import colors from './images/colours.png';
+
+import color1 from './images/colour_img.png';
+import color2 from './images/color_img2.png';
+
+
 const iframe = '<iframe src="https://codesandbox.io/embed/bold-sun-l4upt?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="bold-sun-l4upt" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
 
 export const quiz_data = [
@@ -129,20 +136,35 @@ export const quiz_data = [
   },
   {
       title: "Color",
-      about: "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. The colors used in an application should not be chosen based primarily on how they look, but how they convey information and aid understanding. It is important to maintain consistent usage of colors throughout the DHIS2 platform. Globally, color meanings are relative. It is not possible to say 'red = danger'. However, using a consistent color palette we can establish that 'red in DHIS2 = danger'. Color alone should not be relied upon to communicate effectively. Read more about color accessibility.",
+      about: "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. The colors used in an application should not be chosen based primarily on how they look, but how they convey information and aid understanding. It is important to maintain consistent usage of colors throughout the DHIS2 platform. Globally, color meanings are relative. It is not possible to say 'red = danger'. However, using a consistent color palette we can establish that 'red in DHIS2 = danger'. Color alone should not be relied upon to communicate effectively.",
       topics: [
             {
-                title: "DHIS2 color scale",
+                title: "Information: DHIS2 color scale",
                 info: "learn about the color scale used in DHIS2",
                 taskType: "text",
             },
             {
-                title: "title 2",
+                title: "Code example: the colors in use",
                 info: "learn about blablabla",
                 taskType: "coding",
             },
             {
-                title: "title 3",
+                title: "Example: the colors in use",
+                info: "learn about blablabla",
+                taskType: "quiz",
+            },
+            {
+                title: "Quiz: using color",
+                info: "learn about blablabla",
+                taskType: "quiz",
+            },
+            {
+                title: "Information: accessibility",
+                info: "learn about blablabla",
+                taskType: "text",
+            },
+            {
+                title: "Quiz: accessibility",
                 info: "learn about blablabla",
                 taskType: "quiz",
             }
@@ -157,26 +179,50 @@ export const quiz_data = [
           {
               header: "DHIS2 color scale",
               question: "DHIS2 color scale",
-              information: "The DHIS2 color scale contains 7 colors. Each color has 10 shades. This color system provides enough colors for all situations. Reference: Color codes and #hex values for the DHIS2 color scale.",
               image: "../images/colours.png",
+              information: "The DHIS2 color scale contains 7 colors. Each color has 10 shades. This color system provides enough colors for most situations. Each color in the DHIS2 color scale has a purpose.",    
+              sections: [ {
+                text: "Put simply:",    
+                list: ["Grey: general interface elements, neutral information", "Blue: important neutral information, primary actions", "Teal: selected or active element", "Red: danger, error, destructive action", "Yellow: warning, non-blocking error", "Green: positive feedback, valid, success",]
+            },
+            {
+                text: "avsnitt nummer 2"
+            }
+        ]   
           },
           {
-              header: "General, simplified principles",
-              question: "General, simplified principles",
-              information: "Each color in the DHIS2 color scale has a purpose. Put simply: Grey: general interface elements, neutral information, Blue: important neutral information, primary actions, Teal: selected or active element, Red: danger, error, destructive action, Yellow: warning, non-blocking error, Green: positive feedback, valid, success",
-          },
-          {
-              header: "Qu",
-              question: "Test it out!",
-              information: "Want to test it out?",
+              header: "",
+              question: "Code example: the colours in use",
+              information: "Test out the colours with an example?",
               iframe: iframe,
           },
           {
               header: "Qu",
-              question: "Quiz: When should you use the color red?",
+              question: "Quiz: using color?",
               alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
               correct: 'a',
           },
+          {
+            header: "",
+            question: "Accessibility",
+            sections: [ {
+                text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? ",    
+            },
+            {
+                text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam. "
+            },
+            {
+                text: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat",
+            },
+        ]   
+        },
+        {
+            header: "",
+            question: "Quiz: accessibility",
+            information: "Which image uses correct usage of color?",
+            images: [color1, color2], 
+            correct: 1,
+        },
           
       ]
   },
