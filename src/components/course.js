@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function CourseIntroduction() {
+function Course() {
  const classes = useStyles(); 
  let { id } = useParams();
 
@@ -209,4 +209,4 @@ function CourseIntroduction() {
   );
 }
 
-export default CourseIntroduction;
+export default Course;
