@@ -19,6 +19,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "reactour": "^1.18.0",
+    "simple-codesandbox": "^1.1.1",
     "styled-components": "^4.0.0",
     "styled-jsx": "^3.3.0"
   },

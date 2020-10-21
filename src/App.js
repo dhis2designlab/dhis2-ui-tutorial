@@ -36,6 +36,7 @@ function App() {
   const classes = useStyles();
 
   function login(username, password) {
+    
     auth.signInWithEmailAndPassword(username, password);
   }
 

@@ -40,7 +40,7 @@ function Home({user}){
       <Links /> 
       <main>
         <Container className={classes.cardGrid} >
-          <Grid container spacing={8}>
+          <Grid container spacing={4}>
             <Grid className={classes.header} item xs={12} sm={12} md={12}><h2>Courses</h2></Grid>
             {data.map((section, index) => {
               console.log("index " + index)

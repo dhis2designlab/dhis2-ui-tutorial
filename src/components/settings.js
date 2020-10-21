@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 
 import HeaderBar from './headerbar.js'
 import Grid from  '@material-ui/core/Grid';
@@ -14,6 +14,9 @@ import {
   Link,
 } from "react-router-dom";    
 import { UserContext } from "../userContext"
+
+import { db } from '../firebase'
+
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
@@ -44,7 +47,24 @@ const useStyles = makeStyles((theme) => ({
 function Settings({ onClick, user }) {
   const classes = useStyles();
 
-  let { currentUser } = useContext(UserContext)
+  const { currentUser, completedCourses} = useContext(UserContext)
+  const [courses, setCourses] = useState([])
+
+  useEffect(() => {
+    const coll = db.collection("users").doc(currentUser.uid).collection("points")
+
+    coll.get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, doc.data())
+            setCourses([...courses, doc.data()])
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+  }, [])
+  
 
   return (
     <main>
@@ -62,25 +82,25 @@ function Settings({ onClick, user }) {
           <Grid item xs={12} sm={6}>
               <div>
                 <p>Email: {currentUser.email}</p>
-                <p>Username: [insert username]</p>
               </div>
           </Grid>
           <Grid item xs={12} sm={12} md={12}>
             <div className={classes.paper}><h3>Completed courses</h3></div>
           </Grid>
-            {currentUser.points.map(index => {
-            return <Grid item xs={4} sm={4} md={4}><Card className={classes.card}>
-            <CardMedia
-              className={classes.cardMedia}
-              image="https://source.unsplash.com/random"
-              title="Image title"
-            />
-            <CardContent className={classes.cardContent}>
-              <h3>{index.title}</h3>
-              <p>Points: {index.points}</p>
-            </CardContent>
-          </Card></Grid>
-            })}
+          {courses.map(index => {
+             return <Grid item xs={4} sm={4} md={4}><Card className={classes.card}>
+             <CardMedia
+               className={classes.cardMedia}
+               image="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg?resize=750px:*"
+               title="Image title"
+             />
+             <CardContent className={classes.cardContent}>
+               <h3>{index.name}</h3>
+               <p>Points: {index.points}</p>
+             </CardContent>
+           </Card></Grid>
+          })}
+            
           <Grid item xs={12} sm={12} md={12}>
           <div className={classes.paper}><h3>Received badges</h3></div>
         </Grid>
@@ -127,3 +147,19 @@ export default Settings;
                 Repeat course
               </Button></Link>
             </CardActions> */
+
+
+
+/** {currentUser.points.map(index => {
+            return <Grid item xs={4} sm={4} md={4}><Card className={classes.card}>
+            <CardMedia
+              className={classes.cardMedia}
+              image="https://source.unsplash.com/random"
+              title="Image title"
+            />
+            <CardContent className={classes.cardContent}>
+              <h3>{index.title}</h3>
+              <p>Points: {index.points}</p>
+            </CardContent>
+          </Card></Grid>
+            })} */

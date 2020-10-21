@@ -1,40 +1,58 @@
 import React, {useState, useEffect, createContext} from "react";
 
-import {auth, db} from './firebase'
+import {auth, db } from './firebase'
 
 export const UserContext = createContext();
 
+
 const UserProvider = ({children}) => {
     const [currentUser, setCurrentUser] = useState(null);
+    const [completedCourses, setCompletedCourses] = useState([])
+    const [courses, setCourses] = useState([])
+    const [isLoading, setIsLoading] = useState('False')
+    const [isError, setIsError] = useState('False')
  
     useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged((user => {
+       
+        const fetchData = auth.onAuthStateChanged((user => {
+            setIsLoading('True')
             if (user) {
-                let userReference = db.collection("users").doc(user.uid);
-                userReference.get().then(function(doc){
-                    if(doc.exists){
-                        //TODO: find better way to get userid
-                        console.log(doc.data())
-                         setCurrentUser({...doc.data(), loggedIn: true, ...user});
+                let userReference = db.collection("users").doc(user.uid)
+                console.log(user)
+                console.log(userReference.get())
+           
+                userReference.get().then((doc) => {
+                    if(doc.exists ){
+                        
+                         
+                        setCurrentUser({email: user.email, uid: user.uid, loggedIn: true});
+                            
+     
                     }
-                    else{
-                        userReference.set({username: user.email, points: [], email: user.email, displayName: "name"})
-                        setCurrentUser({...user, username: user.email, points: [], email: user.email, loggedIn: true});
+                       
+                    else {
+                        userReference.set({email: user.email, displayName: "name"})
+                        setCurrentUser({email: user.email, uid: user.uid, loggedIn: true});
                     }
+                  
                 }).catch(function(error){
                     console.log("error getting document", error)
+                    setIsLoading('False')
+                    setIsError('False')
                 })
+               
               } 
               else {
-                setCurrentUser({username: '', email: '', loggedIn: false});
+                setCurrentUser({loggedIn: false});
               }
             }));
-            return () => unsubscribe();
+            setIsLoading('True')
+            return () => fetchData();
     }, []);
 
- 
+    console.log(courses)
 
-    return <UserContext.Provider value={{currentUser, setCurrentUser}}>{children}</UserContext.Provider>
+    return <UserContext.Provider value={{currentUser, setCurrentUser, courses, setCourses, isLoading}}>{children}</UserContext.Provider>
 }
 
 export default UserProvider;

@@ -10,6 +10,7 @@ const iframe = '<iframe src="https://codesandbox.io/embed/bold-sun-l4upt?fontsiz
 export const quiz_data = [
   {
       title: "Content and communication",
+      quizId: "ContentCommunication",
       about: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinction At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
       topics: [
           {
@@ -52,6 +53,7 @@ export const quiz_data = [
   },
   {
       title: "Layout, Spacing and Stacking",
+      quizId: "LayoutSpacingStacking",
       about: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
       topics: [
         {
@@ -71,6 +73,32 @@ export const quiz_data = [
         }
     ],
       steps: [
+          {
+            header: "header",
+            question: "Layout",
+            information: "Consistent layouts of applications means users only need to learn a few different patterns to understand many different applications. It is important that DHIS2 applications approach layout consistently. Let´s take an example: say we have a layout for how ",
+            image: "../images/colours.png",
+          },
+
+          {
+            header: "header",
+            question: "Layout",
+            image: "../images/colours.png",
+            information: "Consistent layouts of applications means users only need to learn a few different patterns to understand many different applications. It is important that DHIS2 applications approach layout consistently",
+            
+        },
+          {
+            header: "header",
+            question: "Layout",
+            image: "../images/colours.png",
+            information: "Consistent layouts of applications means users only need to learn a few different patterns to understand many different applications. It is important that DHIS2 applications approach layout consistently",
+          },
+          {
+            header: "header",
+            question: "Layout",
+            information: "Consistent layouts of applications means users only need to learn a few different patterns to understand many different applications. It is important that DHIS2 applications approach layout consistently. Not all applications need to look the same, but there should be common elements when dealing with similar tasks. If an application has separate sections it should have a sidebar to move between them. An single-task application should not use a sidebar unnecessarily. The header bar is always placed at the top of the screen. These consistent layout principles help users understand DHIS2 applications",
+
+          },
           {
               header: "header1",
               question: "What is blabla?",
@@ -94,6 +122,7 @@ export const quiz_data = [
   },
   {
       title: "Forms",
+      quizId: "Forms",
       about: "this is a quiz about blablabl",
       topics: [
         {
@@ -136,6 +165,7 @@ export const quiz_data = [
   },
   {
       title: "Color",
+      quizId: "Color",
       about: "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. The colors used in an application should not be chosen based primarily on how they look, but how they convey information and aid understanding. It is important to maintain consistent usage of colors throughout the DHIS2 platform. Globally, color meanings are relative. It is not possible to say 'red = danger'. However, using a consistent color palette we can establish that 'red in DHIS2 = danger'. Color alone should not be relied upon to communicate effectively.",
       topics: [
             {
@@ -147,11 +177,6 @@ export const quiz_data = [
                 title: "Code example: the colors in use",
                 info: "learn about blablabla",
                 taskType: "coding",
-            },
-            {
-                title: "Example: the colors in use",
-                info: "learn about blablabla",
-                taskType: "quiz",
             },
             {
                 title: "Quiz: using color",
@@ -185,20 +210,18 @@ export const quiz_data = [
                 text: "Put simply:",    
                 list: ["Grey: general interface elements, neutral information", "Blue: important neutral information, primary actions", "Teal: selected or active element", "Red: danger, error, destructive action", "Yellow: warning, non-blocking error", "Green: positive feedback, valid, success",]
             },
-            {
-                text: "avsnitt nummer 2"
-            }
+
         ]   
           },
           {
               header: "",
-              question: "Code example: the colours in use",
-              information: "Test out the colours with an example?",
+              question: "Code example: the colors in use",
+              information: "Test out how to use the DHIS2 colors",
               iframe: iframe,
           },
           {
               header: "Qu",
-              question: "Quiz: using color?",
+              question: "Quiz: when should you use the color grey in DHIS2?",
               alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
               correct: 'a',
           },
@@ -228,6 +251,7 @@ export const quiz_data = [
   },
   {
       title: "Typography",
+      quizId: "Typography",
       about: "this is a quiz about blablabl",
       topics: [
         {
@@ -270,6 +294,7 @@ export const quiz_data = [
   },
   {
       title: "Icons",
+      quizId: "Icons",
       about: "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. The colors used in an application should not be chosen based primarily on how they look, but how they convey information and aid understanding. It is important to maintain consistent usage of colors throughout the DHIS2 platform. Globally, color meanings are relative. It is not possible to say 'red = danger'. However, using a consistent color palette we can establish that 'red in DHIS2 = danger'. Color alone should not be relied upon to communicate effectively. Read more about color accessibility.",
       topics: [
         {

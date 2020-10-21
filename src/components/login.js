@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import Container from '@material-ui/core/Container';
 import { Input } from '@dhis2/ui-core'
 import { Button } from '@dhis2/ui-core'
 import { makeStyles } from '@material-ui/core/styles';
 import HeaderBar from './headerbar.js'
+import { UserContext } from "../userContext"
 
 import {
   Link,
 } from "react-router-dom";
+import LoadingScreen from './loadingscreen.js';
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
@@ -29,6 +31,8 @@ function Login({ onClick }) {
   const classes = useStyles();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const { isLoading } = useContext(UserContext)
 
   return (
     <>
@@ -71,7 +75,7 @@ function Login({ onClick }) {
           </Button>
         <p>Do you not have an account? Create an account <Link to={`/signup`}>here</Link></p>
     </Container>
-      </>
+    </>
   );
 }
 

@@ -62,18 +62,19 @@ function Course() {
  const classes = useStyles(); 
  let { id } = useParams();
 
- const {currentUser, setCurrentUser} = useContext(UserContext)
+ const {currentUser, setCurrentUser, setCompletedCourses} = useContext(UserContext)
 
   const [ indexState, setIndex ] = useState(0)
   const [ points, setPoints ] = useState(0)
   const [ finished, setFinished ] = useState(false)
   const [isChecked, setIsChecked] = useState([]);  
 
-  const currentQuiz = quiz_data.map(q => q);
+  const quizData = quiz_data.map(q => q);
+  console.log(quizData[id])
 
-  const {title, about, topics} = currentQuiz[id]
+  const {title, about, topics, quizId} = quizData[id]
 
-  const {question, alternatives, information, image, correct, iframe, sections, images } = currentQuiz[id].steps[indexState]
+  const {question, alternatives, information, image, correct, iframe, sections, images } = quizData[id].steps[indexState]
 
   const handleClick=() =>{
     setIndex(indexState + 1)
@@ -81,6 +82,7 @@ function Course() {
 
   const handleStartOver = () => {
     setIndex(0)
+    setPoints(0)
     setFinished(false)
   }
 
@@ -92,40 +94,26 @@ function Course() {
 }
   //TODO: FIX THIS.
   const handleNextClick = ()=> {
-    if(indexState + 1 < currentQuiz[id].steps.length){
+    if(isChecked.includes(correct)){
+      setPoints(points+1)
+}
+    if(indexState + 1 < quizData[id].steps.length){
         setIndex(indexState + 1)
     }
     else {
-       let ref = db.collection('users').doc(currentUser.uid)
+      console.log(currentUser.uid)
+      console.log(id)
+      db.collection("users").doc(currentUser.uid).collection("points").doc(quizId).set({
+        name: title,
+        id: id,
+        points: points
 
-       let present = false
+      });
 
-       for(let points in currentUser.points){
-           if(currentQuiz[id].title == currentUser.points[points].title){
-               present = true
-               return;
-           }
-       }
-
-       if(!present){
-        currentUser.points.push({title: currentQuiz[id].title, points: points})
-        ref.update({
-            points: [...currentUser.points]
-        }).then(function() {
-            setCurrentUser({...currentUser})
-        })
-        .catch(function(error) {
-            // The document probably doesn't exist.
-            console.error("Error updating document: ", error);
-        });
-       }
-
-       setFinished(true)
+      setFinished(true)
      }
 
-    if(isChecked.includes(correct)){
-        setPoints(points+1)
-}
+  
 }
 
   const handleSingleCheck = e => {
@@ -170,7 +158,7 @@ function Course() {
             </Grid>
           <Button
             dataTest="dhis2-uicore-button"
-            onClick={handleClick}
+            onClick={handleNextClick}
             primary
             type="button"
             >

@@ -9,8 +9,10 @@ import { Button } from '@dhis2/ui';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
-    padding: '190px',
-    minHeight: '300px',
+    paddingTop: '128px',
+    paddingBottom: '64px',
+    paddingLeft: '128px',
+    paddingRight: '128px',
   },
 
   title: {
