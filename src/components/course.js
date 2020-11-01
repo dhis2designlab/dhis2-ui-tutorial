@@ -76,6 +76,7 @@ function Course() {
 
   const {question, alternatives, information, image, correct, iframe, sections, images } = quizData[id].steps[indexState]
 
+  console.log(iframe)
   const handleClick=() =>{
     setIndex(indexState + 1)
   }
@@ -157,7 +158,7 @@ function Course() {
             </ul></> : null}
             </Grid>
           <Button
-            dataTest="dhis2-uicore-button"
+            dataTest="dhis2-uicore-buttorn"
             onClick={handleNextClick}
             primary
             type="button"
