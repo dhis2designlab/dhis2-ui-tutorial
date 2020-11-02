@@ -130,6 +130,26 @@ const data = [
           content: 'This is my third Step',
         }
       ]
+    },
+    {
+      title: "Components",
+      short_info: "About icons",
+      id: 5,
+      steps: [
+        {
+          selector: '.first-step',
+          content: 'klklThis is my first Step',
+        },
+        {
+          selector: '.first-step',
+          content: 'This is my second Step',
+        },
+
+        {
+          selector: '.first-step',
+          content: 'This is my third Step',
+        }
+      ]
     }
   ]
 

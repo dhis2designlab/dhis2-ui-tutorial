@@ -336,5 +336,52 @@ export const quiz_data = [
           },
           
       ]
-  }
+  },
+  {
+    title: "Components",
+    quizId: "Components",
+    about: "this is a tutorial about the usage of the DHIS2 components",
+    topics: [
+        {
+            title: "Using the API",
+            info: "learn about to use the API",
+            taskType: "text",
+        },
+      {
+          title: "Buttons",
+          info: "learn about the usage of buttons and secondary buttons",
+          taskType: "text",
+      },
+      {
+          title: "",
+          info: "learn about blablabla",
+          taskType: "coding",
+      },
+      {
+          title: "title 3",
+          info: "learn about blablabla",
+          taskType: "quiz",
+      }
+  ],
+    steps: [
+        {
+            header: "Using the API",
+            question: "Using the API",
+            information: "In this section you will get infor"
+        },
+        {
+            header: "header2",
+            question: "What is blabla?",
+            alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+            correct: 'b',
+        },
+        {
+            header: "header2",
+            question: "What is blabla?",
+            alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
+            correct: 'c',
+        },
+        
+    ]
+},
 ]

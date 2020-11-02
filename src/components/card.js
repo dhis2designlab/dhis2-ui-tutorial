@@ -6,6 +6,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 
+import communication_img from "../images/communication_img.png"
+
 import { makeStyles } from '@material-ui/core/styles';
 
 import { Button } from '@dhis2/ui';
@@ -39,7 +41,8 @@ function Cards({section, index}) {
       <Card className={classes.card}>
         <CardMedia
           className={classes.cardMedia}
-          image="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg?resize=750px:*"
+          //image="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg?resize=750px:*"
+          image={communication_img}
           title="Image title"
         />
         <CardContent className={classes.cardContent}>
