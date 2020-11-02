@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import colors from '../images/colours.png';
 import { makeStyles } from '@material-ui/core/styles';
 
-import Components from './components.js'
+import QuizUiComponents from '../parts/QuizUiComponents'
 
 import CodeSandbox from 'simple-codesandbox';
 
@@ -63,7 +63,7 @@ function Questions({sections, images, question, alternatives, image, information
             {image && <img src={colors} width="100%" alt="" />}
         
             {frame && <div dangerouslySetInnerHTML={{__html: frame}} />}
-            {components && <Components />}
+            {components && <QuizUiComponents />}
             </></div>
     </div>
     </>

@@ -3,7 +3,7 @@ import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Png2 from "../images/header_img.png";
+import Png2 from "../../images/header_img.png";
 
 
 import { Button } from '@dhis2/ui';

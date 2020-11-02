@@ -11,9 +11,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import { quiz_data } from '../../quiz.js';
 import { UserContext } from "../../userContext"
 
-import FinishQuiz from '../../components/finishQuiz';
+import FinishQuiz from '../../components/FinishQuiz';
 import IntroductionCourse from '../../components/IntroductionCourse';
-import QuizSection from '../../components/quizSection';
+import QuizSection from '../../components/QuizSection';
 
 
 import { db } from '../../firebase'

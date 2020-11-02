@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Questions from './questions'
+import Questions from './Questions.js'
 import { Button } from '@dhis2/ui'
 import { makeStyles } from '@material-ui/core/styles';
 

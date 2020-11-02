@@ -2,10 +2,10 @@ import React from 'react';
 
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Cards from '../../components/card.js'
+import CourseCard from '../../components/CourseCard.js'
 import { makeStyles } from '@material-ui/core/styles';
-import Header from '../../components/header.js'
-import Links from '../../parts/Links'
+import Header from '../../parts/Header'
+import Links from '../../parts/Resources'
 
 import data from "../../data.js"
 
@@ -36,7 +36,6 @@ function Home({user}){
   return (
     <div className={classes.font}>
       <Header />
-      <Links /> 
       <main>
         <Container className={classes.cardGrid} >
           <Grid container spacing={4}>
@@ -44,11 +43,12 @@ function Home({user}){
             {data.map((section, index) => {
               console.log("index " + index)
               return <Grid item key={section} xs={12} sm={6} md={4}>
-                  <Cards index={index} section={section} steps={section.steps}/>
+                  <CourseCard index={index} section={section} steps={section.steps}/>
               </Grid>
             })}
           </Grid>
         </Container>
+        <Links /> 
       </main>
     </div>
   );

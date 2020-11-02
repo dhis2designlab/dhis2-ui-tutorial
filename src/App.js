@@ -9,8 +9,8 @@ import Logout from './components/logout.js'
 import Settings from './pages/Settings'
 
 import NavBar from './parts/NavBar'
-import Footer from './components/footer.js'
-import Copyright from './components/copyright'
+import Footer from './parts/Footer'
+import Copyright from './components/Copyright'
 import { UserContext } from "./userContext"
 import { makeStyles } from '@material-ui/core/styles';
 

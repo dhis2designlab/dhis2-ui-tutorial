@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function Cards({section, index}) {
+function CourseCard({section, index}) {
   const classes = useStyles();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +35,6 @@ function Cards({section, index}) {
   function handleChange(newValue){
     setIsOpen(newValue);
   }
-
 
   return (
       <Card className={classes.card}>
@@ -64,4 +63,4 @@ function Cards({section, index}) {
       </Card>
 )}
 
-export default Cards;
+export default CourseCard;
