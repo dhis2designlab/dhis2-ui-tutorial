@@ -8,7 +8,7 @@ import Course from './pages/Course'
 import Logout from './components/logout.js'
 import Settings from './pages/Settings'
 
-import HeaderBar from './components/headerbar.js'
+import NavBar from './parts/NavBar'
 import Footer from './components/footer.js'
 import Copyright from './components/copyright'
 import { UserContext } from "./userContext"
@@ -65,7 +65,7 @@ function App() {
     return <React.Fragment>
           <Router>
            <div>
-             <HeaderBar user={currentUser}/>
+             <NavBar user={currentUser}/>
              <Switch>
                <Route path="/signup" render={() => (
                       !user  ? (

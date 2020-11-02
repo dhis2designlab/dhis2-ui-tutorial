@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 import { makeStyles } from '@material-ui/core/styles';
-import logo from "../images/dhis2-logo.png";
+import logo from "../../images/dhis2-logo.png";
 import Grid from '@material-ui/core/Grid';
 import { Settings } from '@dhis2/ui-icons';
 
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function HeaderBar({user}) {
+function NavBar({user}) {
   const classes = useStyles();
   const name = user ? user.username : ''
 
@@ -65,4 +65,5 @@ function HeaderBar({user}) {
   );
 }
 
-export default HeaderBar;
+export default NavBar;
+

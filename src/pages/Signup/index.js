@@ -4,7 +4,7 @@ import Container from '@material-ui/core/Container';
 import { Input } from '@dhis2/ui-core'
 import { Button } from '@dhis2/ui-core'
 import { makeStyles } from '@material-ui/core/styles';
-import HeaderBar from '../../components/headerbar.js'
+import NavBar from '../../parts/NavBar'
 
 import {
   Link,
@@ -32,7 +32,7 @@ function Signup({onClick}) {
 
   return (
     <>
-    <HeaderBar />
+    <NavBar />
     <Container className={classes.cardGrid} maxWidth="xs">
       <h2 className={classes.heading}>Sign Up</h2>
       <Input
