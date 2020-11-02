@@ -5,7 +5,6 @@ import Login from './pages/Login'
 import Home from './pages/Home'
 import Course from './pages/Course'
 
-import Logout from './components/logout.js'
 import Settings from './pages/Settings'
 
 import NavBar from './parts/NavBar'
@@ -83,13 +82,6 @@ function App() {
                    )
                    )}/>
 
-               <Route path="/logout" render={() => (
-                   !user ? (
-                      <Redirect to="/signup" />
-                   ) : (
-                     <Logout onClick={requestLogout}/>
-                   )
-                   )}/>
                 <Route path="/home" render={() => (
                         !user ? (
                           <Redirect to="/signup"/>
