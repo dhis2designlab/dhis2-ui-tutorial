@@ -30,6 +30,7 @@ function Signup({onClick}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+
   return (
     <>
     <NavBar />

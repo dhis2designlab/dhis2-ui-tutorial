@@ -7,6 +7,9 @@ import Course from './pages/Course'
 
 import Settings from './pages/Settings'
 
+import PrivateRoute from './components/PrivateRoute';
+import PublicRoute from './components/PublicRoute';
+
 import NavBar from './parts/NavBar'
 import Footer from './parts/Footer'
 import Copyright from './components/Copyright'
@@ -14,7 +17,7 @@ import { UserContext } from "./userContext"
 import { makeStyles } from '@material-ui/core/styles';
 
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
   Route,
   Redirect
@@ -56,56 +59,61 @@ function App() {
   }, []);
 
   
-
   const requestSignup = useCallback((username, password) => {signup(username, password);});
 
   const user = currentUser == null ? false : currentUser.loggedIn
 
     return <React.Fragment>
-          <Router>
+          <BrowserRouter>
            <div>
              <NavBar user={currentUser}/>
              <Switch>
-               <Route path="/signup" render={() => (
-                      !user  ? (
-                         <Signup onClick={requestSignup} />
-                       ) : (
-                          <Redirect to="/home" />
-                       )
-                       )}/>
-
-               <Route path="/login" render={() => (
-                   !user ? (
-                       <Login onClick={requestLogin}/>
-                   ) : (
-                     <Redirect to="/home" />
-                   )
-                   )}/>
-
-                <Route path="/home" render={() => (
-                        !user ? (
-                          <Redirect to="/signup"/>
-                        ) : (
-                          <Home user={currentUser}/>
-                        )
-                        )}/>
-                <Route path="/settings" render={() => (
-                        !user ? (
-                          <Redirect to="/signup"/>
-                        ) : (
-                          <Settings user={currentUser} onClick={requestLogout}/>
-                        )
-                        )}/>
-                 <Route path="/course/:id" children={<Course user={currentUser} />} />
+             <PublicRoute  isLoggedIn={user} path="/signup"  component={Signup} onClick={requestSignup} exact  />
+              <PublicRoute  isLoggedIn={user} path="/login" component={Login} onClick={requestLogin} exact  />
+              <Route  path="/home"  component={Home}  exact  />
+              <Redirect  from="/"  to="/home"  exact  />
+              <PrivateRoute  isLoggedIn={user} path="/settings" component={Settings} onClick={requestLogout} />}  exact  />
+              <Route path="/course/:id" component={Course}/>
              </Switch>
              <footer className={classes.footer}>
                 <Footer />
                 <Copyright />
             </footer>
            </div>
-         </Router>
+         </BrowserRouter>
      </React.Fragment>
 }
 
 
 export default App
+ /**<Route path="/signup" render={() => (
+  !user  ? (
+    <Signup onClick={requestSignup} />
+  ) : (
+     <Redirect to="/home" />
+  )
+  )}/>
+
+<Route path="/login" render={() => (
+!user ? (
+  <Login onClick={requestLogin}/>
+) : (
+<Redirect to="/home" />
+)
+)}/>
+
+<Route path="/home" render={() => (
+   !user ? (
+     <Redirect to="/signup"/>
+   ) : (
+     <Home user={currentUser}/>
+   )
+   )}/>
+<Route path="/settings" render={() => (
+   !user ? (
+     <Redirect to="/signup"/>
+   ) : (
+     <Settings user={currentUser} onClick={requestLogout}/>
+   )
+   )}/>
+</PublicRoute></PublicRoute><Route path="/course/:id" children={<Course user={currentUser} />} /> **/

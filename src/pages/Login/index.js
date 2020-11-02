@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useCallback } from 'react';
 
 import Container from '@material-ui/core/Container';
 import { Input } from '@dhis2/ui-core'
@@ -11,8 +11,9 @@ import { UserContext } from "../../userContext"
 import {
   Link,
 } from "react-router-dom";
-import LoadingScreen from '../../components/loadingscreen.js';
+import LoadingScreen from '../../components/Loadingscreen.js';
 
+import { auth } from '../../firebase.js'
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
     paddingTop: theme.spacing(30),
@@ -34,6 +35,14 @@ function Login({ onClick }) {
   const [password, setPassword] = useState("");
 
   const { isLoading } = useContext(UserContext)
+
+  function login(username, password) {
+    
+    auth.signInWithEmailAndPassword(username, password);
+  }
+
+  const requestLogin = useCallback((username, password) => {login(username, password);});
+
 
   return (
     <>
@@ -69,7 +78,7 @@ function Login({ onClick }) {
             type="button"
             value="default"
             onClick={() => {
-              onClick(username, password)
+              requestLogin(username, password)
             }}
           >
             Log In
