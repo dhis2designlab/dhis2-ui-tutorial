@@ -8,15 +8,13 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import logo from "../images/dhis2-logo.png";
 import Grid from '@material-ui/core/Grid';
-import { spacing } from '@material-ui/system';
-import Container from '@material-ui/core/Container';
 import { Settings } from '@dhis2/ui-icons';
 
 
 const useStyles = makeStyles((theme) => ({
   nav: {
     background: 'white',
-    height: '85px',
+    height: '64px',
     position: 'fixed',
     boxShadow: '0 2px 4px -1px rgba(0,0,0,0.25)',
   },

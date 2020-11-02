@@ -1,41 +1,31 @@
 
 import React from 'react';
 
-
-import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
-import DesignSystem from "../images/design_systems_header.png";
-import AtomicDesign from "../images/atomic_design.png";
 import Grid from '@material-ui/core/Grid';
-import IMG from "../images/img.png";
-import Png2 from "../images/pngguru2.png";
-import Png3 from "../images/pngguru3.png";
+import Png2 from "../images/header_img.png";
+
+
 import { Button } from '@dhis2/ui';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: '190px',
-    minHeight: '300px',
-    fontFamily: 'Roboto, sans-serif',
+    paddingTop: '128px',
+    paddingBottom: '64px',
+    paddingLeft: '128px',
+    paddingRight: '128px',
   },
 
   title: {
     textAlign: 'center',
-    fontFamily: 'Roboto, sans-serif',
   },
 
-  testing: {
-    fontSize: '450%',
-    fontFamily: 'Roboto, sans-serif',  
-  }
 }));
 
 function Header() {
   const classes = useStyles();
 
   return (
-    <>
       <div className={classes.heroContent}>
         <Grid container>
           <Grid item xs={12} sm={12} md={6}>
@@ -53,10 +43,7 @@ function Header() {
               <img src={Png2} style={{maxWidth: '100%'}}/>
           </Grid>
           </Grid>
-    
       </div>
-    </>
-
 )}
 
 export default Header;

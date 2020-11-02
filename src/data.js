@@ -1,7 +1,8 @@
 import React  from 'react';
 
 import Fallback from './images/default-image.jpg';
-
+import Color from "./images/color.png"
+import ContentCommunication from "./images/com_big.png"
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -16,6 +17,7 @@ const classes = makeStyles((theme) => ({
 const data = [
     {
       title: "Content and communication",
+      quizId: ContentCommunication,
       short_info: "Learn about content and communication in DHIS2",
       id: 0,
       steps: [
@@ -35,6 +37,7 @@ const data = [
     },
     {
       title: "Layout, Spacing and Stacking",
+      quizId: ContentCommunication,
       short_info: "Learn about the visual architecture of DHIS2 applications",
       id: 1,
       steps: [
@@ -56,6 +59,7 @@ const data = [
     },
     {
       title: "Forms",
+      quizId: Color,
       short_info: "Learn about the form guidelines for DHIS2",
       id: 2,
       steps: [
@@ -75,6 +79,7 @@ const data = [
     },
     {
       title: "Color",
+      quizId: Color,
       short_info: "How to use colours",
       id: 3,
       steps: [
@@ -94,6 +99,7 @@ const data = [
     },
     {
       title: "Typography",
+      quizId: Color,
       short_info: "The typography",
       id: 4,
       steps: [
@@ -113,8 +119,30 @@ const data = [
     },
     {
       title: "Icons",
+      quizId: Color,
       short_info: "About icons",
       id: 5,
+      steps: [
+        {
+          selector: '.first-step',
+          content: 'klklThis is my first Step',
+        },
+        {
+          selector: '.first-step',
+          content: 'This is my second Step',
+        },
+
+        {
+          selector: '.first-step',
+          content: 'This is my third Step',
+        }
+      ]
+    },
+    {
+      title: "Components",
+      quizId: Color,
+      short_info: "About icons",
+      id: 6,
       steps: [
         {
           selector: '.first-step',
