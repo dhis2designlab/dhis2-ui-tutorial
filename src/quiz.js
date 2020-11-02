@@ -346,11 +346,13 @@ export const quiz_data = [
             title: "Using the API",
             info: "learn about to use the API",
             taskType: "text",
+            components: "components"
         },
       {
           title: "Buttons",
           info: "learn about the usage of buttons and secondary buttons",
           taskType: "text",
+
       },
       {
           title: "",
@@ -371,16 +373,51 @@ export const quiz_data = [
         },
         {
             header: "header2",
-            question: "What is blabla?",
-            alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
-            correct: 'b',
+            question: "Using the API",
+            information: "In section, you will be taken through how to make use of the components developed for DHIS2. If we want to get an updated overview of all the components, go to: storybook link.",
+            components: "show",
+            sections: [ {
+                text: "All the components have its own properties you can use to define how you want the component to look and behave. In the next steps in this tutorial, I will got through some examples for how you can use the API and give you the knowledge for you to read up later.",    
+            },
+            {
+                text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam. "
+            },
+          
+        ] 
         },
         {
             header: "header2",
-            question: "What is blabla?",
-            alternatives: [ {a: "To alert about danger"}, {b: "General interface elements"}, {c: "Selected or active element"}],
-            correct: 'c',
+            question: "Buttons in DHIS2",
+            information: "List of all the properties for button",
+            image: color1
         },
+        {
+            header: "header2",
+            question: "Example: Transforming a primary button to a secondary button",
+            iframe: iframe2
+        },
+        {
+            header: "header2",
+            question: "Try it yourself: Changing the button to a big secondary button",
+            iframe: iframe2
+        },
+        {
+            header: "header2",
+            question: "Example: More specific DHIS2 component",
+            iframe: iframe2
+        },
+        {
+            header: "header2",
+            question: "What is the difference between normal and FF components",
+            information: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+        },
+        {
+            header: "header2",
+            question: "Try it yourself: Try to recreate this image by using the components given in the previous examples",
+            image: color1,
+            iframe: iframe2,
+        },
+        
         
     ]
 },

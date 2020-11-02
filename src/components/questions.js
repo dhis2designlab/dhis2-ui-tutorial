@@ -7,6 +7,8 @@ import Grid from '@material-ui/core/Grid';
 import colors from '../images/colours.png';
 import { makeStyles } from '@material-ui/core/styles';
 
+import Components from './components.js'
+
 import CodeSandbox from 'simple-codesandbox';
 
 
@@ -20,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 //TODO: rewrite messy code
-function Questions({sections, images, question, alternatives, image, information, handleSingleCheck, isChecked, frame}) {
+function Questions({sections, images, question, alternatives, image, information, handleSingleCheck, isChecked, frame, components}) {
  
   const classes = useStyles();
 
@@ -61,7 +63,7 @@ function Questions({sections, images, question, alternatives, image, information
             {image && <img src={colors} width="100%" alt="" />}
         
             {frame && <div dangerouslySetInnerHTML={{__html: frame}} />}
-          
+            {components && <Components />}
             </></div>
     </div>
     </>

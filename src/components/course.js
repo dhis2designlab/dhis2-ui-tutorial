@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
+    maxWidth: '50em',
 
   },
 
@@ -74,7 +75,7 @@ function Course() {
 
   const {title, about, topics, quizId} = quizData[id]
 
-  const {question, alternatives, information, image, correct, iframe, sections, images } = quizData[id].steps[indexState]
+  const {question, alternatives, information, image, correct, iframe, sections, images, components } = quizData[id].steps[indexState]
 
   console.log(iframe)
   const handleClick=() =>{
@@ -131,7 +132,7 @@ function Course() {
     <div>
     <main>
       <p>go back to mainpage</p>
-      <Container className={classes.cardGrid} maxWidth="md"> 
+      <Container className={classes.cardGrid}> 
         <Grid container spacing={4}>
           {indexState == 0 ? 
           <>
@@ -168,7 +169,7 @@ function Course() {
         </>: <Grid  item xs={12} sm={12} md={12}>
                 {finished ? <FinishQuiz  setIndex={handleStartOver} points={points}/> :
                 <>
-                <Questions images={images} sections={sections} frame={iframe} isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information}/>
+                <Questions images={images} sections={sections} frame={iframe} isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information} components={components}/>
                 <div className={classes.buttons}>
                   <Button
                       className={classes.button}
