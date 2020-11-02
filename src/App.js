@@ -86,34 +86,3 @@ function App() {
 
 
 export default App
- /**<Route path="/signup" render={() => (
-  !user  ? (
-    <Signup onClick={requestSignup} />
-  ) : (
-     <Redirect to="/home" />
-  )
-  )}/>
-
-<Route path="/login" render={() => (
-!user ? (
-  <Login onClick={requestLogin}/>
-) : (
-<Redirect to="/home" />
-)
-)}/>
-
-<Route path="/home" render={() => (
-   !user ? (
-     <Redirect to="/signup"/>
-   ) : (
-     <Home user={currentUser}/>
-   )
-   )}/>
-<Route path="/settings" render={() => (
-   !user ? (
-     <Redirect to="/signup"/>
-   ) : (
-     <Settings user={currentUser} onClick={requestLogout}/>
-   )
-   )}/>
-</PublicRoute></PublicRoute><Route path="/course/:id" children={<Course user={currentUser} />} /> **/
