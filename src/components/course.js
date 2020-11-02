@@ -10,10 +10,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@dhis2/ui';
 import { quiz_data } from '../quiz.js';
 import { UserContext } from "../userContext"
-import Questions from './questions';
+
 import FinishQuiz from './finishQuiz';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+import IntroductionCourse from './IntroductionCourse';
+import QuizSection from './quizSection';
+
 
 import { db } from '../firebase'
 
@@ -75,10 +76,6 @@ function Course() {
 
   const {question, alternatives, information, image, correct, iframe, sections, images, components } = quizData[id].steps[indexState]
 
-  const handleClick=() =>{
-    setIndex(indexState + 1)
-  }
-
   const handleStartOver = () => {
     setIndex(0)
     setPoints(0)
@@ -131,62 +128,10 @@ function Course() {
       <Container className={classes.cardGrid}> 
         <Grid container spacing={4}>
           {indexState == 0 ? 
-          <>
-          <Grid  item xs={12} sm={12} md={12}>
-             <h2 className={classes.title}>{title}</h2>
-          </Grid>
-          <Grid  item xs={12} sm={8} md={8}>
-             <p> {about}</p>
-          </Grid>
-          <Grid  item xs={12} sm={4} md={4}>
-          <Card className={classes.card}>
-            <CardContent className={classes.cardContent}>
-              <ul className={classes.list}>
-                  <li className={classes.listElement}><b>Expected duration:</b> 20 minutes</li>
-                  <li className={classes.listElement}><b>Key:</b> Blabla</li>
-                  <li className={classes.listElement}><b>Key:</b> Blabla</li>
-                  <li className={classes.listElement}><b>Key:</b> Blabla</li>
-              </ul>
-            </CardContent>
-          </Card>
-          </Grid>
-          <Grid item xs={12} sm={12} md={12}>{topics ? <><p>The topics that will be covered in this module:</p><ul>
-            {topics.map(index => <li>{index.title}</li>)}
-            </ul></> : null}
-            </Grid>
-          <Button
-            dataTest="dhis2-uicore-buttorn"
-            onClick={handleNextClick}
-            primary
-            type="button"
-            >
-            Start Course
-        </Button>
-        </>: <Grid  item xs={12} sm={12} md={12}>
+          <IntroductionCourse handleNextClick={handleNextClick} title={title} topics={topics} about={about} />
+          : <Grid  item xs={12} sm={12} md={12}>
                 {finished ? <FinishQuiz  setIndex={handleStartOver} points={points}/> :
-                <>
-                <Questions images={images} sections={sections} frame={iframe} isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information} components={components}/>
-                <div className={classes.buttons}>
-                  <Button
-                      className={classes.button}
-                      dataTest="dhis2-uicore-button"
-                      onClick={handleBackClick}
-                      secondary
-                      type="button"
-                      >
-                      Back
-                  </Button>
-                  <Button
-                      className={classes.button}
-                      dataTest="dhis2-uicore-button"
-                      onClick={handleNextClick}
-                      secondary
-                      type="button"
-                      >
-                      Next
-                  </Button>
-                </div>
-                </>
+               <QuizSection handleBackClick={handleBackClick} handleNextClick={handleNextClick}  images={images} sections={sections} frame={iframe} isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information} components={components}/>
      } </Grid>}
         </Grid>
       </Container>

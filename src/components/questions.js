@@ -42,9 +42,9 @@ function Questions({sections, images, question, alternatives, image, information
                     </>
                 })}</div>
                 <Grid container>
-                {images ? images.map((value) => {
+                {images && images.map((value) => {
                   return <Grid item xs={12} sm={6} md={6}><div className={classes.border}><img src={value} width="100%" /></div></Grid>
-                }): null}
+                })}
                 </Grid>
                 {alternatives && alternatives.map((value, index) => {
                     const choice = Object.keys(value)

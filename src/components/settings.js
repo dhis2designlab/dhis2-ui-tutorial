@@ -133,33 +133,3 @@ function Settings({ onClick, user }) {
 export default Settings;
 
 
-/** <CardActions>
-              
-            <Link className={classes.link} key={index}
-                to={{
-                  pathname: `/course/${index}`,
-                }}> <Button
-                dataTest="dhis2-uicore-button"
-                name="Basic button"
-                  // onClick={handleChange}
-                  // value={isOpen}>
-                type="button">
-                Repeat course
-              </Button></Link>
-            </CardActions> */
-
-
-
-/** {currentUser.points.map(index => {
-            return <Grid item xs={4} sm={4} md={4}><Card className={classes.card}>
-            <CardMedia
-              className={classes.cardMedia}
-              image="https://source.unsplash.com/random"
-              title="Image title"
-            />
-            <CardContent className={classes.cardContent}>
-              <h3>{index.title}</h3>
-              <p>Points: {index.points}</p>
-            </CardContent>
-          </Card></Grid>
-            })} */
