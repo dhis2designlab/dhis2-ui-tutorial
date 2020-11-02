@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Cards from '../../components/card.js'
 import { makeStyles } from '@material-ui/core/styles';
 import Header from '../../components/header.js'
-import Links from '../../components/links.js'
+import Links from '../../parts/Links'
 
 import data from "../../data.js"
 
