@@ -9,10 +9,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { Button } from '@dhis2/ui';
-import {
-  Link,
-} from "react-router-dom";    
-
 
 const useStyles = makeStyles((theme) => ({
   cardMedia: {
@@ -26,9 +22,6 @@ const useStyles = makeStyles((theme) => ({
 
 function LoadingScreen() {
   const classes = useStyles();
-
-  const [isOpen, setIsOpen] = useState(false);
-
 
   return (
       <Card className={classes.card}>

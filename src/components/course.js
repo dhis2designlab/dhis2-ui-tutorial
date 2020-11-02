@@ -6,9 +6,7 @@ import { useParams } from "react-router-dom";
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import Copyright from './copyright.js'
-import Footer from './footer.js'
-import HeaderBar from './headerbar.js'
+
 import { Button } from '@dhis2/ui';
 import { quiz_data } from '../quiz.js';
 import { UserContext } from "../userContext"
@@ -63,7 +61,7 @@ function Course() {
  const classes = useStyles(); 
  let { id } = useParams();
 
- const {currentUser, setCurrentUser, setCompletedCourses} = useContext(UserContext)
+ const { currentUser } = useContext(UserContext)
 
   const [ indexState, setIndex ] = useState(0)
   const [ points, setPoints ] = useState(0)
@@ -71,13 +69,12 @@ function Course() {
   const [isChecked, setIsChecked] = useState([]);  
 
   const quizData = quiz_data.map(q => q);
-  console.log(quizData[id])
+
 
   const {title, about, topics, quizId} = quizData[id]
 
   const {question, alternatives, information, image, correct, iframe, sections, images, components } = quizData[id].steps[indexState]
 
-  console.log(iframe)
   const handleClick=() =>{
     setIndex(indexState + 1)
   }
@@ -103,8 +100,7 @@ function Course() {
         setIndex(indexState + 1)
     }
     else {
-      console.log(currentUser.uid)
-      console.log(id)
+
       db.collection("users").doc(currentUser.uid).collection("points").doc(quizId).set({
         name: title,
         id: id,

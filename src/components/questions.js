@@ -72,13 +72,3 @@ function Questions({sections, images, question, alternatives, image, information
 
 export default Questions;
 
-//  <div dangerouslySetInnerHTML={{__html: '<iframe src="https://codesandbox.io/embed/n9m2w9q8x0?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Jest test" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>'}}></div>
-
-//previewwindow=tests&
-/**<Checkbox
-dataTest="dhis2-uicore-checkbox"
-label={value_choice}
-name={choice}
-onChange={handleSingleCheck}
-checked={isChecked.includes(String(choice))}
-/>**/
