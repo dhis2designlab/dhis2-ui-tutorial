@@ -4,13 +4,14 @@ import Container from '@material-ui/core/Container';
 import { Input } from '@dhis2/ui-core'
 import { Button } from '@dhis2/ui-core'
 import { makeStyles } from '@material-ui/core/styles';
-import HeaderBar from './headerbar.js'
-import { UserContext } from "../userContext"
+
+import HeaderBar from '../../components/headerbar.js'
+import { UserContext } from "../../userContext"
 
 import {
   Link,
 } from "react-router-dom";
-import LoadingScreen from './loadingscreen.js';
+import LoadingScreen from '../../components/loadingscreen.js';
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {

@@ -7,16 +7,16 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { Button } from '@dhis2/ui';
-import { quiz_data } from '../quiz.js';
-import { UserContext } from "../userContext"
 
-import FinishQuiz from './finishQuiz';
-import IntroductionCourse from './IntroductionCourse';
-import QuizSection from './quizSection';
+import { quiz_data } from '../../quiz.js';
+import { UserContext } from "../../userContext"
+
+import FinishQuiz from '../../components/finishQuiz';
+import IntroductionCourse from '../../components/IntroductionCourse';
+import QuizSection from '../../components/quizSection';
 
 
-import { db } from '../firebase'
+import { db } from '../../firebase'
 
 
 const useStyles = makeStyles((theme) => ({

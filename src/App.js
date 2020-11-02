@@ -1,11 +1,13 @@
 import React, { useCallback, useContext } from 'react';
 
-import Signup from './components/signup.js'
-import Login from './components/login.js'
+import Signup from './pages/Signup'
+import Login from './pages/Login'
+import Home from './pages/Home'
+import Course from './pages/Course'
+
 import Logout from './components/logout.js'
-import Home from './components/home.js'
-import Settings from './components/settings.js'
-import Course from './components/course.js'
+import Settings from './pages/Settings'
+
 import HeaderBar from './components/headerbar.js'
 import Footer from './components/footer.js'
 import Copyright from './components/copyright'

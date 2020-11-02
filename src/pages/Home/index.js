@@ -2,12 +2,12 @@ import React from 'react';
 
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Cards from './card.js'
+import Cards from '../../components/card.js'
 import { makeStyles } from '@material-ui/core/styles';
-import Header from './header.js'
-import Links from './links.js'
+import Header from '../../components/header.js'
+import Links from '../../components/links.js'
 
-import data from "../data.js"
+import data from "../../data.js"
 
 const useStyles = makeStyles((theme) => ({
 
