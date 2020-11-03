@@ -13,24 +13,13 @@ import {
 } from "react-router-dom";
 import LoadingScreen from '../../components/Loadingscreen.js';
 
+import styles from "./styles.module.css"
+
 import { auth } from '../../firebase.js'
-const useStyles = makeStyles((theme) => ({
-  cardGrid: {
-    paddingTop: theme.spacing(30),
-    paddingBottom: theme.spacing(30),
-    fontFamily: 'Roboto, sans-serif',
-  },
-  input: {
-    paddingBottom: theme.spacing(6),
-  },
-  heading: {
-    textAlign: 'center',
-    paddingBottom: theme.spacing(6),
-  }
-}));
+
 
 function Login({ onClick }) {
-  const classes = useStyles();
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -47,10 +36,10 @@ function Login({ onClick }) {
   return (
     <>
     <NavBar />
-    <Container className={classes.cardGrid} maxWidth="xs">
-      <h2 className={classes.heading}>Log In</h2>
+    <Container className={styles.cardGrid} maxWidth="xs">
+      <h2 className={styles.heading}>Log In</h2>
       <Input
-          className={classes.input}
+          className={styles.input}
           dataTest="dhis2-uiwidgets-inputfield"
           label="Default label"
           name="Default"
@@ -60,7 +49,7 @@ function Login({ onClick }) {
           }}
           />
         <Input
-          className={classes.input}
+          className={styles.input}
           dataTest="dhis2-uiwidgets-inputfield"
           label="Default label"
           name="Default"

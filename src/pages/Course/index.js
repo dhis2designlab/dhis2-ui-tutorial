@@ -15,51 +15,13 @@ import FinishQuiz from '../../components/FinishQuiz';
 import IntroductionCourse from '../../components/IntroductionCourse';
 import QuizSection from '../../components/QuizSection';
 
+import styles from "./styles.module.css"
 
 import { db } from '../../firebase'
 
 
-const useStyles = makeStyles((theme) => ({
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-    maxWidth: '50em',
-
-  },
-
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
-  },
-
-  title: {
-    textAlign: 'center',
-  },
-  
-  buttons: {
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    display: 'block',
-    width: '15%',
-  },
-
-  button: {
-    margin: '5px',
-  },
-
-  list: {
-    listStyleType: 'none',
-  },
-
-  listElement: {
-    paddingBottom: '16px',
-  }
-
-}));
-
-
 function Course() {
- const classes = useStyles(); 
+
  let { id } = useParams();
 
  const { currentUser } = useContext(UserContext)
@@ -125,7 +87,7 @@ function Course() {
     <div>
     <main>
       <p>go back to mainpage</p>
-      <Container className={classes.cardGrid}> 
+      <Container className={styles.cardGrid}> 
         <Grid container spacing={4}>
           {indexState == 0 ? 
           <IntroductionCourse handleNextClick={handleNextClick} title={title} topics={topics} about={about} />

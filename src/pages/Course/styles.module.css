@@ -1,0 +1,20 @@
+.cardGrid {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    max-width: 50em;
+  }
+
+.title {
+  text-align: 'center';
+}
+  
+.buttons {
+  margin-left: 'auto';
+  margin-right: 'auto';
+  display: 'block';
+  width: '15%';
+}
+
+.button {
+  margin: '5px'
+}

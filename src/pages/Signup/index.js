@@ -3,30 +3,16 @@ import React, {useState} from 'react';
 import Container from '@material-ui/core/Container';
 import { Input } from '@dhis2/ui-core'
 import { Button } from '@dhis2/ui-core'
-import { makeStyles } from '@material-ui/core/styles';
 import NavBar from '../../parts/NavBar'
+
+import styles from "./styles.module.css"
 
 import {
   Link,
 } from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
-  cardGrid: {
-    paddingTop: theme.spacing(30),
-    paddingBottom: theme.spacing(30),
-    fontFamily: 'Roboto, sans-serif',
-  },
-  input: {
-    paddingBottom: theme.spacing(6),
-  },
-  heading: {
-    textAlign: 'center',
-    paddingBottom: theme.spacing(6),
-  }
-}));
 
 function Signup({onClick}) {
-  const classes = useStyles();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -34,10 +20,10 @@ function Signup({onClick}) {
   return (
     <>
     <NavBar />
-    <Container className={classes.cardGrid} maxWidth="xs">
-      <h2 className={classes.heading}>Sign Up</h2>
+    <Container className={styles.cardGrid}>
+      <h2 className={styles.heading}>Sign Up</h2>
       <Input
-        className={classes.input}
+        className={styles.input}
         dataTest="dhis2-uiwidgets-inputfield"
         label="Default label"
         name="Default"
@@ -47,7 +33,7 @@ function Signup({onClick}) {
         }}
         />
       <Input
-        className={classes.input}
+        className={styles.input}
         dataTest="dhis2-uiwidgets-inputfield"
         label="Default label"
         name="Default"
