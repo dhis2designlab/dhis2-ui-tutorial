@@ -15,35 +15,11 @@ import { UserContext } from "../../userContext"
 
 import { db } from '../../firebase'
 
+import styles from "./styles.module.css"
 
-const useStyles = makeStyles((theme) => ({
-  cardGrid: {
-    paddingTop: '80px',
-    paddingBottom: '80px',
-  },
-  cardMedia: {
-    paddingTop: '56.25%', // 16:9
-  },
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-  },
-
-  link: {
-    textDecoration: 'none',
-  },
-  icon: {
-    minWidth: '300px',
-    minHeight: '200px',
-  }
-}));
 
 
 function Settings({ onClick, user }) {
-  const classes = useStyles();
 
   const { currentUser, completedCourses} = useContext(UserContext)
   const [courses, setCourses] = useState([])
@@ -66,14 +42,14 @@ function Settings({ onClick, user }) {
 
   return (
     <main>
-      <Container className={classes.cardGrid}>
+      <Container className={styles.cardGrid}>
       <Grid container spacing={4}>
           <Grid item xs={12}>
-            <div className={classes.paper}><h1>Settings</h1></div>
+            <div className={styles.paper}><h1>Settings</h1></div>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <div className={classes.paper}>
-                <Account className={classes.icon}/>
+            <div className={styles.paper}>
+                <Account className={styles.icon}/>
                 <p>Change avatar</p>
             </div>
           </Grid>
@@ -83,16 +59,16 @@ function Settings({ onClick, user }) {
               </div>
           </Grid>
           <Grid item xs={12} sm={12} md={12}>
-            <div className={classes.paper}><h3>Completed courses</h3></div>
+            <div className={styles.paper}><h3>Completed courses</h3></div>
           </Grid>
           {courses.map(index => {
-             return <Grid item xs={4} sm={4} md={4}><Card className={classes.card}>
+             return <Grid item xs={4} sm={4} md={4}><Card className={styles.card}>
              <CardMedia
-               className={classes.cardMedia}
+               className={styles.cardMedia}
                image="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg?resize=750px:*"
                title="Image title"
              />
-             <CardContent className={classes.cardContent}>
+             <CardContent className={styles.cardContent}>
                <h3>{index.name}</h3>
                <p>Points: {index.points}</p>
              </CardContent>
@@ -100,19 +76,19 @@ function Settings({ onClick, user }) {
           })}
             
           <Grid item xs={12} sm={12} md={12}>
-          <div className={classes.paper}><h3>Received badges</h3></div>
+          <div className={styles.paper}><h3>Received badges</h3></div>
         </Grid>
           <Grid item xs={6} sm={3}>
-            <div className={classes.paper}>Badge 2</div>
+            <div className={styles.paper}>Badge 2</div>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <div className={classes.paper}>Badge 3</div>
+            <div className={styles.paper}>Badge 3</div>
           </Grid>
           <Grid item xs={6} sm={3}>
-            <div className={classes.paper}>Badge 4</div>
+            <div className={styles.paper}>Badge 4</div>
           </Grid>
           <Grid item xs={12} sm={12}>
-            <div className={classes.paper}><Button
+            <div className={styles.paper}><Button
                 dataTest="dhis2-uicore-button"
                 name="Primary button"
                 primary
