@@ -2,7 +2,7 @@ import React from 'react';
 
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import CourseCard from '../../components/CourseCard.js'
+import CourseCard from '../../parts/CourseCard'
 import Header from '../../parts/Header'
 import Links from '../../parts/Resources'
 

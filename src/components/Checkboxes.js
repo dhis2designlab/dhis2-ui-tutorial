@@ -37,6 +37,53 @@ return (
                     Click me
                 </Checkbox>
             </Grid>
+            <Grid item xs={4} sm={4} md={4}>
+                <Checkbox
+                    checked
+                    dataTest="dhis2-uicore-checkbox"
+                    initialFocus
+                    label="Checkbox"
+                    name="Ex"
+                    value="default"
+                />
+            </Grid>
+            <Grid item xs={4} sm={4} md={4}>
+                <Checkbox
+                    checked
+                    dataTest="dhis2-uicore-checkbox"
+                    label="Checkbox"
+                    name="Ex2"
+                    value="default2"
+                />
+            </Grid>
+            <Grid item xs={4} sm={4} md={4}>
+                <Checkbox
+                    checked
+                    dataTest="dhis2-uicore-checkbox"
+                    dense
+                    label="Checkbox"
+                    name="Ex"
+                    onBlur={function onBlur(){var _window3;return(_window3=window).onBlur.apply(_window3,arguments)}}
+                    onChange={function onChange(){var _window;return(_window=window).onChange.apply(_window,arguments)}}
+                    onFocus={function onFocus(){var _window2;return(_window2=window).onFocus.apply(_window2,arguments)}}
+                    value="warning"
+                    warning
+                />
+            </Grid>
+            <Grid item xs={4} sm={4} md={4}>
+                <Checkbox
+                    checked
+                    dataTest="dhis2-uicore-checkbox"
+                    dense
+                    error
+                    label="Checkbox"
+                    name="Ex"
+                    onBlur={function onBlur(){var _window3;return(_window3=window).onBlur.apply(_window3,arguments)}}
+                    onChange={function onChange(){var _window;return(_window=window).onChange.apply(_window,arguments)}}
+                    onFocus={function onFocus(){var _window2;return(_window2=window).onFocus.apply(_window2,arguments)}}
+                    value="error"
+                />
+            </Grid>
         </Grid>
 )}
 

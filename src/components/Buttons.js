@@ -14,6 +14,16 @@ return (
                 <h4>Buttons</h4>
             </Grid>
             <Grid item xs={4} sm={4} md={4}>
+                <p>Basic button</p>
+                <Button
+                    dataTest="dhis2-uicore-button"
+                    type="button"
+                    >
+                    Click me
+                </Button>
+            </Grid>
+            <Grid item xs={4} sm={4} md={4}>
+                <p>Primary button</p>
                 <Button
                     dataTest="dhis2-uicore-button"
                     primary
@@ -23,6 +33,7 @@ return (
                 </Button>
             </Grid>
             <Grid item xs={4} sm={4} md={4}>
+                <p>Secondary button</p>
                 <Button
                     dataTest="dhis2-uicore-button"
                     secondary
@@ -32,9 +43,40 @@ return (
                 </Button>
             </Grid>
             <Grid item xs={4} sm={4} md={4}>
+                <p>Destructive button</p>
                 <Button
                     dataTest="dhis2-uicore-button"
                     destructive
+                    type="button"
+                    >
+                    Click me
+                </Button>
+            </Grid>
+            <Grid item xs={4} sm={4} md={4}>
+                <p>Disabled button</p>
+                <Button
+                    dataTest="dhis2-uicore-button"
+                    disabled
+                    type="button"
+                    >
+                    Click me
+                </Button>
+            </Grid>
+            <Grid item xs={4} sm={4} md={4}>
+                <p>Small button</p>
+                <Button
+                    dataTest="dhis2-uicore-button"
+                    small
+                    type="button"
+                    >
+                    Click me
+                </Button>
+            </Grid>
+            <Grid item xs={4} sm={4} md={4}>
+                <p>Large button</p>
+                <Button
+                    dataTest="dhis2-uicore-button"
+                    large
                     type="button"
                     >
                     Click me
