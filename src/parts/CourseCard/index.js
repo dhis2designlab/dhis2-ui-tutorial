@@ -32,11 +32,12 @@ function CourseCard({section, index}) {
 
   const {title, short_info, quizId } = section
 
-  function handleChange(newValue){
-    setIsOpen(newValue);
-  }
 
   return (
+    <Link className={classes.link} key={index}
+    to={{
+      pathname: `/course/${index}`,
+    }}> 
       <Card className={classes.card}>
         <CardMedia
           className={classes.cardMedia}
@@ -48,19 +49,16 @@ function CourseCard({section, index}) {
           <p>{short_info}</p>
         </CardContent>
         <CardActions>
-          <Link className={classes.link} key={index}
-            to={{
-              pathname: `/course/${index}`,
-            }}> <Button
+          <Button
             dataTest="dhis2-uicore-button"
             name="Basic button"
             type="button"
-            onClick={handleChange}
             value={isOpen}>
             Read more
-          </Button></Link>
+          </Button>
         </CardActions>
       </Card>
+    </Link>
 )}
 
 export default CourseCard;
