@@ -18,6 +18,10 @@ function NavBar({user}) {
   const name = user ? user.username : ''
 
   return (
+    <Link className={styles.link}
+    to={{
+      pathname: `/home`,
+    }}> 
     <Grid container  spacing={2} className={styles.nav}>
       <Grid  className={styles.img} xs={5} sm={5} md={5}>
         <img src={logo} className={styles.logo}/>
@@ -29,6 +33,7 @@ function NavBar({user}) {
         </Link>
         </Grid>
     </Grid>
+    </Link>
   );
 }
 
