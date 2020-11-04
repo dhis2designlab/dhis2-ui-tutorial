@@ -141,9 +141,9 @@ const data = [
       ]
     },
     {
-      title: "Components",
+      title: "DHIS2 Components",
       quizId: Color,
-      short_info: "A collection of UI elements that should be reused across all DHIS2 applications. Using these components means more time spent focusing on building a positive user experience and less time redesigning and rebuilding common components. Each component has its guidelines for use and in this tutorial you will learn about how and when to use the different components",
+      short_info: "A collection of UI elements that should be reused across all DHIS2 applications. Using these components means more time spent focusing on building a positive user experience and less time redesigning and rebuilding common components. In this tutorial you learn how and when to use the different components.",
       id: 6,
       steps: [
         {

@@ -338,32 +338,47 @@ export const quiz_data = [
       ]
   },
   {
-    title: "Components",
+    title: "DHIS2 components",
     quizId: "Components",
-    about: "this is a tutorial about the usage of the DHIS2 components",
+    about: "DHIS2 has a collection of UI elements that can be, and should be, reused across all DHIS2 applications. The components have been designed with DHIS2 use cases in mind. Using these components means more time spent focusing on building a positive user experience and less time redesigning and rebuilding common components. Each component has its guidelines for use. In this tutorial you will learn how and when to use the different components",
     topics: [
         {
-            title: "Using the API",
+            title: "Information: Using the API",
             info: "learn about to use the API",
             taskType: "text",
             components: "components"
         },
       {
-          title: "Buttons",
+          title: "Information: Buttons in DHIS2",
           info: "learn about the usage of buttons and secondary buttons",
           taskType: "text",
 
       },
       {
-          title: "",
+          title: "Example: Transforming a primary button to a secondary button",
           info: "learn about blablabla",
           taskType: "coding",
       },
       {
-          title: "title 3",
+          title: "Try it yourself: Changing a button to a big secondary button",
           info: "learn about blablabla",
           taskType: "quiz",
-      }
+      }, 
+      {
+        title: "Example: More specific DHIS2 component",
+        info: "learn about blablabla",
+        taskType: "quiz",
+    },
+    {
+        title: "Information: What is the difference between normal and FF components",
+        info: "learn about blablabla",
+        taskType: "quiz",
+    },
+    {
+        title: "Try it yourself: Try to reacreate an image by using the components",
+        info: "learn about blablabla",
+        taskType: "quiz",
+    }
   ],
     steps: [
         {

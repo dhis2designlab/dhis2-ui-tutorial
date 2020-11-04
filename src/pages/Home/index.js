@@ -13,11 +13,12 @@ import styles from "./styles.module.css"
 function Home({user}){
 
   return (
-    <div className={styles.container}>
+   <>
       <Header />
+      <div className={styles.container}>
       <main>
         <div >
-          <Grid container spacing={4}>
+          <Grid className={styles.course} container spacing={5}>
             <Grid item xs={12} sm={12} md={12}><h2 className={styles.header}>Courses</h2></Grid>
             {data.map((section, index) => {
               return <Grid item key={section} xs={12} sm={6} md={4}>
@@ -29,6 +30,7 @@ function Home({user}){
         <Links /> 
       </main>
     </div>
+    </>
   );
 }
 
