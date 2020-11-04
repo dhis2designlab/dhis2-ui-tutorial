@@ -2,44 +2,27 @@
 import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
-import { Button} from '@dhis2/ui';
+import { LinearLoader } from '@dhis2/ui';
+import styles from "./styles.module.css"
 
-
-function LinearLoader() {
+function Linearloader() {
   
 return (
-    <Grid container xs={12} sm={12} md={6}>
+    <Grid xs={12} sm={6} md={6}>
+        <div className={styles.box}>
             <Grid item xs={12} sm={12} md={12}>
-                <h4>Buttons</h4>
+                <h4>LinearLoader</h4>
             </Grid>
             <Grid item xs={4} sm={4} md={4}>
-                <Button
-                    dataTest="dhis2-uicore-button"
-                    primary
-                    type="button"
-                    >
-                    Click me
-                </Button>
+                <LinearLoader
+                    amount={60}
+                    dataTest="dhis2-uicore-linearloader"
+                    margin="12px"
+                    width="300px"
+                />
             </Grid>
-            <Grid item xs={4} sm={4} md={4}>
-                <Button
-                    dataTest="dhis2-uicore-button"
-                    secondary
-                    type="button"
-                    >
-                    Click me
-                </Button>
-            </Grid>
-            <Grid item xs={4} sm={4} md={4}>
-                <Button
-                    dataTest="dhis2-uicore-button"
-                    destructive
-                    type="button"
-                    >
-                    Click me
-                </Button>
-            </Grid>
-        </Grid>
+        </div>
+    </Grid>
 )}
 
-export default LinearLoader
+export default Linearloader

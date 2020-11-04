@@ -4,12 +4,14 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { InputField } from '@dhis2/ui';
 
+import styles from "./styles.module.css"
 
 function Input() {
   
 return (
 
-    <Grid container xs={12} sm={12} md={6}>
+    <Grid xs={12} sm={6} md={6}>
+        <div className={styles.box}>
             <Grid item xs={12} sm={12} md={12}>
                 <h4>InputField</h4>
             </Grid>
@@ -63,7 +65,8 @@ return (
                     value="This field is disabled"
                 />
             </Grid>
-        </Grid>
+        </div>
+    </Grid>
 )}
 
 export default Input

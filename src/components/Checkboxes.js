@@ -4,12 +4,14 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Button, Checkbox} from '@dhis2/ui';
 
+import styles from "./styles.module.css"
 
 function Checkboxes() {
   
 return (
 
-    <Grid container xs={12} sm={12} md={6}>
+    <Grid xs={12} sm={6} md={6}>
+        <div className={styles.box}>
             <Grid item xs={12} sm={12} md={12}>
                 <h4>Checkboxes</h4>
             </Grid>
@@ -84,7 +86,8 @@ return (
                     value="error"
                 />
             </Grid>
-        </Grid>
+        </div>
+    </Grid>
 )}
 
 export default Checkboxes

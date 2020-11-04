@@ -10,7 +10,7 @@ function AlertStack() {
 return (
     <Grid container xs={12} sm={12} md={6}>
             <Grid item xs={12} sm={12} md={12}>
-                <h4>Buttons</h4>
+                <h4>AlertStack</h4>
             </Grid>
             <Grid item xs={4} sm={4} md={4}>
                 <Button

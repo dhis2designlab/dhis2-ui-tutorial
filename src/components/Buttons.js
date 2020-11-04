@@ -2,14 +2,17 @@
 import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
+
 import { Button} from '@dhis2/ui';
+
+import styles from "./styles.module.css"
 
 
 function Buttons() {
   
 return (
-
-    <Grid container xs={12} sm={12} md={6}>
+    <Grid xs={12} sm={6} md={6}>
+    <div className={styles.box} >
             <Grid item xs={12} sm={12} md={12}>
                 <h4>Buttons</h4>
             </Grid>
@@ -82,6 +85,7 @@ return (
                     Click me
                 </Button>
             </Grid>
+        </div>
         </Grid>
 )}
 

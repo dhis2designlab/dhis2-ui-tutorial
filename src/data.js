@@ -3,6 +3,8 @@ import React  from 'react';
 import Fallback from './images/default-image.jpg';
 import Color from "./images/color.png"
 import ContentCommunication from "./images/com_big.png"
+import Forms from "./images/forms.png"
+import Typography from "./images/typography.png"
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -59,7 +61,7 @@ const data = [
     },
     {
       title: "Forms",
-      quizId: Color,
+      quizId: Forms,
       short_info: "Learn about the form guidelines for DHIS2",
       id: 2,
       steps: [
@@ -99,7 +101,7 @@ const data = [
     },
     {
       title: "Typography",
-      quizId: Color,
+      quizId: Typography,
       short_info: "The typography",
       id: 4,
       steps: [

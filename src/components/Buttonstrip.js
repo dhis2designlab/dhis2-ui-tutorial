@@ -2,44 +2,55 @@
 import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
-import { Button} from '@dhis2/ui';
+import { ButtonStrip, Button, SplitButton} from '@dhis2/ui';
 
+import styles from "./styles.module.css"
 
-function ButtonStrip() {
+function Buttonstrip() {
   
 return (
-    <Grid container xs={12} sm={12} md={6}>
+    <Grid xs={12} sm={6} md={6}>
+    <div className={styles.box} >
             <Grid item xs={12} sm={12} md={12}>
-                <h4>Buttons</h4>
+                <h4>ButtonStrip</h4>
             </Grid>
             <Grid item xs={4} sm={4} md={4}>
+            <ButtonStrip dataTest="dhis2-uicore-buttonstrip">
                 <Button
-                    dataTest="dhis2-uicore-button"
-                    primary
-                    type="button"
-                    >
-                    Click me
+                onClick={console.log("click")}
+                dataTest="dhis2-uicore-button"
+                type="button"
+                >
+                Save
                 </Button>
-            </Grid>
-            <Grid item xs={4} sm={4} md={4}>
                 <Button
-                    dataTest="dhis2-uicore-button"
-                    secondary
-                    type="button"
-                    >
-                    Click me
+                onClick={console.log("click")}
+                dataTest="dhis2-uicore-button"
+                type="button"
+                >
+                Save
                 </Button>
-            </Grid>
-            <Grid item xs={4} sm={4} md={4}>
                 <Button
-                    dataTest="dhis2-uicore-button"
-                    destructive
-                    type="button"
-                    >
-                    Click me
+                 onClick={console.log("click")}
+                dataTest="dhis2-uicore-button"
+                type="button"
+                >
+                Save
                 </Button>
+                <Button
+                onClick={console.log("click")}
+                dataTest="dhis2-uicore-button"
+                type="button"
+                >
+                Save
+                </Button>
+                <SplitButton dataTest="dhis2-uicore-splitbutton">
+                Label?
+                </SplitButton>
+            </ButtonStrip>
             </Grid>
+            </div>
         </Grid>
 )}
 
-export default ButtonStrip
+export default Buttonstrip

@@ -2,44 +2,103 @@
 import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
-import { Button} from '@dhis2/ui';
+import { Button, DropdownButton} from '@dhis2/ui';
 
+import styles from "./styles.module.css"
 
-function DropdownButton() {
+function Dropdownbutton() {
   
 return (
-    <Grid container xs={12} sm={12} md={6}>
+    <Grid xs={12} sm={6} md={6}>
+        <div className={styles.box}>
             <Grid item xs={12} sm={12} md={12}>
-                <h4>Buttons</h4>
+                <h4>DropdownButton</h4>
             </Grid>
             <Grid item xs={4} sm={4} md={4}>
-                <Button
-                    dataTest="dhis2-uicore-button"
+                <p>Default</p>     
+                <DropdownButton
+                    component={<span>Simplest thing</span>}
+                    dataTest="dhis2-uicore-dropdownbutton"
+                    name="default"
+                    value="nothing"
+                    >
+                    Label me!
+                </DropdownButton>
+            </Grid>
+            <Grid item xs={4} sm={4} md={4}>
+                <p>Primary</p>
+                <DropdownButton
+                    component={<span>Simplest thing</span>}
+                    dataTest="dhis2-uicore-dropdownbutton"
+                    name="default"
                     primary
-                    type="button"
-                    >
-                    Click me
-                </Button>
+                    value="nothing"
+                >
+                Label me!
+                </DropdownButton>
             </Grid>
             <Grid item xs={4} sm={4} md={4}>
-                <Button
-                    dataTest="dhis2-uicore-button"
+                <p>Secondary</p>            
+                <DropdownButton
+                    component={<span>Simplest thing</span>}
+                    dataTest="dhis2-uicore-dropdownbutton"
+                    name="default"
                     secondary
-                    type="button"
-                    >
-                    Click me
-                </Button>
+                    value="nothing"
+                >
+                Label me!
+                </DropdownButton>
             </Grid>
             <Grid item xs={4} sm={4} md={4}>
-                <Button
-                    dataTest="dhis2-uicore-button"
+                <p>Destructive</p>                   
+                <DropdownButton
+                    component={<span>Simplest thing</span>}
+                    dataTest="dhis2-uicore-dropdownbutton"
                     destructive
-                    type="button"
-                    >
-                    Click me
-                </Button>
+                    name="default"
+                    value="nothing"
+                >
+                Label me!
+                </DropdownButton>
             </Grid>
-        </Grid>
+            <Grid item xs={4} sm={4} md={4}>
+                <p>Disabled</p>                            
+                <DropdownButton
+                    component={<span>Simplest thing</span>}
+                    dataTest="dhis2-uicore-dropdownbutton"
+                    disabled
+                    name="default"
+                    value="nothing"
+                >
+                Label me!
+                </DropdownButton>
+            </Grid>
+            <Grid item xs={4} sm={4} md={4}>
+                <p>Small</p>                                     
+                <DropdownButton
+                    component={<span>Simplest thing</span>}
+                    dataTest="dhis2-uicore-dropdownbutton"
+                    name="default"
+                    small
+                    value="nothing"
+                >
+                Label me!
+                </DropdownButton>
+            </Grid>
+            <Grid item xs={4} sm={4} md={4}>
+                <p>Large</p>                                         
+                <DropdownButton
+                    component={<span>Simplest thing</span>}
+                    dataTest="dhis2-uicore-dropdownbutton"
+                    large
+                    name="default"
+                    value="nothing"
+                >
+                Label me!
+                </DropdownButton>
+            </Grid>
+        </div>
+    </Grid>
 )}
 
-export default DropdownButton
+export default Dropdownbutton
