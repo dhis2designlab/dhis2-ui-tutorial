@@ -17,6 +17,8 @@ import QuizSection from '../../components/QuizSection';
 
 import styles from "./styles.module.css"
 
+import main from "../../styles.module.css"
+
 import { db } from '../../firebase'
 
 
@@ -87,7 +89,7 @@ function Course() {
     <div>
     <main>
       <p>go back to mainpage</p>
-      <div className={styles.cardGrid}> 
+      <div className={main.container}> 
         <Grid container spacing={4}>
           {indexState == 0 ? 
           <IntroductionCourse handleNextClick={handleNextClick} title={title} topics={topics} about={about} />

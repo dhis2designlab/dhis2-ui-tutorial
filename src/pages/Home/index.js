@@ -13,10 +13,10 @@ import styles from "./styles.module.css"
 function Home({user}){
 
   return (
-    <div className={styles.font}>
+    <div className={styles.container}>
       <Header />
       <main>
-        <Container className={styles.cardGrid} >
+        <div >
           <Grid container spacing={4}>
             <Grid item xs={12} sm={12} md={12}><h2 className={styles.header}>Courses</h2></Grid>
             {data.map((section, index) => {
@@ -25,7 +25,7 @@ function Home({user}){
               </Grid>
             })}
           </Grid>
-        </Container>
+        </div>
         <Links /> 
       </main>
     </div>

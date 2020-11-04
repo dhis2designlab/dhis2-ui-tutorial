@@ -49,13 +49,7 @@ function CourseCard({section, index}) {
           <p>{short_info}</p>
         </CardContent>
         <CardActions>
-          <Button
-            dataTest="dhis2-uicore-button"
-            name="Basic button"
-            type="button"
-            value={isOpen}>
-            Read more
-          </Button>
+          <a>Read more</a>
         </CardActions>
       </Card>
     </Link>
