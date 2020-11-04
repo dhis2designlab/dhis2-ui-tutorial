@@ -20,7 +20,7 @@ const data = [
     {
       title: "Content and communication",
       quizId: ContentCommunication,
-      short_info: "Learn about content and communication in DHIS2",
+      short_info: "Communicating consistently helps DHIS2 users understand, use and extend DHIS2. In this tutorial you will learn how to communicate effectively in DHIS2 applications",
       id: 0,
       steps: [
         {
@@ -40,7 +40,7 @@ const data = [
     {
       title: "Layout, Spacing and Stacking",
       quizId: ContentCommunication,
-      short_info: "Learn about the visual architecture of DHIS2 applications",
+      short_info: "The visual architecture of an application is made up of layout, spacing and stacking. The visual architecture of DHIS2 applications should follow some basic rules to provide a consistent user experience across different types of apps",
       id: 1,
       steps: [
         {
@@ -62,7 +62,7 @@ const data = [
     {
       title: "Forms",
       quizId: Forms,
-      short_info: "Learn about the form guidelines for DHIS2",
+      short_info: "Forms are one of the most common ways an application collects user input. DHIS2 applications should follow some common form guidelines to make sure users are not unnecessarily challenged when working with forms.",
       id: 2,
       steps: [
         {
@@ -82,7 +82,7 @@ const data = [
     {
       title: "Color",
       quizId: Color,
-      short_info: "How to use colours",
+      short_info: "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. In this tutorial you will learn about how to use color in DHIS2",
       id: 3,
       steps: [
         {
@@ -102,7 +102,7 @@ const data = [
     {
       title: "Typography",
       quizId: Typography,
-      short_info: "The typography",
+      short_info: "Typography, the selection and use of fonts, colors and sizes, is an effective way to communicate information to users.",
       id: 4,
       steps: [
         {
@@ -122,7 +122,7 @@ const data = [
     {
       title: "Icons",
       quizId: Color,
-      short_info: "About icons",
+      short_info: "Icons are simple images used in context to communicate something. They are easily recognizable and easy to remember. In DHIS2 there are some icons that are recommended to use, which you will learn more about in this tutorial",
       id: 5,
       steps: [
         {
@@ -143,7 +143,7 @@ const data = [
     {
       title: "Components",
       quizId: Color,
-      short_info: "About icons",
+      short_info: "A collection of UI elements that should be reused across all DHIS2 applications. Using these components means more time spent focusing on building a positive user experience and less time redesigning and rebuilding common components. Each component has its guidelines for use and in this tutorial you will learn about how and when to use the different components",
       id: 6,
       steps: [
         {
