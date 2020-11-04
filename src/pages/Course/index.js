@@ -87,7 +87,7 @@ function Course() {
     <div>
     <main>
       <p>go back to mainpage</p>
-      <Container className={styles.cardGrid}> 
+      <div className={styles.cardGrid}> 
         <Grid container spacing={4}>
           {indexState == 0 ? 
           <IntroductionCourse handleNextClick={handleNextClick} title={title} topics={topics} about={about} />
@@ -96,7 +96,7 @@ function Course() {
                <QuizSection handleBackClick={handleBackClick} handleNextClick={handleNextClick}  images={images} sections={sections} frame={iframe} isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information} components={components}/>
      } </Grid>}
         </Grid>
-      </Container>
+      </div>
     </main>
 </div>
   );

@@ -8,7 +8,7 @@ import { Button} from '@dhis2/ui';
 function Chip() {
   
 return (
-    <Grid container xs={12} sm={12} md={6}>
+    <Grid className={styles.container} container xs={12} sm={12} md={12}>
             <Grid item xs={12} sm={12} md={12}>
                 <h4>Buttons</h4>
             </Grid>

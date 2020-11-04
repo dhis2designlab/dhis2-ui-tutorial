@@ -22,7 +22,7 @@ import TextArea from '../../components/TextArea.js'
 function QuizUiComponents() {
   
   return (
-    <Grid container spacing={5}>
+    <Grid container>
         <Buttons />
         <InputField />
         <Buttonstrip />

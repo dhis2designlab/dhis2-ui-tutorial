@@ -9,8 +9,8 @@ import styles from "./styles.module.css"
 function TabBarComponent() {
   
 return (
-    <Grid xs={12} sm={6} md={6}>
-        <div className={styles.box}>
+    <Grid className={styles.container} xs={12} sm={12} md={12}>
+        <div className={styles.box} >
             <Grid item xs={12} sm={12} md={12}>
                 <h4>TabBar</h4>
             </Grid>
