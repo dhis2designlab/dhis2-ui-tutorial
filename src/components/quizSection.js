@@ -24,9 +24,10 @@ const useStyles = makeStyles((theme) => ({
 
 function QuizSection({images, sections, iframe, isChecked, handleSingleCheck, alternatives, image, question, information, components, handleBackClick, handleNextClick}) {
     const classes = useStyles(); 
+    console.log(iframe)
     return (
         <>
-            <Questions images={images} sections={sections} frame={iframe} isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information} components={components}/>
+            <Questions images={images} sections={sections} iframe={iframe} isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information} components={components}/>
             <div className={classes.buttons}>
             <Button
                 className={classes.button}

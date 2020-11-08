@@ -11,7 +11,7 @@ import styles from "./styles.module.css"
 function Buttons() {
   
 return (
-    <Grid className={styles.container} xs={12} sm={12} md={12}>
+    <div>
     <div className={styles.box} >
             <Grid item xs={12} sm={12} md={12}>
                 <h4>Buttons</h4>
@@ -86,7 +86,7 @@ return (
                 </Button>
             </Grid>
         </div>
-        </Grid>
+        </div>
 )}
 
 export default Buttons

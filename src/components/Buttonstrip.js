@@ -9,7 +9,7 @@ import styles from "./styles.module.css"
 function Buttonstrip() {
   
 return (
-    <Grid className={styles.container} xs={12} sm={12} md={12}>
+    <div>
         <div className={styles.box} >
             <Grid item xs={12} sm={12} md={12}>
                 <h4>ButtonStrip</h4>
@@ -50,7 +50,7 @@ return (
             </ButtonStrip>
             </Grid>
         </div>
-    </Grid>
+    </div>
 )}
 
 export default Buttonstrip

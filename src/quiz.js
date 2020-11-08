@@ -3,11 +3,16 @@ import colors from './images/colours.png';
 
 import color1 from './images/colour_img.png';
 import color2 from './images/color_img2.png';
+import api from "./images/api.png";
+
+
 
 
 const iframe = '<iframe src="https://codesandbox.io/embed/bold-sun-l4upt?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="bold-sun-l4upt" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
 
 const iframe2 = '<iframe src="https://codesandbox.io/embed/n9m2w9q8x0?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Jest test" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>'
+const buttonExample = '<iframe src="https://codesandbox.io/embed/compassionate-grass-8wq3t?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="compassionate-grass-8wq3t" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>'
+
 export const quiz_data = [
   {
       title: "Content and communication",
@@ -343,15 +348,16 @@ export const quiz_data = [
     about: "DHIS2 has a collection of UI elements that can be, and should be, reused across all DHIS2 applications. The components have been designed with DHIS2 use cases in mind. Using these components means more time spent focusing on building a positive user experience and less time redesigning and rebuilding common components. Each component has its guidelines for use. In this tutorial you will learn how and when to use the different components",
     topics: [
         {
-            title: "Information: Using the API",
+            title: "Information: Showcase of DHIS2 components",
             info: "learn about to use the API",
             taskType: "text",
             components: "components"
         },
       {
-          title: "Information: Buttons in DHIS2",
+          title: "Information: Using the API",
           info: "learn about the usage of buttons and secondary buttons",
           taskType: "text",
+
 
       },
       {
@@ -375,8 +381,18 @@ export const quiz_data = [
         taskType: "quiz",
     },
     {
+        title: "Fix the mistake: Can you find any mistakes in this tutorial? Try to fix them",
+        info: "learn about blablabla",
+        taskType: "quiz",
+    },
+    {
         title: "Try it yourself: Try to reacreate an image by using the components",
         info: "learn about blablabla",
+        taskType: "quiz",
+    },
+    {
+        title: "You are finished",
+        info: "You have know completed the quiz!.",
         taskType: "quiz",
     }
   ],
@@ -388,38 +404,52 @@ export const quiz_data = [
         },
         {
             header: "header2",
-            question: "Using the API",
-            information: "In section, you will be taken through how to make use of the components developed for DHIS2. If we want to get an updated overview of all the components, go to: storybook link.",
-            components: "show",
+            question: "Showcase of the DHIS2 components",
+            information: "All the components have its own properties you can use to define how you want the component to look and behave. In the showcase below, you will see some examples of what is possible. If you want to get the most updated overview of all the components go to [INSERT STORYBOOK]",  
+            components: "show",  
+        },
+        {
+            header: "header2",
+            question: "Information: Importing the components",
+            information: "There are different ways to import the components in DHIS2.",
+            image: api,
             sections: [ {
-                text: "All the components have its own properties you can use to define how you want the component to look and behave. In the next steps in this tutorial, I will got through some examples for how you can use the API and give you the knowledge for you to read up later.",    
+                text: "Using ",    
             },
             {
-                text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam. "
+                text: "Here you can see the API for the dhis2 button component. In the first column named 'Name', you can see what type of properties the Button component can take in. Each of the properties has a type, as specified in the 'Type' column. Sometimes a default value will be set for the property if nothing is set, which can be seen in the 'Default' column",    
             },
-          
-        ] 
+            {
+                text: "Here you can see the API for the dhis2 button component. In the first column named 'Name', you can see what type of properties the Button component can take in. Each of the properties has a type, as specified in the 'Type' column. Sometimes a default value will be set for the property if nothing is set, which can be seen in the 'Default' column",    
+            },
+        ]   
         },
         {
             header: "header2",
-            question: "Buttons in DHIS2",
-            information: "List of all the properties for button",
-            image: color1
+            question: "Information: Using the API for components",
+            information: "All the components have its own properties you can use to define how you want the component to look and behave. In the next steps in this tutorial, I will got through some examples for how you can use the API and give you the knowledge for you to read up later. If you want to use other DHIS2 components, you can find their documentation here(link)",
+            image: api,
+            sections: [ {
+                text: "Here you can see the API for the dhis2 button component. In the first column named 'Name', you can see what type of properties the Button component can take in. Each of the properties has a type, as specified in the 'Type' column. Sometimes a default value will be set for the property if nothing is set, which can be seen in the 'Default' column",    
+            },
+        ]   
         },
         {
             header: "header2",
-            question: "Example: Transforming a primary button to a secondary button",
-            iframe: iframe2
+            question: "Example: Using the different buttons",
+            information: "NB: to see the code you may need to click on the left of the image and drag to see the code",
+            iframe: buttonExample,
+            
         },
         {
             header: "header2",
             question: "Try it yourself: Changing the button to a big secondary button",
-            iframe: iframe2
+            frame: iframe2
         },
         {
             header: "header2",
             question: "Example: More specific DHIS2 component",
-            iframe: iframe2
+            frame: iframe2
         },
         {
             header: "header2",

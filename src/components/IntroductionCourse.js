@@ -8,11 +8,15 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@dhis2/ui';
 
+import main from "../styles.module.css"
+
 const useStyles = makeStyles((theme) => ({
     cardGrid: {
       paddingTop: theme.spacing(8),
       paddingBottom: theme.spacing(8),
       maxWidth: '50em',
+      marginLeft: 'auto',
+      marginRight: 'auto',
   
     },
   
@@ -51,12 +55,12 @@ function IntroductionCourse({handleNextClick, title, topics, about}) {
 
   const classes = useStyles(); 
   return (
-    <>
+    <Grid container className={classes.cardGrid}> 
           <Grid  item xs={12} sm={12} md={12}>
              <h2 className={classes.title}>{title}</h2>
           </Grid>
           <Grid  item xs={12} sm={8} md={8}>
-             <p> {about}</p>
+             <p>{about}</p>
           </Grid>
           <Grid  item xs={12} sm={4} md={4}>
           <Card className={classes.card}>
@@ -82,7 +86,7 @@ function IntroductionCourse({handleNextClick, title, topics, about}) {
             >
             Start Course
         </Button>
-        </>
+    </Grid>
   );
 }
 

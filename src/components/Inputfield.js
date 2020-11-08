@@ -10,7 +10,7 @@ function Input() {
   
 return (
 
-    <Grid className={styles.container} xs={12} sm={12} md={12}>
+    <div>
          <div className={styles.box} >
             <Grid item xs={12} sm={12} md={12}>
                 <h4>InputField</h4>
@@ -66,7 +66,7 @@ return (
                 />
             </Grid>
         </div>
-    </Grid>
+    </div>
 )}
 
 export default Input

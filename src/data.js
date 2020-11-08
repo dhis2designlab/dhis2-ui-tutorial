@@ -5,6 +5,7 @@ import Color from "./images/color.png"
 import ContentCommunication from "./images/com_big.png"
 import Forms from "./images/forms.png"
 import Typography from "./images/typography.png"
+import Layout from "./images/layout.png"
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -39,7 +40,7 @@ const data = [
     },
     {
       title: "Layout, Spacing and Stacking",
-      quizId: ContentCommunication,
+      quizId: Layout,
       short_info: "The visual architecture of an application is made up of layout, spacing and stacking. The visual architecture of DHIS2 applications should follow some basic rules to provide a consistent user experience across different types of apps",
       id: 1,
       steps: [

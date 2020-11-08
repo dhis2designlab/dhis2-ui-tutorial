@@ -84,20 +84,22 @@ function Course() {
     isChecked.push(name[0]);
     setIsChecked([...isChecked]);
   };
+  
+  console.log("iframe course " + iframe)
 
   return (
     <div>
     <main>
       <p>go back to mainpage</p>
       <div className={main.container}> 
-        <Grid container spacing={4}>
+        <div>
           {indexState == 0 ? 
           <IntroductionCourse handleNextClick={handleNextClick} title={title} topics={topics} about={about} />
-          : <Grid  item xs={12} sm={12} md={12}>
+          :   <Grid container><Grid  item xs={12} sm={12} md={12}>
                 {finished ? <FinishQuiz  setIndex={handleStartOver} points={points}/> :
-               <QuizSection handleBackClick={handleBackClick} handleNextClick={handleNextClick}  images={images} sections={sections} frame={iframe} isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information} components={components}/>
-     } </Grid>}
-        </Grid>
+               <QuizSection handleBackClick={handleBackClick} handleNextClick={handleNextClick}  images={images} sections={sections} iframe={iframe} isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information} components={components}/>
+     } </Grid></Grid>}
+        </div>
       </div>
     </main>
 </div>

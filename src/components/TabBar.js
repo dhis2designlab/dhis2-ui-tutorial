@@ -14,7 +14,7 @@ return (
             <Grid item xs={12} sm={12} md={12}>
                 <h4>TabBar</h4>
             </Grid>
-            <Grid item xs={4} sm={4} md={4}>
+            <Grid item xs={12} sm={12} md={12}>
                 <p>Default (fluid)</p>
                 <TabBar dataTest="dhis2-uicore-tabbar">
                     <Tab
@@ -62,7 +62,7 @@ return (
                     </Tab>
                 </TabBar>
             </Grid>
-            <Grid item xs={4} sm={5} md={4}>
+            <Grid item xs={12} sm={12} md={12}>
                 <p>Tabs with scroller</p>
             <TabBar
                 dataTest="dhis2-uicore-tabbar"

@@ -1,8 +1,12 @@
 .container {
     padding-top: 8px;
     padding-bottom: 8px;
-    max-width: 75ch;
     margin-left: auto;
     margin-right: auto;
     margin-top: 52px;
+    
+}
+
+.paragraph {
+    max-width: 75ch;
 }
