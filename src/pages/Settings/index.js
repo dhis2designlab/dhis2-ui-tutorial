@@ -19,25 +19,14 @@ import styles from "./styles.module.css"
 
 
 
-function Settings({ onClick, user }) {
+function Settings({ onClick }) {
 
-  const { currentUser, completedCourses, setCompletedCourses} = useContext(UserContext)
-  const [courses, setCourses] = useState([])
-  const data = []
-
-  useEffect(() => {
-    const fetchedCourses = [];
-    const coll = db.collection("users").doc(currentUser.uid).collection("points")
-
-    coll.get().then(function(querySnapshot) {
-       let test = 0
-        querySnapshot.forEach(function(doc) {
-          fetchedCourses.push({points: doc.data().points, name: doc.data().name});
-        });
-        setCourses(fetchedCourses)
-        setCompletedCourses(fetchedCourses)
-    })
-  }, [])
+  const { currentUser, completedCourses, setCompletedCourses } = useContext(UserContext)
+  
+  function logout(){
+    setCompletedCourses([])
+    onClick()
+  }
 
   return (
     <main>
@@ -93,7 +82,7 @@ function Settings({ onClick, user }) {
                 primary
                 type="button"
                 value="default"
-                onClick={onClick}
+                onClick={logout}
               >
                 Log out
               </Button></div>

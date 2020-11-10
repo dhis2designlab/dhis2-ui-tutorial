@@ -26,7 +26,7 @@ function Course() {
 
  let { id } = useParams();
 
- const { currentUser } = useContext(UserContext)
+ const { currentUser, completedCourses, setCompletedCourses } = useContext(UserContext)
 
   const [ indexState, setIndex ] = useState(0)
   const [ points, setPoints ] = useState(0)
@@ -68,6 +68,7 @@ function Course() {
           points: points
   
         });
+        setCompletedCourses([...completedCourses, {points: points, name: title}])
       }
   
       setFinished(true)
