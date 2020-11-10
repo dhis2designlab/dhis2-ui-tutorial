@@ -34,7 +34,12 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '75ch',
     marginLeft: 'auto',
     marginRight: 'auto',
-  }
+  },
+  media: {
+    maxWidth: '130ch',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
 }));
 
 //TODO: rewrite messy code
@@ -78,9 +83,10 @@ function Questions({sections, images, question, alternatives, image, information
                         />
                 </>
             })}
-            
-            {image && <img src={image} width="70%" style={{marginLeft: 'auto', marginRight: 'auto'}} alt="" />}
-            {iframe && <div dangerouslySetInnerHTML={{__html: iframe}} />}
+            <div className={classes.media}>
+              {image && <img src={image} width="70%" style={{marginLeft: 'auto', marginRight: 'auto', display: 'block'}} alt="" />}
+              {iframe && <div dangerouslySetInnerHTML={{__html: iframe}} />}
+            </div>
             {components && <QuizUiComponents />}
             </></div>
     </div>

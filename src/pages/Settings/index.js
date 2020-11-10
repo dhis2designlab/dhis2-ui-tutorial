@@ -23,23 +23,26 @@ function Settings({ onClick, user }) {
 
   const { currentUser, completedCourses} = useContext(UserContext)
   const [courses, setCourses] = useState([])
+  const data = []
 
   useEffect(() => {
+    const fetchedCourses = [];
     const coll = db.collection("users").doc(currentUser.uid).collection("points")
 
     coll.get().then(function(querySnapshot) {
+       let test = 0
         querySnapshot.forEach(function(doc) {
-            // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, doc.data())
-            setCourses([...courses, doc.data()])
+          console.log(test + " " + doc.data().name)
+          test = test + 1
+         
+          fetchedCourses.push({points: doc.data().points, name: doc.data().name});
+            
+           
         });
+        setCourses(fetchedCourses)
     })
-    .catch(function(error) {
-        console.log("Error getting documents: ", error);
-    });
   }, [])
   
-
   return (
     <main>
       <Container className={styles.cardGrid}>

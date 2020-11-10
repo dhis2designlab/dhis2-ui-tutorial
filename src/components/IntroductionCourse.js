@@ -54,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
 function IntroductionCourse({handleNextClick, title, topics, about}) {
 
   const classes = useStyles(); 
+  console.log(topics)
   return (
     <Grid container className={classes.cardGrid}> 
           <Grid  item xs={12} sm={12} md={12}>

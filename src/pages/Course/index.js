@@ -61,14 +61,15 @@ function Course() {
         setIndex(indexState + 1)
     }
     else {
-
-      db.collection("users").doc(currentUser.uid).collection("points").doc(quizId).set({
-        name: title,
-        id: id,
-        points: points
-
-      });
-
+      if(currentUser.loggedIn){
+        db.collection("users").doc(currentUser.uid).collection("points").doc(quizId).set({
+          name: title,
+          id: id,
+          points: points
+  
+        });
+      }
+  
       setFinished(true)
      }
 

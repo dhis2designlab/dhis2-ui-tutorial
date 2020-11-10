@@ -10,7 +10,7 @@ import api from "./images/api.png";
 
 const iframe = '<iframe src="https://codesandbox.io/embed/bold-sun-l4upt?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="bold-sun-l4upt" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
 
-const iframe2 = '<iframe src="https://codesandbox.io/embed/n9m2w9q8x0?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Jest test" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>'
+const iframe2 = '<iframe src="https://codesandbox.io/embed/priceless-benz-t7sms?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="priceless-benz-t7sms" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>'
 const buttonExample = '<iframe src="https://codesandbox.io/embed/compassionate-grass-8wq3t?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="compassionate-grass-8wq3t" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>'
 
 export const quiz_data = [
@@ -349,83 +349,44 @@ export const quiz_data = [
     topics: [
         {
             title: "Information: Showcase of DHIS2 components",
-            info: "learn about to use the API",
-            taskType: "text",
-            components: "components"
+         
         },
       {
           title: "Information: Using the API",
-          info: "learn about the usage of buttons and secondary buttons",
-          taskType: "text",
-
-
       },
       {
           title: "Example: Transforming a primary button to a secondary button",
-          info: "learn about blablabla",
-          taskType: "coding",
       },
       {
           title: "Try it yourself: Changing a button to a big secondary button",
-          info: "learn about blablabla",
-          taskType: "quiz",
       }, 
       {
         title: "Example: More specific DHIS2 component",
-        info: "learn about blablabla",
-        taskType: "quiz",
     },
     {
         title: "Information: What is the difference between normal and FF components",
-        info: "learn about blablabla",
-        taskType: "quiz",
     },
     {
         title: "Fix the mistake: Can you find any mistakes in this tutorial? Try to fix them",
-        info: "learn about blablabla",
-        taskType: "quiz",
     },
     {
         title: "Try it yourself: Try to reacreate an image by using the components",
-        info: "learn about blablabla",
-        taskType: "quiz",
     },
     {
         title: "You are finished",
-        info: "You have know completed the quiz!.",
-        taskType: "quiz",
     }
   ],
     steps: [
         {
-            header: "Using the API",
             question: "Using the API",
             information: "In this section you will get infor"
         },
         {
-            header: "header2",
             question: "Showcase of the DHIS2 components",
             information: "All the components have its own properties you can use to define how you want the component to look and behave. In the showcase below, you will see some examples of what is possible. If you want to get the most updated overview of all the components go to [INSERT STORYBOOK]",  
             components: "show",  
         },
         {
-            header: "header2",
-            question: "Information: Importing the components",
-            information: "There are different ways to import the components in DHIS2.",
-            image: api,
-            sections: [ {
-                text: "Using ",    
-            },
-            {
-                text: "Here you can see the API for the dhis2 button component. In the first column named 'Name', you can see what type of properties the Button component can take in. Each of the properties has a type, as specified in the 'Type' column. Sometimes a default value will be set for the property if nothing is set, which can be seen in the 'Default' column",    
-            },
-            {
-                text: "Here you can see the API for the dhis2 button component. In the first column named 'Name', you can see what type of properties the Button component can take in. Each of the properties has a type, as specified in the 'Type' column. Sometimes a default value will be set for the property if nothing is set, which can be seen in the 'Default' column",    
-            },
-        ]   
-        },
-        {
-            header: "header2",
             question: "Information: Using the API for components",
             information: "All the components have its own properties you can use to define how you want the component to look and behave. In the next steps in this tutorial, I will got through some examples for how you can use the API and give you the knowledge for you to read up later. If you want to use other DHIS2 components, you can find their documentation here(link)",
             image: api,
@@ -435,29 +396,28 @@ export const quiz_data = [
         ]   
         },
         {
-            header: "header2",
             question: "Example: Using the different buttons",
-            information: "NB: to see the code you may need to click on the left of the image and drag to see the code",
+            information: "Here you can see the code for using the different type of DHIS2 buttons. Look at the code, in the later exercises you will use the API yourself",
+            sections: [ {
+                text: "NB: to see the code you may need to click on the left of the image and drag to see the code",   
+            },
+            ], 
             iframe: buttonExample,
             
         },
         {
-            header: "header2",
-            question: "Try it yourself: Changing the button to a big secondary button",
-            frame: iframe2
+            question: "Try it yourself: Change the button to a big secondary button",
+            iframe: iframe2
         },
         {
-            header: "header2",
             question: "Example: More specific DHIS2 component",
-            frame: iframe2
+            iframe: iframe2
         },
         {
-            header: "header2",
             question: "What is the difference between normal and FF components",
             information: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
         },
         {
-            header: "header2",
             question: "Try it yourself: Try to recreate this image by using the components given in the previous examples",
             image: color1,
             iframe: iframe2,
