@@ -51,10 +51,11 @@ const useStyles = makeStyles((theme) => ({
   }));
 
   
-function IntroductionCourse({handleNextClick, title, topics, about}) {
+function IntroductionCourse({handleNextClick, title, topics, about, status}) {
 
   const classes = useStyles(); 
   console.log(topics)
+  console.log(status)
   return (
     <Grid container className={classes.cardGrid}> 
           <Grid  item xs={12} sm={12} md={12}>
@@ -79,14 +80,24 @@ function IntroductionCourse({handleNextClick, title, topics, about}) {
             {topics.map(index => <li>{index.title}</li>)}
             </ul></> : null}
             </Grid>
-          <Button
-            dataTest="dhis2-uicore-buttorn"
-            onClick={handleNextClick}
-            primary
-            type="button"
-            >
-            Start Course
-        </Button>
+            {status == "under development" ?
+            <Button
+                dataTest="dhis2-uicore-buttorn"
+                onClick={handleNextClick}
+                disabled
+                type="button"
+                >
+                Start Course
+            </Button> :
+            <Button
+                dataTest="dhis2-uicore-buttorn"
+                onClick={handleNextClick}
+                primary
+                type="button"
+                >
+                Start Course
+            </Button>
+            }
     </Grid>
   );
 }

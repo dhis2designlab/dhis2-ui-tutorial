@@ -36,9 +36,9 @@ function Course() {
   const quizData = quiz_data.map(q => q);
 
 
-  const {title, about, topics, quizId} = quizData[id]
+  const {title, about, topics, quizId,  status } = quizData[id]
 
-  const {question, alternatives, information, image, correct, iframe, sections, images, components } = quizData[id].steps[indexState]
+  const {question, alternatives, information, image, correct, iframe, sections, images, components} = quizData[id].steps[indexState]
 
   const handleStartOver = () => {
     setIndex(0)
@@ -86,7 +86,6 @@ function Course() {
     setIsChecked([...isChecked]);
   };
   
-  console.log("iframe course " + iframe)
 
   return (
     <div>
@@ -95,7 +94,7 @@ function Course() {
       <div className={main.container}> 
         <div>
           {indexState == 0 ? 
-          <IntroductionCourse handleNextClick={handleNextClick} title={title} topics={topics} about={about} />
+          <IntroductionCourse status={status} handleNextClick={handleNextClick} title={title} topics={topics} about={about} />
           :   <Grid container><Grid  item xs={12} sm={12} md={12}>
                 {finished ? <FinishQuiz  setIndex={handleStartOver} points={points}/> :
                <QuizSection handleBackClick={handleBackClick} handleNextClick={handleNextClick}  images={images} sections={sections} iframe={iframe} isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information} components={components}/>

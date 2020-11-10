@@ -21,7 +21,7 @@ import styles from "./styles.module.css"
 
 function Settings({ onClick, user }) {
 
-  const { currentUser, completedCourses} = useContext(UserContext)
+  const { currentUser, completedCourses, setCompletedCourses} = useContext(UserContext)
   const [courses, setCourses] = useState([])
   const data = []
 
@@ -35,9 +35,10 @@ function Settings({ onClick, user }) {
           fetchedCourses.push({points: doc.data().points, name: doc.data().name});
         });
         setCourses(fetchedCourses)
+        setCompletedCourses(fetchedCourses)
     })
   }, [])
-  
+
   return (
     <main>
       <Container className={styles.cardGrid}>
@@ -59,7 +60,7 @@ function Settings({ onClick, user }) {
           <Grid item xs={12} sm={12} md={12}>
             <div className={styles.paper}><h3>Completed courses</h3></div>
           </Grid>
-          {courses.map(index => {
+          {completedCourses.map(index => {
              return <Grid item xs={4} sm={4} md={4}><Card className={styles.card}>
              <CardMedia
                className={styles.cardMedia}

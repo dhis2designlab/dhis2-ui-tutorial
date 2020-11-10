@@ -17,6 +17,7 @@ export const quiz_data = [
   {
       title: "Content and communication",
       quizId: "ContentCommunication",
+      status: "under development",
       about: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinction At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
       topics: [
           {
@@ -60,6 +61,7 @@ export const quiz_data = [
   {
       title: "Layout, Spacing and Stacking",
       quizId: "LayoutSpacingStacking",
+      status: "under development",
       about: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
       topics: [
         {
@@ -129,6 +131,7 @@ export const quiz_data = [
   {
       title: "Forms",
       quizId: "Forms",
+      status: "under development",
       about: "this is a quiz about blablabl",
       topics: [
         {
@@ -259,6 +262,7 @@ export const quiz_data = [
   {
       title: "Typography",
       quizId: "Typography",
+      status: "under development",
       about: "this is a quiz about blablabl",
       topics: [
         {
@@ -302,6 +306,7 @@ export const quiz_data = [
   {
       title: "Icons",
       quizId: "Icons",
+      status: "under development",
       about: "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. The colors used in an application should not be chosen based primarily on how they look, but how they convey information and aid understanding. It is important to maintain consistent usage of colors throughout the DHIS2 platform. Globally, color meanings are relative. It is not possible to say 'red = danger'. However, using a consistent color palette we can establish that 'red in DHIS2 = danger'. Color alone should not be relied upon to communicate effectively. Read more about color accessibility.",
       topics: [
         {
@@ -343,7 +348,7 @@ export const quiz_data = [
       ]
   },
   {
-    title: "DHIS2 components",
+    title: "DHIS2 Components",
     quizId: "Components",
     about: "DHIS2 has a collection of UI elements that can be, and should be, reused across all DHIS2 applications. The components have been designed with DHIS2 use cases in mind. Using these components means more time spent focusing on building a positive user experience and less time redesigning and rebuilding common components. Each component has its guidelines for use. In this tutorial you will learn how and when to use the different components",
     topics: [

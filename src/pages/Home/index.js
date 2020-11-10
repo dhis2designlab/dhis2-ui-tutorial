@@ -11,6 +11,7 @@ import styles from "./styles.module.css"
 
 
 function Home({user}){
+  
 
   return (
    <>

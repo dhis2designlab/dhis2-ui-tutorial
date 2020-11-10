@@ -26,6 +26,7 @@ const UserProvider = ({children}) => {
                         
                          
                         setCurrentUser({email: user.email, uid: user.uid, loggedIn: true});
+                       
                             
      
                     }
@@ -52,7 +53,7 @@ const UserProvider = ({children}) => {
 
     console.log(courses)
 
-    return <UserContext.Provider value={{currentUser, setCurrentUser, courses, setCourses, isLoading}}>{children}</UserContext.Provider>
+    return <UserContext.Provider value={{currentUser, setCurrentUser, completedCourses, setCompletedCourses, courses, setCourses, isLoading}}>{children}</UserContext.Provider>
 }
 
 export default UserProvider;
