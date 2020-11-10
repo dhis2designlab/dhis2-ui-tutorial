@@ -32,12 +32,7 @@ function Settings({ onClick, user }) {
     coll.get().then(function(querySnapshot) {
        let test = 0
         querySnapshot.forEach(function(doc) {
-          console.log(test + " " + doc.data().name)
-          test = test + 1
-         
           fetchedCourses.push({points: doc.data().points, name: doc.data().name});
-            
-           
         });
         setCourses(fetchedCourses)
     })
