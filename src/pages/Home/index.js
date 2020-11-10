@@ -10,8 +10,7 @@ import data from "../../data.js"
 import styles from "./styles.module.css"
 
 
-function Home({user}){
-  
+function Home(){
 
   return (
    <>
