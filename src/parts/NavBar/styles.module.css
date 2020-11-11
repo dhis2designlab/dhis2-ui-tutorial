@@ -1,37 +1,37 @@
 .nav {
-    background: white;
-    height: 64px;
-    position: fixed;
-    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
-    z-index: 2;
-    margin: 0;
-  }
-  
+  background: white;
+  height: 64px;
+  position: fixed;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+  margin: 0;
+}
+
 .icon {
-    width: 40px;
-  }
+  width: 40px;
+}
 
 .settings {
-    text-align: right;
-    display: inline-block;
-    margin: auto;
-  }
+  text-align: right;
+  display: inline-block;
+  margin: auto;
+}
 
 .name {
-    color: black;
-    text-align: right;
-    display: inline-block;
-  }
+  color: black;
+  text-align: right;
+  display: inline-block;
+}
 
 .link {
-    text-decoration: none;
-    text-align: left;
-  }
+  text-decoration: none;
+  text-align: left;
+}
 
-  .img {
-    margin: auto;
-  }
-  
-  .logo {
-    max-height: 30px;
-  }
+.img {
+  margin: auto;
+}
+
+.logo {
+  max-height: 30px;
+}
