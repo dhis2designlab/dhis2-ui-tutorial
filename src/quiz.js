@@ -3,6 +3,7 @@ import React from "react";
 import color1 from "./images/colour_img.png";
 import color2 from "./images/color_img2.png";
 import api from "./images/api.png";
+import buttonTable from "./images/buttonTable.png";
 
 const iframe =
   '<iframe src="https://codesandbox.io/embed/bold-sun-l4upt?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="bold-sun-l4upt" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
@@ -482,6 +483,25 @@ export const quiz_data = [
               "Here you can see the API for the dhis2 button component. In the first column named 'Name', you can see what type of properties the Button component can take in. Each of the properties has a type, as specified in the 'Type' column. Sometimes a default value will be set for the property if nothing is set, which can be seen in the 'Default' column",
           },
         ],
+      },
+      {
+        question: "Information: The different types of buttons and its usage",
+        information:
+          "Buttons are used for triggering actions. There are different types of buttons in the design system which are intended for different types of actions.",
+        image: buttonTable,
+        sections: [
+          {
+            text:
+              "Each type of button has a specific usage:",
+          },
+        ],
+      },
+      {
+        question: "Quiz: Button label",
+        information:
+          "Which of the buttons uses the correct label?",
+        images: [buttonTable, buttonTable],
+        correct: 0,
       },
       {
         question: "Example: Using the different buttons",
