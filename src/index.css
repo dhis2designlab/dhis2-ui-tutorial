@@ -1,19 +1,26 @@
-
 * {
-  font-family: 'Roboto, sans-serif';
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h5,
+h6 {
+  text-align: center;
+  color: #212934;
+}
+
+h4 {
+  text-align: center;
+  color: #4a5768;
 }
 
 p {
   line-height: 1.2;
+  color: #4a5768;
 }
 
-h1 {
-  color: #212934
+li {
+  color: #4a5768;
 }
-
-body {
-  margin: 0;
-  padding: 0;
-
-}
-
