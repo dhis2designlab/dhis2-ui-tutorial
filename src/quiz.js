@@ -1,5 +1,5 @@
 import React from 'react';
-import colors from './images/colours.png';
+
 
 import color1 from './images/colour_img.png';
 import color2 from './images/color_img2.png';

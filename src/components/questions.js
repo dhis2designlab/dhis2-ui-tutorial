@@ -4,8 +4,7 @@ import { ModalTitle, ModalContent, Radio} from '@dhis2/ui';
 
 import Grid from '@material-ui/core/Grid';
 
-import colors from '../images/colours.png';
-import api from '../images/api.png';
+
 import { makeStyles, StylesProvider } from '@material-ui/core/styles';
 
 import QuizUiComponents from '../parts/QuizUiComponents'
@@ -43,13 +42,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 //TODO: rewrite messy code
-function Questions({sections, images, question, alternatives, image, information, handleSingleCheck, isChecked, iframe, components}) {
+function Questions({sections, points, setPoints, correct, images, question, alternatives, image, information, handleSingleCheck, isChecked, iframe, components}) {
  
   const classes = useStyles();
 
-  const [chosenImg, setChosenImg] = useState();
+  const [chosenImg, setChosenImg] = useState(false);
   const [radio, setRadio] = useState(false);
+ 
 
+  const handleImgClick = value => {
+    if(value == correct && !chosenImg){
+      setChosenImg(true)
+      setPoints(points + 1)
+    }
+    else{
+      setChosenImg(true)
+    }
+  }
 
   return (
     <>
@@ -66,8 +75,8 @@ function Questions({sections, images, question, alternatives, image, information
                 </div>
 
                 <div>
-                {images && images.map((value) => {
-                  return <Grid item xs={12} sm={6} md={6}><div className={classes.border}><img src={value} width="100%" /></div></Grid>
+                {images && images.map((value, index) => {
+                  return <Grid item xs={12} sm={6} md={6}><div className={classes.border}><img onClick={() => handleImgClick(index)} src={value} width="100%" /></div></Grid>
                 })}
                 </div>
                 {alternatives && alternatives.map((value, index) => {

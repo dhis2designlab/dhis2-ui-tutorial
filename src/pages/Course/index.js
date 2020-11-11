@@ -38,7 +38,7 @@ function Course() {
 
   const {title, about, topics, quizId,  status } = quizData[id]
 
-  const {question, alternatives, information, image, correct, iframe, sections, images, components} = quizData[id].steps[indexState]
+  const {question, alternatives, information, image, iframe, sections, images, components, correct} = quizData[id].steps[indexState]
 
   const handleStartOver = () => {
     setIndex(0)
@@ -52,7 +52,8 @@ function Course() {
         setIndex(indexState - 1)
     }
 }
-  //TODO: FIX THIS.
+
+
   const handleNextClick = ()=> {
     if(isChecked.includes(correct)){
       setPoints(points+1)
@@ -98,7 +99,7 @@ function Course() {
           <IntroductionCourse status={status} handleNextClick={handleNextClick} title={title} topics={topics} about={about} />
           :   <Grid container><Grid  item xs={12} sm={12} md={12}>
                 {finished ? <FinishQuiz  setIndex={handleStartOver} points={points}/> :
-               <QuizSection handleBackClick={handleBackClick} handleNextClick={handleNextClick}  images={images} sections={sections} iframe={iframe} isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information} components={components}/>
+               <QuizSection setPoints={setPoints} points={points} correct={correct} handleBackClick={handleBackClick} handleNextClick={handleNextClick}  images={images} sections={sections} iframe={iframe} isChecked={isChecked} handleSingleCheck={handleSingleCheck} alternatives={alternatives} image={image} question={question} information={information} components={components}/>
      } </Grid></Grid>}
         </div>
       </div>

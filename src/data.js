@@ -2,10 +2,12 @@ import React  from 'react';
 
 import Fallback from './images/default-image.jpg';
 import Color from "./images/color.png"
-import ContentCommunication from "./images/com_big.png"
+import ContentCommunication from "./images/contentandcommunication.png"
 import Forms from "./images/forms.png"
 import Typography from "./images/typography.png"
 import Layout from "./images/layout.png"
+import Components from "./images/components.png"
+import Icon from "./images/icon.png"
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -81,19 +83,20 @@ const data = [
       ]
     },
     {
-      title: "Color",
-      quizId: Color,
-      short_info: "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. In this tutorial you will learn about how to use color in DHIS2",
-      id: 3,
+      title: "Icons",
+      quizId: Icon,
+      short_info: "Icons are simple images used in context to communicate something. They are easily recognizable and easy to remember. In DHIS2 there are some icons that are recommended to use, which you will learn more about in this tutorial",
+      id: 5,
       steps: [
         {
           selector: '.first-step',
-          content: 'This is my first Step',
+          content: 'klklThis is my first Step',
         },
         {
           selector: '.first-step',
           content: 'This is my second Step',
         },
+
         {
           selector: '.first-step',
           content: 'This is my third Step',
@@ -121,20 +124,19 @@ const data = [
       ]
     },
     {
-      title: "Icons",
+      title: "Color",
       quizId: Color,
-      short_info: "Icons are simple images used in context to communicate something. They are easily recognizable and easy to remember. In DHIS2 there are some icons that are recommended to use, which you will learn more about in this tutorial",
-      id: 5,
+      short_info: "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. In this tutorial you will learn about how to use color in DHIS2",
+      id: 3,
       steps: [
         {
           selector: '.first-step',
-          content: 'klklThis is my first Step',
+          content: 'This is my first Step',
         },
         {
           selector: '.first-step',
           content: 'This is my second Step',
         },
-
         {
           selector: '.first-step',
           content: 'This is my third Step',
@@ -143,7 +145,7 @@ const data = [
     },
     {
       title: "DHIS2 Components",
-      quizId: Color,
+      quizId: Components,
       short_info: "A collection of UI elements that should be reused across all DHIS2 applications. Using these components means more time spent focusing on building a positive user experience and less time redesigning and rebuilding common components. In this tutorial you learn how and when to use the different components.",
       id: 6,
       steps: [
