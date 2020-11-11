@@ -1,6 +1,6 @@
 # IMPORTANT: Not official DHIS2 documentation
 
-This is my master thesis, where I attempt to create a tutorial for developing user interfaces in DHIS2. For now I am only focusing on creating content for DHIS Components and Color courses. It is therefore not possible to click on "start course" for the other courses. I still have to add in a lot more content to the courses
+This is my master thesis, where I attempt to create a tutorial for developing user interfaces in DHIS2. For now, I am only focusing on creating content for DHIS Components and Color courses. Therefore, it is not possible to click on the "start course" button for the other courses. I still have to add in a lot more content to the courses
 
 ## Available Scripts
 
