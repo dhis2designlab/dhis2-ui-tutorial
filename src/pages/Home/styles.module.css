@@ -1,0 +1,26 @@
+.container {
+  max-width: 130ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer {
+  background-color: gray;
+  padding: 6px;
+}
+
+.font {
+  line-height: 2;
+}
+
+.header {
+  text-align: center;
+}
+
+.cardGrid {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.course {
+  padding-top: 32px;
+}

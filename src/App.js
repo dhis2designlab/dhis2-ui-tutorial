@@ -1,130 +1,101 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useCallback, useContext } from "react";
 
-import Signup from './components/signup.js'
-import Login from './components/login.js'
-import Logout from './components/logout.js'
-import Home from './components/home.js'
-import Settings from './components/settings.js'
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import Course from "./pages/Course";
 
-import HeaderBar from './components/headerbar.js'
-import { AlertBar } from '@dhis2/ui'
+import Settings from "./pages/Settings";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-  Redirect
-} from "react-router-dom";
+import PrivateRoute from "./components/PrivateRoute";
+import PublicRoute from "./components/PublicRoute";
 
+import NavBar from "./parts/NavBar";
+import Footer from "./parts/Footer";
+import Copyright from "./components/Copyright";
+import { UserContext } from "./userContext";
+import { makeStyles } from "@material-ui/core/styles";
 
-import data from "./data.js"
-import { auth } from './firebase';
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
+import { auth } from "./firebase";
 
-function onAuthStateChange(callback) {
-  return auth.onAuthStateChanged(user => {
-    if (user) {
-      callback({loggedIn: true, username: user.email});
-    } else {
-      callback({loggedIn: false, username: ''});
-    }
-  });
-}
-
-
-function signup(email, pass){
-  auth.createUserWithEmailAndPassword(email, pass)
-      .then(res => {
-        console.log("Sign-out Success", res)
-        console.log(email)
-      })
-      .catch(err => {
-        console.error(err)
-      })
-  }
+const useStyles = makeStyles((theme) => ({
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(6),
+  },
+}));
 
 function App() {
-  const [user, setUser] = useState({ loggedIn: false, username: '' });
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChange(setUser);
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+  const { currentUser } = useContext(UserContext);
+  const classes = useStyles();
 
   function login(username, password) {
     auth.signInWithEmailAndPassword(username, password);
-
   }
 
   function logout() {
     auth.signOut();
   }
 
-  function signup(email, pass){
-    auth.createUserWithEmailAndPassword(email, pass)
+  function signup(username, password) {
+    auth.createUserWithEmailAndPassword(username, password);
   }
 
- const requestLogin = useCallback((username, password) => {login(username, password);});
+  const requestLogin = useCallback((username, password) => {
+    login(username, password);
+  });
 
- const requestLogout = useCallback(() => {
-   logout();
- }, []);
+  const requestLogout = useCallback(() => {
+    logout();
+  }, []);
 
+  const requestSignup = useCallback((username, password) => {
+    signup(username, password);
+  });
 
- const requestSignup = useCallback((username, password) => {signup(username, password);});
+  const user = currentUser == null ? false : currentUser.loggedIn;
 
-
-    return <React.Fragment>
-          <Router>
-           <div>
-             <Switch>
-               <Route path="/signup" render={() => (
-                      !user.loggedIn ? (
-                         <Signup onClick={requestSignup} />
-                       ) : (
-                          <Redirect to="/home" />
-                       )
-                       )}/>
-
-               <Route path="/login" render={() => (
-                   !user.loggedIn ? (
-                       <Login onClick={requestLogin}/>
-                   ) : (
-                     <Redirect to="/home" />
-                   )
-                   )}/>
-
-               <Route path="/logout" render={() => (
-                   !user.loggedIn ? (
-                      <Redirect to="/signup" />
-                   ) : (
-                     <Logout onClick={requestLogout}/>
-                   )
-                   )}/>
-                <Route path="/home" render={() => (
-                        !user.loggedIn ? (
-                          <Redirect to="/signup"/>
-                        ) : (
-                          <Home user={user}/>
-                        )
-                        )}/>
-                <Route path="/settings" render={() => (
-                        !user.loggedIn ? (
-                          <Redirect to="/signup"/>
-                        ) : (
-                          <Settings user={user} onClick={requestLogout}/>
-                        )
-                        )}/>
-             </Switch>
-           </div>
-         </Router>
-     </React.Fragment>
+  return (
+    <React.Fragment>
+      <BrowserRouter>
+        <div>
+          <NavBar user={currentUser} />
+          <Switch>
+            <PublicRoute
+              isLoggedIn={user}
+              path="/signup"
+              component={Signup}
+              onClick={requestSignup}
+              exact
+            />
+            <PublicRoute
+              isLoggedIn={user}
+              path="/login"
+              component={Login}
+              onClick={requestLogin}
+              exact
+            />
+            <Route path="/home" component={Home} exact />
+            <Redirect from="/" to="/home" exact />
+            <PrivateRoute
+              isLoggedIn={user}
+              path="/settings"
+              component={Settings}
+              onClick={requestLogout}
+            />
+            } exact />
+            <Route path="/course/:id" component={Course} />
+          </Switch>
+          <footer className={classes.footer}>
+            <Footer />
+            <Copyright />
+          </footer>
+        </div>
+      </BrowserRouter>
+    </React.Fragment>
+  );
 }
-
 
 export default App;

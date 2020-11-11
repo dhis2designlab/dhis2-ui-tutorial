@@ -1,0 +1,27 @@
+.header {
+  padding-top: 70px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 32px;
+  background-color: #f3f5f7;
+}
+
+.content {
+  max-width: 130ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.paragraph {
+  margin-right: 92px;
+}
+
+.img {
+  margin-left: 32px;
+}
+
+@media (max-width: 959px) {
+  .img {
+    display: none;
+  }
+}

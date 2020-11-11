@@ -1,0 +1,15 @@
+.cardGrid {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  max-width: 30em;
+  font-family: "Roboto, sans-serif";
+}
+
+.input {
+  padding-bottom: 6px;
+}
+
+.heading {
+  text-align: "center";
+  padding-bottom: 6px;
+}
