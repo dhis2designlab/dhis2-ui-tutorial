@@ -31,6 +31,8 @@ function QuizSection({
   handleBackClick,
   handleNextClick,
   correct,
+  points,
+  setPoints
 }) {
   const classes = useStyles();
   console.log(iframe);
@@ -48,6 +50,8 @@ function QuizSection({
         question={question}
         information={information}
         components={components}
+        points={points}
+        setPoints={setPoints}
       />
       <div className={classes.buttons}>
         <Button

@@ -491,15 +491,13 @@ export const quiz_data = [
         image: buttonTable,
         sections: [
           {
-            text:
-              "Each type of button has a specific usage:",
+            text: "Each type of button has a specific usage:",
           },
         ],
       },
       {
         question: "Quiz: Button label",
-        information:
-          "Which of the buttons uses the correct label?",
+        information: "Which of the buttons uses the correct label?",
         images: [buttonTable, buttonTable],
         correct: 0,
       },

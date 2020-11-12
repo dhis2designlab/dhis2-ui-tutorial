@@ -7,6 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import { makeStyles, StylesProvider } from "@material-ui/core/styles";
 
 import QuizUiComponents from "../parts/QuizUiComponents";
+import classNames from "classnames";
 
 import CodeSandbox from "simple-codesandbox";
 
@@ -14,9 +15,13 @@ const iframe2 =
   '<iframe src="https://codesandbox.io/embed/n9m2w9q8x0?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="Jest test" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
 
 const useStyles = makeStyles((theme) => ({
-  border: {
+  correct: {
     borderStyle: "solid",
     borderColor: "green",
+  },
+  incorrect: {
+    borderStyle: "solid",
+    borderColor: "red",
   },
   question: {
     paddingTop: "8px",
@@ -56,17 +61,25 @@ function Questions({
 }) {
   const classes = useStyles();
 
-  const [chosenImg, setChosenImg] = useState(false);
-  const [radio, setRadio] = useState(false);
+  const [chosenImg, setChosenImg] = useState("");
+  const [chosenValue, setChosenValue] = useState("");
+  const [chosenRadio, setChosenRadio] = useState("");
 
   const handleImgClick = (value) => {
-    if (value == correct && !chosenImg) {
-      setChosenImg(true);
+    if (chosenValue !== "") return
+
+    if (value == correct) {
+      setChosenImg("correct");
+      setChosenValue(value);
       setPoints(points + 1);
     } else {
-      setChosenImg(true);
+      setChosenImg("incorrect");
+      setChosenValue(value);
     }
   };
+
+  const isCorrect = chosenImg == "correct" 
+  const isIncorrect = chosenImg == "incorrect"
 
   return (
     <>
@@ -100,7 +113,14 @@ function Questions({
                 images.map((value, index) => {
                   return (
                     <Grid item xs={12} sm={6} md={6}>
-                      <div className={classes.border}>
+                      <div
+                        className={classNames({
+                          [classes.correct]:
+                            isCorrect && index == chosenValue,
+                          [classes.incorrect]:
+                            isIncorrect && index == chosenValue,
+                        })}
+                      >
                         <img
                           onClick={() => handleImgClick(index)}
                           src={value}
