@@ -210,6 +210,117 @@ export const quiz_data = [
     ],
   },
   {
+    title: "Icons",
+    quizId: "Icons",
+    status: "under development",
+    about:
+      "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. The colors used in an application should not be chosen based primarily on how they look, but how they convey information and aid understanding. It is important to maintain consistent usage of colors throughout the DHIS2 platform. Globally, color meanings are relative. It is not possible to say 'red = danger'. However, using a consistent color palette we can establish that 'red in DHIS2 = danger'. Color alone should not be relied upon to communicate effectively. Read more about color accessibility.",
+    topics: [
+      {
+        title: "DHIS2 color Scale",
+        info: "Learn about the color scale in DHIS2",
+        taskType: "text",
+      },
+      {
+        title: "title 2",
+        info: "learn about blablabla",
+        taskType: "coding",
+      },
+      {
+        title: "title 3",
+        info: "learn about blablabla",
+        taskType: "quiz",
+      },
+    ],
+    steps: [
+      {
+        header: "header1",
+        question: "What is blabla?",
+        alternatives: [
+          { a: "To alert about danger" },
+          { b: "General interface elements" },
+          { c: "Selected or active element" },
+        ],
+        correct: "a",
+      },
+      {
+        header: "header2",
+        question: "What is blabla?",
+        alternatives: [
+          { a: "To alert about danger" },
+          { b: "General interface elements" },
+          { c: "Selected or active element" },
+        ],
+        correct: "b",
+      },
+      {
+        header: "header2",
+        question: "What is blabla?",
+        alternatives: [
+          { a: "To alert about danger" },
+          { b: "General interface elements" },
+          { c: "Selected or active element" },
+        ],
+        correct: "c",
+      },
+    ],
+  },
+  {
+    title: "Typography",
+    quizId: "Typography",
+    status: "under development",
+    about: "this is a quiz about blablabl",
+    topics: [
+      {
+        title: "title 1",
+        info: "learn about blablabla",
+        taskType: "text",
+      },
+      {
+        title: "title 2",
+        info: "learn about blablabla",
+        taskType: "coding",
+      },
+      {
+        title: "title 3",
+        info: "learn about blablabla",
+        taskType: "quiz",
+      },
+    ],
+    steps: [
+      {
+        header: "header1",
+        question: "What is blabla?",
+        alternatives: [
+          { a: "To alert about danger" },
+          { b: "General interface elements" },
+          { c: "Selected or active element" },
+        ],
+        correct: "a",
+      },
+      {
+        header: "header2",
+        question: "What is blabla?",
+        alternatives: [
+          { a: "To alert about danger" },
+          { b: "General interface elements" },
+          { c: "Selected or active element" },
+        ],
+        correct: "b",
+      },
+      {
+        header: "header2",
+        question: "What is blabla?",
+        alternatives: [
+          { a: "To alert about danger" },
+          { b: "General interface elements" },
+          { c: "Selected or active element" },
+        ],
+        correct: "c",
+      },
+    ],
+  },
+  {
     title: "Color",
     quizId: "Color",
     about:
@@ -314,117 +425,6 @@ export const quiz_data = [
     ],
   },
   {
-    title: "Typography",
-    quizId: "Typography",
-    status: "under development",
-    about: "this is a quiz about blablabl",
-    topics: [
-      {
-        title: "title 1",
-        info: "learn about blablabla",
-        taskType: "text",
-      },
-      {
-        title: "title 2",
-        info: "learn about blablabla",
-        taskType: "coding",
-      },
-      {
-        title: "title 3",
-        info: "learn about blablabla",
-        taskType: "quiz",
-      },
-    ],
-    steps: [
-      {
-        header: "header1",
-        question: "What is blabla?",
-        alternatives: [
-          { a: "To alert about danger" },
-          { b: "General interface elements" },
-          { c: "Selected or active element" },
-        ],
-        correct: "a",
-      },
-      {
-        header: "header2",
-        question: "What is blabla?",
-        alternatives: [
-          { a: "To alert about danger" },
-          { b: "General interface elements" },
-          { c: "Selected or active element" },
-        ],
-        correct: "b",
-      },
-      {
-        header: "header2",
-        question: "What is blabla?",
-        alternatives: [
-          { a: "To alert about danger" },
-          { b: "General interface elements" },
-          { c: "Selected or active element" },
-        ],
-        correct: "c",
-      },
-    ],
-  },
-  {
-    title: "Icons",
-    quizId: "Icons",
-    status: "under development",
-    about:
-      "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. The colors used in an application should not be chosen based primarily on how they look, but how they convey information and aid understanding. It is important to maintain consistent usage of colors throughout the DHIS2 platform. Globally, color meanings are relative. It is not possible to say 'red = danger'. However, using a consistent color palette we can establish that 'red in DHIS2 = danger'. Color alone should not be relied upon to communicate effectively. Read more about color accessibility.",
-    topics: [
-      {
-        title: "DHIS2 color Scale",
-        info: "Learn about the color scale in DHIS2",
-        taskType: "text",
-      },
-      {
-        title: "title 2",
-        info: "learn about blablabla",
-        taskType: "coding",
-      },
-      {
-        title: "title 3",
-        info: "learn about blablabla",
-        taskType: "quiz",
-      },
-    ],
-    steps: [
-      {
-        header: "header1",
-        question: "What is blabla?",
-        alternatives: [
-          { a: "To alert about danger" },
-          { b: "General interface elements" },
-          { c: "Selected or active element" },
-        ],
-        correct: "a",
-      },
-      {
-        header: "header2",
-        question: "What is blabla?",
-        alternatives: [
-          { a: "To alert about danger" },
-          { b: "General interface elements" },
-          { c: "Selected or active element" },
-        ],
-        correct: "b",
-      },
-      {
-        header: "header2",
-        question: "What is blabla?",
-        alternatives: [
-          { a: "To alert about danger" },
-          { b: "General interface elements" },
-          { c: "Selected or active element" },
-        ],
-        correct: "c",
-      },
-    ],
-  },
-  {
     title: "DHIS2 Components",
     quizId: "Components",
     about:
@@ -502,14 +502,19 @@ export const quiz_data = [
         correct: 0,
       },
       {
-        question: "Example: Using the different buttons",
+        question: "Information: different button options",
         information:
-          "Here you can see the code for using the different type of DHIS2 buttons. Look at the code, in the later exercises you will use the API yourself",
+          "A button can represent an on/off state using the toggle option. Use a toggle button when the user can enable or disable an option and a checkbox or switch is not suitable. This will most often be in the case of a toolbar, such as bold or italic options in a text editing toolbar. A toggle button in this example uses an icon and does not need text. A text label should be provided in a tooltip on hover. The toggle option is available for basic and secondary type buttons.",
         sections: [
           {
             text:
-              "NB: to see the code you may need to click on the left of the image and drag to see the code",
+              "Icons can be included in Basic, Primary, Secondary and Destructive buttons. Use an icon to supplement the text label. Remember that the user may not be fluent in the working language, so an accompanying icon on an important action can be a welcome addition. Buttons with icons only should be used for supplementary actions and should include a text tooltip on hover.",
           },
+          {
+            text:
+            "Buttons are available in three sizes: small, medium, large. Medium is usually the correct choice. Use small button in an information dense ui. Large buttons can be use on very simple, single action pages.",
+            image: color1,
+          }
         ],
         iframe: buttonExample,
       },

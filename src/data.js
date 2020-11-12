@@ -110,7 +110,7 @@ const data = [
     quizId: Icon,
     short_info:
       "Icons are simple images used in context to communicate something. They are easily recognizable and easy to remember. In DHIS2 there are some icons that are recommended to use, which you will learn more about in this tutorial",
-    id: 5,
+    id: 3,
     steps: [
       {
         selector: ".first-step",
@@ -153,7 +153,7 @@ const data = [
     quizId: Color,
     short_info:
       "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. In this tutorial you will learn about how to use color in DHIS2",
-    id: 3,
+    id: 5,
     steps: [
       {
         selector: ".first-step",

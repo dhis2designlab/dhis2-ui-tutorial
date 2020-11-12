@@ -47,7 +47,6 @@ function Course() {
     components,
     correct,
   } = quizData[id].steps[indexState];
-  console.log("CORRECT " + correct)
 
   const handleStartOver = () => {
     setIndex(0);
