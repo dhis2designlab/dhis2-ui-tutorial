@@ -96,7 +96,8 @@ function Questions({
                   sections.map((value) => {
                     return (
                       <>
-                        <p>{value.text}</p>
+                        {value.heading && <h3>{value.heading}</h3>}
+                        {value.text && <p>{value.text}</p>}
                         {value.image && <img src={value.image} width="50%" style={{
                             marginLeft: "auto",
                             marginRight: "auto",
