@@ -52,12 +52,14 @@ function Course() {
     setIndex(0);
     setPoints(0);
     setFinished(false);
+    window.scrollTo(0, 0)
   };
 
   const handleBackClick = () => {
     if (indexState - 1 >= 0) {
       setFinished(false);
       setIndex(indexState - 1);
+      window.scrollTo(0, 0)
     }
   };
 
@@ -67,6 +69,7 @@ function Course() {
     }
     if (indexState + 1 < quizData[id].steps.length) {
       setIndex(indexState + 1);
+      window.scrollTo(0, 0)
     } else {
       if (currentUser.loggedIn) {
         db.collection("users")
