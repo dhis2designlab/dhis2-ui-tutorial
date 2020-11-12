@@ -58,12 +58,13 @@ function Questions({
   isChecked,
   iframe,
   components,
+  handleRadioCheck,
+  isChosenRadio,
 }) {
   const classes = useStyles();
 
   const [chosenImg, setChosenImg] = useState("");
   const [chosenValue, setChosenValue] = useState("");
-  const [chosenRadio, setChosenRadio] = useState("");
 
   const handleImgClick = (value) => {
     if (chosenValue !== "") return
@@ -80,6 +81,7 @@ function Questions({
 
   const isCorrect = chosenImg == "correct" 
   const isIncorrect = chosenImg == "incorrect"
+
 
   return (
     <>
@@ -134,6 +136,7 @@ function Questions({
             {alternatives &&
               alternatives.map((value, index) => {
                 const choice = Object.keys(value);
+                console.log(choice)
                 const value_choice = Object.values(value);
                 return (
                   <>
@@ -142,8 +145,8 @@ function Questions({
                       label={value_choice}
                       name={choice}
                       id={index}
-                      onChange={handleSingleCheck}
-                      checked={isChecked.includes(String(choice))}
+                      onChange={handleRadioCheck}
+                      checked={isChosenRadio == choice}
                     />
                   </>
                 );

@@ -30,6 +30,7 @@ function Course() {
   const [points, setPoints] = useState(0);
   const [finished, setFinished] = useState(false);
   const [isChecked, setIsChecked] = useState([]);
+  const [isChosenRadio, setChosenRadio] = useState('');
 
   const quizData = quiz_data.map((q) => q);
 
@@ -46,6 +47,7 @@ function Course() {
     components,
     correct,
   } = quizData[id].steps[indexState];
+  console.log("CORRECT " + correct)
 
   const handleStartOver = () => {
     setIndex(0);
@@ -61,7 +63,7 @@ function Course() {
   };
 
   const handleNextClick = () => {
-    if (isChecked.includes(correct)) {
+    if (isChecked.includes(correct) || isChosenRadio == correct) {
       setPoints(points + 1);
     }
     if (indexState + 1 < quizData[id].steps.length) {
@@ -95,8 +97,16 @@ function Course() {
       );
       return;
     }
+   
     isChecked.push(name[0]);
     setIsChecked([...isChecked]);
+  };
+
+  const handleRadioCheck = (e) => {
+    const name = e.name;
+    if (isChosenRadio !== name[0]) {
+      setChosenRadio(name[0]);
+    }
   };
 
   return (
@@ -135,6 +145,8 @@ function Course() {
                       question={question}
                       information={information}
                       components={components}
+                      handleRadioCheck={handleRadioCheck}
+                      isChosenRadio={isChosenRadio}
                     />
                   )}{" "}
                 </Grid>

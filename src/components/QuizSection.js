@@ -32,7 +32,9 @@ function QuizSection({
   handleNextClick,
   correct,
   points,
-  setPoints
+  setPoints,
+  handleRadioCheck,
+  isChosenRadio
 }) {
   const classes = useStyles();
   console.log(iframe);
@@ -52,6 +54,8 @@ function QuizSection({
         components={components}
         points={points}
         setPoints={setPoints}
+        handleRadioCheck={handleRadioCheck}
+        isChosenRadio={isChosenRadio}
       />
       <div className={classes.buttons}>
         <Button
