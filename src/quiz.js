@@ -7,6 +7,7 @@ import buttonTable from "./images/buttonTable.png";
 import buttonIcon from "./images/buttonIcon.png";
 import buttonSize from "./images/buttonSize.png";
 import toggle from "./images/toggle.png";
+import importComponents from "./images/importComponents.png";
 
 const iframe =
   '<iframe src="https://codesandbox.io/embed/bold-sun-l4upt?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="bold-sun-l4upt" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
@@ -470,6 +471,17 @@ export const quiz_data = [
         information: "In this section you will get infor",
       },
       {
+        question: "How to: import components",
+        sections: [
+          {
+            heading: "@dhis2/ui",
+            text:
+              "To be able to use the components, you need to import them. Up until recently, there has been different ways to import the components, depending of the type of component you want to import. @dhis2/ui unifies all of the dhis2 ui libraries, and you can now import everything that you imported previously from ui-core, ui-widgets and ui-forms directly from @dhis2/ui",
+              image: importComponents,
+          },
+        ],
+      },
+      {
         question: "Showcase of the DHIS2 components",
         information:
           "All the components have its own properties you can use to define how you want the component to look and behave. In the showcase below, you will see some examples of what is possible. If you want to get the most updated overview of all the components go to [INSERT STORYBOOK]",
@@ -499,8 +511,40 @@ export const quiz_data = [
         ],
       },
       {
-        question: "Quiz: Button label",
-        information: "Which of the buttons uses the correct label?",
+        question: "Example: The different types of buttons in action",
+        iframe: buttonExample,
+      },
+      {
+        question:
+          "Try it yourself: Change the button to a big secondary button",
+        iframe: iframe2,
+      },
+      {
+        question: "Quiz: Buttons",
+        questions: [{
+          question: "When should you use the primary button?",
+          answers: [{a: "Primary buttons should be the default choice for the majority of actions. Several primary buttons can be in the same area", b: "Primary buttons should be used to highlight the most importent/main action on the page. Should rarerly be more than one primary button", c: "Primary buttons should be used when you want to highlight to the user the seriousness of the action"}],
+
+        },
+        {
+          question: "When should you use the destructive button?",
+          answers: [{a: "Destructive buttons should be the default choice for the majority of actions. Several primary buttons can be in the same area", b: "Destructive buttons should be used to highlight the most importent/main action on the page. Should rarerly be more than one primary button", c: "Destructive buttons should be used when you want to highlight to the user the seriousness of the action"}],
+          correct: 'b',
+        },
+        {
+          question: "What is the difference between basic buttons and secondary buttons?",
+          answers: [{a: "Blablabla", b: "Blabbalba", c: "blablabla"}],
+          correct: 'a',
+        },
+        {
+          question: "When should blabla?",
+          answers: [{a: "Blablabla", b: "Blabbalba", c: "blablabla"}],
+          correct: 'a',
+        },
+      ],
+      },
+      {
+        question: "Quiz: Which image uses the correct button types?",
         images: [buttonTable, buttonTable],
         correct: 0,
       },
@@ -526,11 +570,6 @@ export const quiz_data = [
             image: buttonSize,
           }
         ],
-      },
-      {
-        question:
-          "Try it yourself: Change the button to a big secondary button",
-        iframe: iframe2,
       },
       {
         question: "Example: More specific DHIS2 component",

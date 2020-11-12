@@ -46,6 +46,7 @@ function Course() {
     images,
     components,
     correct,
+    questions,
   } = quizData[id].steps[indexState];
 
   const handleStartOver = () => {
@@ -149,6 +150,7 @@ function Course() {
                       components={components}
                       handleRadioCheck={handleRadioCheck}
                       isChosenRadio={isChosenRadio}
+                      questions={questions}
                     />
                   )}{" "}
                 </Grid>

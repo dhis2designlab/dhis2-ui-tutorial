@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-//TODO: rewrite messy code
+//TODO: rewrite messy code. Create new files for different type of questions
 function Questions({
   sections,
   points,
@@ -60,6 +60,7 @@ function Questions({
   components,
   handleRadioCheck,
   isChosenRadio,
+  questions,
 }) {
   const classes = useStyles();
 
@@ -98,7 +99,7 @@ function Questions({
                       <>
                         {value.heading && <h3>{value.heading}</h3>}
                         {value.text && <p>{value.text}</p>}
-                        {value.image && <img src={value.image} width="50%" style={{
+                        {value.image && <img src={value.image} width="80%" style={{
                             marginLeft: "auto",
                             marginRight: "auto",
                             display: "block",
@@ -115,6 +116,29 @@ function Questions({
                   })}
               </div>
             </div>
+          {questions && questions.map((value) => {
+            return (
+              <div className={classes.text}>
+                {value.question && <h4>{value.question}</h4>}
+                {value.answers && value.answers.map((val)=> {
+                  const values = Object.values(val);
+                  return values.map((answer, index) => {
+                    return (
+                      <>
+                        <Radio
+                          dataTest="dhis2-uicore-radio"
+                          label={answer}
+                          name="mame"
+                          id={index}
+                          onChange={console.log("CLICK")}
+                        />
+                    </>
+                    )
+                  })}
+                )}
+              </div>
+            )
+          })}
 
             <div>
               {images &&
