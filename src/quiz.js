@@ -502,7 +502,7 @@ export const quiz_data = [
         correct: 0,
       },
       {
-        question: "Information: different button options",
+        question: "Information: Different button options",
         information:
           "A button can represent an on/off state using the toggle option. Use a toggle button when the user can enable or disable an option and a checkbox or switch is not suitable. This will most often be in the case of a toolbar, such as bold or italic options in a text editing toolbar. A toggle button in this example uses an icon and does not need text. A text label should be provided in a tooltip on hover. The toggle option is available for basic and secondary type buttons.",
         sections: [
@@ -516,7 +516,6 @@ export const quiz_data = [
             image: color1,
           }
         ],
-        iframe: buttonExample,
       },
       {
         question:

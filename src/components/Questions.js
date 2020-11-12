@@ -97,6 +97,11 @@ function Questions({
                     return (
                       <>
                         <p>{value.text}</p>
+                        {value.image && <img src={value.image} width="50%" style={{
+                            marginLeft: "auto",
+                            marginRight: "auto",
+                            display: "block",
+                         }}/>}
                         {value.list && (
                           <ul>
                             {value.list.map((value) => {
