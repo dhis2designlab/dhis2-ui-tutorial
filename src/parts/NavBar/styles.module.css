@@ -8,6 +8,7 @@
 }
 
 .icon {
+  margin-right: 12px;
   width: 40px;
 }
 
@@ -26,6 +27,8 @@
 .link {
   text-decoration: none;
   text-align: left;
+  margin-left: 12px;
+  margin-right: 12px;
 }
 
 .img {

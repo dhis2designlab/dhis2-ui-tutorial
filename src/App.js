@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function App() {
-  const { currentUser } = useContext(UserContext);
+  const { currentUser, completedCourses } = useContext(UserContext);
   const classes = useStyles();
 
   function login(username, password) {
@@ -61,7 +61,11 @@ function App() {
     <React.Fragment>
       <BrowserRouter>
         <div>
-          <NavBar user={currentUser} />
+          <NavBar
+            user={currentUser}
+            nrCourses={7}
+            nrCompletedCourses={completedCourses.length}
+          />
           <Switch>
             <PublicRoute
               isLoggedIn={user}

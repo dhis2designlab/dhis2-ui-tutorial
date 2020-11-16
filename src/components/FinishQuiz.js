@@ -18,7 +18,7 @@ function FinishQuiz({ points, setIndex }) {
     <div className={classes.text}>
       <ModalTitle>Congratulation! You have now finished the quiz!</ModalTitle>
       <ModalContent>
-        <p>You got {points} point</p>
+        <p>You got {points} points</p>
         <Button
           dataTest="dhis2-uicore-button"
           onClick={setIndex}
