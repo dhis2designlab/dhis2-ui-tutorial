@@ -29,16 +29,19 @@ export const quiz_data = [
         title: "title 1",
         info: "learn about blablabla",
         taskType: "text",
+        breadcrumb: "breadcrumb",
       },
       {
         title: "title 2",
         info: "learn about blablabla",
         taskType: "coding",
+        breadcrumb: "breadcrumb",
       },
       {
         title: "title 3",
         info: "learn about blablabla",
         taskType: "quiz",
+        breadcrumb: "breadcrumb",
       },
     ],
     steps: [
@@ -51,6 +54,7 @@ export const quiz_data = [
           { c: "Selected or active element" },
         ],
         correct: "a",
+        breadcrumb: "breadcrumb",
       },
       {
         header: "header2",
@@ -61,6 +65,7 @@ export const quiz_data = [
           { c: "Selected or active element" },
         ],
         correct: "b",
+        breadcrumb: "breadcrumb",
       },
       {
         header: "header2",
@@ -71,6 +76,7 @@ export const quiz_data = [
           { c: "Selected or active element" },
         ],
         correct: "c",
+        breadcrumb: "breadcrumb",
       },
     ],
   },
@@ -104,6 +110,7 @@ export const quiz_data = [
         information:
           "Consistent layouts of applications means users only need to learn a few different patterns to understand many different applications. It is important that DHIS2 applications approach layout consistently. Let´s take an example: say we have a layout for how ",
         image: "../images/colours.png",
+        breadcrumb: "breadcrumb",
       },
 
       {
@@ -112,6 +119,7 @@ export const quiz_data = [
         image: "../images/colours.png",
         information:
           "Consistent layouts of applications means users only need to learn a few different patterns to understand many different applications. It is important that DHIS2 applications approach layout consistently",
+        breadcrumb: "breadcrumb",
       },
       {
         header: "header",
@@ -119,12 +127,14 @@ export const quiz_data = [
         image: "../images/colours.png",
         information:
           "Consistent layouts of applications means users only need to learn a few different patterns to understand many different applications. It is important that DHIS2 applications approach layout consistently",
+        breadcrumb: "breadcrumb",
       },
       {
         header: "header",
         question: "Layout",
         information:
           "Consistent layouts of applications means users only need to learn a few different patterns to understand many different applications. It is important that DHIS2 applications approach layout consistently. Not all applications need to look the same, but there should be common elements when dealing with similar tasks. If an application has separate sections it should have a sidebar to move between them. An single-task application should not use a sidebar unnecessarily. The header bar is always placed at the top of the screen. These consistent layout principles help users understand DHIS2 applications",
+        breadcrumb: "breadcrumb",
       },
       {
         header: "header1",
@@ -135,6 +145,7 @@ export const quiz_data = [
           { c: "Selected or active element" },
         ],
         correct: "a",
+        breadcrumb: "breadcrumb",
       },
       {
         header: "header2",
@@ -145,6 +156,7 @@ export const quiz_data = [
           { c: "Selected or active element" },
         ],
         correct: "b",
+        breadcrumb: "breadcrumb",
       },
       {
         header: "header2",
@@ -155,6 +167,7 @@ export const quiz_data = [
           { c: "Selected or active element" },
         ],
         correct: "c",
+        breadcrumb: "breadcrumb",
       },
     ],
   },
@@ -190,6 +203,7 @@ export const quiz_data = [
           { c: "Selected or active element" },
         ],
         correct: "a",
+        breadcrumb: "breadcrumb",
       },
       {
         header: "header2",
@@ -200,6 +214,7 @@ export const quiz_data = [
           { c: "Selected or active element" },
         ],
         correct: "b",
+        breadcrumb: "breadcrumb",
       },
       {
         header: "header2",
@@ -210,6 +225,7 @@ export const quiz_data = [
           { c: "Selected or active element" },
         ],
         correct: "c",
+        breadcrumb: "breadcrumb",
       },
     ],
   },
@@ -246,6 +262,7 @@ export const quiz_data = [
           { c: "Selected or active element" },
         ],
         correct: "a",
+        breadcrumb: "breadcrumb",
       },
       {
         header: "header2",
@@ -256,6 +273,7 @@ export const quiz_data = [
           { c: "Selected or active element" },
         ],
         correct: "b",
+        breadcrumb: "breadcrumb",
       },
       {
         header: "header2",
@@ -266,6 +284,7 @@ export const quiz_data = [
           { c: "Selected or active element" },
         ],
         correct: "c",
+        breadcrumb: "breadcrumb",
       },
     ],
   },
@@ -301,6 +320,7 @@ export const quiz_data = [
           { c: "Selected or active element" },
         ],
         correct: "a",
+        breadcrumb: "breadcrumb",
       },
       {
         header: "header2",
@@ -311,6 +331,7 @@ export const quiz_data = [
           { c: "Selected or active element" },
         ],
         correct: "b",
+        breadcrumb: "breadcrumb",
       },
       {
         header: "header2",
@@ -321,6 +342,7 @@ export const quiz_data = [
           { c: "Selected or active element" },
         ],
         correct: "c",
+        breadcrumb: "breadcrumb",
       },
     ],
   },
@@ -363,6 +385,7 @@ export const quiz_data = [
         information:
           "In section we will take you through how to use colors when developing applications for DHIS2. Some examples and explanations will be given as well as some coding tasks for you to try out, and some quizzes to check that you have understood the topics correctly",
         correct: "a",
+        breadcrumb: "breadcrumb",
       },
       {
         header: "DHIS2 color scale",
@@ -383,12 +406,14 @@ export const quiz_data = [
             ],
           },
         ],
+        breadcrumb: "breadcrumb",
       },
       {
         header: "",
         question: "Code example: the colors in use",
         information: "Test out how to use the DHIS2 colors",
         iframe: iframe,
+        breadcrumb: "breadcrumb",
       },
       {
         header: "Qu",
@@ -399,6 +424,7 @@ export const quiz_data = [
           { c: "Selected or active element" },
         ],
         correct: "a",
+        breadcrumb: "breadcrumb",
         //iframe: iframe2,
       },
       {
@@ -425,6 +451,7 @@ export const quiz_data = [
         information: "Which image uses correct usage of color?",
         images: [color1, color2],
         correct: 1,
+        breadcrumb: "breadcrumb",
       },
     ],
   },
@@ -469,6 +496,7 @@ export const quiz_data = [
       {
         question: "Using the API",
         information: "In this section you will get infor",
+        breadcrumb: "breadcrumb",
       },
       {
         question: "How to: import components",
@@ -477,15 +505,17 @@ export const quiz_data = [
             heading: "@dhis2/ui",
             text:
               "To be able to use the components, you need to import them. Up until recently, there has been different ways to import the components, depending of the type of component you want to import. @dhis2/ui unifies all of the dhis2 ui libraries, and you can now import everything that you imported previously from ui-core, ui-widgets and ui-forms directly from @dhis2/ui",
-              image: importComponents,
+            image: importComponents,
           },
         ],
+        breadcrumb: "Introduction",
       },
       {
         question: "Showcase of the DHIS2 components",
         information:
           "All the components have its own properties you can use to define how you want the component to look and behave. In the showcase below, you will see some examples of what is possible. If you want to get the most updated overview of all the components go to [INSERT STORYBOOK]",
         components: "show",
+        breadcrumb: "Introduction",
       },
       {
         question: "Information: Using the API for components",
@@ -498,6 +528,7 @@ export const quiz_data = [
               "Here you can see the API for the dhis2 button component. In the first column named 'Name', you can see what type of properties the Button component can take in. Each of the properties has a type, as specified in the 'Type' column. Sometimes a default value will be set for the property if nothing is set, which can be seen in the 'Default' column",
           },
         ],
+        breadcrumb: "Introduction",
       },
       {
         question: "Information: The different types of buttons and its usage",
@@ -509,44 +540,71 @@ export const quiz_data = [
             text: "Each type of button has a specific usage:",
           },
         ],
+        breadcrumb: "Buttons",
       },
       {
         question: "Example: The different types of buttons in action",
         iframe: buttonExample,
+        breadcrumb: "Buttons",
       },
       {
         question:
           "Try it yourself: Change the button to a big secondary button",
         iframe: iframe2,
+        breadcrumb: "Buttons",
       },
       {
         question: "Quiz: Buttons",
-        questions: [{
-          question: "When should you use the primary button?",
-          answers: [{a: "Primary buttons should be the default choice for the majority of actions. Several primary buttons can be in the same area", b: "Primary buttons should be used to highlight the most importent/main action on the page. Should rarerly be more than one primary button", c: "Primary buttons should be used when you want to highlight to the user the seriousness of the action"}],
-
-        },
-        {
-          question: "When should you use the destructive button?",
-          answers: [{a: "Destructive buttons should be the default choice for the majority of actions. Several primary buttons can be in the same area", b: "Destructive buttons should be used to highlight the most importent/main action on the page. Should rarerly be more than one primary button", c: "Destructive buttons should be used when you want to highlight to the user the seriousness of the action"}],
-          correct: 'b',
-        },
-        {
-          question: "What is the difference between basic buttons and secondary buttons?",
-          answers: [{a: "Blablabla", b: "Blabbalba", c: "blablabla"}],
-          correct: 'a',
-        },
-        {
-          question: "When should blabla?",
-          answers: [{a: "Blablabla", b: "Blabbalba", c: "blablabla"}],
-          correct: 'a',
-        },
-      ],
+        questions: [
+          {
+            question: "When should you use the primary button?",
+            answers: [
+              {
+                a:
+                  "Primary buttons should be the default choice for the majority of actions. Several primary buttons can be in the same area",
+                b:
+                  "Primary buttons should be used to highlight the most importent/main action on the page. Should rarerly be more than one primary button",
+                c:
+                  "Primary buttons should be used when you want to highlight to the user the seriousness of the action",
+              },
+            ],
+            breadcrumb: "Buttons",
+          },
+          {
+            question: "When should you use the destructive button?",
+            answers: [
+              {
+                a:
+                  "Destructive buttons should be the default choice for the majority of actions. Several primary buttons can be in the same area",
+                b:
+                  "Destructive buttons should be used to highlight the most importent/main action on the page. Should rarerly be more than one primary button",
+                c:
+                  "Destructive buttons should be used when you want to highlight to the user the seriousness of the action",
+              },
+            ],
+            correct: "b",
+            breadcrumb: "Buttons",
+          },
+          {
+            question:
+              "What is the difference between basic buttons and secondary buttons?",
+            answers: [{ a: "Blablabla", b: "Blabbalba", c: "blablabla" }],
+            correct: "a",
+            breadcrumb: "Buttons",
+          },
+          {
+            question: "When should blabla?",
+            answers: [{ a: "Blablabla", b: "Blabbalba", c: "blablabla" }],
+            correct: "a",
+            breadcrumb: "Buttons",
+          },
+        ],
       },
       {
         question: "Quiz: Which image uses the correct button types?",
         images: [buttonTable, buttonTable],
         correct: 0,
+        breadcrumb: "Buttons",
       },
       {
         question: "Information: Different button options",
@@ -555,36 +613,40 @@ export const quiz_data = [
             heading: "Toggle",
             text:
               "A button can represent an on/off state using the toggle option. Use a toggle button when the user can enable or disable an option and a checkbox or switch is not suitable. This will most often be in the case of a toolbar, such as bold or italic options in a text editing toolbar. A toggle button in this example uses an icon and does not need text. A text label should be provided in a tooltip on hover. The toggle option is available for basic and secondary type buttons.",
-              image: toggle,
+            image: toggle,
           },
           {
             heading: "Icons",
             text:
               "Icons can be included in Basic, Primary, Secondary and Destructive buttons. Use an icon to supplement the text label. Remember that the user may not be fluent in the working language, so an accompanying icon on an important action can be a welcome addition. Buttons with icons only should be used for supplementary actions and should include a text tooltip on hover.",
-            image: buttonIcon
+            image: buttonIcon,
           },
           {
             heading: "Size",
             text:
-            "Buttons are available in three sizes: small, medium, large. Medium is usually the correct choice. Use small button in an information dense ui. Large buttons can be use on very simple, single action pages.",
+              "Buttons are available in three sizes: small, medium, large. Medium is usually the correct choice. Use small button in an information dense ui. Large buttons can be use on very simple, single action pages.",
             image: buttonSize,
-          }
+          },
         ],
+        breadcrumb: "Buttons",
       },
       {
         question: "Example: More specific DHIS2 component",
         iframe: iframe2,
+        breadcrumb: "Specific component",
       },
       {
         question: "What is the difference between normal and FF components",
         information:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        breadcrumb: "General",
       },
       {
         question:
           "Try it yourself: Try to recreate this image by using the components given in the previous examples",
         image: color1,
         iframe: iframe2,
+        breadcrumb: "Full examples",
       },
     ],
   },

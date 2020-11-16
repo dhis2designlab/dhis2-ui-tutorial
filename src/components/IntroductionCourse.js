@@ -6,8 +6,7 @@ import Grid from "@material-ui/core/Grid";
 
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@dhis2/ui";
-
-import main from "../styles.module.css";
+import BreadCrumb from "../components/BreadCrumb";
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
@@ -49,10 +48,10 @@ const useStyles = makeStyles((theme) => ({
 
 function IntroductionCourse({ handleNextClick, title, topics, about, status }) {
   const classes = useStyles();
-  console.log(topics);
-  console.log(status);
+
   return (
     <Grid container className={classes.cardGrid}>
+      <BreadCrumb title={title} />
       <Grid item xs={12} sm={12} md={12}>
         <h2 className={classes.title}>{title}</h2>
       </Grid>

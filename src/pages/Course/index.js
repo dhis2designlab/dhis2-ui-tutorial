@@ -2,20 +2,17 @@ import React, { useContext, useState } from "react";
 
 import { useParams } from "react-router-dom";
 
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
-
 import { quiz_data } from "../../quiz.js";
 import { UserContext } from "../../userContext";
 
 import FinishQuiz from "../../components/FinishQuiz";
 import IntroductionCourse from "../../components/IntroductionCourse";
-import QuizSection from "../../components/QuizSection";
-
-import styles from "./styles.module.css";
+import Questions from "../../parts/Questions.js";
+import { Button } from "@dhis2/ui";
 
 import main from "../../styles.module.css";
+
+import styles from "./styles.module.css";
 
 import { db } from "../../firebase";
 
@@ -30,7 +27,7 @@ function Course() {
   const [points, setPoints] = useState(0);
   const [finished, setFinished] = useState(false);
   const [isChecked, setIsChecked] = useState([]);
-  const [isChosenRadio, setChosenRadio] = useState('');
+  const [isChosenRadio, setChosenRadio] = useState("");
 
   const quizData = quiz_data.map((q) => q);
 
@@ -47,20 +44,21 @@ function Course() {
     components,
     correct,
     questions,
+    breadcrumb,
   } = quizData[id].steps[indexState];
 
   const handleStartOver = () => {
     setIndex(0);
     setPoints(0);
     setFinished(false);
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   };
 
   const handleBackClick = () => {
     if (indexState - 1 >= 0) {
       setFinished(false);
       setIndex(indexState - 1);
-      window.scrollTo(0, 0)
+      window.scrollTo(0, 0);
     }
   };
 
@@ -70,7 +68,7 @@ function Course() {
     }
     if (indexState + 1 < quizData[id].steps.length) {
       setIndex(indexState + 1);
-      window.scrollTo(0, 0)
+      window.scrollTo(0, 0);
     } else {
       if (currentUser.loggedIn) {
         db.collection("users")
@@ -100,7 +98,7 @@ function Course() {
       );
       return;
     }
-   
+
     isChecked.push(name[0]);
     setIsChecked([...isChecked]);
   };
@@ -113,53 +111,69 @@ function Course() {
   };
 
   return (
-    <div>
-      <main>
-        <p>go back to mainpage</p>
-        <div className={main.container}>
-          <div>
-            {indexState == 0 ? (
-              <IntroductionCourse
-                status={status}
-                handleNextClick={handleNextClick}
-                title={title}
-                topics={topics}
-                about={about}
-              />
+    <main className={main.container}>
+      <p>go back to mainpage</p>
+      <>
+        {indexState == 0 ? (
+          <IntroductionCourse
+            status={status}
+            handleNextClick={handleNextClick}
+            title={title}
+            topics={topics}
+            about={about}
+          />
+        ) : (
+          <>
+            {finished ? (
+              <FinishQuiz setIndex={handleStartOver} points={points} />
             ) : (
-              <Grid container>
-                <Grid item xs={12} sm={12} md={12}>
-                  {finished ? (
-                    <FinishQuiz setIndex={handleStartOver} points={points} />
-                  ) : (
-                    <QuizSection
-                      setPoints={setPoints}
-                      points={points}
-                      correct={correct}
-                      handleBackClick={handleBackClick}
-                      handleNextClick={handleNextClick}
-                      images={images}
-                      sections={sections}
-                      iframe={iframe}
-                      isChecked={isChecked}
-                      handleSingleCheck={handleSingleCheck}
-                      alternatives={alternatives}
-                      image={image}
-                      question={question}
-                      information={information}
-                      components={components}
-                      handleRadioCheck={handleRadioCheck}
-                      isChosenRadio={isChosenRadio}
-                      questions={questions}
-                    />
-                  )}{" "}
-                </Grid>
-              </Grid>
-            )}
-          </div>
-        </div>
-      </main>
-    </div>
+              <>
+                <Questions
+                  setPoints={setPoints}
+                  points={points}
+                  correct={correct}
+                  handleBackClick={handleBackClick}
+                  handleNextClick={handleNextClick}
+                  images={images}
+                  sections={sections}
+                  iframe={iframe}
+                  isChecked={isChecked}
+                  handleSingleCheck={handleSingleCheck}
+                  alternatives={alternatives}
+                  image={image}
+                  question={question}
+                  information={information}
+                  components={components}
+                  handleRadioCheck={handleRadioCheck}
+                  isChosenRadio={isChosenRadio}
+                  questions={questions}
+                  breadcrumb={breadcrumb}
+                  title={title}
+                />
+                <div className={styles.navigation}>
+                  <Button
+                    dataTest="dhis2-uicore-button"
+                    onClick={handleBackClick}
+                    secondary
+                    type="button"
+                  >
+                    Back
+                  </Button>
+                  <Button
+                    dataTest="dhis2-uicore-button"
+                    onClick={handleNextClick}
+                    secondary
+                    type="button"
+                  >
+                    Next
+                  </Button>
+                </div>
+              </>
+            )}{" "}
+          </>
+        )}
+      </>
+    </main>
   );
 }
 
