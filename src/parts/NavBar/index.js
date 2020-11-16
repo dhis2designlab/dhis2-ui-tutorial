@@ -11,7 +11,7 @@ import styles from "./styles.module.css";
 
 function NavBar({ user, nrCourses, nrCompletedCourses }) {
   const name = user ? user.username : "";
-  const completionRate = (nrCompletedCourses / nrCourses) * 100;
+  const completionRate = Math.floor((nrCompletedCourses / nrCourses) * 100);
 
   return (
     <Grid container spacing={2} className={styles.nav}>
@@ -25,10 +25,9 @@ function NavBar({ user, nrCourses, nrCompletedCourses }) {
           <img src={logo} className={styles.logo} />
         </Link>
       </Grid>
-
       <Grid className={styles.settings} xs={4} sm={4} md={4}>
         <div style={{ margin: "auto", textAlign: "center" }}>
-          <p>Course completion</p>
+        <p>Course completion ({completionRate}%)</p>
           <LinearLoader
             amount={completionRate}
             dataTest="dhis2-uicore-linearloader"
