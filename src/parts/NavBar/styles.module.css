@@ -18,6 +18,13 @@
   margin: auto;
 }
 
+.login {
+  text-align: right;
+  margin-top: auto;
+  margin-bottom: auto;
+
+}
+
 .name {
   color: black;
   text-align: right;
@@ -31,9 +38,6 @@
   margin-right: 12px;
 }
 
-.img {
-  margin: auto;
-}
 
 .logo {
   max-height: 30px;

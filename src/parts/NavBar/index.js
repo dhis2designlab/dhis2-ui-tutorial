@@ -9,13 +9,13 @@ import { LinearLoader } from "@dhis2/ui";
 
 import styles from "./styles.module.css";
 
-function NavBar({ user, nrCourses, nrCompletedCourses }) {
+function NavBar({ user, nrCourses, nrCompletedCourses, loggedIn }) {
   const name = user ? user.username : "";
   const completionRate = Math.floor((nrCompletedCourses / nrCourses) * 100);
-
+ 
   return (
-    <Grid container spacing={2} className={styles.nav}>
-      <Grid className={styles.img} xs={4} sm={4} md={4}>
+    <Grid container className={styles.nav}>
+      <Grid item className={styles.img} xs={4} sm={4} md={4}>
         <Link
           className={styles.link}
           to={{
@@ -25,7 +25,7 @@ function NavBar({ user, nrCourses, nrCompletedCourses }) {
           <img src={logo} className={styles.logo} />
         </Link>
       </Grid>
-      <Grid className={styles.settings} xs={4} sm={4} md={4}>
+      {loggedIn ? <><Grid item className={styles.settings} xs={4} sm={4} md={4}>
         <div style={{ margin: "auto", textAlign: "center" }}>
         <p>Course completion ({completionRate}%)</p>
           <LinearLoader
@@ -35,12 +35,19 @@ function NavBar({ user, nrCourses, nrCompletedCourses }) {
           />
         </div>
       </Grid>
-      <Grid className={styles.settings} xs={4} sm={4} md={4}>
+      <Grid item className={styles.settings} xs={4} sm={4} md={4}>
         <Link className={styles.link} to={`/settings`}>
           <p className={styles.name}>{name}</p>
           <Settings className={styles.icon} />
         </Link>
-      </Grid>
+      </Grid></> : <Grid item className={styles.login} xs={6} sm={6} md={6}><Link
+          className={styles.login}
+          to={{
+            pathname: `/login`,
+          }}
+        >
+        <p>login</p>
+        </Link></Grid>}
     </Grid>
   );
 }

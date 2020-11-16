@@ -65,6 +65,7 @@ function App() {
             user={currentUser}
             nrCourses={7}
             nrCompletedCourses={completedCourses.length}
+            loggedIn={user}
           />
           <Switch>
             <PublicRoute
