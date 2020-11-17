@@ -60,41 +60,42 @@ function App() {
   return (
     <React.Fragment>
       <BrowserRouter>
-          <NavBar
-            user={currentUser}
-            nrCourses={7}
-            nrCompletedCourses={completedCourses.length}
-            loggedIn={user}
+        <NavBar
+          user={currentUser}
+          nrCourses={7}
+          nrCompletedCourses={completedCourses.length}
+          loggedIn={user}
+        />
+        <Switch>
+          <PublicRoute
+            isLoggedIn={user}
+            path="/signup"
+            component={Signup}
+            onClick={requestSignup}
+            exact
           />
-          <Switch>
-            <PublicRoute
-              isLoggedIn={user}
-              path="/signup"
-              component={Signup}
-              onClick={requestSignup}
-              exact
-            />
-            <PublicRoute
-              isLoggedIn={user}
-              path="/login"
-              component={Login}
-              onClick={requestLogin}
-              exact
-            />
-            <Route path="/home" component={Home} exact />
-            <Redirect from="/" to="/home" exact />
-            <PrivateRoute
-              isLoggedIn={user}
-              path="/settings"
-              component={Settings}
-              onClick={requestLogout}
-              exact />
-            <Route path="/course/:id" component={Course} />
-          </Switch>
-          <footer className={classes.footer}>
-            <Footer />
-            <Copyright />
-          </footer>
+          <PublicRoute
+            isLoggedIn={user}
+            path="/login"
+            component={Login}
+            onClick={requestLogin}
+            exact
+          />
+          <Route path="/home" component={Home} exact />
+          <Redirect from="/" to="/home" exact />
+          <PrivateRoute
+            isLoggedIn={user}
+            path="/settings"
+            component={Settings}
+            onClick={requestLogout}
+            exact
+          />
+          <Route path="/course/:id" component={Course} />
+        </Switch>
+        <footer className={classes.footer}>
+          <Footer />
+          <Copyright />
+        </footer>
       </BrowserRouter>
     </React.Fragment>
   );

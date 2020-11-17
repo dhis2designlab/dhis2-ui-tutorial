@@ -45,7 +45,7 @@ function Course() {
     correct,
     questions,
     breadcrumb,
-    showCode
+    showCode,
   } = quizData[id].steps[indexState];
 
   const handleStartOver = () => {
@@ -85,7 +85,7 @@ function Course() {
             points: points,
             courseImg: courseImg,
           });
-        
+
         setCompletedCourses([
           ...completedCourses,
           { points: points, name: title, courseImg: courseImg },

@@ -18,7 +18,7 @@ function CourseCard({ section, index }) {
 
   const { title, short_info, quizId } = section;
 
-  console.log(quizId)
+  console.log(quizId);
 
   let courseCompleted = false;
 
@@ -28,7 +28,7 @@ function CourseCard({ section, index }) {
       courseCompleted = true;
     }
   });
-  console.log(quizId)
+  console.log(quizId);
   return (
     <Link
       className={styles.link}

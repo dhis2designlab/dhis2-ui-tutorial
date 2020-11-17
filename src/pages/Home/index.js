@@ -10,7 +10,6 @@ import data from "../../data.js";
 import styles from "./styles.module.css";
 
 function Home() {
-
   return (
     <>
       <Header />
@@ -22,7 +21,7 @@ function Home() {
                 <h2 className={styles.header}>Courses</h2>
               </Grid>
               {data.map((section, index) => {
-                console.log("sec " + JSON.stringify(section))
+                console.log("sec " + JSON.stringify(section));
                 return (
                   <Grid item key={section} xs={12} sm={6} md={4}>
                     <CourseCard
