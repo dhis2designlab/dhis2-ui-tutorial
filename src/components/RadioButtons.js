@@ -42,7 +42,6 @@ function RadioButtons({ questions, setPoints, points }) {
   }
   
   return questions.map((value, id) => {
-  
     return (
       <div className={classes.text}>
         {value.question && <h4>{value.question}</h4>}
