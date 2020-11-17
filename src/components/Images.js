@@ -25,24 +25,26 @@ function Images({
   const classes = useStyles();
 
   return (
-  <Grid spacing={4} container>{images.map((value, index) => {
-    return (
-      <Grid item xs={6} sm={6} md={6}>
-        <div
-          className={classNames({
-            [classes.correct]: isCorrect && index == chosenValue,
-            [classes.incorrect]: isIncorrect && index == chosenValue,
-          })}
-        >
-          <img onClick={() => handleImgClick(index)} src={value} width="100%" />
-        </div>
-      </Grid>
-    );
-   
-  })
- 
-}
-</Grid>
-  )
+    <Grid spacing={4} container>
+      {images.map((value, index) => {
+        return (
+          <Grid item xs={6} sm={6} md={6}>
+            <div
+              className={classNames({
+                [classes.correct]: isCorrect && index == chosenValue,
+                [classes.incorrect]: isIncorrect && index == chosenValue,
+              })}
+            >
+              <img
+                onClick={() => handleImgClick(index)}
+                src={value}
+                width="100%"
+              />
+            </div>
+          </Grid>
+        );
+      })}
+    </Grid>
+  );
 }
 export default Images;

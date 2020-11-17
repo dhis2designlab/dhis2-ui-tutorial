@@ -10,43 +10,44 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "auto",
   },
   incorrect: {
-    color: 'red !important',
+    color: "red !important",
   },
   correct: {
-    color: 'green !important',
+    color: "green !important",
   },
 }));
 
 function RadioButtons({ questions, setPoints, points }) {
   const classes = useStyles();
-  const [isChecked, setIsChecked] = useState([])
-  const [isCorrect, setIsCorrect] = useState([])
+  const [isChecked, setIsChecked] = useState([]);
+  const [isCorrect, setIsCorrect] = useState([]);
 
   useEffect(() => {
-    [...Array(questions.length)].map((_,i) => setIsChecked(state => [...state, -1]))
-
+    [...Array(questions.length)].map((_, i) =>
+      setIsChecked((state) => [...state, -1])
+    );
   }, []);
 
-  const handleClick = e => {
-    if(isChecked[e.name] == -1){
-      let isCheckedArr = [...isChecked]
-      isCheckedArr [e.name] = e.value
-      let correctArr = [...isCorrect]
-      correctArr[e.name] = questions[e.name].correct == e.value
-      if(questions[e.name].correct == e.value){
-        setPoints(points + 1)
+  const handleClick = (e) => {
+    if (isChecked[e.name] == -1) {
+      let isCheckedArr = [...isChecked];
+      isCheckedArr[e.name] = e.value;
+      let correctArr = [...isCorrect];
+      correctArr[e.name] = questions[e.name].correct == e.value;
+      if (questions[e.name].correct == e.value) {
+        setPoints(points + 1);
       }
-      setIsChecked(isCheckedArr)  
-      setIsCorrect(correctArr)  
+      setIsChecked(isCheckedArr);
+      setIsCorrect(correctArr);
     }
-  }
-  
+  };
+
   return questions.map((value, id) => {
     return (
       <div className={classes.text}>
         {value.question && <h4>{value.question}</h4>}
         {value.answers &&
-          value.answers.map((val, i) => { 
+          value.answers.map((val, i) => {
             const values = Object.values(val);
             return values.map((answer, index) => {
               return (
@@ -60,8 +61,10 @@ function RadioButtons({ questions, setPoints, points }) {
                     onChange={handleClick}
                     checked={isChecked[id] == index}
                     className={classNames({
-                      [classes.correct]: isCorrect[id] && isChecked[id] == index,
-                      [classes.incorrect]: !isCorrect[id] && isChecked[id] == index,
+                      [classes.correct]:
+                        isCorrect[id] && isChecked[id] == index,
+                      [classes.incorrect]:
+                        !isCorrect[id] && isChecked[id] == index,
                     })}
                   />
                 </>

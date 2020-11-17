@@ -108,11 +108,10 @@ function Course() {
 
   const handleRadioCheck = (e) => {
     const name = e.name;
-   // if (isChosenRadio !== name[0]) {
+    // if (isChosenRadio !== name[0]) {
     //  setChosenRadio(name[0]);
-  //  }
+    //  }
   };
-
 
   return (
     <main className={main.container}>

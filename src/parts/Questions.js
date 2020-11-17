@@ -69,7 +69,13 @@ function Questions({
           {question && <h1>{question}</h1>}
           {information && <p>{information}</p>}
           {sections && <Sections sections={sections} />}
-          {questions && <RadioButtons setPoints={setPoints} points={points} questions={questions} />}
+          {questions && (
+            <RadioButtons
+              setPoints={setPoints}
+              points={points}
+              questions={questions}
+            />
+          )}
           {images && (
             <Images
               isCorrect={isCorrect}
