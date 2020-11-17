@@ -13,8 +13,9 @@ import CardMedia from "@material-ui/core/CardMedia";
 import { UserContext } from "../../userContext";
 import data from "../../data.js";
 import { db } from "../../firebase";
-
 import styles from "./styles.module.css";
+
+
 
 function Settings({ onClick }) {
   const { currentUser, completedCourses, setCompletedCourses } = useContext(

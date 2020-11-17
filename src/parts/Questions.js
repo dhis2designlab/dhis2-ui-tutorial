@@ -9,6 +9,9 @@ import Sections from "../components/Sections";
 import RadioButtons from "../components/RadioButtons";
 import Images from "../components/Images";
 import Image from "../components/Image";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Button } from '@dhis2/ui';
 
 const useStyles = makeStyles((theme) => ({
   question: {
@@ -39,11 +42,13 @@ function Questions({
   questions,
   breadcrumb,
   title,
+  showCode,
 }) {
   const classes = useStyles();
 
   const [chosenImg, setChosenImg] = useState("");
   const [chosenValue, setChosenValue] = useState("");
+  const [shouldShowCode, setShowCode] = useState(false);
 
   const handleImgClick = (value) => {
     if (chosenValue !== "") return;
@@ -57,6 +62,10 @@ function Questions({
       setChosenValue(value);
     }
   };
+
+  const showCodeClick = () => {
+    setShowCode(true)
+  }
 
   const isCorrect = chosenImg == "correct";
   const isIncorrect = chosenImg == "incorrect";
@@ -85,6 +94,7 @@ function Questions({
               chosenValue={chosenValue}
             />
           )}
+  
         </div>
         {image && <Image image={image} />}
         {iframe && (
@@ -92,6 +102,17 @@ function Questions({
             <div dangerouslySetInnerHTML={{ __html: iframe }} />
           </div>
         )}
+          {showCode && (
+            <div>
+            <Button onClick={showCodeClick}>Show solution</Button>
+            {shouldShowCode &&
+              <SyntaxHighlighter language="javascript" style={vscDarkPlus}>
+                 {showCode}
+              </SyntaxHighlighter>
+            
+          }
+          </div>
+          )}
         {components && <QuizUiComponents />}
       </div>
     </>

@@ -18,6 +18,49 @@ import Layout from "./images/layout.png";
 import Components from "./images/components.png";
 import Icon from "./images/icon.png";
 
+const changeButton = `
+  function createStyleObject(classNames, style) {
+    return classNames.reduce((styleObject, className) => {
+      return {...styleObject, ...style[className]};
+    }, {});
+  }
+  
+  function createClassNameString(classNames) {
+    return classNames.join(' ');
+  }
+  
+  // this comment is here to demonstrate an extremely long line length, well beyond what you should probably allow in your own code, though sometimes you'll be highlighting code you can't refactor, which is unfortunate but should be handled gracefully
+  
+  function createChildren(style, useInlineStyles) {
+    let childrenCount = 0;
+    return children => {
+      childrenCount += 1;
+      return children.map((child, i) => createElement({
+        node: child,
+        style,
+        useInlineStyles,
+      }));
+    }
+  }
+  
+  function createElement({ node, style, useInlineStyles, key }) {
+    const { properties, type, tagName, value } = node;
+    if (type === "text") {
+      return value;
+    } else if (tagName) {
+      const TagName = tagName;
+      const childrenCreator = createChildren(style, useInlineStyles);
+      const props = (
+        useInlineStyles
+        ? { style: createStyleObject(properties.className, style) }
+        : { className: createClassNameString(properties.className) }
+      );
+      const children = childrenCreator(node.children);
+      return <TagName key={key} {...props}>{children}</TagName>;
+    }
+  }
+  `
+  
 const iframe =
   '<iframe src="https://codesandbox.io/embed/bold-sun-l4upt?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="bold-sun-l4upt" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
 
@@ -568,6 +611,7 @@ export const quiz_data = [
           "Try it yourself: Change the button to a big secondary button",
         iframe: iframe2,
         breadcrumb: "Buttons",
+        showCode: changeButton,
       },
       {
         question: "Quiz: Buttons",
