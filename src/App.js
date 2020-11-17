@@ -60,7 +60,6 @@ function App() {
   return (
     <React.Fragment>
       <BrowserRouter>
-        <div>
           <NavBar
             user={currentUser}
             nrCourses={7}
@@ -97,7 +96,6 @@ function App() {
             <Footer />
             <Copyright />
           </footer>
-        </div>
       </BrowserRouter>
     </React.Fragment>
   );

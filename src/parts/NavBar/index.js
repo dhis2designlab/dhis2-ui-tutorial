@@ -15,7 +15,7 @@ function NavBar({ user, nrCourses, nrCompletedCourses, loggedIn }) {
 
   return (
     <Grid container className={styles.nav}>
-      <Grid item className={styles.img} xs={4} sm={4} md={4}>
+      <Grid item xs={4} sm={4} md={4}>
         <Link
           className={styles.link}
           to={{
@@ -45,9 +45,8 @@ function NavBar({ user, nrCourses, nrCompletedCourses, loggedIn }) {
           </Grid>
         </>
       ) : (
-        <Grid item className={styles.login} xs={6} sm={6} md={6}>
+        <Grid item className={styles.login} xs={8} sm={8} md={8}>
           <Link
-            className={styles.login}
             to={{
               pathname: `/login`,
             }}
