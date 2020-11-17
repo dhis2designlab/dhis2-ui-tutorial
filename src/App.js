@@ -88,8 +88,7 @@ function App() {
               path="/settings"
               component={Settings}
               onClick={requestLogout}
-            />
-            } exact />
+              exact />
             <Route path="/course/:id" component={Course} />
           </Switch>
           <footer className={classes.footer}>

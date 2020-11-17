@@ -31,7 +31,7 @@ function Course() {
 
   const quizData = quiz_data.map((q) => q);
 
-  const { title, about, topics, quizId, status } = quizData[id];
+  const { title, about, topics, quizId, status, courseImg } = quizData[id];
 
   const {
     question,
@@ -82,10 +82,12 @@ function Course() {
             name: title,
             id: id,
             points: points,
+            courseImg: courseImg,
           });
+        
         setCompletedCourses([
           ...completedCourses,
-          { points: points, name: title },
+          { points: points, name: title, courseImg: courseImg },
         ]);
       }
 

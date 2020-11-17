@@ -1,6 +1,9 @@
 .cardGrid {
   padding-top: 80px;
   padding-bottom: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75ch;
 }
 
 .cardMedia {

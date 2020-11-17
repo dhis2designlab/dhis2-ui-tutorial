@@ -9,6 +9,15 @@ import buttonSize from "./images/buttonSize.png";
 import toggle from "./images/toggle.png";
 import importComponents from "./images/importComponents.png";
 
+import Fallback from "./images/default-image.jpg";
+import Color from "./images/color.png";
+import ContentCommunication from "./images/contentandcommunication.png";
+import Forms from "./images/forms.png";
+import Typography from "./images/typography.png";
+import Layout from "./images/layout.png";
+import Components from "./images/components.png";
+import Icon from "./images/icon.png";
+
 const iframe =
   '<iframe src="https://codesandbox.io/embed/bold-sun-l4upt?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="bold-sun-l4upt" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
 
@@ -21,6 +30,7 @@ export const quiz_data = [
   {
     title: "Content and communication",
     quizId: "ContentCommunication",
+    courseImg: ContentCommunication,
     status: "under development",
     about:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinction At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
@@ -83,6 +93,7 @@ export const quiz_data = [
   {
     title: "Layout, Spacing and Stacking",
     quizId: "LayoutSpacingStacking",
+    courseImg: Layout,
     status: "under development",
     about:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
@@ -174,6 +185,7 @@ export const quiz_data = [
   {
     title: "Forms",
     quizId: "Forms",
+    courseImg: Forms,
     status: "under development",
     about: "this is a quiz about blablabl",
     topics: [
@@ -232,6 +244,7 @@ export const quiz_data = [
   {
     title: "Icons",
     quizId: "Icons",
+    courseImg: Icon,
     status: "under development",
     about:
       "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. The colors used in an application should not be chosen based primarily on how they look, but how they convey information and aid understanding. It is important to maintain consistent usage of colors throughout the DHIS2 platform. Globally, color meanings are relative. It is not possible to say 'red = danger'. However, using a consistent color palette we can establish that 'red in DHIS2 = danger'. Color alone should not be relied upon to communicate effectively. Read more about color accessibility.",
@@ -291,6 +304,7 @@ export const quiz_data = [
   {
     title: "Typography",
     quizId: "Typography",
+    courseImg: Typography,
     status: "under development",
     about: "this is a quiz about blablabl",
     topics: [
@@ -349,6 +363,7 @@ export const quiz_data = [
   {
     title: "Color",
     quizId: "Color",
+    courseImg: Color,
     about:
       "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. The colors used in an application should not be chosen based primarily on how they look, but how they convey information and aid understanding. It is important to maintain consistent usage of colors throughout the DHIS2 platform. Globally, color meanings are relative. It is not possible to say 'red = danger'. However, using a consistent color palette we can establish that 'red in DHIS2 = danger'. Color alone should not be relied upon to communicate effectively.",
     topics: [
@@ -458,6 +473,7 @@ export const quiz_data = [
   {
     title: "DHIS2 Components",
     quizId: "Components",
+    courseImg: Components,
     about:
       "DHIS2 has a collection of UI elements that can be, and should be, reused across all DHIS2 applications. The components have been designed with DHIS2 use cases in mind. Using these components means more time spent focusing on building a positive user experience and less time redesigning and rebuilding common components. Each component has its guidelines for use. In this tutorial you will learn how and when to use the different components",
     topics: [

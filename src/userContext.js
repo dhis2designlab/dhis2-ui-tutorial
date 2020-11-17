@@ -33,6 +33,7 @@ const UserProvider = ({ children }) => {
                     fetchedCourses.push({
                       points: doc.data().points,
                       name: doc.data().name,
+                      courseImg: doc.data().courseImg,
                     });
                   });
                   console.log(fetchedCourses);

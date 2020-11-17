@@ -18,6 +18,8 @@ function CourseCard({ section, index }) {
 
   const { title, short_info, quizId } = section;
 
+  console.log(quizId)
+
   let courseCompleted = false;
 
   completedCourses.map((course) => {
@@ -26,7 +28,7 @@ function CourseCard({ section, index }) {
       courseCompleted = true;
     }
   });
-
+  console.log(quizId)
   return (
     <Link
       className={styles.link}
