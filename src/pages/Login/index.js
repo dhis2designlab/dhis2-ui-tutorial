@@ -31,7 +31,6 @@ function Login({ onClick }) {
 
   return (
     <>
-      <NavBar />
       <Container className={styles.cardGrid} maxWidth="xs">
         <h2 className={styles.heading}>Log In</h2>
         <Input

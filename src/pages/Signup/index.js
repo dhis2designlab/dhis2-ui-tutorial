@@ -15,7 +15,6 @@ function Signup({ onClick }) {
 
   return (
     <>
-      <NavBar />
       <Container className={styles.cardGrid}>
         <h2 className={styles.heading}>Sign Up</h2>
         <Input

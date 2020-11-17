@@ -66,6 +66,9 @@ function Course() {
     if (isChecked.includes(correct) || isChosenRadio == correct) {
       setPoints(points + 1);
     }
+    if (isChecked.includes(correct) || isChosenRadio == correct) {
+      setPoints(points + 1);
+    }
     if (indexState + 1 < quizData[id].steps.length) {
       setIndex(indexState + 1);
       window.scrollTo(0, 0);
@@ -105,10 +108,11 @@ function Course() {
 
   const handleRadioCheck = (e) => {
     const name = e.name;
-    if (isChosenRadio !== name[0]) {
-      setChosenRadio(name[0]);
-    }
+   // if (isChosenRadio !== name[0]) {
+    //  setChosenRadio(name[0]);
+  //  }
   };
+
 
   return (
     <main className={main.container}>
