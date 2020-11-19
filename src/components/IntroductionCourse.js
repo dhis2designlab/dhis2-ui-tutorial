@@ -8,6 +8,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@dhis2/ui";
 import BreadCrumb from "../components/BreadCrumb";
 
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
@@ -46,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function IntroductionCourse({ handleNextClick, title, topics, about, status }) {
+function IntroductionCourse({ handleNextClick, title, topics, about, status, subtopics }) {
   const classes = useStyles();
 
   return (
@@ -84,7 +90,21 @@ function IntroductionCourse({ handleNextClick, title, topics, about, status }) {
             <p>The topics that will be covered in this module:</p>
             <ul>
               {topics.map((index) => (
-                <li>{index.title}</li>
+                <>
+                 <Accordion>
+                 <AccordionSummary
+                   expandIcon={<ExpandMoreIcon />}
+                   aria-controls="panel1a-content"
+                   id="panel1a-header"
+                 >
+                   <p><b>{index.title}</b></p>
+                 </AccordionSummary>
+                 <AccordionDetails>
+                   {index.content}
+                 </AccordionDetails>
+               </Accordion>  
+               </>
+                
               ))}
             </ul>
           </>

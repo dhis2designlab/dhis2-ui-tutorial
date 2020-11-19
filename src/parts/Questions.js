@@ -112,6 +112,7 @@ function Questions({
           </div>
         )}
         {components && <QuizUiComponents />}
+       
       </div>
     </>
   );

@@ -18,6 +18,11 @@ import Layout from "./images/layout.png";
 import Components from "./images/components.png";
 import Icon from "./images/icon.png";
 
+import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
+import BuildIcon from '@material-ui/icons/Build';
+import ContactSupportIcon from '@material-ui/icons/ContactSupport';
+
 const changeButton = `
   function createStyleObject(classNames, style) {
     return classNames.reduce((styleObject, className) => {
@@ -519,36 +524,158 @@ export const quiz_data = [
     courseImg: Components,
     about:
       "DHIS2 has a collection of UI elements that can be, and should be, reused across all DHIS2 applications. The components have been designed with DHIS2 use cases in mind. Using these components means more time spent focusing on building a positive user experience and less time redesigning and rebuilding common components. Each component has its guidelines for use. In this tutorial you will learn how and when to use the different components",
+    subtopics: <ul>
+    <li><b>Section 1: Introduction</b></li>
+      <ul>
+        <li>How to: import components</li>
+        <li>Showcase of the DHIS2 components</li>
+        <li>Information: Using the API for components</li>
+      </ul>
+    <li><b>Section 2: Action components</b></li>
+      <ul>
+        <li>Buttons</li>
+        <ul>
+          <li>Information: The different types of buttons and its usage</li>
+          <li>Example: The different types of buttons in action</li>
+          <li>Try it yourself: Change the button to a big secondary button</li>
+          <li>Quiz: Buttons</li>
+          <li>Quiz: Which image uses the correct button type</li>
+          <li>Information: Different button options</li>
+        </ul>
+        <li>Chip</li>
+        <li>Menu</li>
+      </ul>
+    <li><b>Section 3: Data display components</b></li>
+    <ul>
+      <li>Data table</li>
+      <li>Table</li>
+      <li>Tag</li>
+      <li>Tooltip</li>
+    </ul>
+    <li><b>Section 4: Data entry components</b></li>
+    <ul>
+      <li>Checkbox</li>
+      <li>Organization Unit tree (NO INFO)</li>
+      <li>Radio</li>
+      <li>Select</li>
+      <li>Switch</li>
+      <li>Transfer</li>
+    </ul>
+    <li><b>Section 5: Feedback components</b></li>
+    <ul>
+      <li>Alert bar</li>
+      <li>Loading indicators</li>
+    </ul>
+   <li><b>Section 6: Layout components</b></li>
+    <ul>
+      <li>Card</li>
+      <li>Modal</li>
+    </ul>
+    <li><b>Section 7: Naviagation components</b></li>
+    <ul>
+      <li>Pagination</li>
+      <li>Tabs</li>
+    </ul>
+    <li><b>Section 8: Utilities</b></li>
+    <ul>
+      <li>Elevation</li>
+      <li>Header Bar</li>
+    </ul>
+    <li><b>Section 9: Full examples</b></li>
+    <li><b>Section 10: General</b></li>
+    <ul>
+      <li>What is the difference between normal and FF components</li>
+    </ul>
+    <li><b>Section 11: Contributing</b></li>
+    </ul>,
     topics: [
       {
-        title: "Information: Showcase of DHIS2 components",
+        title: "Introduction",
+        content: <div>
+        <p><LibraryBooksIcon /> <span style={{marginLeft: '15px'}}>Lesson: How to import components</span></p>
+        <p><LibraryBooksIcon /> <span style={{marginLeft: '15px'}}>Lesson: Showcase of the DHIS2 components</span></p>
+        <p><LibraryBooksIcon /> <span style={{marginLeft: '15px'}}>Lesson: Using the API for components</span></p>
+      </div>,
       },
       {
-        title: "Information: Using the API",
+        title: "Action components",
+        content:  <div>
+        <p>Buttons</p>
+        <p><LibraryBooksIcon /> <span style={{marginLeft: '15px'}}>Lesson: The different types of buttons and its usage</span></p>
+        <p><EmojiObjectsIcon /> <span style={{marginLeft: '15px'}}>Example: The different types of buttons in action</span></p>
+        <p><BuildIcon /> <span style={{marginLeft: '15px'}}>Try it yourself: Change the button to a big secondary button</span></p>
+        <p><ContactSupportIcon /> <span style={{marginLeft: '15px'}}>Quiz: Buttons</span></p>
+        <p><ContactSupportIcon /> <span style={{marginLeft: '15px'}}>Quiz: Which image uses the correct button type</span></p>
+        <p><LibraryBooksIcon /> <span style={{marginLeft: '15px'}}>Lesson: Different button options</span></p>
+        <p>Chip</p>
+        <p>Menu</p>
+      </div>,
       },
       {
-        title: "Example: Transforming a primary button to a secondary button",
+        title: "Data display components",
+        content:  <ul>
+        <li>Data table</li>
+        <li>Table</li>
+        <li>Tooltip</li>
+      </ul>,
       },
       {
-        title: "Try it yourself: Changing a button to a big secondary button",
+        title: "Data entry components",
+        content:  <ul>
+        <li>Checkbox</li>
+        <li>Organization Unit tree</li>
+        <li>Radio</li>
+        <li>Select</li>
+        <li>Switch</li>
+        <li>Transfer</li>
+      </ul>,
       },
       {
-        title: "Example: More specific DHIS2 component",
+        title: "Feecback components",
+        content:  <ul>
+        <li>Alert bar</li>
+        <li>Loading indicators</li>
+      </ul>,
       },
       {
-        title:
-          "Information: What is the difference between normal and FF components",
+        title: "Layout components",
+        content:  <ul>
+        <li>Card</li>
+        <li>Modal</li>
+      </ul>,
       },
       {
-        title:
-          "Fix the mistake: Can you find any mistakes in this tutorial? Try to fix them",
+        title: "Navigation components",
+        content:  <ul>
+        <li>Pagination</li>
+        <li>Tabs</li>
+      </ul>,
       },
       {
-        title:
-          "Try it yourself: Try to reacreate an image by using the components",
+        title: "Utilities",
+        content:  <ul>
+        <li>Elevation</li>
+        <li>Header bar</li>
+      </ul>,
       },
       {
-        title: "You are finished",
+        title: "Full examples",
+        content:  <ul>
+        <li>Elevation</li>
+        <li>Header bar</li>
+      </ul>,
+      },
+      {
+        title: "General",
+        content:  <ul>
+        <li>info</li>
+      </ul>,
+      },
+      {
+        title: "Contributing",
+        content:  <ul>
+        <li>info</li>
+      </ul>,
       },
     ],
     steps: [

@@ -31,7 +31,7 @@ function Course() {
 
   const quizData = quiz_data.map((q) => q);
 
-  const { title, about, topics, quizId, status, courseImg } = quizData[id];
+  const { title, about, topics, quizId, status, courseImg, subtopics } = quizData[id];
 
   const {
     question,
@@ -127,11 +127,12 @@ function Course() {
             title={title}
             topics={topics}
             about={about}
+            subtopics={subtopics}
           />
         ) : (
           <>
             {finished ? (
-              <FinishQuiz setIndex={handleStartOver} points={points} />
+              <FinishQuiz setIndex={handleStartOver}  points={points} />
             ) : (
               <>
                 <Questions
