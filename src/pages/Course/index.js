@@ -46,6 +46,7 @@ function Course() {
     questions,
     breadcrumb,
     showCode,
+    section,
   } = quizData[id].steps[indexState];
 
   const handleStartOver = () => {
@@ -72,7 +73,6 @@ function Course() {
     }
     if (indexState + 1 < quizData[id].steps.length) {
       setIndex(indexState + 1);
-      window.scrollTo(0, 0);
     } else {
       if (currentUser.loggedIn) {
         db.collection("users")
@@ -91,9 +91,9 @@ function Course() {
           { points: points, name: title, courseImg: courseImg },
         ]);
       }
-
-      setFinished(true);
+      setFinished(true); 
     }
+    window.scrollTo(0, 0);
   };
 
   const handleSingleCheck = (e) => {
@@ -157,6 +157,7 @@ function Course() {
                   breadcrumb={breadcrumb}
                   title={title}
                   showCode={showCode}
+                  section={section}
                 />
                 <div className={styles.navigation}>
                   <Button

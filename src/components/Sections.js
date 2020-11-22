@@ -8,6 +8,7 @@ function Sections({ sections }) {
           <>
             {value.heading && <h3>{value.heading}</h3>}
             {value.text && <p>{value.text}</p>}
+            {value.subheading && <h5>{value.subheading}</h5>}
             {value.image && (
               <img
                 src={value.image}

@@ -43,6 +43,7 @@ function Questions({
   breadcrumb,
   title,
   showCode,
+  section,
 }) {
   const classes = useStyles();
 
@@ -74,7 +75,7 @@ function Questions({
     <>
       <div className={classes.question}>
         <div className={classes.text}>
-          <BreadCrumb title={title} breadcrumb={breadcrumb} />
+          <BreadCrumb title={title} breadcrumb={breadcrumb} section={section}/>
           {question && <h1>{question}</h1>}
           {information && <p>{information}</p>}
           {sections && <Sections sections={sections} />}
