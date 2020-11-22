@@ -7,7 +7,7 @@ function Sections({ sections }) {
         return (
           <>
             {value.heading && <h3>{value.heading}</h3>}
-            {value.text && <p>{value.text}</p>}
+            {value.text && <p>{value.text} {value.link && <a href={value.link}>{value.link}</a>}</p>}
             {value.subheading && <h5>{value.subheading}</h5>}
             {value.image && (
               <img

@@ -764,10 +764,12 @@ export const quiz_data = [
       },
       {
         question: "Lesson: Using the API for components",
-        information:
-          "All the components have its own properties you can use to define how you want the component to look and behave. In the next steps in this tutorial, I will got through some examples for how you can use the API and give you the knowledge for you to read up later. If you want to use other DHIS2 components, you can find their documentation here(link)",
         image: api,
         sections: [
+          {
+            text:  "All the components have its own properties you can use to define how you want the component to look and behave. In the next steps in this tutorial, I will got through some examples for how you can use the API and give you the knowledge for you to read up later. If you want to use other DHIS2 components, you can find their documentation here:",
+            link: "https://ui.dhis2.nu/#/api",
+          },
           {
             text:
               "Here you can see the API for the dhis2 button component. In the first column named 'Name', you can see what type of properties the Button component can take in. Each of the properties has a type, as specified in the 'Type' column. Sometimes a default value will be set for the property if nothing is set, which can be seen in the 'Default' column",
