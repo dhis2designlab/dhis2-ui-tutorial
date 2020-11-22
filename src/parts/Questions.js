@@ -50,6 +50,7 @@ function Questions({
   const [chosenImg, setChosenImg] = useState("");
   const [chosenValue, setChosenValue] = useState("");
   const [shouldShowCode, setShowCode] = useState(false);
+  
 
   const handleImgClick = (value) => {
     if (chosenValue !== "") return;
@@ -65,7 +66,7 @@ function Questions({
   };
 
   const showCodeClick = () => {
-    setShowCode(true);
+    setShowCode(!shouldShowCode);
   };
 
   const isCorrect = chosenImg == "correct";
@@ -104,7 +105,7 @@ function Questions({
         )}
         {showCode && (
           <div>
-            <Button onClick={showCodeClick}>Show solution</Button>
+            <Button onClick={showCodeClick}>{shouldShowCode ? "Hide solution" : "Show solution"}</Button>
             {shouldShowCode && (
               <SyntaxHighlighter language="javascript" style={vscDarkPlus}>
                 {showCode}
