@@ -4,7 +4,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Grid from "@material-ui/core/Grid";
 
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, StylesProvider } from "@material-ui/core/styles";
 import { Button } from "@dhis2/ui";
 import BreadCrumb from "../components/BreadCrumb";
 
@@ -40,7 +40,9 @@ const useStyles = makeStyles((theme) => ({
   },
 
   button: {
-    margin: "5px",
+    marginTop: "16px",
+    paddingTop: "16px",
+    backgroundColor: 'yellow',
   },
 
   list: {
@@ -50,6 +52,18 @@ const useStyles = makeStyles((theme) => ({
   listElement: {
     paddingBottom: "16px",
   },
+  accordion: {
+    marginBottom: "26px",
+  },
+
+  accordionHeader: {
+    backgroundColor: '#F8F9FA',
+  },
+
+  text: {
+    marginRight: "26px",
+  }
+
 }));
 
 function IntroductionCourse({ handleNextClick, title, topics, about, status, subtopics }) {
@@ -62,7 +76,7 @@ function IntroductionCourse({ handleNextClick, title, topics, about, status, sub
         <h2 className={classes.title}>{title}</h2>
       </Grid>
       <Grid item xs={12} sm={8} md={8}>
-        <p>{about}</p>
+        <p className={classes.text}>{about}</p>
       </Grid>
       <Grid item xs={12} sm={4} md={4}>
         <Card className={classes.card}>
@@ -84,15 +98,16 @@ function IntroductionCourse({ handleNextClick, title, topics, about, status, sub
           </CardContent>
         </Card>
       </Grid>
-      <Grid item xs={12} sm={12} md={12}>
+      <Grid spacing={4} item xs={12} sm={12} md={12}>
         {topics ? (
           <>
             <p>The topics that will be covered in this module:</p>
-            <ul>
+            <div className={classes.accordion}>
               {topics.map((index) => (
                 <>
                  <Accordion>
                  <AccordionSummary
+                   className={classes.accordionHeader}
                    expandIcon={<ExpandMoreIcon />}
                    aria-controls="panel1a-content"
                    id="panel1a-header"
@@ -104,30 +119,33 @@ function IntroductionCourse({ handleNextClick, title, topics, about, status, sub
                  </AccordionDetails>
                </Accordion>  
                </>
-                
               ))}
-            </ul>
+            </div>
           </>
         ) : null}
       </Grid>
       {status == "under development" ? (
-        <Button
-          dataTest="dhis2-uicore-buttorn"
-          onClick={handleNextClick}
-          disabled
-          type="button"
-        >
-          Start Course
-        </Button>
+        <div classname={classes.button}>
+          <Button
+            dataTest="dhis2-uicore-buttorn"
+            onClick={handleNextClick}
+            disabled
+            type="button"
+          >
+            Start Course
+          </Button>
+        </div>
       ) : (
-        <Button
-          dataTest="dhis2-uicore-buttorn"
-          onClick={handleNextClick}
-          primary
-          type="button"
-        >
-          Start Course
-        </Button>
+        <div classname={classes.button}>
+          <Button
+            dataTest="dhis2-uicore-buttorn"
+            onClick={handleNextClick}
+            primary
+            type="button"
+          >
+            Start Course
+          </Button>
+        </div>
       )}
     </Grid>
   );

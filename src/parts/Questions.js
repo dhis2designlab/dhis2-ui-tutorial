@@ -20,12 +20,16 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: "52px",
+    width: "75ch",
   },
   text: {
-    maxWidth: "75ch",
     marginLeft: "auto",
     marginRight: "auto",
   },
+  media: {
+    marginRight: '26px',
+    marginLeft: '26px',
+  }
 }));
 
 function Questions({
@@ -98,13 +102,14 @@ function Questions({
           )}
         </div>
         {image && <Image image={image} />}
+        </div>
         {iframe && (
           <div className={classes.media}>
             <div dangerouslySetInnerHTML={{ __html: iframe }} />
           </div>
         )}
         {showCode && (
-          <div>
+          <div className={classes.media}>
             <Button onClick={showCodeClick}>{shouldShowCode ? "Hide solution" : "Show solution"}</Button>
             {shouldShowCode && (
               <SyntaxHighlighter language="javascript" style={vscDarkPlus}>
@@ -113,9 +118,7 @@ function Questions({
             )}
           </div>
         )}
-        {components && <QuizUiComponents />}
-       
-      </div>
+        {components && <QuizUiComponents />} 
     </>
   );
 }

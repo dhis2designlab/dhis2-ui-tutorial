@@ -23,6 +23,23 @@ import menuDivider from "./images/menuDivider.png";
 import menuItem from "./images/menuItem.png";
 import menuSectionHeader from "./images/menuSectionHeader.png";
 
+//Table
+import tableActions from "./images/tableActions.png";
+import tableEditingRows from "./images/tableEditingRows.png";
+import tableEditingSimple from "./images/tableEditingSimple.png";
+import tableEditingSingle from "./images/tableEditingSimple.png"
+import tableExpandable from "./images/tableExpandable.png"
+import tableFiltering from "./images/tableFiltering.png"
+import tableFixedColumns from "./images/tableFixedColumns.png"
+import tableFixedHeader from "./images/tableFixedHeader.png"
+import tableInline from "./images/tableInline.png"
+import tableInlineEditing from "./images/tableInlineEditing.png"
+import tableReordering from "./images/tableReordering.png"
+import tableRowActions from "./images/tableRowActions.png"
+import tableSearch from "./images/tableSearch.png"
+import tableSelectableRow from "./images/tableSelectableRow.png"
+import tableSorting from "./images/tableSorting.png"
+
 import Fallback from "./images/default-image.jpg";
 import Color from "./images/color.png";
 import ContentCommunication from "./images/contentandcommunication.png";
@@ -567,70 +584,6 @@ export const quiz_data = [
     courseImg: Components,
     about:
       "DHIS2 has a collection of UI elements that can be, and should be, reused across all DHIS2 applications. The components have been designed with DHIS2 use cases in mind. Using these components means more time spent focusing on building a positive user experience and less time redesigning and rebuilding common components. Each component has its guidelines for use. In this tutorial you will learn how and when to use the different components",
-    subtopics: <ul>
-    <li><b>Section 1: Introduction</b></li>
-      <ul>
-        <li>How to: import components</li>
-        <li>Showcase of the DHIS2 components</li>
-        <li>Information: Using the API for components</li>
-      </ul>
-    <li><b>Section 2: Action components</b></li>
-      <ul>
-        <li>Buttons</li>
-        <ul>
-          <li>Information: The different types of buttons and its usage</li>
-          <li>Example: The different types of buttons in action</li>
-          <li>Try it yourself: Change the button to a big secondary button</li>
-          <li>Quiz: Buttons</li>
-          <li>Quiz: Which image uses the correct button type</li>
-          <li>Information: Different button options</li>
-        </ul>
-        <li>Chip</li>
-        <li>Menu</li>
-      </ul>
-    <li><b>Section 3: Data display components</b></li>
-    <ul>
-      <li>Data table</li>
-      <li>Table</li>
-      <li>Tag</li>
-      <li>Tooltip</li>
-    </ul>
-    <li><b>Section 4: Data entry components</b></li>
-    <ul>
-      <li>Checkbox</li>
-      <li>Organization Unit tree (NO INFO)</li>
-      <li>Radio</li>
-      <li>Select</li>
-      <li>Switch</li>
-      <li>Transfer</li>
-    </ul>
-    <li><b>Section 5: Feedback components</b></li>
-    <ul>
-      <li>Alert bar</li>
-      <li>Loading indicators</li>
-    </ul>
-   <li><b>Section 6: Layout components</b></li>
-    <ul>
-      <li>Card</li>
-      <li>Modal</li>
-    </ul>
-    <li><b>Section 7: Naviagation components</b></li>
-    <ul>
-      <li>Pagination</li>
-      <li>Tabs</li>
-    </ul>
-    <li><b>Section 8: Utilities</b></li>
-    <ul>
-      <li>Elevation</li>
-      <li>Header Bar</li>
-    </ul>
-    <li><b>Section 9: Full examples</b></li>
-    <li><b>Section 10: General</b></li>
-    <ul>
-      <li>What is the difference between normal and FF components</li>
-    </ul>
-    <li><b>Section 11: Contributing</b></li>
-    </ul>,
     topics: [
       {
         title: "Introduction",
@@ -767,7 +720,7 @@ export const quiz_data = [
         image: api,
         sections: [
           {
-            text:  "All the components have its own properties you can use to define how you want the component to look and behave. In the next steps in this tutorial, I will got through some examples for how you can use the API and give you the knowledge for you to read up later. If you want to use other DHIS2 components, you can find their documentation here:",
+            text:  "All the components have its own properties you can use to define how you want the component to look and behave. In the next steps in this tutorial, I will got through some examples for how you can use the API and give you the knowledge for you to read up later. If you want to use other DHIS2 components, you can find their documentation here",
             link: "https://ui.dhis2.nu/#/api",
           },
           {
@@ -840,52 +793,6 @@ export const quiz_data = [
         section: "Action components",
       },
       {
-        question: "Quiz: Buttons",
-        questions: [
-          {
-            question: "When should you use the primary button?",
-            answers: [
-              {
-                a:
-                  "Primary buttons should be the default choice for the majority of actions. Several primary buttons can be in the same area",
-                b:
-                  "Primary buttons should be used to highlight the most importent/main action on the page. Should rarerly be more than one primary button",
-                c:
-                  "Primary buttons should be used when you want to highlight to the user the seriousness of the action",
-              },
-            ],
-            correct: 0,
-          },
-          {
-            question: "When should you use the destructive button?",
-            answers: [
-              {
-                a:
-                  "Destructive buttons should be the default choice for the majority of actions. Several primary buttons can be in the same area",
-                b:
-                  "Destructive buttons should be used to highlight the most importent/main action on the page. Should rarerly be more than one primary button",
-                c:
-                  "Destructive buttons should be used when you want to highlight to the user the seriousness of the action",
-              },
-            ],
-            correct: 0,
-          },
-          {
-            question:
-              "What is the difference between basic buttons and secondary buttons?",
-            answers: [{ a: "Blablabla", b: "Blabbalba", c: "blablabla" }],
-            correct: 0,
-          },
-          {
-            question: "When should blabla?",
-            answers: [{ a: "Blablabla", b: "Blabbalba", c: "blablabla" }],
-            correct: 0,
-          },
-        ],
-        breadcrumb: "Buttons",
-        section: "Action components",
-      },
-      {
         question: "Quiz: Which image uses the correct button types?",
         images: [buttonTable, buttonTable],
         correct: 0,
@@ -900,18 +807,21 @@ export const quiz_data = [
             text:
               "A button can represent an on/off state using the toggle option. Use a toggle button when the user can enable or disable an option and a checkbox or switch is not suitable. This will most often be in the case of a toolbar, such as bold or italic options in a text editing toolbar. A toggle button in this example uses an icon and does not need text. A text label should be provided in a tooltip on hover. The toggle option is available for basic and secondary type buttons.",
             image: toggle,
+            imageWidth: '40%',
           },
           {
             heading: "Icons",
             text:
               "Icons can be included in Basic, Primary, Secondary and Destructive buttons. Use an icon to supplement the text label. Remember that the user may not be fluent in the working language, so an accompanying icon on an important action can be a welcome addition. Buttons with icons only should be used for supplementary actions and should include a text tooltip on hover.",
             image: buttonIcon,
+            imageWidth: '40%',
           },
           {
             heading: "Size",
             text:
               "Buttons are available in three sizes: small, medium, large. Medium is usually the correct choice. Use small button in an information dense ui. Large buttons can be use on very simple, single action pages.",
             image: buttonSize,
+            imageWidth: '40%',
           },
         ],
         breadcrumb: "Buttons",
@@ -970,6 +880,7 @@ export const quiz_data = [
         question: "Lesson: Chip api",
         information: "The Api for chips",
         image: chipApi,
+        imageWidth: '50%',
         breadcrumb: "Chip",
         section: "Action component",
       },
@@ -1209,10 +1120,106 @@ export const quiz_data = [
         text: "A data table is made up of multiple elements, some of which are optional",
         list: ["Toolbar, optional", "Data rows and header, required", "Footer, optional"]
       },
+
+    ],
+  },
+  {
+    question: "Lesson: Data table options",
+    section: "Data display components",
+    breadcrumb: "Data table",
+    sections: [
       {
-        heading: "Options",
+        heading: "Search",
+        image: tableSearch,
+      },
+      {
+        subheading: "What is search?",
+        text: "Search allows a user to search for a specific term across the entire data table.",
+      },
+      {
+        subheading: "How is search used?",
+        text: "A search input can be included inside the table toolbar area or made available outside of the table. The location of the search input depends on the importance of search and how it relates to the task. If searching is a logical step performed before looking at the table the input should be shown outside, above the table. If searching is a secondary action it can be included inside the table.",
+      },
+      {
+        text: "Be sure to inform the user with an empty state if there are no results for a search term.",
+      },
+      {
+        subheading: "When to use search?",
+        text: "Include search whenever a user might need to find a specific data record in the table. Search can be quicker than filtering if the user knows the exact data item they are looking for. Often search and filtering work well in combination.",
+      },
+      {
+        heading: "Filtering",
+        text: "Filters allow a user to view a precise, focused set of data. Filtering is a very effective way of finding the right data. Enabling filtering on a data table means that a single data table can fulfill several different functions for varying users and use cases.",
+      },
+      {
+        text: "Filtering works best when a user wants to return multiple results that fit some criteria. If a user is looking for a single result, especially where they know a name/title/attribute, then provide search functionality outside of the table.",
+      },
+      {
+        text: "Never filter data in a table without informing the user, the user must know they are viewing a filtered set of data.",
+      },
+      {
+        text: "There are two ways to filter data in a data table: standalone or inline.",
+      },
+      {
+        heading: "Filtering: Standalone",
+        image: tableFiltering,
+      },
+      {
+        subheading: "What are standalone filters?",
+        text: "Standalone filters are buttons that can be used to filter on a column in a data table.",
+      },
+      {
+        subheading: "How are standalone filters used?",
+        text: "Standalone filter buttons should be displayed inside the table toolbar area. The available filters must be defined, none will be provided by default. Clicking a filter button opens a popover with input controls. An actively filtered column is highlighted with an active button and text indicating the applied filter.",
+      },
+      {
+        subheading: "When to use standalone filters?",
+        text: "Standalone filters are useful when filtering is one of the main actions available on the page. Standalone filters will draw the user's attention and are easier to use for users with lower tech literacy. Only provide standalone filters that are useful to the user, as filter buttons add visual noise and potential confusion to a data table.",
+      },
+      {
+        heading: "Filtering: Inline",
+        image: tableInline,
+      },
+      {
+        subheading: "What are inline filters?",
+        text: "Inline filter controls are a compact way to filter data in the data table.",
+      },
+      {
+        subheading: "How are inline filters used?",
+        text: "The filter input for a column is displayed by clicking the filter icon in the column header. Multiple columns can be filtered at the same time.",
+      },
+      {
+        subheading: "When to use inline filters?",
+        text: "Use inline filters in data-heavy, compact tables where standalone filters would take too much space. Inline filters are useful when filtering is not one of the main actions on a page, but is a tool that will be used occasionally.",
+      },
+      {
+        heading: "Table actions",
+        image: tableActions,
+      },
+      {
+        subheading: "What are table actions?",
+        text: "Actions that can be applied to the entire data table or the currently selected data rows.",
+      },
+      {
+        subheading: "How are table actions used?",
+        text: "Table actions are presented as buttons in the toolbar area. Important, often used table actions can be displayed as individual buttons: 'Export' and 'Print' in the example above. Other secondary options contained within a dropdown button. Use a button label like 'Actions', 'More' or the three-dot icon.",
+      },
+      {
+        subheading: "When to use table actions?",
+        text: "Only include actions in the toolbar that apply directly to the data in the data table, not to the rest of the interface.",
+      },
+      {
+        text: "Table action buttons will be very visible to the user, so only include actions here that will apply to most use cases. Edge case or rarely used options should be accessed through the overflow menu to avoid overwhelming users with options.",
       },
     ],
+  },
+  {
+    question: "Example: Data table",
+    information:
+      "A data table is used to display data in a structured way. Data tables have functionality for viewing and manipulating data.",
+    section: "Data display components",
+    breadcrumb: "Data table",
+    image: dataTable,
   },
   {
     question: "Lesson: Tag",

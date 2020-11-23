@@ -4,6 +4,7 @@ function Sections({ sections }) {
   return (
     <div>
       {sections.map((value) => {
+        let maxWidth = value.imageWidth ? value.imageWidth : '100%'
         return (
           <>
             {value.heading && <h3>{value.heading}</h3>}
@@ -12,11 +13,12 @@ function Sections({ sections }) {
             {value.image && (
               <img
                 src={value.image}
-                width="80%"
                 style={{
                   marginLeft: "auto",
                   marginRight: "auto",
                   display: "block",
+                  maxWidth: maxWidth,
+                  
                 }}
               />
             )}

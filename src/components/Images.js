@@ -38,7 +38,7 @@ function Images({
               <img
                 onClick={() => handleImgClick(index)}
                 src={value}
-                width="100%"
+                style={{maxWidth: '100%'}}
               />
             </div>
           </Grid>

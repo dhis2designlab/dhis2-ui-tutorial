@@ -160,22 +160,26 @@ function Course() {
                   section={section}
                 />
                 <div className={styles.navigation}>
-                  <Button
-                    dataTest="dhis2-uicore-button"
-                    onClick={handleBackClick}
-                    secondary
-                    type="button"
-                  >
-                    Back
-                  </Button>
-                  <Button
-                    dataTest="dhis2-uicore-button"
-                    onClick={handleNextClick}
-                    secondary
-                    type="button"
-                  >
-                    Next
-                  </Button>
+                  <span className={styles.button}>
+                    <Button
+                      dataTest="dhis2-uicore-button"
+                      onClick={handleBackClick}
+                      secondary
+                      type="button"
+                    >
+                      Back
+                    </Button>
+                  </span>
+                  <span className={styles.button}>
+                    <Button
+                      dataTest="dhis2-uicore-button"
+                      onClick={handleNextClick}
+                      secondary
+                      type="button"
+                    >
+                      Next
+                    </Button>
+                  </span>
                 </div>
               </>
             )}{" "}
