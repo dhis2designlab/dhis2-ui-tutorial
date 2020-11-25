@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
   media: {
     marginRight: '26px',
     marginLeft: '26px',
+    marginBottom: "16px",
   }
 }));
 
@@ -48,13 +49,15 @@ function Questions({
   title,
   showCode,
   section,
+  hints,
+  imageWidth,
 }) {
   const classes = useStyles();
 
   const [chosenImg, setChosenImg] = useState("");
   const [chosenValue, setChosenValue] = useState("");
   const [shouldShowCode, setShowCode] = useState(false);
-  
+  const [shouldShowHint, setShowHint] = useState(false);
 
   const handleImgClick = (value) => {
     if (chosenValue !== "") return;
@@ -67,10 +70,6 @@ function Questions({
       setChosenImg("incorrect");
       setChosenValue(value);
     }
-  };
-
-  const showCodeClick = () => {
-    setShowCode(!shouldShowCode);
   };
 
   const isCorrect = chosenImg == "correct";
@@ -101,16 +100,28 @@ function Questions({
             />
           )}
         </div>
-        {image && <Image image={image} />}
+        {image && <Image image={image} imageWidth={imageWidth}/>}
         </div>
         {iframe && (
           <div className={classes.media}>
             <div dangerouslySetInnerHTML={{ __html: iframe }} />
           </div>
         )}
+        {hints && (
+          <div className={classes.media}>
+          <Button onClick={() => setShowHint(!shouldShowHint)}>{shouldShowHint ? "Hide hint" : "Show hint"}</Button>
+          {shouldShowHint &&
+            <ul>
+              {hints.map((hint) => {
+                return <li>{hint}</li>
+              })}
+            </ul>
+           }
+          </div>
+        )}
         {showCode && (
           <div className={classes.media}>
-            <Button onClick={showCodeClick}>{shouldShowCode ? "Hide solution" : "Show solution"}</Button>
+            <Button onClick={() => setShowCode(!shouldShowCode)}>{shouldShowCode ? "Hide solution" : "Show solution"}</Button>
             {shouldShowCode && (
               <SyntaxHighlighter language="javascript" style={vscDarkPlus}>
                 {showCode}

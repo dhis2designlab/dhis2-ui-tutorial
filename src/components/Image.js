@@ -1,14 +1,14 @@
 import React from "react";
 
 
-function Image({ image }) {
-
+function Image({ image, imageWidth }) {
+  
   return (
     <>
       {image && (
         <img
           src={image}
-          width="100%"
+          width={imageWidth ? imageWidth : '100%'}
             style={{
               marginLeft: "auto",
               marginRight: "auto",

@@ -1,4 +1,6 @@
 import React from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function Sections({ sections }) {
   return (
@@ -28,6 +30,11 @@ function Sections({ sections }) {
                   return <li>{value}</li>;
                 })}
               </ul>
+            )}
+            {value.codeSnippet && (
+              <SyntaxHighlighter language="javascript" style={vscDarkPlus}>
+                {value.codeSnippet}
+              </SyntaxHighlighter>
             )}
           </>
         );

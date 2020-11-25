@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "75ch",
     marginLeft: "auto",
     marginRight: "auto",
+    marginBottom: "32px",
   },
   incorrect: {
     color: "red !important",
@@ -15,6 +16,10 @@ const useStyles = makeStyles((theme) => ({
   correct: {
     color: "green !important",
   },
+  radioButton: {
+    marginBottom: '16px',
+
+  }
 }));
 
 function RadioButtons({ questions, setPoints, points }) {
@@ -51,7 +56,7 @@ function RadioButtons({ questions, setPoints, points }) {
             const values = Object.values(val);
             return values.map((answer, index) => {
               return (
-                <>
+                <div className={classes.radioButton}>
                   <Radio
                     dataTest="dhis2-uicore-radio"
                     label={answer}
@@ -67,7 +72,7 @@ function RadioButtons({ questions, setPoints, points }) {
                         !isCorrect[id] && isChecked[id] == index,
                     })}
                   />
-                </>
+                </div>
               );
             });
           })}

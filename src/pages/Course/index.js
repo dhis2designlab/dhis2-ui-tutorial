@@ -47,6 +47,8 @@ function Course() {
     breadcrumb,
     showCode,
     section,
+    hints,
+    imageWidth,
   } = quizData[id].steps[indexState];
 
   const handleStartOver = () => {
@@ -158,6 +160,8 @@ function Course() {
                   title={title}
                   showCode={showCode}
                   section={section}
+                  hints={hints}
+                  imageWidth={imageWidth}
                 />
                 <div className={styles.navigation}>
                   <span className={styles.button}>
