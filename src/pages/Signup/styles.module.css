@@ -1,12 +1,12 @@
 .cardGrid {
   padding-top: 120px;
   padding-bottom: 120px;
-  max-width: 30em;
+  max-width: 50%;
   font-family: "Roboto, sans-serif";
 }
 
 .input {
-  padding-bottom: 6px;
+  padding-bottom: 16px;
 }
 
 .heading {

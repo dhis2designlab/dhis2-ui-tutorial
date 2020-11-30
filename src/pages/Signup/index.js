@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Container from "@material-ui/core/Container";
-import { Input } from "@dhis2/ui-core";
+import { InputField } from "@dhis2/ui";
 import { Button } from "@dhis2/ui-core";
 import NavBar from "../../parts/NavBar";
 
@@ -15,24 +15,24 @@ function Signup({ onClick }) {
 
   return (
     <>
-      <Container className={styles.cardGrid}>
+      <Container className={styles.cardGrid} maxWidth="xs">
         <h2 className={styles.heading}>Sign Up</h2>
-        <Input
+        <InputField
           className={styles.input}
           dataTest="dhis2-uiwidgets-inputfield"
           label="Default label"
           name="Default"
-          placeholder="username"
+          label="Username"
+          placeholder="Type your username"
           onChange={(event) => {
             setUsername(event.value);
           }}
         />
-        <Input
+        <InputField
           className={styles.input}
           dataTest="dhis2-uiwidgets-inputfield"
-          label="Default label"
-          name="Default"
-          placeholder="password"
+          label="Password"
+          placeholder="Type your password"
           type="password"
           onChange={(event) => {
             setPassword(event.value);
