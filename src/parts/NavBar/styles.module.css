@@ -7,6 +7,7 @@
   margin: 0;
   padding: 0;
   align-items: center;
+
 }
 
 .icon {
@@ -42,4 +43,12 @@
 
 .logo {
   max-height: 30px;
+}
+
+
+
+@media (max-width: 959px) {
+  .loader {
+    display: none;
+  }
 }

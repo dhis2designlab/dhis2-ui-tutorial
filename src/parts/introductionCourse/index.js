@@ -6,22 +6,17 @@ import Grid from "@material-ui/core/Grid";
 
 import { makeStyles, StylesProvider } from "@material-ui/core/styles";
 import { Button } from "@dhis2/ui";
-import BreadCrumb from "../components/BreadCrumb";
+import BreadCrumb from "../../components/BreadCrumb";
 
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import styles from "./styles.module.css";
 
 const useStyles = makeStyles((theme) => ({
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-    maxWidth: "50em",
-    marginLeft: "auto",
-    marginRight: "auto",
-  },
+ 
 
   footer: {
     backgroundColor: theme.palette.background.paper,
@@ -70,7 +65,7 @@ function IntroductionCourse({ handleNextClick, title, topics, about, status, sub
   const classes = useStyles();
 
   return (
-    <Grid container className={classes.cardGrid}>
+    <Grid container className={styles.cardGrid}>
       <BreadCrumb title={title} />
       <Grid item xs={12} sm={12} md={12}>
         <h2 className={classes.title}>{title}</h2>

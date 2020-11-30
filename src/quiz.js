@@ -84,6 +84,239 @@ import BuildIcon from '@material-ui/icons/Build';
 import ContactSupportIcon from '@material-ui/icons/ContactSupport';
 
 
+const chipSingleSelectSol = `import React, { useState } from "react";
+import "./styles.css";
+import { Chip } from "@dhis2/ui";
+
+export default function App() {
+  const [chip, setChip] = useState(1);
+
+  const handleClick = (value) => {
+    if (value === "chipOne") {
+      setChip(1);
+    }
+    if (value === "chipTwo") {
+      setChip(2);
+    }
+    if (value === "chipThree") {
+      setChip(3);
+    }
+  };
+
+  return (
+    <div className="App">
+      <Chip
+        dataTest="dhis2-uicore-chip"
+        onClick={() => handleClick("chipOne")}
+        selected={chip === 1}
+      >
+        Chip one
+      </Chip>
+      <Chip
+        dataTest="dhis2-uicore-chip"
+        onClick={() => handleClick("chipTwo")}
+        selected={chip === 2}
+      >
+        Chip two
+      </Chip>
+      <Chip
+        dataTest="dhis2-uicore-chip"
+        onClick={() => handleClick("chipThree")}
+        selected={chip === 3}
+      >
+        Chip three
+      </Chip>
+    </div>
+  );
+}`
+
+const exerciseTable = `import React from "react";
+import "./styles.css";
+import {
+  Table,
+  TableHead,
+  TableRowHead,
+  TableCellHead,
+  TableBody,
+  TableRow,
+  TableCell,
+  DropdownButton
+} from "@dhis2/ui";
+
+export default function App() {
+  return (
+    <Table>
+      <TableHead>
+        <TableRowHead>
+          <TableCellHead>Patients on your watchlist</TableCellHead>
+          <TableCellHead colSpan="9"></TableCellHead>
+        </TableRowHead>
+        <TableRowHead>
+          <TableCellHead>
+            <DropdownButton
+              dataTest="dhis2-uicore-dropdownbutton"
+              name="default"
+              value="nothing"
+            >
+              First name
+            </DropdownButton>
+          </TableCellHead>
+          <TableCellHead>
+            <DropdownButton
+              dataTest="dhis2-uicore-dropdownbutton"
+              name="default"
+              value="nothing"
+            >
+              Last name
+            </DropdownButton>
+          </TableCellHead>
+          <TableCellHead>
+            <DropdownButton
+              dataTest="dhis2-uicore-dropdownbutton"
+              name="default"
+              value="nothing"
+            >
+              Incident date
+            </DropdownButton>
+          </TableCellHead>
+          <TableCellHead>
+            <DropdownButton
+              dataTest="dhis2-uicore-dropdownbutton"
+              name="default"
+              value="nothing"
+            >
+              Last updated
+            </DropdownButton>
+          </TableCellHead>
+          <TableCellHead>
+            <DropdownButton
+              dataTest="dhis2-uicore-dropdownbutton"
+              name="default"
+              value="nothing"
+            >
+              Age
+            </DropdownButton>
+          </TableCellHead>
+          <TableCellHead colSpan="9"></TableCellHead>
+        </TableRowHead>
+        <TableRowHead>
+          <TableCellHead>First name</TableCellHead>
+          <TableCellHead>Last name</TableCellHead>
+          <TableCellHead>Incident date</TableCellHead>
+          <TableCellHead>Last updated</TableCellHead>
+          <TableCellHead>Age</TableCellHead>
+          <TableCellHead>Registering unit</TableCellHead>
+          <TableCellHead>Assigned user</TableCellHead>
+          <TableCellHead>Status</TableCellHead>
+        </TableRowHead>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell>Onyekachukwu</TableCell>
+          <TableCell>Kariuki</TableCell>
+          <TableCell>02/06/2007</TableCell>
+          <TableCell>05/25/1972</TableCell>
+          <TableCell>66</TableCell>
+          <TableCell>Jawi</TableCell>
+          <TableCell>Sofie Hubert</TableCell>
+          <TableCell>Incomplete</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Kwasi</TableCell>
+          <TableCell>Okafor</TableCell>
+          <TableCell>08/11/2010</TableCell>
+          <TableCell>02/26/1991</TableCell>
+          <TableCell>38</TableCell>
+          <TableCell>Mokassie MCHP</TableCell>
+          <TableCell>Dashonte Clarke</TableCell>
+          <TableCell>Complete</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Siyabonga</TableCell>
+          <TableCell>Abiodun</TableCell>
+          <TableCell>07/21/1981</TableCell>
+          <TableCell>02/06/2007</TableCell>
+          <TableCell>98</TableCell>
+          <TableCell>Bathurst MCHP</TableCell>
+          <TableCell>Unassigned</TableCell>
+          <TableCell>Incomplete</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Chiyembekezo</TableCell>
+          <TableCell>Okeke</TableCell>
+          <TableCell>01/23/1982</TableCell>
+          <TableCell>07/15/2003</TableCell>
+          <TableCell>2</TableCell>
+          <TableCell>Mayolla MCHP</TableCell>
+          <TableCell>Wan Gengxin</TableCell>
+          <TableCell>Incomplete</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Mtendere</TableCell>
+          <TableCell>Afolayan</TableCell>
+          <TableCell>08/12/1994</TableCell>
+          <TableCell>05/12/1972</TableCell>
+          <TableCell>37</TableCell>
+          <TableCell>Gbangadu MCHP</TableCell>
+          <TableCell>Gvozden Boskovsky</TableCell>
+          <TableCell>Complete</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Inyene</TableCell>
+          <TableCell>Okonkwo</TableCell>
+          <TableCell>04/01/1971</TableCell>
+          <TableCell>03/16/2000</TableCell>
+          <TableCell>70</TableCell>
+          <TableCell>Kunike Barina</TableCell>
+          <TableCell>Oscar de la Cavallería</TableCell>
+          <TableCell>Complete</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Amaka</TableCell>
+          <TableCell>Pretorius</TableCell>
+          <TableCell>01/25/1996</TableCell>
+          <TableCell>09/15/1986</TableCell>
+          <TableCell>32</TableCell>
+          <TableCell>Bargbo</TableCell>
+          <TableCell>Alberto Raya</TableCell>
+          <TableCell>Incomplete</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Meti</TableCell>
+          <TableCell>Abiodun</TableCell>
+          <TableCell>10/24/2010</TableCell>
+          <TableCell>07/26/1989</TableCell>
+          <TableCell>8</TableCell>
+          <TableCell>Majihun MCHP</TableCell>
+          <TableCell>Unassigned</TableCell>
+          <TableCell>Complete</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Eshe</TableCell>
+          <TableCell>Okeke</TableCell>
+          <TableCell>01/31/1995</TableCell>
+          <TableCell>01/31/1995</TableCell>
+          <TableCell>63</TableCell>
+          <TableCell>Mambiama CHP</TableCell>
+          <TableCell>Shadrias Pearson</TableCell>
+          <TableCell>Incomplete</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Obi</TableCell>
+          <TableCell>Okafor</TableCell>
+          <TableCell>06/07/1990</TableCell>
+          <TableCell>01/03/2006</TableCell>
+          <TableCell>28</TableCell>
+          <TableCell>Dalakuru CHP</TableCell>
+          <TableCell>Anatoliy Shcherbatykh</TableCell>
+          <TableCell>Incomplete</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+  );
+}
+`
+
 const flyoutMenuSolution = `
 import React, { useState } from "react";
 import "./styles.css";
@@ -830,7 +1063,7 @@ export const quiz_data = [
             list: [
               "Lesson: Chip",
               "Lesson: Chip Api",
-              "Code Exercise: Chip in use",
+              "Coding Exercise: Chip in use",
 
             ],
           },
@@ -972,10 +1205,14 @@ export const quiz_data = [
       {
         question: "Coding Exercise: Change the Chips from multiple select to single select",
         information: "Here is an example of chips using the multiple selection options. If we remember the introduction lesson about Chips, Chips can either be used as single or multiple select depending on their usage. How would you make the Chips single select? Try to change the code",
+        sections: [{
+          text: "There exists many possible ways for how this could be accomplished, but you will see one possible solution by clicking the 'show solution' button below. If you are not familiar with React's useState, you can read about it here:",
+          link: "https://reactjs.org/docs/hooks-state.html",
+        }],
         iframe: chipIframeExample,
         breadcrumb: "Chip",
         section: "Action component",
-        showCode: "Not made",
+        showCode: chipSingleSelectSol,
       },
       {
         question: "Lesson: FlyoutMenu",
@@ -1198,23 +1435,26 @@ export const quiz_data = [
         list: [
           "Lesson: usage of the Data table",
           "Lesson: composition of the Data table",
-          "Example: The different types of buttons in action",
-          "Try it yourself: Change the button to a big secondary button",
-          "Quiz: Buttons",
-          "Quiz: Which image uses the correct button type",
-          "Lesson: Different button options",
+          "Lesson: the Data table Api",
+          "Coding exercise: Here is a simple DHIS2 table. See if you can add a table to reflect the image",
+          "Lesson: Data table search",
+          "Lesson: Data table filtering",
+          "Lesson: Data table actions",
         ],
       },
       {
         subheading: "Tag:",
         list: [
-          "Lesson: How to import components",
+          "Lesson: Tag usage",
+          "Lesson: Tag options",
+          "Lesson: Tag Api",
+          "Code example: example of tags in use",
         ],
       },
       {
         subheading: "Tooltip:",
         list: [
-          "Lesson: How to import components",
+          "Lesson: Tooltip",
         ],
       },
     ],
@@ -1301,7 +1541,7 @@ export const quiz_data = [
   {
     question: "Coding exercise: Here you will see a simple DHIS2 table without a header or footer. Try if you can add the header and footer",
     iframe: simpleTableExample,
-    showCode: 'not made',
+    showCode: exerciseTable,
   },
   {
     question: "Lesson: Data table search",

@@ -28,13 +28,15 @@ function NavBar({ user, nrCourses, nrCompletedCourses, loggedIn }) {
       {loggedIn ? (
         <>
           <Grid item className={styles.settings} xs={4} sm={4} md={4}>
+          <div className={styles.loader}>
             <div style={{ margin: "auto", textAlign: "center" }}>
-              <p>Course completion ({completionRate}%)</p>
+              <p>Completion rate: {completionRate}%</p>
               <LinearLoader
                 amount={completionRate}
                 dataTest="dhis2-uicore-linearloader"
                 width="300px"
               />
+            </div>
             </div>
           </Grid>
           <Grid item className={styles.settings} xs={4} sm={4} md={4}>

@@ -6,7 +6,7 @@ import { quiz_data } from "../../quiz.js";
 import { UserContext } from "../../userContext";
 
 import FinishQuiz from "../../components/FinishQuiz";
-import IntroductionCourse from "../../components/IntroductionCourse";
+import IntroductionCourse from "../../parts/introductionCourse";
 import Questions from "../../parts/Questions.js";
 import { Button } from "@dhis2/ui";
 
