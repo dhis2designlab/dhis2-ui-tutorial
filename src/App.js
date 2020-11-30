@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from "react";
+import React, { useCallback, useContext, useState } from "react";
 
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
@@ -29,31 +29,19 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const { currentUser, completedCourses } = useContext(UserContext);
-  const classes = useStyles();
 
-  function login(username, password) {
-    auth.signInWithEmailAndPassword(username, password);
-  }
+  
+  const classes = useStyles();
 
   function logout() {
     auth.signOut();
   }
 
-  function signup(username, password) {
-    auth.createUserWithEmailAndPassword(username, password);
-  }
-
-  const requestLogin = useCallback((username, password) => {
-    login(username, password);
-  });
-
   const requestLogout = useCallback(() => {
     logout();
   }, []);
 
-  const requestSignup = useCallback((username, password) => {
-    signup(username, password);
-  });
+
 
   const user = currentUser == null ? false : currentUser.loggedIn;
 
@@ -71,14 +59,12 @@ function App() {
             isLoggedIn={user}
             path="/signup"
             component={Signup}
-            onClick={requestSignup}
             exact
           />
           <PublicRoute
             isLoggedIn={user}
             path="/login"
             component={Login}
-            onClick={requestLogin}
             exact
           />
           <Route path="/home" component={Home} exact />

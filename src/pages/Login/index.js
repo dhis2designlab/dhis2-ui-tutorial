@@ -15,13 +15,20 @@ import styles from "./styles.module.css";
 
 import { auth } from "../../firebase.js";
 
-function Login({ onClick }) {
+function Login({ }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedInState, setLoggedInState] = useState("")
- 
-  function login(username, password) {
-    auth.signInWithEmailAndPassword(username, password);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const login = (username, password) => {
+    auth.signInWithEmailAndPassword(username, password)
+    .catch((error) => {
+
+      let errorMessage = error.message;
+      setErrorMessage(errorMessage)
+      
+    });
   }
 
   const requestLogin = useCallback((username, password) => {
@@ -29,10 +36,11 @@ function Login({ onClick }) {
     login(username, password);
   });
 
+
   return (
     <>
       <Container className={styles.cardGrid} maxWidth="xs">
-      {loggedInState == "logging in" ? <div className={styles.loader}><CircularLoader large/></div>:
+      {loggedInState == "logging in" && errorMessage == "" ? <div className={styles.loader}><CircularLoader large/></div>:
         <>
         <h2 className={styles.heading}>Log In</h2>
         <InputField
@@ -69,7 +77,7 @@ function Login({ onClick }) {
         >
           Log In
         </Button>
-       
+        {errorMessage !== "" && <p className={styles.error}>{errorMessage}</p>}
         <p>
           Do you not have an account? Create an account{" "}
           <Link to={`/signup`}>here</Link>
