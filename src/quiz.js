@@ -449,22 +449,40 @@ export const quiz_data = [
     courseImg: ContentCommunication,
     status: "under development",
     about:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinction At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
+      "Communicating consistently helps DHIS2 users understand, use and extend DHIS2. In this tutorial you will learn how to communicate effectively in DHIS2",
     topics: [
       {
-        title: "title 1",
+        title: "Communcation",
         info: "learn about blablabla",
         taskType: "text",
         breadcrumb: "breadcrumb",
       },
       {
-        title: "title 2",
+        title: "Building a conceptual model",
         info: "learn about blablabla",
         taskType: "coding",
         breadcrumb: "breadcrumb",
       },
       {
-        title: "title 3",
+        title: "Error messages",
+        info: "learn about blablabla",
+        taskType: "quiz",
+        breadcrumb: "breadcrumb",
+      },
+      {
+        title: "Keeping the user informed",
+        info: "learn about blablabla",
+        taskType: "quiz",
+        breadcrumb: "breadcrumb",
+      },
+      {
+        title: "Tone of voice",
+        info: "learn about blablabla",
+        taskType: "quiz",
+        breadcrumb: "breadcrumb",
+      },
+      {
+        title: "Referring to the user",
         info: "learn about blablabla",
         taskType: "quiz",
         breadcrumb: "breadcrumb",
@@ -474,33 +492,6 @@ export const quiz_data = [
       {
         header: "header1",
         question: "What is blabla1?",
-        alternatives: [
-          { a: "To alert about danger" },
-          { b: "General interface elements" },
-          { c: "Selected or active element" },
-        ],
-        correct: 0,
-        breadcrumb: "breadcrumb",
-      },
-      {
-        header: "header2",
-        question: "What is blabla2?",
-        alternatives: [
-          { a: "To alert about danger" },
-          { b: "General interface elements" },
-          { c: "Selected or active element" },
-        ],
-        correct: 0,
-        breadcrumb: "breadcrumb",
-      },
-      {
-        header: "header2",
-        question: "What is blabla3?",
-        alternatives: [
-          { a: "To alert about danger" },
-          { b: "General interface elements" },
-          { c: "Selected or active element" },
-        ],
         correct: 0,
         breadcrumb: "breadcrumb",
       },
@@ -512,20 +503,25 @@ export const quiz_data = [
     courseImg: Layout,
     status: "under development",
     about:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
+      "The visual architecture of an application is made up of layout, spacing and stacking. The visual architecture of DHIS2 application should follow some basic rules to provide a consistent user experience across different types of apps",
     topics: [
       {
-        title: "title 1",
+        title: "About layout",
         info: "learn about blablabla",
         taskType: "text",
       },
       {
-        title: "title 2",
+        title: "Choosing the right layout",
         info: "learn about blablabla",
         taskType: "coding",
       },
       {
-        title: "title 3",
+        title: "Spacing",
+        info: "learn about blablabla",
+        taskType: "quiz",
+      },
+      {
+        title: "Stacking",
         info: "learn about blablabla",
         taskType: "quiz",
       },
@@ -603,7 +599,7 @@ export const quiz_data = [
     quizId: "Forms",
     courseImg: Forms,
     status: "under development",
-    about: "this is a quiz about blablabl",
+    about: "Forms are one of the most common ways an application collects user input. DHIS2 applications should follow some common form of guidelines to make sure users are not unnecessarily challenged when working with forms",
     topics: [
       {
         title: "title 1",
@@ -633,28 +629,6 @@ export const quiz_data = [
         correct: 0,
         breadcrumb: "breadcrumb",
       },
-      {
-        header: "header2",
-        question: "What is blabla?",
-        alternatives: [
-          { a: "To alert about danger" },
-          { b: "General interface elements" },
-          { c: "Selected or active element" },
-        ],
-        correct: 2,
-        breadcrumb: "breadcrumb",
-      },
-      {
-        header: "header2",
-        question: "What is blabla?",
-        alternatives: [
-          { a: "To alert about danger" },
-          { b: "General interface elements" },
-          { c: "Selected or active element" },
-        ],
-        correct: 1,
-        breadcrumb: "breadcrumb",
-      },
     ],
   },
   {
@@ -663,22 +637,17 @@ export const quiz_data = [
     courseImg: Icon,
     status: "under development",
     about:
-      "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. The colors used in an application should not be chosen based primarily on how they look, but how they convey information and aid understanding. It is important to maintain consistent usage of colors throughout the DHIS2 platform. Globally, color meanings are relative. It is not possible to say 'red = danger'. However, using a consistent color palette we can establish that 'red in DHIS2 = danger'. Color alone should not be relied upon to communicate effectively. Read more about color accessibility.",
+      "Icons are simple images used in context to communicate something. They are easily recognizable and easy to remember. In DHIS2 there are some icons that are recommended to use, which you will learn more about in this tutorial",
     topics: [
       {
-        title: "DHIS2 color Scale",
+        title: "The Icon library",
         info: "Learn about the color scale in DHIS2",
         taskType: "text",
       },
       {
-        title: "title 2",
+        title: "Using icons",
         info: "learn about blablabla",
         taskType: "coding",
-      },
-      {
-        title: "title 3",
-        info: "learn about blablabla",
-        taskType: "quiz",
       },
     ],
     steps: [
@@ -693,28 +662,6 @@ export const quiz_data = [
         correct: 2,
         breadcrumb: "breadcrumb",
       },
-      {
-        header: "header2",
-        question: "What is blabla?",
-        alternatives: [
-          { a: "To alert about danger" },
-          { b: "General interface elements" },
-          { c: "Selected or active element" },
-        ],
-        correct: 2,
-        breadcrumb: "breadcrumb",
-      },
-      {
-        header: "header2",
-        question: "What is blabla?",
-        alternatives: [
-          { a: "To alert about danger" },
-          { b: "General interface elements" },
-          { c: "Selected or active element" },
-        ],
-        correct: 1,
-        breadcrumb: "breadcrumb",
-      },
     ],
   },
   {
@@ -722,20 +669,20 @@ export const quiz_data = [
     quizId: "Typography",
     courseImg: Typography,
     status: "under development",
-    about: "this is a quiz about blablabl",
+    about: "Typography, the selection and use of fonts, colors and sizes, is an effective way to communicate information to users. In this tutorial, you will learn the right way to use typography in DHIS2.",
     topics: [
       {
-        title: "title 1",
+        title: "DHIS2 application typeface",
         info: "learn about blablabla",
         taskType: "text",
       },
       {
-        title: "title 2",
+        title: "Communicating with typography",
         info: "learn about blablabla",
         taskType: "coding",
       },
       {
-        title: "title 3",
+        title: "Guidelines",
         info: "learn about blablabla",
         taskType: "quiz",
       },
