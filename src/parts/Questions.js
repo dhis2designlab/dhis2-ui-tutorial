@@ -55,11 +55,10 @@ function Questions({
   chosenValue,
   chosenImg,
   isCorrect,
-  isIncorrect
+  isIncorrect,
+  solutionImg,
 }) {
   const classes = useStyles();
-
-  
 
   const [shouldShowCode, setShowCode] = useState(false);
   const [shouldShowHint, setShowHint] = useState(false);
@@ -68,9 +67,6 @@ function Questions({
     console.log(value)
     handleImgClick(value)
   };
-
-
- 
 
   return (
     <>
@@ -94,6 +90,7 @@ function Questions({
               images={images}
               handleImgClick={handleClick}
               chosenValue={chosenValue}
+              solutionImg={solutionImg}
             />
           )}
         </div>

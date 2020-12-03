@@ -53,7 +53,10 @@ function Course() {
     section,
     hints,
     imageWidth,
+    solutionImg
   } = quizData[id].steps[indexState];
+
+  console.log(solutionImg)
 
   const handleStartOver = () => {
     setIndex(0);
@@ -190,6 +193,7 @@ function Course() {
                   isCorrect={isCorrect}
                   isIncorrect={isIncorrect}
                   chosenValue={chosenValue}
+                  solutionImg={solutionImg}
                 />
                 <div className={styles.navigation}>
                   <span className={styles.button}>

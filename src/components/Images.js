@@ -21,9 +21,10 @@ function Images({
   chosenValue,
   isCorrect,
   isIncorrect,
+  solutionImg,
 }) {
   const classes = useStyles();
-
+  console.log(solutionImg)
   return (
     <Grid spacing={4} container>
       {images.map((value, index) => {
@@ -44,6 +45,8 @@ function Images({
           </Grid>
         );
       })}
+      {chosenValue !== -1 && <>{isIncorrect && <p>Incorrect: {solutionImg}</p>}</>}
+      {chosenValue !== -1 && <>{isCorrect && <p>Correct: {solutionImg}</p>}</>}
     </Grid>
   );
 }

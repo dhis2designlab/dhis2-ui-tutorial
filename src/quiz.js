@@ -91,6 +91,16 @@ import colorIncorrect2 from "./images/colorIncorrect2.png";
 import colorCorrect3 from "./images/colorCorrect3.png";
 import colorIncorrect3 from "./images/colorIncorrect3.png";
 
+import grey from "./images/grey.png";
+import blue from "./images/blue.png";
+import teal from "./images/teal.png";
+import red from "./images/red.png";
+import yellow from "./images/yellow.png";
+import green from "./images/green.png";
+
+import highContrast from "./images/highContrast.png";
+import lowContrast from "./images/lowContrast.png";
+
 const chipSingleSelectSol = `import React, { useState } from "react";
 import "./styles.css";
 import { Chip } from "@dhis2/ui";
@@ -401,6 +411,9 @@ const flyoutExampleIcons = `
   import DeleteIcon from "@material-ui/icons/Delete";
 `;
 
+const importColors = ` 
+import { colors } from "@dhis2/ui"
+`;
 
 
 const findTheMistakeButton =  ` <>
@@ -433,6 +446,8 @@ const findTheMistakeButton =  ` <>
 </span>
 </>`
 
+const colorIframe = '<iframe src="https://codesandbox.io/embed/still-sunset-oucqv?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="still-sunset-oucqv" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>'
+
 const iframe =
   '<iframe src="https://codesandbox.io/embed/bold-sun-l4upt?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="bold-sun-l4upt" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
 
@@ -448,6 +463,9 @@ const chipTableExample = '<iframe src="https://codesandbox.io/embed/keen-noether
 const flyoutMenuExample = '<iframe src="https://codesandbox.io/embed/serene-snow-qi0wx?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="serene-snow-qi0wx" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>'
 
 const simpleTableExample = '<iframe src="https://codesandbox.io/embed/festive-bhabha-nsi75?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="festive-bhabha-nsi75" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>'
+
+const colorScaleIframe = '<iframe src="https://codesandbox.io/embed/still-sunset-oucqv?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="still-sunset-oucqv" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>'
+
 
 export const quiz_data = [
   {
@@ -816,36 +834,41 @@ export const quiz_data = [
       {
         question: "Quiz: Which of the images uses colors correctly?",
         images: [colorCorrect1, colorIncorrect1],
+        solutionImg: "Use neutral colors to make the information easy to understand and parse. Using unnecessary colors makes the user question: what does this color mean?",
         correct: 0,
       },
       {
         question: "Quiz: Which of the images uses colors correctly?",
         images: [colorIncorrect2, colorCorrect2],
         correct: 1,
+        solutionImg: "Consistent use of red for errors or danger help the user to always understand what red means across all DHIS2 applications. If error and danger are represented with other colors it becomes much less obvious what information means or what actions do",
       },
       {
         question: "Quiz: Which of the images uses colors correctly?",
         images: [colorIncorrect3, colorCorrect3],
         correct: 1,
+        solutionImg: "A single use of blue for the primary action makes it clear. Consistency aids user understanding. Using blue for non-primary actions breaks consistency and makes it harder to understand",
+      },
+      {
+        question: "Lesson: How to import and use the colors",
+        information: "The use the colors in DHIS2, you can either use the colors hex value or you can import colors from @dhis2/ui",
+        sections: [
+          {
+            codeSnippet: importColors,
+          }
+        ],
       },
       {
         header: "",
         question: "Code example: the colors in use",
-        information: "Test out how to use the DHIS2 colors",
-        iframe: iframe,
-        breadcrumb: "breadcrumb",
-      },
-      {
-        header: "Qu",
-        question: "Quiz: when should you use the color grey in DHIS2?",
-        alternatives: [
-          { a: "To alert about danger" },
-          { b: "General interface elements" },
-          { c: "Selected or active element" },
-        ],
-        correct: 1,
-        breadcrumb: "breadcrumb",
-        //iframe: iframe2,
+        information: "Here you can see the DHIS2 colors in use",
+        iframe: colorIframe,
+        sections: [
+        {
+          text: "Try to see if you can change some of the color values",
+        },
+      ],
+        breadcrumb: "Code example: the colors in use",
       },
       {
         header: "",
@@ -853,16 +876,23 @@ export const quiz_data = [
         sections: [
           {
             text:
-              "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? ",
+              "Do not rely on color alone to communicate. Not everyone sees color the same. Relying on color to communicate will restrict access for partially sighted, color blind and users with low-quality display hardware.",
           },
           {
             text:
-              "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam. ",
+              "In addition to using color to communicate as described in the previous sections, you always need to use color with another communication method. That can for example be text formatting or icon usage",
           },
           {
             text:
-              "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat",
+              "Relying on color alone to signal an error to a user is problematic. For example:",
           },
+          {
+            text: 
+            "Pay attention to contrast too. Information dense text needs to satisfy a minimum contrast ratio of 7:1 to be accessible to all users and headers and secondary text should pass a 4.5:1 ratio:",
+          },
+          {
+            text: "Remember, when dealing with accessibility issues that designs may work or be understandable on your screen, but not necessarily on others. Make sure to think of all kinds of users with all kinds of hardware when designing with accessibility in mind. Use an WCAG2.0 standard accessibility checker to check contrast. Aim for AAA rating for all essential interface elements.",
+          }
         ],
       },
       {
@@ -870,9 +900,17 @@ export const quiz_data = [
         question: "Quiz: accessibility",
         information: "Which image uses correct usage of color?",
         images: [color1, color2],
-        correct: 1,
-        breadcrumb: "breadcrumb",
+        correct: 0,
+        breadcrumb: "Quiz: accessibility",
+        solutionImg: "You need to make sure that you do not rely on color alone. You could for example also use icons which is the correct answer in this case"
       },
+      {
+        question: "Quiz: Click on the image that uses contrast correctly",
+        images: [lowContrast, highContrast],
+        correct: 1,
+        solutionImg: "In this example, you see will see that the image to the right has a much higher contrast ratio, which ensure that the content is accessible to all users. On the other hand, the image on the left has a much lower contrast ration which makes information unnecessarily difficult to understand"
+      }
+
     ],
   },
   {
