@@ -84,6 +84,12 @@ import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 import BuildIcon from '@material-ui/icons/Build';
 import ContactSupportIcon from '@material-ui/icons/ContactSupport';
 
+import colorCorrect1 from "./images/colorCorrect1.png";
+import colorIncorrect1 from "./images/colorIncorrect1.png";
+import colorCorrect2 from "./images/colorCorrect2.png";
+import colorIncorrect2 from "./images/colorIncorrect2.png";
+import colorCorrect3 from "./images/colorCorrect3.png";
+import colorIncorrect3 from "./images/colorIncorrect3.png";
 
 const chipSingleSelectSol = `import React, { useState } from "react";
 import "./styles.css";
@@ -809,7 +815,18 @@ export const quiz_data = [
       },
       {
         question: "Quiz: Which of the images uses colors correctly?",
-
+        images: [colorCorrect1, colorIncorrect1],
+        correct: 0,
+      },
+      {
+        question: "Quiz: Which of the images uses colors correctly?",
+        images: [colorIncorrect2, colorCorrect2],
+        correct: 1,
+      },
+      {
+        question: "Quiz: Which of the images uses colors correctly?",
+        images: [colorIncorrect3, colorCorrect3],
+        correct: 1,
       },
       {
         header: "",

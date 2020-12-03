@@ -32,7 +32,11 @@ function Course() {
   const quizData = quiz_data.map((q) => q);
 
   const { title, about, topics, quizId, status, courseImg, subtopics } = quizData[id];
-
+  const [chosenImg, setChosenImg] = useState("");
+  const [chosenValue, setChosenValue] = useState(-1);
+ 
+  const isCorrect = chosenImg == "correct";
+  const isIncorrect = chosenImg == "incorrect";
   const {
     question,
     alternatives,
@@ -55,7 +59,9 @@ function Course() {
     setIndex(0);
     setPoints(0);
     setFinished(false);
+    setChosenValue(-1)
     window.scrollTo(0, 0);
+
   };
 
   const handleBackClick = () => {
@@ -63,10 +69,25 @@ function Course() {
       setFinished(false);
       setIndex(indexState - 1);
       window.scrollTo(0, 0);
+      setChosenValue(-1)
     }
   };
 
+  const handleImgClick = (value) => {
+    if (chosenValue !== -1) return;
+    if (value == correct) {
+      setChosenImg("correct");
+      setChosenValue(value);
+      setPoints(points + 1);
+    } else {
+      setChosenImg("incorrect");
+      setChosenValue(value);
+    }
+  };
+
+
   const handleNextClick = () => {
+    setChosenValue(-1)
     if (isChecked.includes(correct) || isChosenRadio == correct) {
       setPoints(points + 1);
     }
@@ -94,7 +115,9 @@ function Course() {
         ]);
       }
       setFinished(true); 
+
     }
+    
     window.scrollTo(0, 0);
   };
 
@@ -162,6 +185,11 @@ function Course() {
                   section={section}
                   hints={hints}
                   imageWidth={imageWidth}
+                  handleImgClick={handleImgClick}
+                  chosenImg={chosenImg}
+                  isCorrect={isCorrect}
+                  isIncorrect={isIncorrect}
+                  chosenValue={chosenValue}
                 />
                 <div className={styles.navigation}>
                   <span className={styles.button}>

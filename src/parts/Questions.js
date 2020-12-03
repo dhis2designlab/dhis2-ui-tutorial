@@ -51,29 +51,26 @@ function Questions({
   section,
   hints,
   imageWidth,
+  handleImgClick,
+  chosenValue,
+  chosenImg,
+  isCorrect,
+  isIncorrect
 }) {
   const classes = useStyles();
 
-  const [chosenImg, setChosenImg] = useState("");
-  const [chosenValue, setChosenValue] = useState("");
+  
+
   const [shouldShowCode, setShowCode] = useState(false);
   const [shouldShowHint, setShowHint] = useState(false);
 
-  const handleImgClick = (value) => {
-    if (chosenValue !== "") return;
-
-    if (value == correct) {
-      setChosenImg("correct");
-      setChosenValue(value);
-      setPoints(points + 1);
-    } else {
-      setChosenImg("incorrect");
-      setChosenValue(value);
-    }
+  const handleClick = (value) => {
+    console.log(value)
+    handleImgClick(value)
   };
 
-  const isCorrect = chosenImg == "correct";
-  const isIncorrect = chosenImg == "incorrect";
+
+ 
 
   return (
     <>
@@ -95,7 +92,7 @@ function Questions({
               isCorrect={isCorrect}
               isIncorrect={isIncorrect}
               images={images}
-              handleImgClick={handleImgClick}
+              handleImgClick={handleClick}
               chosenValue={chosenValue}
             />
           )}
