@@ -13,6 +13,8 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CardActions from "@material-ui/core/CardActions";
 
 import github from "../images/github_logo.png";
+import storybook from "../images/storybook.svg";
+import api from "../images/api.png";
 
 const useStyles = makeStyles((theme) => ({
   cardMedia: {
@@ -34,25 +36,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Link() {
+function Link({title, info, link, img}) {
   const handleClick = () => {
-    window.open("https://ui.dhis2.nu/demo/?path=/story/inputfieldff--default");
+    window.open(link);
   };
   const classes = useStyles();
+  console.log(img)
   return (
     <Grid spacing={16} item xs={12} sm={6} md={4}>
       <Card className={classes.card}>
         <CardMedia
           className={classes.cardMedia}
-          image={github}
+          image={img}
           title="Image title"
         />
         <CardContent className={classes.cardContent}>
-          <h3>Storybook</h3>
-          <p>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam
-          </p>
+          <h3>{title}</h3>
+          <p>{info}</p>
         </CardContent>
         <CardActions>
           <Button

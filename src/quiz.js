@@ -9,6 +9,7 @@ import buttonSize from "./images/buttonSize.png";
 import toggle from "./images/toggle.png";
 import importComponents from "./images/importComponents.png";
 import checkBoxApi from "./images/checkBoxApi.png";
+import colorScale from "./images/colorScale.png";
 
 import chip from "./images/chip.png";
 import chipSelected from "./images/chipSelected.jpg";
@@ -727,8 +728,7 @@ export const quiz_data = [
     title: "Color",
     quizId: "Color",
     courseImg: Color,
-    about:
-      "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. The colors used in an application should not be chosen based primarily on how they look, but how they convey information and aid understanding. It is important to maintain consistent usage of colors throughout the DHIS2 platform. Globally, color meanings are relative. It is not possible to say 'red = danger'. However, using a consistent color palette we can establish that 'red in DHIS2 = danger'. Color alone should not be relied upon to communicate effectively.",
+    about: "In section we will take you through how to use colors when developing applications for DHIS2. Some examples and explanations will be given as well as some coding tasks for you to try out, and some quizzes to check that you have understood the topics correctly",
     topics: [
       {
         title: "Information: DHIS2 color scale",
@@ -759,19 +759,32 @@ export const quiz_data = [
     steps: [
       {
         header: "",
+        question: "Question",
+      },
+      {
+        header: "",
         question: "Color",
         information:
-          "In section we will take you through how to use colors when developing applications for DHIS2. Some examples and explanations will be given as well as some coding tasks for you to try out, and some quizzes to check that you have understood the topics correctly",
-        correct: 0,
-        breadcrumb: "breadcrumb",
+          "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. The colors used in an application should not be chosen based primarily on how they look, but how they convey information and aid understanding",
+        sections: [{
+          text: "It is important to maintain consistent usage of colors throughout the DHIS2 platform. Globally, color meanings are relative. It is not possible to say 'red = danger'. However, using a consistent color palette we can establish that 'red in DHIS2 = danger'.",
+        },
+        {
+          text: "Color alone should not be relied upon to communicate effectively. ",
+        }
+      ],
+      breadcrumb: "Color",
       },
       {
         header: "DHIS2 color scale",
         question: "DHIS2 color scale",
-        image: "../images/colours.png",
+        image: colorScale,
         information:
           "The DHIS2 color scale contains 7 colors. Each color has 10 shades. This color system provides enough colors for most situations. Each color in the DHIS2 color scale has a purpose.",
         sections: [
+          {
+            text: "Color usage in DHIS2 applications should be subtle. Reserve colors for when they need to communicate effectively",
+          },
           {
             text: "Put simply:",
             list: [
@@ -783,8 +796,20 @@ export const quiz_data = [
               "Green: positive feedback, valid, success",
             ],
           },
+          {
+            text: "Generally speaking, for all colors, the values also have a purpose",
+            list: [
+              "900-700: text, information, active or highlighted content",
+              "600-300: icons, states (inactive, disabled etc.)",
+              "200-050: backgrounds, tints, accents",
+            ]
+          }
         ],
-        breadcrumb: "breadcrumb",
+        breadcrumb: "DHIS2 color scale",
+      },
+      {
+        question: "Quiz: Which of the images uses colors correctly?",
+
       },
       {
         header: "",
@@ -852,69 +877,86 @@ export const quiz_data = [
         title: "Action components",
         content:  <div>
         <p>Buttons</p>
-        <p><LibraryBooksIcon /> <span style={{marginLeft: '15px'}}>Lesson: The different types of buttons and its usage</span></p>
-        <p><EmojiObjectsIcon /> <span style={{marginLeft: '15px'}}>Example: The different types of buttons in action</span></p>
-        <p><BuildIcon /> <span style={{marginLeft: '15px'}}>Try it yourself: Change the button to a big secondary button</span></p>
-        <p><ContactSupportIcon /> <span style={{marginLeft: '15px'}}>Quiz: Buttons</span></p>
-        <p><ContactSupportIcon /> <span style={{marginLeft: '15px'}}>Quiz: Which image uses the correct button type</span></p>
-        <p><LibraryBooksIcon /> <span style={{marginLeft: '15px'}}>Lesson: Different button options</span></p>
+        <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: The different types of buttons and their usage</span></p>
+        <p><EmojiObjectsIcon /><span style={{marginLeft: '15px'}}>Lesson: The Button API</span></p>
+        <p><BuildIcon /><span style={{marginLeft: '15px'}}>Example: The different types of buttons in action</span></p>
+        <p><ContactSupportIcon /><span style={{marginLeft: '15px'}}>Lesson: Different button options</span></p>
+        <p><ContactSupportIcon /><span style={{marginLeft: '15px'}}>Coding exercise: Find the button mistakes and fix them</span></p>
         <p>Chip</p>
-        <p>Menu</p>
+        <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: Chip</span></p>
+        <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: Chip API</span></p>
+        <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Coding exercise: Change the Chips from multiple select to single select</span></p>
+        <p>FlyoutMenu</p>
+        <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: FlyoutMenu</span></p>
+        <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: FlyoutMenu API</span></p>
+        <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Coding exercise: Add more functionality to the flyout menu</span></p>
+        <p>End of section quiz: Action components</p>
       </div>,
       },
       {
         title: "Data display components",
-        content:  <ul>
-        <li>Data table</li>
-        <li>Table</li>
-        <li>Tooltip</li>
-      </ul>,
+        content:  <div>
+          <p>Data table</p>
+          <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: usage of the Data table</span></p>
+          <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: composition of the Data table</span></p>
+          <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Coding exercise: Here you will see a simple DHIS2 table without a header or footer. Try if you can add the header and footer</span></p>
+          <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: Data table search</span></p>
+          <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: Data table filterint</span></p>
+          <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: Data table actions</span></p>
+          <p>Tag</p>
+          <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: Tag</span></p>
+          <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Quiz: Tag</span></p>
+          <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: Tag options</span></p>
+          <p>Tooltip</p>
+          <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: Tooltip</span></p>
+          <p>Quiz</p>
+          <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>End of section quiz: Data display components</span></p>
+        </div>,
       },
       {
-        title: "Data entry components",
-        content:  <ul>
-        <li>Checkbox</li>
-        <li>Organization Unit tree</li>
-        <li>Radio</li>
-        <li>Select</li>
-        <li>Switch</li>
-        <li>Transfer</li>
-      </ul>,
+        title: "Data entry components (coming soon)",
+        content:  <div>
+          <p>Checkbox</p>
+          <p>Organization Unit tree</p>
+          <p>Radio</p>
+          <p>Select</p>
+          <p>Switch</p>
+          <p>Transfer</p>
+        </div>,
       },
       {
-        title: "Feecback components",
-        content:  <ul>
-        <li>Alert bar</li>
-        <li>Loading indicators</li>
-      </ul>,
+        title: "Feecback components (coming soon)",
+        content:  <div>
+          <p>Alertbar</p>
+          <p>Loading indicators</p>
+        </div>,
       },
       {
-        title: "Layout components",
-        content:  <ul>
-        <li>Card</li>
-        <li>Modal</li>
-      </ul>,
+        title: "Layout components (coming soon)",
+        content:  <div>
+        <p>Card</p>
+        <p>Modal</p>
+      </div>,
       },
       {
-        title: "Navigation components",
-        content:  <ul>
-        <li>Pagination</li>
-        <li>Tabs</li>
-      </ul>,
+        title: "Navigation components (coming soon)",
+        content:  <div>
+        <p>Pagination</p>
+        <p>Tabs</p>
+      </div>,
       },
       {
-        title: "Utilities",
-        content:  <ul>
-        <li>Elevation</li>
-        <li>Header bar</li>
-      </ul>,
+        title: "Utilities (coming soon)",
+        content:  <div>
+        <p>Elevation</p>
+        <p>Header bar</p>
+      </div>,
       },
       {
         title: "Full examples",
-        content:  <ul>
-        <li>Elevation</li>
-        <li>Header bar</li>
-      </ul>,
+        content:  <div>
+        <p></p>
+      </div>,
       },
       {
         title: "General",
