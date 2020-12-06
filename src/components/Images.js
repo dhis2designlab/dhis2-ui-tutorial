@@ -31,6 +31,14 @@ const useStyles = makeStyles((theme) => ({
     color: colors.green700,
     borderColor: colors.green700,
   },
+  hover: {
+    "&:hover": {
+      borderColor: colors.grey500,
+      borderStyle: 'solid',
+
+    },
+  }
+
 }));
 
 function Images({
@@ -52,6 +60,7 @@ function Images({
               className={classNames({
                 [classes.correct]: isCorrect && index == chosenValue,
                 [classes.incorrect]: isIncorrect && index == chosenValue,
+                [classes.hover]: !isIncorrect && !isCorrect,
               })}
             >
               <img
