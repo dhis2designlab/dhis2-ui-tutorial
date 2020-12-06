@@ -10,11 +10,11 @@ import CancelIcon from "@material-ui/icons/Cancel";
 const useStyles = makeStyles((theme) => ({
   correct: {
     borderStyle: "solid",
-    borderColor: "green",
+    borderColor: colors.green700,
   },
   incorrect: {
     borderStyle: "solid",
-    borderColor: "red",
+    borderColor: colors.red700,
   },
   solutionDiv: {
     padding: "16px",
