@@ -83,6 +83,7 @@ import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 import BuildIcon from '@material-ui/icons/Build';
 import ContactSupportIcon from '@material-ui/icons/ContactSupport';
+import CodeIcon from '@material-ui/icons/Code';
 
 import colorCorrect1 from "./images/colorCorrect1.png";
 import colorIncorrect1 from "./images/colorIncorrect1.png";
@@ -90,6 +91,9 @@ import colorCorrect2 from "./images/colorCorrect2.png";
 import colorIncorrect2 from "./images/colorIncorrect2.png";
 import colorCorrect3 from "./images/colorCorrect3.png";
 import colorIncorrect3 from "./images/colorIncorrect3.png";
+
+import tagImgIncorrect from "./images/tagImgIncorrect.png";
+import tagImgCorrect from "./images/tagImgCorrect.png";
 
 import grey from "./images/grey.png";
 import blue from "./images/blue.png";
@@ -416,7 +420,28 @@ import { colors } from "@dhis2/ui"
 `;
 
 
-const findTheMistakeButton =  ` <>
+const findTheMistakeButton =  ` 
+import React, { useState } from "react";
+import "./styles.css";
+
+import { InputField } from "@dhis2/ui";
+import { Button } from "@dhis2/ui";
+import { spacers } from "@dhis2/ui";
+
+const input = {
+  marginBottom: spacers.dp16
+};
+
+const button = {
+  marginRight: spacers.dp8
+};
+
+export default function App() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+
+  return (
+  <>
 <div style={input}>
   <InputField
     dataTest="dhis2-uiwidgets-inputfield"
@@ -444,7 +469,8 @@ const findTheMistakeButton =  ` <>
 <span style={button}>
   <Button secondary>Cancel</Button>
 </span>
-</>`
+</>
+)}`
 
 const colorIframe = '<iframe src="https://codesandbox.io/embed/still-sunset-oucqv?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="still-sunset-oucqv" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>'
 
@@ -755,29 +781,35 @@ export const quiz_data = [
     about: "In section we will take you through how to use colors when developing applications for DHIS2. Some examples and explanations will be given as well as some coding tasks for you to try out, and some quizzes to check that you have understood the topics correctly",
     topics: [
       {
-        title: "Information: DHIS2 color scale",
-        info: "learn about the color scale used in DHIS2",
-        taskType: "text",
+        title: "DHIS2 Color scale",
+        content: <div>
+        <p><LibraryBooksIcon /> <span style={{marginLeft: '15px'}}>Lesson: Color</span></p>
+        <p><LibraryBooksIcon /> <span style={{marginLeft: '15px'}}>Lesson: DHIS2 color scale</span></p>
+      </div>,
       },
       {
-        title: "Code example: the colors in use",
-        info: "learn about blablabla",
-        taskType: "coding",
+        title: "Quiz about colors",
+        content:  <div>
+        <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Quiz: Which of the images uses color correctly</span></p>
+        <p><EmojiObjectsIcon /><span style={{marginLeft: '15px'}}>Quiz: Which of the images uses color correctly</span></p>
+        <p><BuildIcon /><span style={{marginLeft: '15px'}}>Quiz: Which of the images uses color correctly</span></p>
+        <p><ContactSupportIcon /><span style={{marginLeft: '15px'}}>Lesson: Different button options</span></p>
+        </div>
       },
       {
-        title: "Quiz: using color",
-        info: "learn about blablabla",
-        taskType: "quiz",
+        title: "How to use the colors",
+        content:  <div>
+        <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: How to import the colors</span></p>
+        <p><EmojiObjectsIcon /><span style={{marginLeft: '15px'}}>Code examples: the colors in use</span></p>
+        </div>
       },
       {
-        title: "Information: accessibility",
-        info: "learn about blablabla",
-        taskType: "text",
-      },
-      {
-        title: "Quiz: accessibility",
-        info: "learn about blablabla",
-        taskType: "quiz",
+        title: "Accessibility",
+        content:  <div>
+        <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: About accessibility</span></p>
+        <p><EmojiObjectsIcon /><span style={{marginLeft: '15px'}}>Quiz: about acessibility</span></p>
+        <p><EmojiObjectsIcon /><span style={{marginLeft: '15px'}}>Quiz: Click on the image that uses contrast correctly</span></p>
+        </div>
       },
     ],
     steps: [
@@ -788,6 +820,7 @@ export const quiz_data = [
       {
         header: "",
         question: "Color",
+        
         information:
           "Color is used in DHIS2 to support effective communication. DHIS2 applications use color to help the user understand information, feedback and more. The colors used in an application should not be chosen based primarily on how they look, but how they convey information and aid understanding",
         sections: [{
@@ -921,7 +954,7 @@ export const quiz_data = [
       "DHIS2 has a collection of UI elements that can be, and should be, reused across all DHIS2 applications. The components have been designed with DHIS2 use cases in mind. Using these components means more time spent focusing on building a positive user experience and less time redesigning and rebuilding common components. Each component has its guidelines for use. In this tutorial you will learn how and when to use the different components",
     topics: [
       {
-        title: "Introduction",
+        title: "Section 1: Introduction",
         content: <div>
         <p><LibraryBooksIcon /> <span style={{marginLeft: '15px'}}>Lesson: How to import components</span></p>
         <p><LibraryBooksIcon /> <span style={{marginLeft: '15px'}}>Lesson: Showcase of the DHIS2 components</span></p>
@@ -929,27 +962,28 @@ export const quiz_data = [
       </div>,
       },
       {
-        title: "Action components",
+        title: "Section 2: Action components",
         content:  <div>
         <p>Buttons</p>
         <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: The different types of buttons and their usage</span></p>
-        <p><EmojiObjectsIcon /><span style={{marginLeft: '15px'}}>Lesson: The Button API</span></p>
-        <p><BuildIcon /><span style={{marginLeft: '15px'}}>Example: The different types of buttons in action</span></p>
-        <p><ContactSupportIcon /><span style={{marginLeft: '15px'}}>Lesson: Different button options</span></p>
-        <p><ContactSupportIcon /><span style={{marginLeft: '15px'}}>Coding exercise: Find the button mistakes and fix them</span></p>
+        <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: The Button API</span></p>
+        <p><EmojiObjectsIcon /><span style={{marginLeft: '15px'}}>Example: The different types of buttons in action</span></p>
+        <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: Different button options</span></p>
+        <p><CodeIcon /><span style={{marginLeft: '15px'}}>Coding exercise: Find the button mistakes and fix them</span></p>
         <p>Chip</p>
         <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: Chip</span></p>
         <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: Chip API</span></p>
-        <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Coding exercise: Change the Chips from multiple select to single select</span></p>
+        <p><CodeIcon /><span style={{marginLeft: '15px'}}>Coding exercise: Change the Chips from multiple select to single select</span></p>
         <p>FlyoutMenu</p>
         <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: FlyoutMenu</span></p>
         <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: FlyoutMenu API</span></p>
-        <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Coding exercise: Add more functionality to the flyout menu</span></p>
-        <p>End of section quiz: Action components</p>
+        <p><CodeIcon/><span style={{marginLeft: '15px'}}>Coding exercise: Add more functionality to the flyout menu</span></p>
+        <p>Quiz</p>
+        <p><ContactSupportIcon /><span style={{marginLeft: '15px'}}>End of section quiz: Action components</span></p>
       </div>,
       },
       {
-        title: "Data display components",
+        title: "Section 3: Data display components",
         content:  <div>
           <p>Data table</p>
           <p><LibraryBooksIcon /><span style={{marginLeft: '15px'}}>Lesson: usage of the Data table</span></p>
@@ -969,7 +1003,7 @@ export const quiz_data = [
         </div>,
       },
       {
-        title: "Data entry components (coming soon)",
+        title: "Section 4: Data entry components (coming soon)",
         content:  <div>
           <p>Checkbox</p>
           <p>Organization Unit tree</p>
@@ -980,49 +1014,44 @@ export const quiz_data = [
         </div>,
       },
       {
-        title: "Feecback components (coming soon)",
+        title: "Section 5: Feecback components (coming soon)",
         content:  <div>
           <p>Alertbar</p>
           <p>Loading indicators</p>
         </div>,
       },
       {
-        title: "Layout components (coming soon)",
+        title: "Section 6: Layout components (coming soon)",
         content:  <div>
         <p>Card</p>
         <p>Modal</p>
       </div>,
       },
       {
-        title: "Navigation components (coming soon)",
+        title: "Section 7: Navigation components (coming soon)",
         content:  <div>
         <p>Pagination</p>
         <p>Tabs</p>
       </div>,
       },
       {
-        title: "Utilities (coming soon)",
+        title: "Section 8: Utilities (coming soon)",
         content:  <div>
         <p>Elevation</p>
         <p>Header bar</p>
       </div>,
       },
       {
-        title: "Full examples",
+        title: "Section 9: Full examples",
         content:  <div>
         <p></p>
       </div>,
       },
       {
-        title: "General",
+        title: "Section 10: General",
         content:  <ul>
         <li>info</li>
-      </ul>,
-      },
-      {
-        title: "Contributing",
-        content:  <ul>
-        <li>info</li>
+        <li>Contributing</li>
       </ul>,
       },
     ],
@@ -1038,12 +1067,11 @@ export const quiz_data = [
         breadcrumb: "Introduction",
         sections: [
           {
-            text: "Some of the topics that will be covered includes:",
+            text: "Some of the topics that will be covered in this module includes:",
             list: [
               "Lesson: How to import components",
               "Lesson: Showcase of the DHIS2 components",
               "Lesson: Using the API for components",
-              "Lesson: Resources that exists"
             ],
           },
         ],
@@ -1054,7 +1082,7 @@ export const quiz_data = [
           {
             heading: "@dhis2/ui",
             text:
-              "To be able to use the components, you need to import them. Up until recently, there has been different ways to import the components, depending of the type of component you want to import. @dhis2/ui unifies all of the dhis2 ui libraries, and you can now import everything that you imported previously from ui-core, ui-widgets and ui-forms directly from @dhis2/ui",
+              "To be able to use the components, you need to import them. Until recently, there have been different ways to import the components, depending on the type of component you want to import. @dhis2/ui unifies all of the dhis2 ui libraries, and you can now import everything that you imported previously from ui-core, ui-widgets and ui-forms directly from @dhis2/ui",
             image: importComponents,
           },
         ],
@@ -1062,8 +1090,10 @@ export const quiz_data = [
       },
       {
         question: "Lesson: Showcase of the DHIS2 components",
-        information:
-          "All the components have its own properties you can use to define how you want the component to look and behave. In the showcase below, you will see some examples of what is possible. If you want to get the most updated overview of all the components go to" + <a href="https://ui.dhis2.nu/demo/?path=/story/box--min-height" />,
+        sections: [ {
+          text: "All the components have its own properties you can use to define how you want the component to look and behave. In the showcase below, you will see some examples of what is possible. If you want to get the most updated overview of all the components go to:",
+          link: "https://ui.dhis2.nu/demo/?path=/story/alertbar--default",
+        }],
         components: "show",
         section: "Introduction",
       },
@@ -1072,12 +1102,12 @@ export const quiz_data = [
         image: checkBoxApi,
         sections: [
           {
-            text:  "All the components have its own properties you can use to define how you want the component to look and behave. In the next steps in this tutorial, I will got through some examples for how you can use the API and give you the knowledge for you to read up later. If you want to use other DHIS2 components, you can find their documentation here",
+            text:  "All the components have their own properties to define how you want the component to look and behave. In the next steps in this tutorial, I will go through some examples of using the API. If you want to use other DHIS2 components, you can find their documentation here",
             link: "https://ui.dhis2.nu/#/api",
           },
           {
             text:
-              "Here you can see the API for the dhis2 Checkbox component. In the first column named 'Name', you can see what type of properties the Checkbox component can take in. Each of the properties has a type, as specified in the 'Type' column. Sometimes a default value will be set for the property if nothing is set, which can be seen in the 'Default' column",
+              "Here you can see the API for the dhis2 Checkbox component. In the first column named 'Name,' you can see what type of properties the Checkbox component can take. Each of the properties has a type, as specified in the 'Type' column. ",
           },
         ],
         section: "Introduction",
@@ -1085,7 +1115,7 @@ export const quiz_data = [
       {
         question: "Section 2: Action components",
         information:
-          "Action components consist of components that the user will be able to interact with. When a user clicks on the component, an action will be performed",
+          "Action components consist of components that the user will be able to interact with. When a user clicks on the component, an action will be performed.",
         section: "Action components",
         sections: [
           {
@@ -1097,7 +1127,6 @@ export const quiz_data = [
               "Lesson: The different types buttons and their usage",
               "Lesson: Button Api",
               "Example: The different types of buttons in action",
-              "Quiz: Which image uses the correct button type",
               "Lesson: Different button options",
               "Coding Exercise: Find the button mistakes and fix them",
             ],
@@ -1140,7 +1169,7 @@ export const quiz_data = [
       {
         question: "Lesson: The Button Api",
         information:
-          "Here you can see the Api for the button component. Have a look at what is possible, you will use this in later exercises",
+          "Here you can see the Api for the button component. Have a look at what is possible. You will use this in later exercises.",
         image: api,
         breadcrumb: "Buttons",
         section: "Action components",
@@ -1183,6 +1212,9 @@ export const quiz_data = [
       {
         question: "Coding Exercise: Find the button mistakes and fix them",
         information: "Use the information from the page about the different types of buttons and their usage to improve the code example below.",
+        sections: [{
+          text: "Tip: You will find some hints to the solution below the coding exercise and a possible solution",
+        }],
         hints: ["Remember when you should use primary buttons. Does the interface follow the guidelines?", "Could you create better labels for the buttons?", "Do some of the button represent the same?"],
         iframe: buttonFormExample,
         breadcrumb: "Buttons",
@@ -1191,17 +1223,17 @@ export const quiz_data = [
       },
       {
         question: "Lesson: Chip",
-        information: "Chips are useful for displaying a selection of defined choices and filters to the user",
+        information: "Chips are useful for displaying a selection of defined choices and filters to the user.",
         sections: [
           {
             heading: "Usage",
             text:
-              "Chips are used to display a list of defined options, filters or views for a related view. Chips are always a secondary content to a main element, for example a data table or a dashboard. A common usage of this that can help to understand the pattern is a table with a set of filters:",
+              "Chips are used to display a list of defined options, filters or views for a related view. Chips are always secondary content to the main element, for example a data table or a dashboard. A common usage of this that can help to understand the pattern is a table with a set of filters:",
             image: chip,
           },
           {
             text:
-              "The chips displayed above the table act as defined filters for the table. In the example above, selecting 'Overdue Patients' chip will select that chip and display only that data in the table below. To deselect the chip the user can click again, or a 'Clear filters' control could be provided.",
+              "In this example, the chips act as filters for the table. By selecting the 'Overdue Patients' chip will display only that data in the table below. To deselect the chip the user can click again, or a 'Clear filters' control could be provided.",
             image: chipSelected,
           },
           {
@@ -1239,7 +1271,7 @@ export const quiz_data = [
         section: "Action component",
       },
       {
-        question: "Lesson: Chip api",
+        question: "Lesson: Chip Api",
         information: "Here you can see the Api for the Chip component. Have a look at what is possible, you will use this in later exercises",
         image: chipApi,
         imageWidth: '50%',
@@ -1250,7 +1282,7 @@ export const quiz_data = [
         question: "Coding Exercise: Change the Chips from multiple select to single select",
         information: "Here is an example of chips using the multiple selection options. If we remember the introduction lesson about Chips, Chips can either be used as single or multiple select depending on their usage. How would you make the Chips single select? Try to change the code",
         sections: [{
-          text: "There exists many possible ways for how this could be accomplished, but you will see one possible solution by clicking the 'show solution' button below. If you are not familiar with React's useState, you can read about it here:",
+          text: "There are many possible ways to accomplish this, but you will see one possible solution by clicking the 'show solution' button below. If you are not familiar with React's useState, you can read about it here: ",
           link: "https://reactjs.org/docs/hooks-state.html",
         }],
         iframe: chipIframeExample,
@@ -1284,11 +1316,11 @@ export const quiz_data = [
           {
             heading: "Menu levels",
             image: menuLevels,
-            text: "Splitting menus into several levels with child menus makes sense when there are a lot of options that can be grouped together. An example may be an option in level 1 menu of 'Download' that has several different download formats as child menu items. Make sure that child menu items relate to their parent item, otherwise a user will struggle to discover them. A menu item with children is not selectable/actionable itself, it serves only as a container for the child elements. Try to keep menus to a maximum of 1, 2 or 3 levels, anything more than this can easily confuse the user",
+            text: "Splitting menus into several levels with child menus makes sense when there are a lot of options that can be grouped together. An example may be an option in level 1 menu of 'Download' that has several different download formats as child menu items. Make sure that child menu items relate to their parent item, otherwise a user will struggle to discover them. A menu item with children is not selectable/actionable itself, it serves only as a container for the child elements. Try to keep menus to a maximum of three levels. More than three levels can easily confuse the user.",
           },
           {
-            heading: "Ordering items",
-            text: "There is no enforced ordering of menu items, they should be presented in order of relevance. Put the most commonly used items at the top of the menu for easy discovery and access.",
+            heading: "Ordering og menuitems",
+            text: "There is no enforced ordering of menu items, but present them in order of relevance. Put the most commonly used items at the top of the menu for easy discovery and access.",
           },
           {
             heading: "Options",
@@ -1301,7 +1333,7 @@ export const quiz_data = [
           {
             heading: "Dividers & Section Headers",
             image: menuSections,
-            text: "Items in a menu can be split into separate sections by using dividers. Group relevant menu items together to help the user understand the options quickly. A divider can be used alone. If using a section header a divider will be automatically included. Try not to group single menu items together. An exception to this is a critical destructive menu item, like 'Delete', which can be separated from other menu items."
+            text: "Items in a menu can be split into separate sections by using dividers. Group relevant menu items together to help the user understand the options quickly. A divider can be used alone. If using a section header, a divider will be automatically included. Try not to group single menu items together. An exception to this is a critical destructive menu item, like 'Delete,' which can be separated from other menu items."
           },
           {
             heading: "Examples in use",
@@ -1341,11 +1373,15 @@ export const quiz_data = [
       text: "For the the Chart, Table and Map icons I have used material-ui/icons",
     },
     {
+      text: "Tip: Below the code sandbox, you will find a possible solution if you are stuck", 
+    },
+    {
       text: "To import the icons I have used, you can use these import statements:"
     },
     {
       codeSnippet: flyoutExampleIcons,
-    }
+    },
+
   ],
   image: flyoutMenuImage,
   imageWidth: '50%',
@@ -1365,14 +1401,15 @@ export const quiz_data = [
               a:
                 "Primary buttons should be the default choice for the majority of actions. Several primary buttons can be used in the same area",
               b:
-                "Primary buttons should be used to highlight the most importent/main action on the page. Should rarerly be more than one primary button",
+                "Primary buttons should be used to highlight the most important/main action on the page. Should rarerly be more than one primary button",
               c:
                 "Primary buttons should be used when you want to highlight to the user the seriousness of the action",
               d:
               "Primary buttons should be used for passive actions, often as an alternative to the secondary action. If 'Save' is secondary, 'Cancel could be primary. Do not use as the only action on a page",
             },
           ],
-          correct: 0,
+          correct: 1,
+          solutionQuiz: "Blablablabla"
         },
         {
           question: "When should you use the destructive button?",
@@ -1381,38 +1418,48 @@ export const quiz_data = [
               a:
                 "Destructive buttons should be the default choice for the majority of actions. Several destructive buttons can be used in the same area",
               b:
-                "Destructive buttons should be used to highlight the most importent/main action on the page. Should rarerly be more than one primary button",
+                "Destructive buttons should be used to highlight the most important/main action on the page. Should rarerly be more than one destructive button",
               c:
                 "Destructive buttons should be used when you want to highlight to the user the seriousness of the action",
                 d:
                 "Destructive buttons should be used for passive actions, often as an alternative to the primary action. If 'Save' is primary, 'Cancel could be destructive. Do not use as the only action on a page",
             },
           ],
-          correct: 0,
+          correct: 2,
+          solutionQuiz: "Blablablabla"
         },
         {
           question: "When should you use the secondary button?",
           answers: [
             {
               a:
-                "Secondary buttons are the most often used button that will suit the majority of actions. Should be the default choice for the majority of actions. Several secondary buttons can be used in the same area",
+                "Secondary buttons should be the default choice for the majority of actions. Several secondary buttons can be used in the same area",
               b:
-                "Destructive buttons should be used to highlight the most importent/main action on the page. Should rarerly be more than one primary button",
+                "Secondary buttons should be used to highlight the most important/main action on the page. Should rarerly be more than one secondary button",
               c:
-                "Destructive buttons should be used when you want to highlight to the user the seriousness of the action",
+                "Secondary buttons should be used when you want to highlight to the user the seriousness of the action",
               d:
               "Secondary buttons should be used for passive actions, often as an alternative to the primary action. If 'Save' is primary, 'Cancel could be secondary. Do not use as the only action on a page",
           },
           ],
-          correct: 0,
+          correct: 3,
+          solutionQuiz: "Blablablabla"
         },
         {
-          question:
-            "What is the difference between basic buttons and secondary buttons?",
-          answers: [{ a: "Blablabla", b: "Blabbalba", c: "blablabla" }],
-          correct: 0,
+          question: "When should you use the toggle button?",
+          answers: [
+            {
+              a:
+                "The toggle button should be used for auxiliary actions, for example clearing the content of an input.",
+              b:
+                "When you want the user to be able to enable or disable an option in a toolbar",
+              c:
+                "When you want to add filtering in a table"
+          },
+          ],
+          correct: 1,
+          solutionQuiz: "Blablablabla"
         },
-
         {
           question: "How should you display Chips?",
           answers: [
@@ -1425,7 +1472,8 @@ export const quiz_data = [
                 "Chips should have horizontal scrolling when a large number of chips are used",
             },
           ],
-          correct: 1,
+          correct: 0,
+          solutionQuiz: "gdgdfgfdgdfg",
         },
         {
           question: "How should you use Chips?",
@@ -1441,9 +1489,10 @@ export const quiz_data = [
             },
           ],
           correct: 1,
+          solutionQuiz: "dsfsdfsgdfgf",
         },
         {
-          question: "When should you use single selection chips over multipleselection chips?",
+          question: "When should you use single-selection chips over multiple-selection chips?",
           answers: [
             {
               a:
@@ -1455,11 +1504,7 @@ export const quiz_data = [
             },
           ],
           correct: 2,
-        },
-        {
-          question: "When should you use the Flyoutmenu component?",
-          answers: [{ a: "When space is limited and displaying all the options would be impractical", b: "When you want to be able to choose multiple options at once", c: "When you...." }],
-          correct: 0,
+          solutionQuiz: "fsfdfsfds",
         },
       ],
       breadcrumb: "End of section quiz",
@@ -1489,10 +1534,10 @@ export const quiz_data = [
       {
         subheading: "Tag:",
         list: [
-          "Lesson: Tag usage",
-          "Lesson: Tag options",
+          "Lesson: Tag",
           "Lesson: Tag Api",
-          "Code example: example of tags in use",
+          "Lesson: Tag options",
+          "Quiz: Tag",
         ],
       },
       {
@@ -1501,6 +1546,12 @@ export const quiz_data = [
           "Lesson: Tooltip",
         ],
       },
+      {
+        subheading: "Coding exercise",
+      },
+      {
+        subheading: "End of section quiz",
+      }
     ],
   },
   {
@@ -1522,7 +1573,7 @@ export const quiz_data = [
     
       },
       {
-        text: "There are several different types of functionality and options available in the data table component. The correct data table to use will depend on the use case and type of data being displayed. The functionality and options available in the data table component are highlighted and discussed below.",
+        text: "There are several different types of functionality and options available in the data table component. The correct data table to use will depend on the use case and type of data being displayed.",
       },
 
     ],
@@ -1719,13 +1770,12 @@ export const quiz_data = [
     ],
   },
   {
-    question: "Quiz: Tag",
-    information:
-      "A tag is used to display categorizing labels or information for other elements in a collection.",
+    question: "Quiz: Which of the images uses tags correctly? Click on the correct image",
     section: "Data display components",
     breadcrumb: "Tag",
-    images: [tagCorrect, tagIncorrect],
-    correct: 0,
+    images: [tagImgIncorrect, tagImgCorrect],
+    correct: 1,
+    solutionImg: "Tags should not be used to display unique info like names"
   },
   {
     question: "Lesson: Tag options",
@@ -1785,10 +1835,16 @@ export const quiz_data = [
     ]
   },
   {
+    question: "Coding exercise: add more functionality to the table",
+    information: "In the sandbox below, you will see an example for how you can use the Data table and the chips together to create filterable table. Your task is to create a new row for 'status' and use the tag component with proper usage of color",
+    section: "Full Examples",
+    iframe:  chipTableExample,
+  },
+  {
     question: "End of section quiz: Data display components",
       questions: [
         {
-          question: "How should you display Chips?",
+          question: "When should you use the data table",
           answers: [
             {
               a:
@@ -1800,6 +1856,7 @@ export const quiz_data = [
             },
           ],
           correct: 1,
+          solutionQuiz: "blbal fdsfsfdsf fdsfsfd fdsfsdf"
         },
         {
           question: "How should you use Chips?",
@@ -1815,6 +1872,7 @@ export const quiz_data = [
             },
           ],
           correct: 1,
+          solutionQuiz: "blbal fdsfsfdsf fdsfsfd fdsfsdf"
         },
         {
           question: "When should you use single selection chips over multipleselection chips?",
@@ -1829,6 +1887,7 @@ export const quiz_data = [
             },
           ],
           correct: 2,
+          solutionQuiz: "blbal fdsfsfdsf fdsfsfd fdsfsdf"
         },
         {
           question: "When should you use the destructive button?",
@@ -1845,6 +1904,7 @@ export const quiz_data = [
             },
           ],
           correct: 0,
+          solutionQuiz: "blbal fdsfsfdsf fdsfsfd fdsfsdf"
         },
         {
           question: "When should you use the secondary button?",
@@ -1861,6 +1921,7 @@ export const quiz_data = [
           },
           ],
           correct: 0,
+          solutionQuiz: "blbal fdsfsfdsf fdsfsfd fdsfsdf"
         },
         {
           question:
@@ -2036,27 +2097,6 @@ export const quiz_data = [
         ],
       },
     ],
-  },
-  {
-    question: "Section 9: Full examples",
-    information:
-      "In this section, you will get multiple examples of components working together",
-    section: "Full examples",
-    sections: [
-      {
-        text: "Some of the topics that will be covered includes:",
-      },
-      {
-        list: [
-          "Example: Filterable table with chips",
-        ],
-      },
-    ],
-  },
-  {
-    question: "Example: Filterable table with chips",
-    section: "Full Examples",
-    iframe:  chipTableExample,
   },
   {
     question: "Section 10: General",

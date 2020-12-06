@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, StylesProvider } from "@material-ui/core/styles";
 import { Radio } from "@dhis2/ui";
 import classNames from "classnames";
+import { colors } from "@dhis2/ui";
+import { pink } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
   text: {
@@ -18,14 +20,31 @@ const useStyles = makeStyles((theme) => ({
   },
   radioButton: {
     marginBottom: '16px',
-
-  }
+  },
+  solutionDiv: {
+    padding: '16px',
+    border: 'solid',
+    borderRadius: '6px',
+    borderWidth: 'thin',
+    fontWeight: '500',
+  },
+  incorrectDiv: {
+    backgroundColor: colors.red100,
+    color: colors.red700,  
+    borderColor: colors.red700,
+  },
+  correctDiv: {
+    backgroundColor: colors.green100,
+    color: colors.green700,
+    borderColor: colors.green700,
+  },
 }));
 
 function RadioButtons({ questions, setPoints, points }) {
   const classes = useStyles();
   const [isChecked, setIsChecked] = useState([]);
   const [isCorrect, setIsCorrect] = useState([]);
+  console.log("Questions " + questions[0])
 
   useEffect(() => {
     [...Array(questions.length)].map((_, i) =>
@@ -54,6 +73,7 @@ function RadioButtons({ questions, setPoints, points }) {
         {value.answers &&
           value.answers.map((val, i) => {
             const values = Object.values(val);
+            console.log(values)
             return values.map((answer, index) => {
               return (
                 <div className={classes.radioButton}>
@@ -72,10 +92,13 @@ function RadioButtons({ questions, setPoints, points }) {
                         !isCorrect[id] && isChecked[id] == index,
                     })}
                   />
+                   {value.solutionQuiz && isChecked[id] == index ? <>{isCorrect[id] ? <p className={classNames(classes.correctDiv, classes.solutionDiv)}>Correct {value.solutionQuiz}</p> : <p className={classNames(classes.incorrectDiv, classes.solutionDiv)}>Incorrect {value.solutionQuiz}</p>}</>: null}
                 </div>
               );
+             
             });
           })}
+          
       </div>
     );
   });

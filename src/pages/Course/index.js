@@ -53,7 +53,8 @@ function Course() {
     section,
     hints,
     imageWidth,
-    solutionImg
+    solutionImg,
+    solutionQuiz
   } = quizData[id].steps[indexState];
 
   console.log(solutionImg)
@@ -194,6 +195,7 @@ function Course() {
                   isIncorrect={isIncorrect}
                   chosenValue={chosenValue}
                   solutionImg={solutionImg}
+                  solutionQuiz={solutionQuiz}
                 />
                 <div className={styles.navigation}>
                   <span className={styles.button}>

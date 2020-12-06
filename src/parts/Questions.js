@@ -57,6 +57,7 @@ function Questions({
   isCorrect,
   isIncorrect,
   solutionImg,
+  solutionQuiz
 }) {
   const classes = useStyles();
 
@@ -81,6 +82,7 @@ function Questions({
               setPoints={setPoints}
               points={points}
               questions={questions}
+           
             />
           )}
           {images && (
