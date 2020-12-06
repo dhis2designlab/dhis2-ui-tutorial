@@ -8,16 +8,14 @@ import { makeStyles, StylesProvider } from "@material-ui/core/styles";
 import { Button } from "@dhis2/ui";
 import BreadCrumb from "../../components/BreadCrumb";
 
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
+import Typography from "@material-ui/core/Typography";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import styles from "./styles.module.css";
 
 const useStyles = makeStyles((theme) => ({
- 
-
   footer: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
@@ -37,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     marginTop: "16px",
     paddingTop: "16px",
-    backgroundColor: 'yellow',
+    backgroundColor: "yellow",
   },
 
   list: {
@@ -52,16 +50,22 @@ const useStyles = makeStyles((theme) => ({
   },
 
   accordionHeader: {
-    backgroundColor: '#F8F9FA',
+    backgroundColor: "#F8F9FA",
   },
 
   text: {
     marginRight: "26px",
-  }
-
+  },
 }));
 
-function IntroductionCourse({ handleNextClick, title, topics, about, status, subtopics }) {
+function IntroductionCourse({
+  handleNextClick,
+  title,
+  topics,
+  about,
+  status,
+  subtopics,
+}) {
   const classes = useStyles();
 
   return (
@@ -100,20 +104,20 @@ function IntroductionCourse({ handleNextClick, title, topics, about, status, sub
             <div className={classes.accordion}>
               {topics.map((index) => (
                 <>
-                 <Accordion>
-                 <AccordionSummary
-                   className={classes.accordionHeader}
-                   expandIcon={<ExpandMoreIcon />}
-                   aria-controls="panel1a-content"
-                   id="panel1a-header"
-                 >
-                   <p><b>{index.title}</b></p>
-                 </AccordionSummary>
-                 <AccordionDetails>
-                   {index.content}
-                 </AccordionDetails>
-               </Accordion>  
-               </>
+                  <Accordion>
+                    <AccordionSummary
+                      className={classes.accordionHeader}
+                      expandIcon={<ExpandMoreIcon />}
+                      aria-controls="panel1a-content"
+                      id="panel1a-header"
+                    >
+                      <p>
+                        <b>{index.title}</b>
+                      </p>
+                    </AccordionSummary>
+                    <AccordionDetails>{index.content}</AccordionDetails>
+                  </Accordion>
+                </>
               ))}
             </div>
           </>

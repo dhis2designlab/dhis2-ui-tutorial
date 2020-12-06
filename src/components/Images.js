@@ -3,9 +3,9 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles, StylesProvider } from "@material-ui/core/styles";
 import classNames from "classnames";
-import { colors } from '@dhis2/ui';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import CancelIcon from '@material-ui/icons/Cancel';
+import { colors } from "@dhis2/ui";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
+import CancelIcon from "@material-ui/icons/Cancel";
 
 const useStyles = makeStyles((theme) => ({
   correct: {
@@ -17,11 +17,11 @@ const useStyles = makeStyles((theme) => ({
     borderColor: "red",
   },
   solutionDiv: {
-    padding: '16px',
-    border: 'solid',
-    borderRadius: '6px',
-    borderWidth: 'thin',
-    marginBottom: '16px',
+    padding: "16px",
+    border: "solid",
+    borderRadius: "6px",
+    borderWidth: "thin",
+    marginBottom: "16px",
   },
   incorrectDiv: {
     backgroundColor: colors.red100,
@@ -34,21 +34,18 @@ const useStyles = makeStyles((theme) => ({
   hover: {
     "&:hover": {
       borderColor: colors.grey500,
-      borderStyle: 'solid',
-
+      borderStyle: "solid",
     },
   },
   solutionCorrect: {
     color: colors.green700,
- 
   },
   solutionIncorrect: {
     color: colors.red700,
   },
   icon: {
-    marginRight: '8px',
+    marginRight: "8px",
   },
-
 }));
 
 function Images({
@@ -76,14 +73,44 @@ function Images({
               <img
                 onClick={() => handleImgClick(index)}
                 src={value}
-                style={{maxWidth: '100%'}}
+                style={{ maxWidth: "100%" }}
               />
             </div>
           </Grid>
         );
       })}
-      {chosenValue !== -1 && <>{isIncorrect && <div className={classNames(classes.solutionDiv, classes.incorrectDiv)}><p className={classes.solutionIncorrect}><span className={classes.icon}><CancelIcon/></span><b>Incorrect:</b> {solutionImg}</p></div>}</>}
-      {chosenValue !== -1 && <>{isCorrect && <div className={classNames(classes.solutionDiv, classes.correctDiv)}><p className={classes.solutionCorrect}><span className={classes.icon}><CheckCircleIcon/></span><b>Correct:</b> {solutionImg}</p></div>}</>}
+      {chosenValue !== -1 && (
+        <>
+          {isIncorrect && (
+            <div
+              className={classNames(classes.solutionDiv, classes.incorrectDiv)}
+            >
+              <p className={classes.solutionIncorrect}>
+                <span className={classes.icon}>
+                  <CancelIcon />
+                </span>
+                <b>Incorrect:</b> {solutionImg}
+              </p>
+            </div>
+          )}
+        </>
+      )}
+      {chosenValue !== -1 && (
+        <>
+          {isCorrect && (
+            <div
+              className={classNames(classes.solutionDiv, classes.correctDiv)}
+            >
+              <p className={classes.solutionCorrect}>
+                <span className={classes.icon}>
+                  <CheckCircleIcon />
+                </span>
+                <b>Correct:</b> {solutionImg}
+              </p>
+            </div>
+          )}
+        </>
+      )}
     </Grid>
   );
 }

@@ -30,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const { currentUser, completedCourses } = useContext(UserContext);
 
-  
   const classes = useStyles();
 
   function logout() {
@@ -40,8 +39,6 @@ function App() {
   const requestLogout = useCallback(() => {
     logout();
   }, []);
-
-
 
   const user = currentUser == null ? false : currentUser.loggedIn;
 

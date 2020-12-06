@@ -19,18 +19,18 @@ const useStyles = makeStyles((theme) => ({
     color: "green !important",
   },
   radioButton: {
-    marginBottom: '16px',
+    marginBottom: "16px",
   },
   solutionDiv: {
-    padding: '16px',
-    border: 'solid',
-    borderRadius: '6px',
-    borderWidth: 'thin',
-    fontWeight: '500',
+    padding: "16px",
+    border: "solid",
+    borderRadius: "6px",
+    borderWidth: "thin",
+    fontWeight: "500",
   },
   incorrectDiv: {
     backgroundColor: colors.red100,
-    color: colors.red700,  
+    color: colors.red700,
     borderColor: colors.red700,
   },
   correctDiv: {
@@ -44,7 +44,7 @@ function RadioButtons({ questions, setPoints, points }) {
   const classes = useStyles();
   const [isChecked, setIsChecked] = useState([]);
   const [isCorrect, setIsCorrect] = useState([]);
-  console.log("Questions " + questions[0])
+  console.log("Questions " + questions[0]);
 
   useEffect(() => {
     [...Array(questions.length)].map((_, i) =>
@@ -73,7 +73,7 @@ function RadioButtons({ questions, setPoints, points }) {
         {value.answers &&
           value.answers.map((val, i) => {
             const values = Object.values(val);
-            console.log(values)
+            console.log(values);
             return values.map((answer, index) => {
               return (
                 <div className={classes.radioButton}>
@@ -92,13 +92,33 @@ function RadioButtons({ questions, setPoints, points }) {
                         !isCorrect[id] && isChecked[id] == index,
                     })}
                   />
-                   {value.solutionQuiz && isChecked[id] == index ? <>{isCorrect[id] ? <p className={classNames(classes.correctDiv, classes.solutionDiv)}>Correct {value.solutionQuiz}</p> : <p className={classNames(classes.incorrectDiv, classes.solutionDiv)}>Incorrect {value.solutionQuiz}</p>}</>: null}
+                  {value.solutionQuiz && isChecked[id] == index ? (
+                    <>
+                      {isCorrect[id] ? (
+                        <p
+                          className={classNames(
+                            classes.correctDiv,
+                            classes.solutionDiv
+                          )}
+                        >
+                          Correct {value.solutionQuiz}
+                        </p>
+                      ) : (
+                        <p
+                          className={classNames(
+                            classes.incorrectDiv,
+                            classes.solutionDiv
+                          )}
+                        >
+                          Incorrect {value.solutionQuiz}
+                        </p>
+                      )}
+                    </>
+                  ) : null}
                 </div>
               );
-             
             });
           })}
-          
       </div>
     );
   });

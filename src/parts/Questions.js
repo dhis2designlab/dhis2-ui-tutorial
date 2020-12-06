@@ -27,10 +27,10 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "auto",
   },
   media: {
-    marginRight: '26px',
-    marginLeft: '26px',
+    marginRight: "26px",
+    marginLeft: "26px",
     marginBottom: "16px",
-  }
+  },
 }));
 
 function Questions({
@@ -57,7 +57,7 @@ function Questions({
   isCorrect,
   isIncorrect,
   solutionImg,
-  solutionQuiz
+  solutionQuiz,
 }) {
   const classes = useStyles();
 
@@ -65,15 +65,15 @@ function Questions({
   const [shouldShowHint, setShowHint] = useState(false);
 
   const handleClick = (value) => {
-    console.log(value)
-    handleImgClick(value)
+    console.log(value);
+    handleImgClick(value);
   };
 
   return (
     <>
       <div className={classes.question}>
         <div className={classes.text}>
-          <BreadCrumb title={title} breadcrumb={breadcrumb} section={section}/>
+          <BreadCrumb title={title} breadcrumb={breadcrumb} section={section} />
           {question && <h1>{question}</h1>}
           {information && <p>{information}</p>}
           {sections && <Sections sections={sections} />}
@@ -82,7 +82,6 @@ function Questions({
               setPoints={setPoints}
               points={points}
               questions={questions}
-           
             />
           )}
           {images && (
@@ -96,36 +95,40 @@ function Questions({
             />
           )}
         </div>
-        {image && <Image image={image} imageWidth={imageWidth}/>}
+        {image && <Image image={image} imageWidth={imageWidth} />}
+      </div>
+      {iframe && (
+        <div className={classes.media}>
+          <div dangerouslySetInnerHTML={{ __html: iframe }} />
         </div>
-        {iframe && (
-          <div className={classes.media}>
-            <div dangerouslySetInnerHTML={{ __html: iframe }} />
-          </div>
-        )}
-        {hints && (
-          <div className={classes.media}>
-          <Button onClick={() => setShowHint(!shouldShowHint)}>{shouldShowHint ? "Hide hint" : "Show hint"}</Button>
-          {shouldShowHint &&
+      )}
+      {hints && (
+        <div className={classes.media}>
+          <Button onClick={() => setShowHint(!shouldShowHint)}>
+            {shouldShowHint ? "Hide hint" : "Show hint"}
+          </Button>
+          {shouldShowHint && (
             <ul>
               {hints.map((hint) => {
-                return <li>{hint}</li>
+                return <li>{hint}</li>;
               })}
             </ul>
-           }
-          </div>
-        )}
-        {showCode && (
-          <div className={classes.media}>
-            <Button onClick={() => setShowCode(!shouldShowCode)}>{shouldShowCode ? "Hide solution" : "Show solution"}</Button>
-            {shouldShowCode && (
-              <SyntaxHighlighter language="javascript" style={vscDarkPlus}>
-                {showCode}
-              </SyntaxHighlighter>
-            )}
-          </div>
-        )}
-        {components && <QuizUiComponents />} 
+          )}
+        </div>
+      )}
+      {showCode && (
+        <div className={classes.media}>
+          <Button onClick={() => setShowCode(!shouldShowCode)}>
+            {shouldShowCode ? "Hide solution" : "Show solution"}
+          </Button>
+          {shouldShowCode && (
+            <SyntaxHighlighter language="javascript" style={vscDarkPlus}>
+              {showCode}
+            </SyntaxHighlighter>
+          )}
+        </div>
+      )}
+      {components && <QuizUiComponents />}
     </>
   );
 }

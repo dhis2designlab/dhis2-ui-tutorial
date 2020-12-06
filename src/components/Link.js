@@ -36,12 +36,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Link({title, info, link, img}) {
+function Link({ title, info, link, img }) {
   const handleClick = () => {
     window.open(link);
   };
   const classes = useStyles();
-  console.log(img)
+  console.log(img);
   return (
     <Grid spacing={16} item xs={12} sm={6} md={4}>
       <Card className={classes.card}>

@@ -31,10 +31,18 @@ function Course() {
 
   const quizData = quiz_data.map((q) => q);
 
-  const { title, about, topics, quizId, status, courseImg, subtopics } = quizData[id];
+  const {
+    title,
+    about,
+    topics,
+    quizId,
+    status,
+    courseImg,
+    subtopics,
+  } = quizData[id];
   const [chosenImg, setChosenImg] = useState("");
   const [chosenValue, setChosenValue] = useState(-1);
- 
+
   const isCorrect = chosenImg == "correct";
   const isIncorrect = chosenImg == "incorrect";
   const {
@@ -54,18 +62,17 @@ function Course() {
     hints,
     imageWidth,
     solutionImg,
-    solutionQuiz
+    solutionQuiz,
   } = quizData[id].steps[indexState];
 
-  console.log(solutionImg)
+  console.log(solutionImg);
 
   const handleStartOver = () => {
     setIndex(0);
     setPoints(0);
     setFinished(false);
-    setChosenValue(-1)
+    setChosenValue(-1);
     window.scrollTo(0, 0);
-
   };
 
   const handleBackClick = () => {
@@ -73,7 +80,7 @@ function Course() {
       setFinished(false);
       setIndex(indexState - 1);
       window.scrollTo(0, 0);
-      setChosenValue(-1)
+      setChosenValue(-1);
     }
   };
 
@@ -89,9 +96,8 @@ function Course() {
     }
   };
 
-
   const handleNextClick = () => {
-    setChosenValue(-1)
+    setChosenValue(-1);
     if (isChecked.includes(correct) || isChosenRadio == correct) {
       setPoints(points + 1);
     }
@@ -118,10 +124,9 @@ function Course() {
           { points: points, name: title, courseImg: courseImg },
         ]);
       }
-      setFinished(true); 
-
+      setFinished(true);
     }
-    
+
     window.scrollTo(0, 0);
   };
 
@@ -161,7 +166,7 @@ function Course() {
         ) : (
           <>
             {finished ? (
-              <FinishQuiz setIndex={handleStartOver}  points={points} />
+              <FinishQuiz setIndex={handleStartOver} points={points} />
             ) : (
               <>
                 <Questions

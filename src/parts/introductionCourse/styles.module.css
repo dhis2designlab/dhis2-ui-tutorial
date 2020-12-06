@@ -1,14 +1,13 @@
-.cardGrid{
-    padding: 8px !important;
-    margin: 8px !important;
-    width: 50% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;  
+.cardGrid {
+  padding: 8px !important;
+  margin: 8px !important;
+  width: 50% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 @media (max-width: 959px) {
-    .cardGrid {
-        width: 80% !important;
-    }
+  .cardGrid {
+    width: 80% !important;
+  }
 }
-  
