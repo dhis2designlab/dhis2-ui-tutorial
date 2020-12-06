@@ -3,6 +3,7 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles, StylesProvider } from "@material-ui/core/styles";
 import classNames from "classnames";
+import { colors } from '@dhis2/ui';
 
 const useStyles = makeStyles((theme) => ({
   correct: {
@@ -12,6 +13,23 @@ const useStyles = makeStyles((theme) => ({
   incorrect: {
     borderStyle: "solid",
     borderColor: "red",
+  },
+  solutionDiv: {
+    padding: '16px',
+    border: 'solid',
+    borderRadius: '6px',
+    borderWidth: 'thin',
+    fontWeight: '500',
+  },
+  incorrectDiv: {
+    backgroundColor: colors.red100,
+    color: colors.red700,  
+    borderColor: colors.red700,
+  },
+  correctDiv: {
+    backgroundColor: colors.green100,
+    color: colors.green700,
+    borderColor: colors.green700,
   },
 }));
 
@@ -45,8 +63,8 @@ function Images({
           </Grid>
         );
       })}
-      {chosenValue !== -1 && <>{isIncorrect && <p>Incorrect: {solutionImg}</p>}</>}
-      {chosenValue !== -1 && <>{isCorrect && <p>Correct: {solutionImg}</p>}</>}
+      {chosenValue !== -1 && <>{isIncorrect && <p className={classNames(classes.solutionDiv, classes.incorrectDiv)}>Incorrect: {solutionImg}</p>}</>}
+      {chosenValue !== -1 && <>{isCorrect && <p className={classNames(classes.solutionDiv, classes.correctDiv)}>Correct: {solutionImg}</p>}</>}
     </Grid>
   );
 }
