@@ -12,8 +12,8 @@ import PublicRoute from "./routes/PublicRoute";
 
 import GlobalStyle from "./theme/globalStyles";
 
-import NavBar from "./Shared/NavBar.js";
-import Copyright from "./Shared/Copyright.js";
+import NavBar from "./shared/NavBar.js";
+import Copyright from "./shared/Copyright.js";
 import { UserContext } from "./userContext";
 import { makeStyles } from "@material-ui/core/styles";
 

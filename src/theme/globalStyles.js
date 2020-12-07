@@ -4,17 +4,41 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-family: Open-Sans, Helvetica, Sans-Serif;
+    font-family: "Roboto", sans-serif;
   }
-  container {
-      padding-top: 8px;
-      padding-bottom: 8px;
-      margin-left: auto;
-      margin-right: auto;
+
+  h1,
+  h2,
+  h6 {
+    text-align: center;
+    color: #212934;
   }
-  paragraph {
-      max-width: 75ch;
+  
+  h3 {
+    text-align: left;
+    color: #212934;
   }
+  
+  h4 {
+    text-align: center;
+    color: #4a5768;
+  }
+  
+  h5 {
+    text-align: left;
+    color: #212934;
+  }
+  
+  p {
+    line-height: 1.2;
+    color: #4a5768;
+  }
+  
+  li {
+    color: #4a5768;
+  }
+  
+  
 `;
  
 export default GlobalStyle;
