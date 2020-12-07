@@ -14,7 +14,6 @@ import { UserContext } from "../userContext";
 import data from "../data.js";
 import { db } from "../firebase";
 
-
 function Settings({ onClick }) {
   const { currentUser, completedCourses, setCompletedCourses } = useContext(
     UserContext
@@ -26,7 +25,7 @@ function Settings({ onClick }) {
   }
 
   return (
-    <main >
+    <main>
       <Grid container spacing={4}>
         <Grid item xs={12}>
           <div>

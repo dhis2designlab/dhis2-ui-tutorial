@@ -8,7 +8,6 @@ const PublicRoute = ({
   restricted,
   ...rest
 }) => {
-
   return (
     <Route
       {...rest}

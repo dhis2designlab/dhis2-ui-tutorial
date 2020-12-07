@@ -1212,7 +1212,7 @@ export const quiz_data = [
         title: "Section 5: Feecback components (coming soon)",
         content: (
           <div>
-             <p>No information. Coming soon</p>
+            <p>No information. Coming soon</p>
           </div>
         ),
       },

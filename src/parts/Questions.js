@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 import QuizUiComponents from "./QuizUiComponents.js";
-import ShowCode from "../components/ShowCode.js"
+import ShowCode from "../components/ShowCode.js";
 import Hints from "../components/Hints.js";
 
 import BreadCrumb from "../components/BreadCrumb.js";
@@ -11,7 +11,6 @@ import Sections from "../components/Sections";
 import RadioButtons from "../components/RadioButtons";
 import Images from "../components/Images";
 import Image from "../components/Image";
-
 
 const useStyles = makeStyles((theme) => ({
   question: {
@@ -95,8 +94,8 @@ function Questions({
           <div dangerouslySetInnerHTML={{ __html: iframe }} />
         </div>
       )}
-      {hints && <Hints hints={hints}/>}
-      {showCode && <ShowCode showCode={showCode}/>}
+      {hints && <Hints hints={hints} />}
+      {showCode && <ShowCode showCode={showCode} />}
       {components && <QuizUiComponents />}
     </>
   );

@@ -8,7 +8,6 @@ const PrivateRoute = ({
   ...rest
 }) => {
   return (
-
     <Route
       {...rest}
       render={(props) =>

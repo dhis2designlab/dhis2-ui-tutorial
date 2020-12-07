@@ -11,17 +11,17 @@ import { Link } from "react-router-dom";
 
 import { UserContext } from "../userContext";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const LinkTo = styled(Link)`
-    text-decoration: none;
+  text-decoration: none;
 `;
 
 const CardComponent = styled(Card)`
-    &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
-    }
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  }
 `;
 
 function CourseCard({ section, index }) {
@@ -29,11 +29,9 @@ function CourseCard({ section, index }) {
 
   const { title, short_info, quizId } = section;
 
-
   let courseCompleted = false;
 
   completedCourses.map((course) => {
- 
     if (course.name == title) {
       courseCompleted = true;
     }
@@ -48,14 +46,16 @@ function CourseCard({ section, index }) {
     >
       <CardComponent>
         <CardMedia
-            style={{paddingTop: '56.25%'}}
-            image={quizId}
-            title="Image title"
-            />
+          style={{ paddingTop: "56.25%" }}
+          image={quizId}
+          title="Image title"
+        />
         <CardContent>
           <h3>{title}</h3>
           {courseCompleted && (
-            <p><Check style={{ fill: "#43a047" }} /> Completed</p>
+            <p>
+              <Check style={{ fill: "#43a047" }} /> Completed
+            </p>
           )}
           <p>{short_info}</p>
         </CardContent>

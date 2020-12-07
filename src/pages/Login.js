@@ -10,24 +10,23 @@ import { CircularLoader } from "@dhis2/ui";
 
 import { auth } from "../firebase.js";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Loader = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 120px;
-`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px;
+`;
 
 const Heading = styled.h2`
-    text-align: center;
-    padding-bottom: 6px;
-`
+  text-align: center;
+  padding-bottom: 6px;
+`;
 
 const Error = styled.p`
-    color: #b71c1c;
-
-`
+  color: #b71c1c;
+`;
 function Login({}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -87,9 +86,7 @@ function Login({}) {
             >
               Log In
             </Button>
-            {errorMessage !== "" && (
-              <Error>{errorMessage}</Error>
-            )}
+            {errorMessage !== "" && <Error>{errorMessage}</Error>}
             <p>
               Do you not have an account? Create an account{" "}
               <Link to={`/signup`}>here</Link>

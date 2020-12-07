@@ -81,9 +81,11 @@ function Images({
         );
       })}
       {chosenValue !== -1 && (
-        <Solution isCorrect={isCorrect ? isCorrect : isIncorrect} solutionQuiz={solutionImg}/>
+        <Solution
+          isCorrect={isCorrect ? isCorrect : isIncorrect}
+          solutionQuiz={solutionImg}
+        />
       )}
-     
     </Grid>
   );
 }

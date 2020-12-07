@@ -15,32 +15,31 @@ import main from "../styles.module.css";
 import { db } from "../firebase";
 
 const styles = {
-    cardGrid: {
-        paddingTop: '8px',
-        paddingBottom: '8px',
-        maxWidth: '80%',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        marginTop: '52px',
-      },
-      
-      title: {
-        textAlign: "center",
-      },
-      buttons: {
-        marginLeft: "auto",
-        marginRight: "auto",
-        display: "block",
-      },
-      navigation: {
-        textAlign: 'center',
-      },
+  cardGrid: {
+    paddingTop: "8px",
+    paddingBottom: "8px",
+    maxWidth: "80%",
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginTop: "52px",
+  },
 
-      button: {
-        margin: '6px',
-      }
-      
-}
+  title: {
+    textAlign: "center",
+  },
+  buttons: {
+    marginLeft: "auto",
+    marginRight: "auto",
+    display: "block",
+  },
+  navigation: {
+    textAlign: "center",
+  },
+
+  button: {
+    margin: "6px",
+  },
+};
 function Course() {
   let { id } = useParams();
 

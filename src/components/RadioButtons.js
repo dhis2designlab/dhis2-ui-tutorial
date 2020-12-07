@@ -5,7 +5,6 @@ import classNames from "classnames";
 import { colors } from "@dhis2/ui";
 import Solution from "./Solution.js";
 
-
 const useStyles = makeStyles((theme) => ({
   text: {
     maxWidth: "75ch",
@@ -103,7 +102,10 @@ function RadioButtons({ questions, setPoints, points }) {
                   />
                   {value.solutionQuiz && isChecked[id] == index ? (
                     <>
-                    <Solution solutionQuiz={value.solutionQuiz} isCorrect={isCorrect[id]} />
+                      <Solution
+                        solutionQuiz={value.solutionQuiz}
+                        isCorrect={isCorrect[id]}
+                      />
                     </>
                   ) : null}
                 </div>

@@ -15,7 +15,6 @@ import github from "../images/github_logo.png";
 import storybook from "../images/storybook.svg";
 import { blue } from "@material-ui/core/colors";
 
-
 const useStyles = makeStyles((theme) => ({
   cardMedia: {
     paddingTop: "56.25%", // 16:9
@@ -35,12 +34,11 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "40px",
   },
   header: {
-      textAlign: "center",
+    textAlign: "center",
   },
   card: {
-      backgroundColor: blue,
-  }
-  
+    backgroundColor: blue,
+  },
 }));
 
 function Links() {

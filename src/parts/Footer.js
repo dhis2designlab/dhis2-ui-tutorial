@@ -10,8 +10,7 @@ function Footer() {
         align="center"
         color="textSecondary"
         component="p"
-      >
-      </Typography>
+      ></Typography>
     </>
   );
 }

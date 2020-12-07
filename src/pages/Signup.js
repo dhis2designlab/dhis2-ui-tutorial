@@ -32,10 +32,10 @@ function Signup({}) {
     <>
       <Container maxWidth="xs">
         {signupState == "signing in" && errorMessage == "" ? (
-            <CircularLoader large />
+          <CircularLoader large />
         ) : (
           <>
-            <h2 >Sign Up</h2>
+            <h2>Sign Up</h2>
             <InputField
               dataTest="dhis2-uiwidgets-inputfield"
               label="Default label"
@@ -69,9 +69,7 @@ function Signup({}) {
             >
               Sign Up
             </Button>
-            {errorMessage !== "" && (
-              <p>{errorMessage}</p>
-            )}
+            {errorMessage !== "" && <p>{errorMessage}</p>}
             <p>
               Do you already have an account? Sign in{" "}
               <Link to={`/login`}>here</Link>
