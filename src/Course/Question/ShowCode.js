@@ -13,7 +13,6 @@ const Container = styled.div`
   marginBottom: 16px,
 `;
 
-
 function ShowCode({ showCode }) {
   const [shouldShowCode, setShowCode] = useState(false);
 

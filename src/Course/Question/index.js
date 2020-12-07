@@ -14,13 +14,13 @@ import styled from "styled-components";
 const Code = styled.div`
   margin-left: auto;
   margin-right: auto;
-  width: 90%
+  width: 90%;
 `;
 
 const Content = styled.div`
   margin-left: auto;
   margin-right: auto;
-  width: 60%
+  width: 60%;
 `;
 
 const Container = styled.div`
@@ -50,7 +50,6 @@ function Question({
   isIncorrect,
   solutionImg,
 }) {
-
   const handleClick = (value) => {
     handleImgClick(value);
   };
@@ -58,33 +57,31 @@ function Question({
   return (
     <Container>
       <Content>
-          <BreadCrumb title={title} breadcrumb={breadcrumb} section={section} />
-          {question && <h1>{question}</h1>}
-          {information && <p>{information}</p>}
-          {sections && <Sections sections={sections} />}
-          {questions && (
-            <RadioButtons
-              setPoints={setPoints}
-              points={points}
-              questions={questions}
-            />
-          )}
-          {images && (
-            <Images
-              isCorrect={isCorrect}
-              isIncorrect={isIncorrect}
-              images={images}
-              handleImgClick={handleClick}
-              chosenValue={chosenValue}
-              solutionImg={solutionImg}
-            />
-          )}
+        <BreadCrumb title={title} breadcrumb={breadcrumb} section={section} />
+        {question && <h1>{question}</h1>}
+        {information && <p>{information}</p>}
+        {sections && <Sections sections={sections} />}
+        {questions && (
+          <RadioButtons
+            setPoints={setPoints}
+            points={points}
+            questions={questions}
+          />
+        )}
+        {images && (
+          <Images
+            isCorrect={isCorrect}
+            isIncorrect={isIncorrect}
+            images={images}
+            handleImgClick={handleClick}
+            chosenValue={chosenValue}
+            solutionImg={solutionImg}
+          />
+        )}
         {image && <Image image={image} imageWidth={imageWidth} />}
       </Content>
       <Code>
-        {iframe && (
-          <div dangerouslySetInnerHTML={{ __html: iframe }} />
-        )}
+        {iframe && <div dangerouslySetInnerHTML={{ __html: iframe }} />}
         {hints && <Hints hints={hints} />}
         {showCode && <ShowCode showCode={showCode} />}
         {components && <QuizUiComponents />}

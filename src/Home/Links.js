@@ -6,7 +6,6 @@ import Container from "@material-ui/core/Container";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 
-
 function Links() {
   const handleClick = (link) => {
     window.open(link);
@@ -45,9 +44,7 @@ function Links() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Card
-              onClick={() => handleClick("https://ui.dhis2.nu/demo/")}
-            >
+            <Card onClick={() => handleClick("https://ui.dhis2.nu/demo/")}>
               <CardContent>
                 <h3>Overview of all the UI components</h3>
                 <p>
@@ -61,10 +58,7 @@ function Links() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Card
-              onClick={() => handleClick("https://ui.dhis2.nu/#/api")}
-         
-            >
+            <Card onClick={() => handleClick("https://ui.dhis2.nu/#/api")}>
               <CardContent>
                 <h3>Api docs</h3>
                 <p>

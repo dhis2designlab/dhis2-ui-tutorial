@@ -7,8 +7,6 @@ import { colors } from "@dhis2/ui";
 
 import Solution from "./Solution.js";
 
-
-
 const useStyles = makeStyles((theme) => ({
   correct: {
     borderStyle: "solid",

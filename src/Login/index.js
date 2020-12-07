@@ -19,7 +19,6 @@ const Main = styled.main`
   padding-top: 128px;
 `;
 
-
 const Loader = styled.div`
   display: flex;
   align-items: center;
@@ -54,54 +53,53 @@ function Login() {
   }, []);
 
   return (
-      <Main>
-        {loggedInState === "logging in" && errorMessage === "" ? (
-          <Loader>
-            <CircularLoader large />
-          </Loader>
-        ) : (
-          <>
-            <Heading>Log In</Heading>
-            <InputField
-              dataTest="dhis2-uiwidgets-inputfield"
-              placeholder="Type your username"
-              label="Username"
-              value={username}
-              onChange={(event) => {
-                setUsername(event.value);
-              }}
-            />
-            <InputField
-              dataTest="dhis2-uiwidgets-inputfield"
-              label="Password"
-              placeholder="Type your password"
-              type="password"
-              value={password}
-              onChange={(event) => {
-                setPassword(event.value);
-              }}
-            />
-            <Button
-              dataTest="dhis2-uicore-button"
-              name="Primary button"
-              primary
-              type="button"
-              value="default"
-              onClick={() => {
-                requestLogin(username, password);
-              }}
-            >
-              Log In
-            </Button>
-            {errorMessage !== "" && <Error>{errorMessage}</Error>}
-            <p>
-              Do you not have an account? Create an account{" "}
-              <Link to={`/signup`}>here</Link>
-            </p>
-          </>
-        )}
-      </Main>
-
+    <Main>
+      {loggedInState === "logging in" && errorMessage === "" ? (
+        <Loader>
+          <CircularLoader large />
+        </Loader>
+      ) : (
+        <>
+          <Heading>Log In</Heading>
+          <InputField
+            dataTest="dhis2-uiwidgets-inputfield"
+            placeholder="Type your username"
+            label="Username"
+            value={username}
+            onChange={(event) => {
+              setUsername(event.value);
+            }}
+          />
+          <InputField
+            dataTest="dhis2-uiwidgets-inputfield"
+            label="Password"
+            placeholder="Type your password"
+            type="password"
+            value={password}
+            onChange={(event) => {
+              setPassword(event.value);
+            }}
+          />
+          <Button
+            dataTest="dhis2-uicore-button"
+            name="Primary button"
+            primary
+            type="button"
+            value="default"
+            onClick={() => {
+              requestLogin(username, password);
+            }}
+          >
+            Log In
+          </Button>
+          {errorMessage !== "" && <Error>{errorMessage}</Error>}
+          <p>
+            Do you not have an account? Create an account{" "}
+            <Link to={`/signup`}>here</Link>
+          </p>
+        </>
+      )}
+    </Main>
   );
 }
 

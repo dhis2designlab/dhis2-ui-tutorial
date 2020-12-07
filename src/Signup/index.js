@@ -9,7 +9,6 @@ import { auth } from "../firebase.js";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-
 const Main = styled.main`
   max-width: 40%;
   margin-left: auto;
@@ -38,52 +37,52 @@ function Signup() {
   }, []);
 
   return (
-      <Main>
-        {signupState === "signing in" && errorMessage === "" ? (
-          <CircularLoader large />
-        ) : (
-          <>
-            <h2>Sign Up</h2>
-            <InputField
-              dataTest="dhis2-uiwidgets-inputfield"
-              name="Default"
-              label="Username"
-              value={username}
-              placeholder="Type your username"
-              onChange={(event) => {
-                setUsername(event.value);
-              }}
-            />
-            <InputField
-              dataTest="dhis2-uiwidgets-inputfield"
-              label="Password"
-              placeholder="Type your password"
-              type="password"
-              value={password}
-              onChange={(event) => {
-                setPassword(event.value);
-              }}
-            />
-            <Button
-              dataTest="dhis2-uicore-button"
-              name="Primary button"
-              onClick={() => {
-                requestsignup(username, password);
-              }}
-              primary
-              type="button"
-              value="default"
-            >
-              Sign Up
-            </Button>
-            {errorMessage !== "" && <p>{errorMessage}</p>}
-            <p>
-              Do you already have an account? Sign in{" "}
-              <Link to={`/login`}>here</Link>
-            </p>
-          </>
-        )}
-      </Main>
+    <Main>
+      {signupState === "signing in" && errorMessage === "" ? (
+        <CircularLoader large />
+      ) : (
+        <>
+          <h2>Sign Up</h2>
+          <InputField
+            dataTest="dhis2-uiwidgets-inputfield"
+            name="Default"
+            label="Username"
+            value={username}
+            placeholder="Type your username"
+            onChange={(event) => {
+              setUsername(event.value);
+            }}
+          />
+          <InputField
+            dataTest="dhis2-uiwidgets-inputfield"
+            label="Password"
+            placeholder="Type your password"
+            type="password"
+            value={password}
+            onChange={(event) => {
+              setPassword(event.value);
+            }}
+          />
+          <Button
+            dataTest="dhis2-uicore-button"
+            name="Primary button"
+            onClick={() => {
+              requestsignup(username, password);
+            }}
+            primary
+            type="button"
+            value="default"
+          >
+            Sign Up
+          </Button>
+          {errorMessage !== "" && <p>{errorMessage}</p>}
+          <p>
+            Do you already have an account? Sign in{" "}
+            <Link to={`/login`}>here</Link>
+          </p>
+        </>
+      )}
+    </Main>
   );
 }
 

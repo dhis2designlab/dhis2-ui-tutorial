@@ -10,7 +10,6 @@ const Container = styled.div`
   padding-top: 128px;
 `;
 
-
 function FinishedCourse({ points, setIndex }) {
   return (
     <Container>

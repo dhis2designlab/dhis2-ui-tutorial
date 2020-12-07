@@ -12,7 +12,6 @@ import { Button } from "@dhis2/ui";
 
 import { db } from "../firebase";
 
-
 function Course() {
   let { id } = useParams();
 

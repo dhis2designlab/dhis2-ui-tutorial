@@ -13,8 +13,7 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import styled from "styled-components";
-import { colors } from "@dhis2/ui"
-
+import { colors } from "@dhis2/ui";
 
 const Main = styled.main`
   max-width: 60%;
@@ -35,51 +34,43 @@ const ListElement = styled.li`
   padding-bottom: 16px;
 `;
 
-
-function CourseOverview({
-  handleNextClick,
-  title,
-  topics,
-  about,
-  status,
-}) {
-
+function CourseOverview({ handleNextClick, title, topics, about, status }) {
   return (
     <Main>
-    <Grid container spacing={5}>
-      <Grid item xs={12} sm={12} md={12}>
-      <BreadCrumb title={title} />
-      </Grid>
-      <Grid item xs={12} sm={12} md={12}>
-        <h2>{title}</h2>
-      </Grid>
-      <Grid item xs={12} sm={8} md={8}>
-        <p>{about}</p>
-      </Grid>
-      <Grid item xs={12} sm={4} md={4}>
-        <Card>
-          <CardContent>
-            <List>
-              <ListElement>
-                <b>Expected duration:</b> 20 minutes
-              </ListElement>
-              <ListElement>
-                <b>Key:</b> Blabla
-              </ListElement>
-              <ListElement>
-                <b>Key:</b> Blabla
-              </ListElement>
-              <ListElement>
-                <b>Key:</b> Blabla
-              </ListElement>
-            </List>
-          </CardContent>
-        </Card>
-      </Grid>
-      <Grid spacing={4} item xs={12} sm={12} md={12}>
-        {topics ? (
-          <>
-            <p>The topics that will be covered in this module:</p>
+      <Grid container spacing={5}>
+        <Grid item xs={12} sm={12} md={12}>
+          <BreadCrumb title={title} />
+        </Grid>
+        <Grid item xs={12} sm={12} md={12}>
+          <h2>{title}</h2>
+        </Grid>
+        <Grid item xs={12} sm={8} md={8}>
+          <p>{about}</p>
+        </Grid>
+        <Grid item xs={12} sm={4} md={4}>
+          <Card>
+            <CardContent>
+              <List>
+                <ListElement>
+                  <b>Expected duration:</b> 20 minutes
+                </ListElement>
+                <ListElement>
+                  <b>Key:</b> Blabla
+                </ListElement>
+                <ListElement>
+                  <b>Key:</b> Blabla
+                </ListElement>
+                <ListElement>
+                  <b>Key:</b> Blabla
+                </ListElement>
+              </List>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid spacing={4} item xs={12} sm={12} md={12}>
+          {topics ? (
+            <>
+              <p>The topics that will be covered in this module:</p>
               {topics.map((index) => (
                 <>
                   <Accordion>
@@ -88,7 +79,7 @@ function CourseOverview({
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                     >
-                      <p >
+                      <p>
                         <b>{index.title}</b>
                       </p>
                     </AccordionHeader>
@@ -96,33 +87,33 @@ function CourseOverview({
                   </Accordion>
                 </>
               ))}
-          </>
-        ) : null}
+            </>
+          ) : null}
+        </Grid>
+        {status === "under development" ? (
+          <div>
+            <Button
+              dataTest="dhis2-uicore-buttorn"
+              onClick={handleNextClick}
+              disabled
+              type="button"
+            >
+              Start Course
+            </Button>
+          </div>
+        ) : (
+          <div>
+            <Button
+              dataTest="dhis2-uicore-buttorn"
+              onClick={handleNextClick}
+              primary
+              type="button"
+            >
+              Start Course
+            </Button>
+          </div>
+        )}
       </Grid>
-      {status === "under development" ? (
-        <div>
-          <Button
-            dataTest="dhis2-uicore-buttorn"
-            onClick={handleNextClick}
-            disabled
-            type="button"
-          >
-            Start Course
-          </Button>
-        </div>
-      ) : (
-        <div>
-          <Button
-            dataTest="dhis2-uicore-buttorn"
-            onClick={handleNextClick}
-            primary
-            type="button"
-          >
-            Start Course
-          </Button>
-        </div>
-      )}
-    </Grid>
     </Main>
   );
 }
