@@ -15,7 +15,6 @@ const Nav = styled.div`
   z-index: 2;
   margin: 0;
   padding: 8px;
-  align-items: center;
   width: 100%;
 `;
 
@@ -34,7 +33,7 @@ const Text = styled.p`
   text-align: center;
 `;
 
-function NavBar({ user, nrCourses, nrCompletedCourses, loggedIn }) {
+function NavBar({ nrCourses, nrCompletedCourses, loggedIn }) {
   const completionRate = Math.floor((nrCompletedCourses / nrCourses) * 100);
 
   return (
@@ -98,6 +97,7 @@ function NavBar({ user, nrCourses, nrCompletedCourses, loggedIn }) {
             item
             alignItems="center"
             justify="flex-end"
+            style={{ paddingRight: "12px" }}
             xs={8}
             sm={8}
             md={8}

@@ -4,6 +4,7 @@ import { InputField } from "@dhis2/ui";
 import { Button } from "@dhis2/ui-core";
 
 import { CircularLoader } from "@dhis2/ui";
+import Grid from "@material-ui/core/Grid";
 
 import { auth } from "../firebase.js";
 import { Link } from "react-router-dom";
@@ -41,10 +42,12 @@ function Signup() {
       {signupState === "signing in" && errorMessage === "" ? (
         <CircularLoader large />
       ) : (
-        <>
-          <h2>Sign Up</h2>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={12} md={12}>
+            <h2>Sign Up</h2>
+          </Grid>
+          <Grid item xs={12} sm={12} md={12}>
           <InputField
-            dataTest="dhis2-uiwidgets-inputfield"
             name="Default"
             label="Username"
             value={username}
@@ -53,8 +56,9 @@ function Signup() {
               setUsername(event.value);
             }}
           />
+          </Grid>
+          <Grid item xs={12} sm={12} md={12}>
           <InputField
-            dataTest="dhis2-uiwidgets-inputfield"
             label="Password"
             placeholder="Type your password"
             type="password"
@@ -63,8 +67,9 @@ function Signup() {
               setPassword(event.value);
             }}
           />
+          </Grid>
+          <Grid item xs={12} sm={12} md={12}>
           <Button
-            dataTest="dhis2-uicore-button"
             name="Primary button"
             onClick={() => {
               requestsignup(username, password);
@@ -75,12 +80,17 @@ function Signup() {
           >
             Sign Up
           </Button>
+          </Grid>
+         
+          <Grid item spacing={3} xs={12} sm={12} md={12}>
           {errorMessage !== "" && <p>{errorMessage}</p>}
           <p>
             Do you already have an account? Sign in{" "}
             <Link to={`/login`}>here</Link>
           </p>
-        </>
+          </Grid>
+          </Grid>
+      
       )}
     </Main>
   );

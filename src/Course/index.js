@@ -9,6 +9,7 @@ import FinishedCourse from "./FinishedCourse.js";
 import CourseOverview from "./CourseOverview.js";
 import Question from "./Question";
 import { Button } from "@dhis2/ui";
+import Grid from "@material-ui/core/Grid";
 
 import { db } from "../firebase";
 
@@ -159,8 +160,7 @@ function Course() {
                   isIncorrect={isIncorrect}
                   solutionImg={solutionImg}
                 />
-                <div>
-                  <span>
+                <Grid container justify="center" spacing={6}>
                     <Button
                       dataTest="dhis2-uicore-button"
                       onClick={handleBackClick}
@@ -169,8 +169,6 @@ function Course() {
                     >
                       Back
                     </Button>
-                  </span>
-                  <span>
                     <Button
                       dataTest="dhis2-uicore-button"
                       onClick={handleNextClick}
@@ -179,8 +177,7 @@ function Course() {
                     >
                       Next
                     </Button>
-                  </span>
-                </div>
+                  </Grid>
               </>
             )}{" "}
           </>

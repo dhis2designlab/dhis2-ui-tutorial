@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 
 import { InputField } from "@dhis2/ui";
 import { Button } from "@dhis2/ui-core";
+import Grid from "@material-ui/core/Grid";
 
 import { Link } from "react-router-dom";
 
@@ -59,8 +60,11 @@ function Login() {
           <CircularLoader large />
         </Loader>
       ) : (
-        <>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={12} md={12}>
           <Heading>Log In</Heading>
+          </Grid>
+          <Grid item xs={12} sm={12} md={12}>
           <InputField
             dataTest="dhis2-uiwidgets-inputfield"
             placeholder="Type your username"
@@ -70,6 +74,8 @@ function Login() {
               setUsername(event.value);
             }}
           />
+          </Grid>
+          <Grid item xs={12} sm={12} md={12}>
           <InputField
             dataTest="dhis2-uiwidgets-inputfield"
             label="Password"
@@ -80,6 +86,8 @@ function Login() {
               setPassword(event.value);
             }}
           />
+           </Grid>
+           <Grid item xs={12} sm={12} md={12}>
           <Button
             dataTest="dhis2-uicore-button"
             name="Primary button"
@@ -92,12 +100,15 @@ function Login() {
           >
             Log In
           </Button>
+          </Grid>
+          <Grid item xs={12} sm={12} md={12}>
           {errorMessage !== "" && <Error>{errorMessage}</Error>}
           <p>
             Do you not have an account? Create an account{" "}
             <Link to={`/signup`}>here</Link>
           </p>
-        </>
+          </Grid>
+        </Grid>
       )}
     </Main>
   );
