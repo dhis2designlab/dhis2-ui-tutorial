@@ -34,8 +34,7 @@ const UserProvider = ({ children }) => {
                       courseImg: doc.data().courseImg,
                     });
                   });
-                  console.log(fetchedCourses);
-
+  
                   setCompletedCourses(fetchedCourses);
                 });
             } else {
