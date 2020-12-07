@@ -15,11 +15,8 @@ const Main = styled.main`
   max-width: 60%;
   margin-left: auto;
   margin-right: auto;
-  background-color: "blue";
-  padding-top: 70px;
+  padding-top: 128px;
 `;
-
-
 
 function Settings({ onClick }) {
   const { currentUser, completedCourses, setCompletedCourses } = useContext(

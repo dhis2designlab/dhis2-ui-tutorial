@@ -20,7 +20,7 @@ const Main = styled.main`
   max-width: 60%;
   margin-left: auto;
   margin-right: auto;
-  background-color: "blue";
+  padding-top: 128px;
 `;
 
 const List = styled.ul`

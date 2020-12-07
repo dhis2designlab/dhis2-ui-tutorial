@@ -1,21 +1,19 @@
 import React from "react";
 
 import { ModalTitle, ModalContent, Button } from "@dhis2/ui";
+import styled from "styled-components";
 
-import { makeStyles } from "@material-ui/core/styles";
+const Container = styled.div`
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 128px;
+`;
 
-const useStyles = makeStyles((theme) => ({
-  text: {
-    maxWidth: "75ch",
-    marginLeft: "auto",
-    marginRight: "auto",
-  },
-}));
 
 function FinishedCourse({ points, setIndex }) {
-  const classes = useStyles();
   return (
-    <div className={classes.text}>
+    <Container>
       <ModalTitle>Congratulation! You have now finished the quiz!</ModalTitle>
       <ModalContent>
         <p>You got {points} points</p>
@@ -28,7 +26,7 @@ function FinishedCourse({ points, setIndex }) {
           Start over
         </Button>
       </ModalContent>
-    </div>
+    </Container>
   );
 }
 

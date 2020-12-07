@@ -11,11 +11,11 @@ import styled from "styled-components";
 
 
 const Main = styled.main`
-  max-width: 60%;
+  max-width: 40%;
   margin-left: auto;
   margin-right: auto;
   background-color: "blue";
-  padding-top: 100px;
+  padding-top: 128px;
 `;
 
 function Signup() {

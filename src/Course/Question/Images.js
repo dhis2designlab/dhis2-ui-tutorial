@@ -7,6 +7,8 @@ import { colors } from "@dhis2/ui";
 
 import Solution from "./Solution.js";
 
+
+
 const useStyles = makeStyles((theme) => ({
   correct: {
     borderStyle: "solid",
@@ -16,35 +18,12 @@ const useStyles = makeStyles((theme) => ({
     borderStyle: "solid",
     borderColor: colors.red700,
   },
-  solutionDiv: {
-    padding: "16px",
-    border: "solid",
-    borderRadius: "6px",
-    borderWidth: "thin",
-    marginBottom: "16px",
-  },
-  incorrectDiv: {
-    backgroundColor: colors.red100,
-    borderColor: colors.red700,
-  },
-  correctDiv: {
-    backgroundColor: colors.green100,
-    borderColor: colors.green700,
-  },
+
   hover: {
     "&:hover": {
       borderColor: colors.grey500,
       borderStyle: "solid",
     },
-  },
-  solutionCorrect: {
-    color: colors.green700,
-  },
-  solutionIncorrect: {
-    color: colors.red700,
-  },
-  icon: {
-    marginRight: "8px",
   },
 }));
 

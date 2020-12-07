@@ -8,23 +8,17 @@ import { Settings } from "@dhis2/ui-icons";
 import { LinearLoader } from "@dhis2/ui";
 import styled from "styled-components";
 
-const Nav = styled(Grid)`
+const Nav = styled.div`
   background: white;
-  height: 64px;
   position: fixed;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
   z-index: 2;
   margin: 0;
-  padding: 0;
+  padding: 8px;
   align-items: center;
+  width: 100%;
 `;
 
-const LinkTo = styled(Link)`
-  text-decoration: none;
-  text-align: left;
-  margin-left: 12px;
-  margin-right: 12px;
-`;
 
 const Logo = styled.img`
   max-height: 30px;
@@ -47,15 +41,16 @@ function NavBar({ user, nrCourses, nrCompletedCourses, loggedIn }) {
   const completionRate = Math.floor((nrCompletedCourses / nrCourses) * 100);
 
   return (
-    <Nav container>
+    <Nav>
+    <Grid container>
       <Grid item xs={4} sm={4} md={4}>
-        <LinkTo
+        <Link
           to={{
             pathname: `/home`,
           }}
         >
           <Logo src={logo} />
-        </LinkTo>
+        </Link>
       </Grid>
       {loggedIn ? (
         <>
@@ -72,10 +67,10 @@ function NavBar({ user, nrCourses, nrCompletedCourses, loggedIn }) {
             </Loader>
           </Grid>
           <Grid item xs={4} sm={4} md={4}>
-            <LinkTo to={`/settings`}>
+            <Link to={`/settings`}>
               <Name>{name}</Name>
               <Settings />
-            </LinkTo>
+            </Link>
           </Grid>
         </>
       ) : (
@@ -89,7 +84,9 @@ function NavBar({ user, nrCourses, nrCompletedCourses, loggedIn }) {
           </Link>
         </Grid>
       )}
+    </Grid>
     </Nav>
+  
   );
 }
 

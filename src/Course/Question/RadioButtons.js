@@ -2,49 +2,21 @@ import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Radio } from "@dhis2/ui";
 import classNames from "classnames";
-import { colors } from "@dhis2/ui";
+
 import Solution from "./Solution.js";
 
+import styled from "styled-components";
+
+const Container = styled.div`
+  margin-bottom: 16px;
+`;
+
 const useStyles = makeStyles((theme) => ({
-  text: {
-    maxWidth: "75ch",
-    marginLeft: "auto",
-    marginRight: "auto",
-    marginBottom: "32px",
-  },
   incorrect: {
     color: "red !important",
   },
   correct: {
     color: "green !important",
-  },
-  radioButton: {
-    marginBottom: "16px",
-  },
-  solutionDiv: {
-    padding: "8px",
-    border: "solid",
-    borderRadius: "6px",
-    borderWidth: "thin",
-    marginBottom: "16px",
-    marginTop: "16px",
-  },
-  incorrectDiv: {
-    backgroundColor: colors.red100,
-    borderColor: colors.red700,
-  },
-  correctDiv: {
-    backgroundColor: colors.green100,
-    borderColor: colors.green700,
-  },
-  solutionCorrect: {
-    color: colors.green700,
-  },
-  solutionIncorrect: {
-    color: colors.red700,
-  },
-  icon: {
-    marginRight: "8px",
   },
 }));
 
@@ -75,7 +47,7 @@ function RadioButtons({ questions, setPoints, points }) {
 
   return questions.map((value, id) => {
     return (
-      <div className={classes.text}>
+      <div>
         {value.question && <h4>{value.question}</h4>}
         {value.answers &&
           value.answers.map((val, i) => {
@@ -83,7 +55,7 @@ function RadioButtons({ questions, setPoints, points }) {
 
             return values.map((answer, index) => {
               return (
-                <div className={classes.radioButton}>
+                <Container>
                   <Radio
                     dataTest="dhis2-uicore-radio"
                     label={answer}
@@ -107,7 +79,7 @@ function RadioButtons({ questions, setPoints, points }) {
                       />
                     </>
                   ) : null}
-                </div>
+                </Container>
               );
             });
           })}

@@ -38,13 +38,7 @@ const GlobalStyle = createGlobalStyle`
     color: #4a5768;
   }
  
-  .main {
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: "blue";
-  }
-  
+
 `;
 
 export default GlobalStyle;

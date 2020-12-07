@@ -12,43 +12,7 @@ import { Button } from "@dhis2/ui";
 
 import { db } from "../firebase";
 
-import styled from "styled-components";
 
-const Main = styled.main`
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: "blue";
-`;
-
-
-
-const styles = {
-  cardGrid: {
-    paddingTop: "8px",
-    paddingBottom: "8px",
-    maxWidth: "80%",
-    marginLeft: "auto",
-    marginRight: "auto",
-    marginTop: "52px",
-  },
-
-  title: {
-    textAlign: "center",
-  },
-  buttons: {
-    marginLeft: "auto",
-    marginRight: "auto",
-    display: "block",
-  },
-  navigation: {
-    textAlign: "center",
-  },
-
-  button: {
-    margin: "6px",
-  },
-};
 function Course() {
   let { id } = useParams();
 
@@ -196,8 +160,8 @@ function Course() {
                   isIncorrect={isIncorrect}
                   solutionImg={solutionImg}
                 />
-                <div className={styles.navigation}>
-                  <span className={styles.button}>
+                <div>
+                  <span>
                     <Button
                       dataTest="dhis2-uicore-button"
                       onClick={handleBackClick}
@@ -207,7 +171,7 @@ function Course() {
                       Back
                     </Button>
                   </span>
-                  <span className={styles.button}>
+                  <span>
                     <Button
                       dataTest="dhis2-uicore-button"
                       onClick={handleNextClick}

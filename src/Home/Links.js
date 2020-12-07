@@ -2,47 +2,21 @@ import React from "react";
 
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
-import { makeStyles } from "@material-ui/core/styles";
 
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 
-import { blue } from "@material-ui/core/colors";
-
-const useStyles = makeStyles((theme) => ({
-  cardMedia: {
-    paddingTop: "56.25%", // 16:9
-  },
-
-  link: {
-    display: "block",
-    marginLeft: "auto",
-    marginRight: "auto",
-  },
-  header: {
-    textAlign: "center",
-  },
-
-  cont: {
-    paddingTop: "40px",
-    paddingBottom: "40px",
-  },
-
-  card: {
-    backgroundColor: blue,
-  },
-}));
 
 function Links() {
   const handleClick = (link) => {
     window.open(link);
   };
-  const classes = useStyles();
+
   return (
     <div>
       <Container>
         <Grid container spacing={5}>
-          <Grid item xs={12} sm={12} md={12} className={classes.header}>
+          <Grid item xs={12} sm={12} md={12}>
             <h2>Resources</h2>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
@@ -50,9 +24,8 @@ function Links() {
               onClick={() =>
                 handleClick("https://github.com/dhis2/design-system")
               }
-              className={classes.card}
             >
-              <CardContent className={classes.cardContent}>
+              <CardContent>
                 <h3>DHIS2 Design System on Github</h3>
                 <p>
                   A lot of the content used in these tutorials are taken from
@@ -74,9 +47,8 @@ function Links() {
           <Grid item xs={12} sm={6} md={4}>
             <Card
               onClick={() => handleClick("https://ui.dhis2.nu/demo/")}
-              className={classes.card}
             >
-              <CardContent className={classes.cardContent}>
+              <CardContent>
                 <h3>Overview of all the UI components</h3>
                 <p>
                   In Storybook, you will find all the possible UI components
@@ -91,9 +63,9 @@ function Links() {
           <Grid item xs={12} sm={6} md={4}>
             <Card
               onClick={() => handleClick("https://ui.dhis2.nu/#/api")}
-              className={classes.card}
+         
             >
-              <CardContent className={classes.cardContent}>
+              <CardContent>
                 <h3>Api docs</h3>
                 <p>
                   The Api documentation contains documentation for all the

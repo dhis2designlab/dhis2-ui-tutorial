@@ -1,62 +1,56 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import classNames from "classnames";
+
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import CancelIcon from "@material-ui/icons/Cancel";
 import { colors } from "@dhis2/ui";
+import styled from "styled-components";
 
-const useStyles = makeStyles((theme) => ({
-  solutionDiv: {
-    padding: "8px",
-    border: "solid",
-    borderRadius: "6px",
-    borderWidth: "thin",
-    marginBottom: "16px",
-    marginTop: "16px",
-  },
-  incorrectDiv: {
-    backgroundColor: colors.red100,
-    borderColor: colors.red700,
-  },
-  correctDiv: {
-    backgroundColor: colors.green100,
-    borderColor: colors.green700,
-  },
-  solutionCorrect: {
-    color: colors.green700,
-  },
-  solutionIncorrect: {
-    color: colors.red700,
-  },
-  icon: {
-    marginRight: "8px",
-  },
-}));
+const Container = styled.div`
+  padding: 8px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+`
+
+const CorrectDiv = styled.div`
+  background-color: ${colors.green100};
+  border-color: ${colors.green700};
+  border: solid;
+  border-radius: 6px;
+  border-width: thin;
+
+`
+const IncorrectDiv = styled.div`
+  background-color: ${colors.red100};
+  border-color: ${colors.red700}; 
+  border: solid;
+  border-radius: 6px;
+  border-width: thin;
+`
+const Correct = styled.p`
+  color: ${colors.green700};
+`
+const Incorrect = styled.p`
+  color: ${colors.red700};
+`
 
 function Solution({ isCorrect, solutionQuiz }) {
-  const classes = useStyles();
   return (
-    <>
+    <Container>
       {isCorrect ? (
-        <div className={classNames(classes.correctDiv, classes.solutionDiv)}>
-          <p className={classes.solutionCorrect}>
-            <span className={classes.icon}>
-              <CheckCircleIcon />
-            </span>
-            <b>Correct:</b> {solutionQuiz}
-          </p>
-        </div>
+        <CorrectDiv>
+            <Correct>
+              <CheckCircleIcon style={{marginRight: "8px", marginLeft: "8px"}}/>
+            <b>Correct:</b> {solutionQuiz}</Correct>
+        </CorrectDiv>
       ) : (
-        <div className={classNames(classes.incorrectDiv, classes.solutionDiv)}>
-          <p className={classes.solutionIncorrect}>
-            <span className={classes.icon}>
-              <CancelIcon />
-            </span>
+        <IncorrectDiv>
+            <Incorrect>
+              <CancelIcon style={{marginRight: "8px", marginLeft: "8px"}} />
             <b>Incorrect:</b> {solutionQuiz}
-          </p>
-        </div>
+          </Incorrect>
+        </IncorrectDiv>
       )}
-    </>
+    </Container>
   );
 }
 
