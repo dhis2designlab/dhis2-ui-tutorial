@@ -21,7 +21,9 @@ const Nav = styled.div`
 
 
 const Logo = styled.img`
+  text-align: left;
   max-height: 30px;
+  
 `;
 
 const Loader = styled.div`
@@ -30,20 +32,19 @@ const Loader = styled.div`
   }
 `;
 
-const Name = styled.p`
-  color: black;
-  text-align: right;
-  display: inline-block;
+const Text = styled.p`
+  text-align: center;
 `;
 
+
 function NavBar({ user, nrCourses, nrCompletedCourses, loggedIn }) {
-  const name = user ? user.username : "";
+ 
   const completionRate = Math.floor((nrCompletedCourses / nrCourses) * 100);
 
   return (
     <Nav>
     <Grid container>
-      <Grid item xs={4} sm={4} md={4}>
+      <Grid container item alignItems="center" justify="left" xs={4} sm={4} md={4}>
         <Link
           to={{
             pathname: `/home`,
@@ -54,27 +55,24 @@ function NavBar({ user, nrCourses, nrCompletedCourses, loggedIn }) {
       </Grid>
       {loggedIn ? (
         <>
-          <Grid item xs={4} sm={4} md={4}>
+          <Grid container item alignItems="center" justify="center" xs={4} sm={4} md={4}>
             <Loader>
-              <div style={{ margin: "auto", textAlign: "center" }}>
-                <p>Completion rate: {completionRate}%</p>
+                <Text>Completion rate: {completionRate}%</Text>
                 <LinearLoader
                   amount={completionRate}
                   dataTest="dhis2-uicore-linearloader"
                   width="300px"
                 />
-              </div>
             </Loader>
           </Grid>
-          <Grid item xs={4} sm={4} md={4}>
+          <Grid container item alignItems="center" justify="flex-end" style={{paddingRight: '12px'}} xs={4} sm={4} md={4}>
             <Link to={`/settings`}>
-              <Name>{name}</Name>
               <Settings />
             </Link>
           </Grid>
         </>
       ) : (
-        <Grid item xs={8} sm={8} md={8}>
+        <Grid container item  alignItems="center" justify="flex-end" xs={8} sm={8} md={8}>
           <Link
             to={{
               pathname: `/login`,
