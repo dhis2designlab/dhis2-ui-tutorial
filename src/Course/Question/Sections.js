@@ -14,7 +14,7 @@ function Sections({ sections }) {
               <p>
                 {value.text}{" "}
                 {value.link && (
-                  <a target="_blank" href={value.link}>
+                  <a target="_blank" rel="noopener noreferrer"  href={value.link}>
                     {value.link}
                   </a>
                 )}
@@ -30,6 +30,7 @@ function Sections({ sections }) {
                   display: "block",
                   maxWidth: maxWidth,
                 }}
+                alt="Question"
               />
             )}
             {value.list && (

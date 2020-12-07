@@ -35,7 +35,7 @@ function Header() {
     <HeaderDiv>
       <Content>
         <Grid container spacing={4}>
-          <Grid item item xs={12} sm={12} md={6}>
+          <Grid item sm={12} md={6}>
             <h1>DHIS2 UI tutorial</h1>
             <Paragraph>
               In these tutorials you will get design knowledge about how to
@@ -47,7 +47,7 @@ function Header() {
               Go to courses
             </Button>
           </Grid>
-          <Grid item item xs={12} sm={12} md={6}>
+          <Grid item xs={12} sm={12} md={6}>
             <Image src={HeaderImg} style={{ maxWidth: "100%" }}></Image>
           </Grid>
         </Grid>

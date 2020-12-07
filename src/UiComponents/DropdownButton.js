@@ -1,7 +1,7 @@
 import React from "react";
 
 import Grid from "@material-ui/core/Grid";
-import { Button, DropdownButton } from "@dhis2/ui";
+import { DropdownButton } from "@dhis2/ui";
 
 import styles from "./styles.module.css";
 

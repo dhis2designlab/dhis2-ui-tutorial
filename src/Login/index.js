@@ -27,7 +27,7 @@ const Heading = styled.h2`
 const Error = styled.p`
   color: #b71c1c;
 `;
-function Login({}) {
+function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedInState, setLoggedInState] = useState("");
@@ -43,12 +43,12 @@ function Login({}) {
   const requestLogin = useCallback((username, password) => {
     setLoggedInState("logging in");
     login(username, password);
-  });
+  },[]);
 
   return (
     <>
       <Container maxWidth="xs">
-        {loggedInState == "logging in" && errorMessage == "" ? (
+        {loggedInState === "logging in" && errorMessage === "" ? (
           <Loader>
             <CircularLoader large />
           </Loader>

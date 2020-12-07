@@ -9,7 +9,7 @@ import { CircularLoader } from "@dhis2/ui";
 import { auth } from "../firebase.js";
 import { Link } from "react-router-dom";
 
-function Signup({}) {
+function Signup() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [signupState, setSignupState] = useState("");
@@ -26,19 +26,18 @@ function Signup({}) {
   const requestsignup = useCallback((username, password) => {
     setSignupState("signing in");
     signup(username, password);
-  });
+  }, []);
 
   return (
     <>
       <Container maxWidth="xs">
-        {signupState == "signing in" && errorMessage == "" ? (
+        {signupState === "signing in" && errorMessage === "" ? (
           <CircularLoader large />
         ) : (
           <>
             <h2>Sign Up</h2>
             <InputField
               dataTest="dhis2-uiwidgets-inputfield"
-              label="Default label"
               name="Default"
               label="Username"
               value={username}

@@ -65,8 +65,8 @@ function Images({
           <Grid item xs={6} sm={6} md={6}>
             <div
               className={classNames({
-                [classes.correct]: isCorrect && index == chosenValue,
-                [classes.incorrect]: isIncorrect && index == chosenValue,
+                [classes.correct]: isCorrect && index === chosenValue,
+                [classes.incorrect]: isIncorrect && index === chosenValue,
                 [classes.hover]: !isIncorrect && !isCorrect,
               })}
             >
@@ -74,6 +74,7 @@ function Images({
                 onClick={() => handleImgClick(index)}
                 src={value}
                 style={{ maxWidth: "100%" }}
+                alt="question"
               />
             </div>
           </Grid>

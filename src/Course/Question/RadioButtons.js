@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { makeStyles, StylesProvider } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import { Radio } from "@dhis2/ui";
 import classNames from "classnames";
 import { colors } from "@dhis2/ui";
@@ -52,21 +52,20 @@ function RadioButtons({ questions, setPoints, points }) {
   const classes = useStyles();
   const [isChecked, setIsChecked] = useState([]);
   const [isCorrect, setIsCorrect] = useState([]);
-  console.log("Questions " + questions[0]);
 
   useEffect(() => {
     [...Array(questions.length)].map((_, i) =>
       setIsChecked((state) => [...state, -1])
     );
-  }, []);
+  }, [questions.length]);
 
   const handleClick = (e) => {
-    if (isChecked[e.name] == -1) {
+    if (isChecked[e.name] === -1) {
       let isCheckedArr = [...isChecked];
       isCheckedArr[e.name] = e.value;
       let correctArr = [...isCorrect];
-      correctArr[e.name] = questions[e.name].correct == e.value;
-      if (questions[e.name].correct == e.value) {
+      correctArr[e.name] = questions[e.name].correct === e.value;
+      if (questions[e.name].correct === e.value) {
         setPoints(points + 1);
       }
       setIsChecked(isCheckedArr);
@@ -81,7 +80,7 @@ function RadioButtons({ questions, setPoints, points }) {
         {value.answers &&
           value.answers.map((val, i) => {
             const values = Object.values(val);
-            console.log(values);
+      
             return values.map((answer, index) => {
               return (
                 <div className={classes.radioButton}>
@@ -92,15 +91,15 @@ function RadioButtons({ questions, setPoints, points }) {
                     id={index}
                     value={index}
                     onChange={handleClick}
-                    checked={isChecked[id] == index}
+                    checked={isChecked[id] === index}
                     className={classNames({
                       [classes.correct]:
-                        isCorrect[id] && isChecked[id] == index,
+                        isCorrect[id] && isChecked[id] === index,
                       [classes.incorrect]:
-                        !isCorrect[id] && isChecked[id] == index,
+                        !isCorrect[id] && isChecked[id] === index,
                     })}
                   />
-                  {value.solutionQuiz && isChecked[id] == index ? (
+                  {value.solutionQuiz && isChecked[id] === index ? (
                     <>
                       <Solution
                         solutionQuiz={value.solutionQuiz}

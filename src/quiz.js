@@ -20,7 +20,6 @@ import chipApi from "./images/chipApi.png";
 import menuLevels from "./images/menuLevels.png";
 import menuDensity from "./images/menuDensity.png";
 import menuSections from "./images/menuSections.png";
-import menuApi from "./images/menuApi.png";
 import menuDivider from "./images/menuDivider.png";
 import menuItem from "./images/menuItem.png";
 import menuSectionHeader from "./images/menuSectionHeader.png";
@@ -31,22 +30,10 @@ import fileInputFieldFF from "./images/fileInputFieldFF.png";
 import flyoutMenuApi from "./images/flyoutMenuApi.png";
 
 //Table
-
 import tableActions from "./images/tableActions.png";
-import tableEditingRows from "./images/tableEditingRows.png";
-import tableEditingSimple from "./images/tableEditingSimple.png";
-import tableEditingSingle from "./images/tableEditingSimple.png";
-import tableExpandable from "./images/tableExpandable.png";
 import tableFiltering from "./images/tableFiltering.png";
-import tableFixedColumns from "./images/tableFixedColumns.png";
-import tableFixedHeader from "./images/tableFixedHeader.png";
 import tableInline from "./images/tableInline.png";
-import tableInlineEditing from "./images/tableInlineEditing.png";
-import tableReordering from "./images/tableReordering.png";
-import tableRowActions from "./images/tableRowActions.png";
 import tableSearch from "./images/tableSearch.png";
-import tableSelectableRow from "./images/tableSelectableRow.png";
-import tableSorting from "./images/tableSorting.png";
 
 //Table API
 import tableApi from "./images/tableApi.png";
@@ -58,7 +45,6 @@ import tableHeadApi from "./images/tableHeadApi.png";
 import tableRowApi from "./images/tableRowApi.png";
 import tableRowHeadApi from "./images/tableRowHeadApi.png";
 
-import Fallback from "./images/default-image.jpg";
 import Color from "./images/color.png";
 import ContentCommunication from "./images/contentandcommunication.png";
 import Forms from "./images/forms.png";
@@ -69,8 +55,6 @@ import Icon from "./images/icon.png";
 import dataTable from "./images/dataTable.png";
 import composition from "./images/composition.png";
 import tag from "./images/tag.png";
-import tagCorrect from "./images/tagCorrect.png";
-import tagIncorrect from "./images/tagIncorrect.png";
 import tagTable from "./images/tagTable.png";
 import tagIcons from "./images/tagIcons.png";
 import tagExample from "./images/tagExample.png";
@@ -94,12 +78,6 @@ import colorIncorrect3 from "./images/colorIncorrect3.png";
 import tagImgIncorrect from "./images/tagImgIncorrect.png";
 import tagImgCorrect from "./images/tagImgCorrect.png";
 
-import grey from "./images/grey.png";
-import blue from "./images/blue.png";
-import teal from "./images/teal.png";
-import red from "./images/red.png";
-import yellow from "./images/yellow.png";
-import green from "./images/green.png";
 
 import highContrast from "./images/highContrast.png";
 import lowContrast from "./images/lowContrast.png";
@@ -389,19 +367,6 @@ export default function App() {
 }
 `;
 
-const changeButton = `
-    <div className="App">
-    <Button
-      dataTest="dhis2-uicore-button"
-      name="Basic button"
-      type="button"
-      secondary
-    >
-      Basic button
-    </Button>
-    </div>
-  `;
-
 const flyoutExampleIcons = `
   // Chart icon
   import AssessmentIcon from "@material-ui/icons/Assessment";
@@ -472,11 +437,6 @@ export default function App() {
 const colorIframe =
   '<iframe src="https://codesandbox.io/embed/still-sunset-oucqv?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="still-sunset-oucqv" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
 
-const iframe =
-  '<iframe src="https://codesandbox.io/embed/bold-sun-l4upt?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="bold-sun-l4upt" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
-
-const iframe2 =
-  '<iframe src="https://codesandbox.io/embed/priceless-benz-t7sms?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="priceless-benz-t7sms" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
 const buttonExample =
   '<iframe src="https://codesandbox.io/embed/compassionate-grass-8wq3t?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="compassionate-grass-8wq3t" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
 
@@ -493,8 +453,6 @@ const flyoutMenuExample =
 const simpleTableExample =
   '<iframe src="https://codesandbox.io/embed/festive-bhabha-nsi75?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="festive-bhabha-nsi75" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
 
-const colorScaleIframe =
-  '<iframe src="https://codesandbox.io/embed/still-sunset-oucqv?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="still-sunset-oucqv" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
 
 export const quiz_data = [
   {

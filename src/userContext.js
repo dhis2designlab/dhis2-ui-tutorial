@@ -7,12 +7,10 @@ export const UserContext = createContext();
 const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [completedCourses, setCompletedCourses] = useState([]);
-  const [isLoading, setIsLoading] = useState("False");
-  const [isError, setIsError] = useState("False");
 
   useEffect(() => {
     const fetchData = auth.onAuthStateChanged((user) => {
-      setIsLoading("True");
+    
       if (user) {
         let userReference = db.collection("users").doc(user.uid);
         userReference
@@ -49,16 +47,12 @@ const UserProvider = ({ children }) => {
               });
             }
           })
-          .catch(function (error) {
-            console.log("error getting document", error);
-            setIsLoading("False");
-            setIsError("False");
-          });
+         
       } else {
         setCurrentUser({ loggedIn: false });
       }
     });
-    setIsLoading("True");
+ 
     return () => fetchData();
   }, []);
 

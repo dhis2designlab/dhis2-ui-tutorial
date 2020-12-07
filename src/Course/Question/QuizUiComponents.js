@@ -9,7 +9,6 @@ import InputField from "../../UiComponents/Inputfield.js";
 import Buttonstrip from "../../UiComponents/Buttonstrip.js";
 
 import DropdownButton from "../../UiComponents/DropdownButton.js";
-import Fieldgroup from "../../UiComponents/Fieldgroup.js";
 import LinearLoader from "../../UiComponents/LinearLoader.js";
 import Pagination from "../../UiComponents/Pagination.js";
 import Radio from "../../UiComponents/Radio.js";

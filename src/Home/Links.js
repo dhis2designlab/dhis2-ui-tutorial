@@ -4,15 +4,9 @@ import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 
-
-import { Button } from "@dhis2/ui";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardActions from "@material-ui/core/CardActions";
 
-import github from "../images/github_logo.png";
-import storybook from "../images/storybook.svg";
 import { blue } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
@@ -33,9 +27,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "40px",
     paddingBottom: "40px",
   },
-  header: {
-    textAlign: "center",
-  },
+
   card: {
     backgroundColor: blue,
   },
@@ -70,7 +62,7 @@ function Links() {
                   colors or anything related to the UI, then this is the place
                   to go
                 </p>
-                <a>Go to Github</a>
+                <a alt="link to github" href="https://github.com/dhis2/design-system">Go to Github</a>
               </CardContent>
             </Card>
           </Grid>
@@ -85,7 +77,7 @@ function Links() {
                   In Storybook, you will find all the possible UI components
                   that are developed in DHIS2.
                 </p>
-                <a>Go to Storybook</a>
+                <a alt="link to storybook" href="https://ui.dhis2.nu/demo">Go to Storybook</a>
               </CardContent>
             </Card>
           </Grid>
@@ -102,7 +94,7 @@ function Links() {
                   can use in the components and a description of what they mean.
                   You will also see how you can import the different components
                 </p>
-                <a>Go to Api docs</a>
+                <a alt="link to api docs" href="https://ui.dhis2.nu/#/api">>Go to Api docs</a>
               </CardContent>
             </Card>
           </Grid>

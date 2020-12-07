@@ -1,7 +1,7 @@
 import React from "react";
 
 import Grid from "@material-ui/core/Grid";
-import { Switch, Button } from "@dhis2/ui";
+import { Switch } from "@dhis2/ui";
 
 import styles from "./styles.module.css";
 

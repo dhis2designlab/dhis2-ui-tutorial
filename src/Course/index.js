@@ -49,9 +49,7 @@ function Course() {
   const [indexState, setIndex] = useState(0);
   const [points, setPoints] = useState(0);
   const [finished, setFinished] = useState(false);
-  const [isChecked, setIsChecked] = useState([]);
-  const [isChosenRadio, setChosenRadio] = useState("");
-
+ 
   const quizData = quiz_data.map((q) => q);
 
   const {
@@ -66,11 +64,10 @@ function Course() {
   const [chosenImg, setChosenImg] = useState("");
   const [chosenValue, setChosenValue] = useState(-1);
 
-  const isCorrect = chosenImg == "correct";
-  const isIncorrect = chosenImg == "incorrect";
+  const isCorrect = chosenImg === "correct";
+  const isIncorrect = chosenImg === "incorrect";
   const {
     question,
-    alternatives,
     information,
     image,
     iframe,
@@ -85,7 +82,6 @@ function Course() {
     hints,
     imageWidth,
     solutionImg,
-    solutionQuiz,
   } = quizData[id].steps[indexState];
 
   const handleStartOver = () => {
@@ -107,7 +103,7 @@ function Course() {
 
   const handleImgClick = (value) => {
     if (chosenValue !== -1) return;
-    if (value == correct) {
+    if (value === correct) {
       setChosenImg("correct");
       setChosenValue(value);
       setPoints(points + 1);
@@ -119,12 +115,10 @@ function Course() {
 
   const handleNextClick = () => {
     setChosenValue(-1);
-    if (isChecked.includes(correct) || isChosenRadio == correct) {
-      setPoints(points + 1);
-    }
-    if (isChecked.includes(correct) || isChosenRadio == correct) {
-      setPoints(points + 1);
-    }
+   // if (isChecked.includes(correct) || isChosenRadio === correct) {
+    //  setPoints(points + 1);
+  //  }
+ 
     if (indexState + 1 < quizData[id].steps.length) {
       setIndex(indexState + 1);
     } else {
@@ -151,31 +145,11 @@ function Course() {
     window.scrollTo(0, 0);
   };
 
-  const handleSingleCheck = (e) => {
-    const name = e.name;
-    if (isChecked.includes(name[0])) {
-      setIsChecked(
-        isChecked.filter((checked_name) => checked_name !== name[0])
-      );
-      return;
-    }
-
-    isChecked.push(name[0]);
-    setIsChecked([...isChecked]);
-  };
-
-  const handleRadioCheck = (e) => {
-    const name = e.name;
-    // if (isChosenRadio !== name[0]) {
-    //  setChosenRadio(name[0]);
-    //  }
-  };
-
   return (
     <main>
       <p>go back to mainpage</p>
       <>
-        {indexState == 0 ? (
+        {indexState === 0 ? (
           <CourseOverview
             status={status}
             handleNextClick={handleNextClick}

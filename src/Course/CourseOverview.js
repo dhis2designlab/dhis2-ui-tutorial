@@ -121,7 +121,7 @@ function CourseOverview({
           </>
         ) : null}
       </Grid>
-      {status == "under development" ? (
+      {status === "under development" ? (
         <div classname={classes.button}>
           <Button
             dataTest="dhis2-uicore-buttorn"
