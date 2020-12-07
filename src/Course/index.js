@@ -12,6 +12,17 @@ import { Button } from "@dhis2/ui";
 
 import { db } from "../firebase";
 
+import styled from "styled-components";
+
+const Main = styled.main`
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: "blue";
+`;
+
+
+
 const styles = {
   cardGrid: {
     paddingTop: "8px",
@@ -145,8 +156,7 @@ function Course() {
   };
 
   return (
-    <main>
-      <p>go back to mainpage</p>
+    <>
       <>
         {indexState === 0 ? (
           <CourseOverview
@@ -213,7 +223,7 @@ function Course() {
           </>
         )}
       </>
-    </main>
+    </>
   );
 }
 

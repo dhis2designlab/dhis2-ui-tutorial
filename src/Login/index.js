@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from "react";
 
-import Container from "@material-ui/core/Container";
 import { InputField } from "@dhis2/ui";
 import { Button } from "@dhis2/ui-core";
 
@@ -11,6 +10,15 @@ import { CircularLoader } from "@dhis2/ui";
 import { auth } from "../firebase.js";
 
 import styled from "styled-components";
+
+const Main = styled.main`
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: "blue";
+  padding-top: 100px;
+`;
+
 
 const Loader = styled.div`
   display: flex;
@@ -46,8 +54,7 @@ function Login() {
   }, []);
 
   return (
-    <>
-      <Container maxWidth="xs">
+      <Main>
         {loggedInState === "logging in" && errorMessage === "" ? (
           <Loader>
             <CircularLoader large />
@@ -93,8 +100,8 @@ function Login() {
             </p>
           </>
         )}
-      </Container>
-    </>
+      </Main>
+
   );
 }
 

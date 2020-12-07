@@ -9,6 +9,18 @@ import CardMedia from "@material-ui/core/CardMedia";
 
 import { UserContext } from "../userContext";
 
+import styled from "styled-components";
+
+const Main = styled.main`
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: "blue";
+  padding-top: 70px;
+`;
+
+
+
 function Settings({ onClick }) {
   const { currentUser, completedCourses, setCompletedCourses } = useContext(
     UserContext
@@ -20,8 +32,8 @@ function Settings({ onClick }) {
   }
 
   return (
-    <main>
-      <Grid container spacing={4}>
+    <Main>
+      <Grid container spacing={6}>
         <Grid item xs={12}>
           <div>
             <h1>Settings</h1>
@@ -71,7 +83,7 @@ function Settings({ onClick }) {
           );
         })}
       </Grid>
-    </main>
+    </Main>
   );
 }
 export default Settings;

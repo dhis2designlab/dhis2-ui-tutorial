@@ -4,7 +4,6 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Grid from "@material-ui/core/Grid";
 
-import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@dhis2/ui";
 import BreadCrumb from "./Question/BreadCrumb.js";
 
@@ -13,48 +12,29 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-const useStyles = makeStyles((theme) => ({
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
-  },
+import styled from "styled-components";
+import { colors } from "@dhis2/ui"
 
-  title: {
-    textAlign: "center",
-  },
 
-  buttons: {
-    marginLeft: "auto",
-    marginRight: "auto",
-    display: "block",
-    width: "15%",
-  },
+const Main = styled.main`
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: "blue";
+`;
 
-  button: {
-    marginTop: "16px",
-    paddingTop: "16px",
-    backgroundColor: "yellow",
-  },
+const List = styled.ul`
+  list-style-type: none;
+`;
 
-  list: {
-    listStyleType: "none",
-  },
+const AccordionHeader = styled(AccordionSummary)`
+  background-color: ${colors.grey100};
+`;
 
-  listElement: {
-    paddingBottom: "16px",
-  },
-  accordion: {
-    marginBottom: "26px",
-  },
+const ListElement = styled.li`
+  padding-bottom: 16px;
+`;
 
-  accordionHeader: {
-    backgroundColor: "#F8F9FA",
-  },
-
-  text: {
-    marginRight: "26px",
-  },
-}));
 
 function CourseOverview({
   handleNextClick,
@@ -62,36 +42,37 @@ function CourseOverview({
   topics,
   about,
   status,
-  subtopics,
 }) {
-  const classes = useStyles();
 
   return (
-    <Grid container>
-      <BreadCrumb title={title} />
+    <Main>
+    <Grid container spacing={5}>
       <Grid item xs={12} sm={12} md={12}>
-        <h2 className={classes.title}>{title}</h2>
+      <BreadCrumb title={title} />
+      </Grid>
+      <Grid item xs={12} sm={12} md={12}>
+        <h2>{title}</h2>
       </Grid>
       <Grid item xs={12} sm={8} md={8}>
-        <p className={classes.text}>{about}</p>
+        <p>{about}</p>
       </Grid>
       <Grid item xs={12} sm={4} md={4}>
-        <Card className={classes.card}>
-          <CardContent className={classes.cardContent}>
-            <ul className={classes.list}>
-              <li className={classes.listElement}>
+        <Card>
+          <CardContent>
+            <List>
+              <ListElement>
                 <b>Expected duration:</b> 20 minutes
-              </li>
-              <li className={classes.listElement}>
+              </ListElement>
+              <ListElement>
                 <b>Key:</b> Blabla
-              </li>
-              <li className={classes.listElement}>
+              </ListElement>
+              <ListElement>
                 <b>Key:</b> Blabla
-              </li>
-              <li className={classes.listElement}>
+              </ListElement>
+              <ListElement>
                 <b>Key:</b> Blabla
-              </li>
-            </ul>
+              </ListElement>
+            </List>
           </CardContent>
         </Card>
       </Grid>
@@ -99,30 +80,27 @@ function CourseOverview({
         {topics ? (
           <>
             <p>The topics that will be covered in this module:</p>
-            <div className={classes.accordion}>
               {topics.map((index) => (
                 <>
                   <Accordion>
-                    <AccordionSummary
-                      className={classes.accordionHeader}
+                    <AccordionHeader
                       expandIcon={<ExpandMoreIcon />}
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                     >
-                      <p>
+                      <p >
                         <b>{index.title}</b>
                       </p>
-                    </AccordionSummary>
+                    </AccordionHeader>
                     <AccordionDetails>{index.content}</AccordionDetails>
                   </Accordion>
                 </>
               ))}
-            </div>
           </>
         ) : null}
       </Grid>
       {status === "under development" ? (
-        <div classname={classes.button}>
+        <div>
           <Button
             dataTest="dhis2-uicore-buttorn"
             onClick={handleNextClick}
@@ -133,7 +111,7 @@ function CourseOverview({
           </Button>
         </div>
       ) : (
-        <div classname={classes.button}>
+        <div>
           <Button
             dataTest="dhis2-uicore-buttorn"
             onClick={handleNextClick}
@@ -145,6 +123,7 @@ function CourseOverview({
         </div>
       )}
     </Grid>
+    </Main>
   );
 }
 
