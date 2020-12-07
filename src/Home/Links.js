@@ -45,7 +45,7 @@ function Links() {
           <Grid item xs={12} sm={12} md={12} className={classes.header}>
             <h2>Resources</h2>
           </Grid>
-          <Grid spacing={16} item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Card
               onClick={() =>
                 handleClick("https://github.com/dhis2/design-system")
@@ -66,7 +66,7 @@ function Links() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid spacing={16} item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Card
               onClick={() => handleClick("https://ui.dhis2.nu/demo/")}
               className={classes.card}
@@ -81,7 +81,7 @@ function Links() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid spacing={16} item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Card
               onClick={() => handleClick("https://ui.dhis2.nu/#/api")}
               className={classes.card}

@@ -56,9 +56,6 @@ const UserProvider = ({ children }) => {
     return () => fetchData();
   }, []);
 
-  console.log("Completed courses" + completedCourses);
-  console.log("Current user" + currentUser);
-
   return (
     <UserContext.Provider
       value={{

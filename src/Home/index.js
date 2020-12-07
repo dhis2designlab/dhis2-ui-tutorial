@@ -27,7 +27,7 @@ function Home() {
           </Grid>
           {data.map((section, index) => {
             return (
-              <Grid item key={section} xs={12} sm={6} md={4}>
+              <Grid item key={index} xs={12} sm={6} md={4}>
                 <CourseCard
                   index={index}
                   section={section}
