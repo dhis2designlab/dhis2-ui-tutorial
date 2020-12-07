@@ -1,11 +1,12 @@
 import React from "react";
 
 import Grid from "@material-ui/core/Grid";
-import { makeStyles, StylesProvider } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
 import { colors } from "@dhis2/ui";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import CancelIcon from "@material-ui/icons/Cancel";
+import Solution from "./Solution.js";
 
 const useStyles = makeStyles((theme) => ({
   correct: {
@@ -80,37 +81,9 @@ function Images({
         );
       })}
       {chosenValue !== -1 && (
-        <>
-          {isIncorrect && (
-            <div
-              className={classNames(classes.solutionDiv, classes.incorrectDiv)}
-            >
-              <p className={classes.solutionIncorrect}>
-                <span className={classes.icon}>
-                  <CancelIcon />
-                </span>
-                <b>Incorrect:</b> {solutionImg}
-              </p>
-            </div>
-          )}
-        </>
+        <Solution isCorrect={isCorrect ? isCorrect : isIncorrect} solutionQuiz={solutionImg}/>
       )}
-      {chosenValue !== -1 && (
-        <>
-          {isCorrect && (
-            <div
-              className={classNames(classes.solutionDiv, classes.correctDiv)}
-            >
-              <p className={classes.solutionCorrect}>
-                <span className={classes.icon}>
-                  <CheckCircleIcon />
-                </span>
-                <b>Correct:</b> {solutionImg}
-              </p>
-            </div>
-          )}
-        </>
-      )}
+     
     </Grid>
   );
 }

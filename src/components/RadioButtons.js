@@ -3,8 +3,8 @@ import { makeStyles, StylesProvider } from "@material-ui/core/styles";
 import { Radio } from "@dhis2/ui";
 import classNames from "classnames";
 import { colors } from "@dhis2/ui";
-import CheckCircleIcon from "@material-ui/icons/CheckCircle";
-import CancelIcon from "@material-ui/icons/Cancel";
+import Solution from "./Solution.js";
+
 
 const useStyles = makeStyles((theme) => ({
   text: {
@@ -103,35 +103,7 @@ function RadioButtons({ questions, setPoints, points }) {
                   />
                   {value.solutionQuiz && isChecked[id] == index ? (
                     <>
-                      {isCorrect[id] ? (
-                        <div
-                          className={classNames(
-                            classes.correctDiv,
-                            classes.solutionDiv
-                          )}
-                        >
-                          <p className={classes.solutionCorrect}>
-                            <span className={classes.icon}>
-                              <CheckCircleIcon />
-                            </span>
-                            <b>Correct:</b> {value.solutionQuiz}
-                          </p>
-                        </div>
-                      ) : (
-                        <div
-                          className={classNames(
-                            classes.incorrectDiv,
-                            classes.solutionDiv
-                          )}
-                        >
-                          <p className={classes.solutionIncorrect}>
-                            <span className={classes.icon}>
-                              <CancelIcon />
-                            </span>
-                            <b>Incorrect:</b> {value.solutionQuiz}
-                          </p>
-                        </div>
-                      )}
+                    <Solution solutionQuiz={value.solutionQuiz} isCorrect={isCorrect[id]} />
                     </>
                   ) : null}
                 </div>
