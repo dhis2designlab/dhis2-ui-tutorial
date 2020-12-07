@@ -10,10 +10,10 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 
-import { UserContext } from "../../userContext";
-import data from "../../data.js";
-import { db } from "../../firebase";
-import styles from "./styles.module.css";
+import { UserContext } from "../userContext";
+import data from "../data.js";
+import { db } from "../firebase";
+
 
 function Settings({ onClick }) {
   const { currentUser, completedCourses, setCompletedCourses } = useContext(
@@ -26,10 +26,10 @@ function Settings({ onClick }) {
   }
 
   return (
-    <main className={styles.cardGrid}>
+    <main >
       <Grid container spacing={4}>
         <Grid item xs={12}>
-          <div className={styles.paper}>
+          <div>
             <h1>Settings</h1>
           </div>
         </Grid>
@@ -41,7 +41,7 @@ function Settings({ onClick }) {
           </div>
         </Grid>
         <Grid item xs={12} sm={12}>
-          <div className={styles.paper}>
+          <div>
             <Button
               dataTest="dhis2-uicore-button"
               name="Primary button"
@@ -55,21 +55,20 @@ function Settings({ onClick }) {
           </div>
         </Grid>
         <Grid item xs={12} sm={12} md={12}>
-          <div className={styles.paper}>
+          <div>
             <h3>Completed courses</h3>
           </div>
         </Grid>
         {completedCourses.map((index) => {
           return (
             <Grid item xs={12} sm={6} md={4}>
-              <Card className={styles.card}>
+              <Card>
                 <CardMedia
                   style={{ height: 0, paddingTop: "56%" }}
-                  className={styles.cardMedia}
                   image={index.courseImg}
                   title="Image title"
                 />
-                <CardContent className={styles.cardContent}>
+                <CardContent>
                   <h3>{index.name}</h3>
                   <p>Points received: {index.points}</p>
                 </CardContent>
@@ -77,21 +76,6 @@ function Settings({ onClick }) {
             </Grid>
           );
         })}
-
-        <Grid item xs={12} sm={12} md={12}>
-          <div className={styles.paper}>
-            <h3>Received badges</h3>
-          </div>
-        </Grid>
-        <Grid item xs={6} sm={3}>
-          <div className={styles.paper}>Badge 2</div>
-        </Grid>
-        <Grid item xs={6} sm={3}>
-          <div className={styles.paper}>Badge 3</div>
-        </Grid>
-        <Grid item xs={6} sm={3}>
-          <div className={styles.paper}>Badge 4</div>
-        </Grid>
       </Grid>
     </main>
   );

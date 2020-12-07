@@ -8,11 +8,8 @@ const PublicRoute = ({
   restricted,
   ...rest
 }) => {
-  console.log("loggedIn " + isLoggedIn);
-  console.log(Component);
+
   return (
-    // restricted = false meaning public route
-    // restricted = true meaning restricted route
     <Route
       {...rest}
       render={(props) =>

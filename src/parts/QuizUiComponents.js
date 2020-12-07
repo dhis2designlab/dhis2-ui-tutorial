@@ -2,21 +2,21 @@ import React from "react";
 
 import Grid from "@material-ui/core/Grid";
 
-import Buttons from "../../UiComponents/Buttons.js";
-import Checkboxes from "../../UiComponents/Checkboxes.js";
-import InputField from "../../UiComponents/Inputfield.js";
+import Buttons from "../UiComponents/Buttons.js";
+import Checkboxes from "../UiComponents/Checkboxes.js";
+import InputField from "../UiComponents/Inputfield.js";
 
-import Buttonstrip from "../../UiComponents/Buttonstrip.js";
+import Buttonstrip from "../UiComponents/Buttonstrip.js";
 
-import DropdownButton from "../../UiComponents/DropdownButton.js";
-import Fieldgroup from "../../UiComponents/Fieldgroup.js";
-import LinearLoader from "../../UiComponents/LinearLoader.js";
-import Pagination from "../../UiComponents/Pagination.js";
-import Radio from "../../UiComponents/Radio.js";
-import SingleSelect from "../../UiComponents/SingleSelect.js";
-import Switch from "../../UiComponents/Switch.js";
-import TabBar from "../../UiComponents/TabBar.js";
-import TextArea from "../../UiComponents/TextArea.js";
+import DropdownButton from "../UiComponents/DropdownButton.js";
+import Fieldgroup from "../UiComponents/Fieldgroup.js";
+import LinearLoader from "../UiComponents/LinearLoader.js";
+import Pagination from "../UiComponents/Pagination.js";
+import Radio from "../UiComponents/Radio.js";
+import SingleSelect from "../UiComponents/SingleSelect.js";
+import Switch from "../UiComponents/Switch.js";
+import TabBar from "../UiComponents/TabBar.js";
+import TextArea from "../UiComponents/TextArea.js";
 
 function QuizUiComponents() {
   return (

@@ -3,7 +3,8 @@ import { makeStyles, StylesProvider } from "@material-ui/core/styles";
 import { Radio } from "@dhis2/ui";
 import classNames from "classnames";
 import { colors } from "@dhis2/ui";
-import { pink } from "@material-ui/core/colors";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
+import CancelIcon from "@material-ui/icons/Cancel";
 
 const useStyles = makeStyles((theme) => ({
   text: {
@@ -22,21 +23,29 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "16px",
   },
   solutionDiv: {
-    padding: "16px",
+    padding: "8px",
     border: "solid",
     borderRadius: "6px",
     borderWidth: "thin",
-    fontWeight: "500",
+    marginBottom: "16px",
+    marginTop: "16px",
   },
   incorrectDiv: {
     backgroundColor: colors.red100,
-    color: colors.red700,
     borderColor: colors.red700,
   },
   correctDiv: {
     backgroundColor: colors.green100,
-    color: colors.green700,
     borderColor: colors.green700,
+  },
+  solutionCorrect: {
+    color: colors.green700,
+  },
+  solutionIncorrect: {
+    color: colors.red700,
+  },
+  icon: {
+    marginRight: "8px",
   },
 }));
 
@@ -95,23 +104,33 @@ function RadioButtons({ questions, setPoints, points }) {
                   {value.solutionQuiz && isChecked[id] == index ? (
                     <>
                       {isCorrect[id] ? (
-                        <p
+                        <div
                           className={classNames(
                             classes.correctDiv,
                             classes.solutionDiv
                           )}
                         >
-                          Correct {value.solutionQuiz}
-                        </p>
+                          <p className={classes.solutionCorrect}>
+                            <span className={classes.icon}>
+                              <CheckCircleIcon />
+                            </span>
+                            <b>Correct:</b> {value.solutionQuiz}
+                          </p>
+                        </div>
                       ) : (
-                        <p
+                        <div
                           className={classNames(
                             classes.incorrectDiv,
                             classes.solutionDiv
                           )}
                         >
-                          Incorrect {value.solutionQuiz}
-                        </p>
+                          <p className={classes.solutionIncorrect}>
+                            <span className={classes.icon}>
+                              <CancelIcon />
+                            </span>
+                            <b>Incorrect:</b> {value.solutionQuiz}
+                          </p>
+                        </div>
                       )}
                     </>
                   ) : null}

@@ -6,8 +6,7 @@ import { Button } from "@dhis2/ui-core";
 
 import { CircularLoader } from "@dhis2/ui";
 
-import styles from "./styles.module.css";
-import { auth } from "../../firebase.js";
+import { auth } from "../firebase.js";
 import { Link } from "react-router-dom";
 
 function Signup({}) {
@@ -31,16 +30,13 @@ function Signup({}) {
 
   return (
     <>
-      <Container className={styles.cardGrid} maxWidth="xs">
+      <Container maxWidth="xs">
         {signupState == "signing in" && errorMessage == "" ? (
-          <div className={styles.loader}>
             <CircularLoader large />
-          </div>
         ) : (
           <>
-            <h2 className={styles.heading}>Sign Up</h2>
+            <h2 >Sign Up</h2>
             <InputField
-              className={styles.input}
               dataTest="dhis2-uiwidgets-inputfield"
               label="Default label"
               name="Default"
@@ -52,7 +48,6 @@ function Signup({}) {
               }}
             />
             <InputField
-              className={styles.input}
               dataTest="dhis2-uiwidgets-inputfield"
               label="Password"
               placeholder="Type your password"
@@ -75,7 +70,7 @@ function Signup({}) {
               Sign Up
             </Button>
             {errorMessage !== "" && (
-              <p className={styles.error}>{errorMessage}</p>
+              <p>{errorMessage}</p>
             )}
             <p>
               Do you already have an account? Sign in{" "}

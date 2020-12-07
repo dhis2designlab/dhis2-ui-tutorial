@@ -4,16 +4,15 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Grid from "@material-ui/core/Grid";
 
-import { makeStyles, StylesProvider } from "@material-ui/core/styles";
+import { makeStyles} from "@material-ui/core/styles";
 import { Button } from "@dhis2/ui";
-import BreadCrumb from "../../components/BreadCrumb";
+import BreadCrumb from "../components/BreadCrumb.js";
 
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
-import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import styles from "./styles.module.css";
+
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -58,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function IntroductionCourse({
+function CourseOverview({
   handleNextClick,
   title,
   topics,
@@ -69,7 +68,7 @@ function IntroductionCourse({
   const classes = useStyles();
 
   return (
-    <Grid container className={styles.cardGrid}>
+    <Grid container>
       <BreadCrumb title={title} />
       <Grid item xs={12} sm={12} md={12}>
         <h2 className={classes.title}>{title}</h2>
@@ -150,4 +149,4 @@ function IntroductionCourse({
   );
 }
 
-export default IntroductionCourse;
+export default CourseOverview;

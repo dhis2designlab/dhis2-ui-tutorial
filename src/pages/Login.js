@@ -1,20 +1,33 @@
-import React, { useState, useContext, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 
 import Container from "@material-ui/core/Container";
-import { InputField, Input } from "@dhis2/ui";
+import { InputField } from "@dhis2/ui";
 import { Button } from "@dhis2/ui-core";
-import { makeStyles } from "@material-ui/core/styles";
-
-import NavBar from "../../parts/NavBar";
-import { UserContext } from "../../userContext";
 
 import { Link } from "react-router-dom";
-import LoadingScreen from "../../components/Loadingscreen.js";
+
 import { CircularLoader } from "@dhis2/ui";
-import styles from "./styles.module.css";
 
-import { auth } from "../../firebase.js";
+import { auth } from "../firebase.js";
 
+import styled from 'styled-components';
+
+const Loader = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 120px;
+`
+
+const Heading = styled.h2`
+    text-align: center;
+    padding-bottom: 6px;
+`
+
+const Error = styled.p`
+    color: #b71c1c;
+
+`
 function Login({}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -35,16 +48,15 @@ function Login({}) {
 
   return (
     <>
-      <Container className={styles.cardGrid} maxWidth="xs">
+      <Container maxWidth="xs">
         {loggedInState == "logging in" && errorMessage == "" ? (
-          <div className={styles.loader}>
+          <Loader>
             <CircularLoader large />
-          </div>
+          </Loader>
         ) : (
           <>
-            <h2 className={styles.heading}>Log In</h2>
+            <Heading>Log In</Heading>
             <InputField
-              className={styles.input}
               dataTest="dhis2-uiwidgets-inputfield"
               placeholder="Type your username"
               label="Username"
@@ -54,7 +66,6 @@ function Login({}) {
               }}
             />
             <InputField
-              className={styles.input}
               dataTest="dhis2-uiwidgets-inputfield"
               label="Password"
               placeholder="Type your password"
@@ -66,7 +77,6 @@ function Login({}) {
             />
             <Button
               dataTest="dhis2-uicore-button"
-              className={styles.input}
               name="Primary button"
               primary
               type="button"
@@ -78,7 +88,7 @@ function Login({}) {
               Log In
             </Button>
             {errorMessage !== "" && (
-              <p className={styles.error}>{errorMessage}</p>
+              <Error>{errorMessage}</Error>
             )}
             <p>
               Do you not have an account? Create an account{" "}

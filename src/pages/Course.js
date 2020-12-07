@@ -2,20 +2,45 @@ import React, { useContext, useState } from "react";
 
 import { useParams } from "react-router-dom";
 
-import { quiz_data } from "../../quiz.js";
-import { UserContext } from "../../userContext";
+import { quiz_data } from "../quiz.js";
+import { UserContext } from "../userContext";
 
-import FinishQuiz from "../../components/FinishQuiz";
-import IntroductionCourse from "../../parts/introductionCourse";
-import Questions from "../../parts/Questions.js";
+import FinishQuiz from "./FinishQuiz.js";
+import CourseOverview from "./CourseOverview.js";
+import Questions from "../parts/Questions.js";
 import { Button } from "@dhis2/ui";
 
-import main from "../../styles.module.css";
+import main from "../styles.module.css";
 
-import styles from "./styles.module.css";
+import { db } from "../firebase";
 
-import { db } from "../../firebase";
+const styles = {
+    cardGrid: {
+        paddingTop: '8px',
+        paddingBottom: '8px',
+        maxWidth: '80%',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        marginTop: '52px',
+      },
+      
+      title: {
+        textAlign: "center",
+      },
+      buttons: {
+        marginLeft: "auto",
+        marginRight: "auto",
+        display: "block",
+      },
+      navigation: {
+        textAlign: 'center',
+      },
 
+      button: {
+        margin: '6px',
+      }
+      
+}
 function Course() {
   let { id } = useParams();
 
@@ -64,8 +89,6 @@ function Course() {
     solutionImg,
     solutionQuiz,
   } = quizData[id].steps[indexState];
-
-  console.log(solutionImg);
 
   const handleStartOver = () => {
     setIndex(0);
@@ -155,7 +178,7 @@ function Course() {
       <p>go back to mainpage</p>
       <>
         {indexState == 0 ? (
-          <IntroductionCourse
+          <CourseOverview
             status={status}
             handleNextClick={handleNextClick}
             title={title}
@@ -172,21 +195,13 @@ function Course() {
                 <Questions
                   setPoints={setPoints}
                   points={points}
-                  correct={correct}
-                  handleBackClick={handleBackClick}
-                  handleNextClick={handleNextClick}
                   images={images}
                   sections={sections}
                   iframe={iframe}
-                  isChecked={isChecked}
-                  handleSingleCheck={handleSingleCheck}
-                  alternatives={alternatives}
-                  image={image}
                   question={question}
+                  image={image}
                   information={information}
                   components={components}
-                  handleRadioCheck={handleRadioCheck}
-                  isChosenRadio={isChosenRadio}
                   questions={questions}
                   breadcrumb={breadcrumb}
                   title={title}
@@ -195,12 +210,10 @@ function Course() {
                   hints={hints}
                   imageWidth={imageWidth}
                   handleImgClick={handleImgClick}
-                  chosenImg={chosenImg}
+                  chosenValue={chosenValue}
                   isCorrect={isCorrect}
                   isIncorrect={isIncorrect}
-                  chosenValue={chosenValue}
                   solutionImg={solutionImg}
-                  solutionQuiz={solutionQuiz}
                 />
                 <div className={styles.navigation}>
                   <span className={styles.button}>

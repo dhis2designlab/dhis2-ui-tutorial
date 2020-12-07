@@ -1,17 +1,17 @@
 import React, { useCallback, useContext, useState } from "react";
 
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
-import Home from "./pages/Home";
-import Course from "./pages/Course";
+import Signup from "./pages/Signup.js";
+import Login from "./pages/Login.js";
+import Home from "./pages/Home.js";
+import Course from "./pages/Course.js";
 
-import Settings from "./pages/Settings";
+import Settings from "./pages/Settings.js";
 
-import PrivateRoute from "./components/PrivateRoute";
-import PublicRoute from "./components/PublicRoute";
+import PrivateRoute from "./routes/PrivateRoute";
+import PublicRoute from "./routes/PublicRoute";
 
-import NavBar from "./parts/NavBar";
-import Footer from "./parts/Footer";
+import NavBar from "./parts/NavBar.js";
+import Footer from "./parts/Footer.js";
 import Copyright from "./components/Copyright";
 import { UserContext } from "./userContext";
 import { makeStyles } from "@material-ui/core/styles";

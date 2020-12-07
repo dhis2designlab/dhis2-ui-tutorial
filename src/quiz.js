@@ -1204,12 +1204,7 @@ export const quiz_data = [
         title: "Section 4: Data entry components (coming soon)",
         content: (
           <div>
-            <p>Checkbox</p>
-            <p>Organization Unit tree</p>
-            <p>Radio</p>
-            <p>Select</p>
-            <p>Switch</p>
-            <p>Transfer</p>
+            <p>No information. Coming soon</p>
           </div>
         ),
       },
@@ -1217,8 +1212,7 @@ export const quiz_data = [
         title: "Section 5: Feecback components (coming soon)",
         content: (
           <div>
-            <p>Alertbar</p>
-            <p>Loading indicators</p>
+             <p>No information. Coming soon</p>
           </div>
         ),
       },
@@ -1226,8 +1220,7 @@ export const quiz_data = [
         title: "Section 6: Layout components (coming soon)",
         content: (
           <div>
-            <p>Card</p>
-            <p>Modal</p>
+            <p>No information. Coming soon</p>
           </div>
         ),
       },
@@ -1235,8 +1228,7 @@ export const quiz_data = [
         title: "Section 7: Navigation components (coming soon)",
         content: (
           <div>
-            <p>Pagination</p>
-            <p>Tabs</p>
+            <p>No information. Coming soon</p>
           </div>
         ),
       },
@@ -1244,21 +1236,12 @@ export const quiz_data = [
         title: "Section 8: Utilities (coming soon)",
         content: (
           <div>
-            <p>Elevation</p>
-            <p>Header bar</p>
+            <p>No information. Coming soon</p>
           </div>
         ),
       },
       {
-        title: "Section 9: Full examples",
-        content: (
-          <div>
-            <p></p>
-          </div>
-        ),
-      },
-      {
-        title: "Section 10: General",
+        title: "Section 9: General",
         content: (
           <ul>
             <li>info</li>

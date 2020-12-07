@@ -2,33 +2,66 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import logo from "../../images/dhis2-logo.png";
+import logo from "../images/dhis2-logo.png";
 import Grid from "@material-ui/core/Grid";
 import { Settings } from "@dhis2/ui-icons";
 import { LinearLoader } from "@dhis2/ui";
+import styled from 'styled-components';
 
-import styles from "./styles.module.css";
+const Nav = styled(Grid)`
+    background: white;
+    height: 64px;
+    position: fixed;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+`;
+
+const LinkTo = styled(Link)`
+    text-decoration: none;
+    text-align: left;
+    margin-left: 12px;
+    margin-right: 12px;
+`;
+
+const Logo = styled.img`
+    max-height: 30px;
+`;
+
+const Loader = styled.div`
+    @media (max-width: 959px) {
+        display: none;
+
+    }
+`;
+
+const Name = styled.p`
+    color: black;
+    text-align: right;
+    display: inline-block;
+`
 
 function NavBar({ user, nrCourses, nrCompletedCourses, loggedIn }) {
   const name = user ? user.username : "";
   const completionRate = Math.floor((nrCompletedCourses / nrCourses) * 100);
 
   return (
-    <Grid container className={styles.nav}>
+    <Nav container>
       <Grid item xs={4} sm={4} md={4}>
-        <Link
-          className={styles.link}
+        <LinkTo
           to={{
             pathname: `/home`,
           }}
         >
-          <img src={logo} className={styles.logo} />
-        </Link>
+          <Logo src={logo} />
+        </LinkTo>
       </Grid>
       {loggedIn ? (
         <>
-          <Grid item className={styles.settings} xs={4} sm={4} md={4}>
-            <div className={styles.loader}>
+          <Grid item  xs={4} sm={4} md={4}>
+            <Loader>
               <div style={{ margin: "auto", textAlign: "center" }}>
                 <p>Completion rate: {completionRate}%</p>
                 <LinearLoader
@@ -37,17 +70,17 @@ function NavBar({ user, nrCourses, nrCompletedCourses, loggedIn }) {
                   width="300px"
                 />
               </div>
-            </div>
+            </Loader>
           </Grid>
-          <Grid item className={styles.settings} xs={4} sm={4} md={4}>
-            <Link className={styles.link} to={`/settings`}>
-              <p className={styles.name}>{name}</p>
-              <Settings className={styles.icon} />
-            </Link>
+          <Grid item xs={4} sm={4} md={4}>
+            <LinkTo to={`/settings`}>
+              <Name>{name}</Name>
+              <Settings />
+            </LinkTo>
           </Grid>
         </>
       ) : (
-        <Grid item className={styles.login} xs={8} sm={8} md={8}>
+        <Grid item xs={8} sm={8} md={8}>
           <Link
             to={{
               pathname: `/login`,
@@ -57,7 +90,7 @@ function NavBar({ user, nrCourses, nrCompletedCourses, loggedIn }) {
           </Link>
         </Grid>
       )}
-    </Grid>
+    </Nav>
   );
 }
 
