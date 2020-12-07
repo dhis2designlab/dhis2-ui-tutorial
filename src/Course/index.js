@@ -10,7 +10,6 @@ import CourseOverview from "./CourseOverview.js";
 import Question from "./Question";
 import { Button } from "@dhis2/ui";
 
-
 import { db } from "../firebase";
 
 const styles = {
@@ -49,7 +48,7 @@ function Course() {
   const [indexState, setIndex] = useState(0);
   const [points, setPoints] = useState(0);
   const [finished, setFinished] = useState(false);
- 
+
   const quizData = quiz_data.map((q) => q);
 
   const {
@@ -115,10 +114,10 @@ function Course() {
 
   const handleNextClick = () => {
     setChosenValue(-1);
-   // if (isChecked.includes(correct) || isChosenRadio === correct) {
+    // if (isChecked.includes(correct) || isChosenRadio === correct) {
     //  setPoints(points + 1);
-  //  }
- 
+    //  }
+
     if (indexState + 1 < quizData[id].steps.length) {
       setIndex(indexState + 1);
     } else {

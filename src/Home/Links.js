@@ -62,7 +62,12 @@ function Links() {
                   colors or anything related to the UI, then this is the place
                   to go
                 </p>
-                <a alt="link to github" href="https://github.com/dhis2/design-system">Go to Github</a>
+                <a
+                  alt="link to github"
+                  href="https://github.com/dhis2/design-system"
+                >
+                  Go to Github
+                </a>
               </CardContent>
             </Card>
           </Grid>
@@ -77,7 +82,9 @@ function Links() {
                   In Storybook, you will find all the possible UI components
                   that are developed in DHIS2.
                 </p>
-                <a alt="link to storybook" href="https://ui.dhis2.nu/demo">Go to Storybook</a>
+                <a alt="link to storybook" href="https://ui.dhis2.nu/demo">
+                  Go to Storybook
+                </a>
               </CardContent>
             </Card>
           </Grid>
@@ -94,7 +101,9 @@ function Links() {
                   can use in the components and a description of what they mean.
                   You will also see how you can import the different components
                 </p>
-                <a alt="link to api docs" href="https://ui.dhis2.nu/#/api">>Go to Api docs</a>
+                <a alt="link to api docs" href="https://ui.dhis2.nu/#/api">
+                  >Go to Api docs
+                </a>
               </CardContent>
             </Card>
           </Grid>

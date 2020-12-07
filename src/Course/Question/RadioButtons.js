@@ -80,7 +80,7 @@ function RadioButtons({ questions, setPoints, points }) {
         {value.answers &&
           value.answers.map((val, i) => {
             const values = Object.values(val);
-      
+
             return values.map((answer, index) => {
               return (
                 <div className={classes.radioButton}>

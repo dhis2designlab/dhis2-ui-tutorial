@@ -78,7 +78,6 @@ import colorIncorrect3 from "./images/colorIncorrect3.png";
 import tagImgIncorrect from "./images/tagImgIncorrect.png";
 import tagImgCorrect from "./images/tagImgCorrect.png";
 
-
 import highContrast from "./images/highContrast.png";
 import lowContrast from "./images/lowContrast.png";
 
@@ -452,7 +451,6 @@ const flyoutMenuExample =
 
 const simpleTableExample =
   '<iframe src="https://codesandbox.io/embed/festive-bhabha-nsi75?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="festive-bhabha-nsi75" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
-
 
 export const quiz_data = [
   {

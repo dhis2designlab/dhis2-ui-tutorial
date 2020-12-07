@@ -9,7 +9,6 @@ import CardMedia from "@material-ui/core/CardMedia";
 
 import { UserContext } from "../userContext";
 
-
 function Settings({ onClick }) {
   const { currentUser, completedCourses, setCompletedCourses } = useContext(
     UserContext

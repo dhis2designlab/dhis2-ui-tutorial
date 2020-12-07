@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -12,7 +12,6 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../userContext";
 
 import styled from "styled-components";
-
 
 const LinkTo = styled(Link)`
   text-decoration: none;
@@ -30,15 +29,13 @@ function CourseCard({ section, index }) {
 
   const { title, short_info, quizId } = section;
 
-  let courseCompleted = false
-    
-    completedCourses.forEach((course) => {
-      if (course.name === title) {
-        courseCompleted = true
-      }
+  let courseCompleted = false;
+
+  completedCourses.forEach((course) => {
+    if (course.name === title) {
+      courseCompleted = true;
     }
-    );
-    
+  });
 
   return (
     <LinkTo
@@ -63,7 +60,7 @@ function CourseCard({ section, index }) {
           <p>{short_info}</p>
         </CardContent>
         <CardActions>
-           <p>Read more</p>
+          <p>Read more</p>
         </CardActions>
       </CardComponent>
     </LinkTo>

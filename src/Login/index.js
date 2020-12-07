@@ -43,7 +43,7 @@ function Login() {
   const requestLogin = useCallback((username, password) => {
     setLoggedInState("logging in");
     login(username, password);
-  },[]);
+  }, []);
 
   return (
     <>

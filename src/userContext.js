@@ -10,48 +10,44 @@ const UserProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchData = auth.onAuthStateChanged((user) => {
-    
       if (user) {
         let userReference = db.collection("users").doc(user.uid);
-        userReference
-          .get()
-          .then((doc) => {
-            if (doc.exists) {
-              setCurrentUser({
-                email: user.email,
-                uid: user.uid,
-                loggedIn: true,
-              });
-              let fetchedCourses = [];
-              userReference
-                .collection("points")
-                .get()
-                .then(function (querySnapshot) {
-                  querySnapshot.forEach(function (doc) {
-                    fetchedCourses.push({
-                      points: doc.data().points,
-                      name: doc.data().name,
-                      courseImg: doc.data().courseImg,
-                    });
+        userReference.get().then((doc) => {
+          if (doc.exists) {
+            setCurrentUser({
+              email: user.email,
+              uid: user.uid,
+              loggedIn: true,
+            });
+            let fetchedCourses = [];
+            userReference
+              .collection("points")
+              .get()
+              .then(function (querySnapshot) {
+                querySnapshot.forEach(function (doc) {
+                  fetchedCourses.push({
+                    points: doc.data().points,
+                    name: doc.data().name,
+                    courseImg: doc.data().courseImg,
                   });
-  
-                  setCompletedCourses(fetchedCourses);
                 });
-            } else {
-              userReference.set({ email: user.email, displayName: "name" });
-              setCurrentUser({
-                email: user.email,
-                uid: user.uid,
-                loggedIn: true,
+
+                setCompletedCourses(fetchedCourses);
               });
-            }
-          })
-         
+          } else {
+            userReference.set({ email: user.email, displayName: "name" });
+            setCurrentUser({
+              email: user.email,
+              uid: user.uid,
+              loggedIn: true,
+            });
+          }
+        });
       } else {
         setCurrentUser({ loggedIn: false });
       }
     });
- 
+
     return () => fetchData();
   }, []);
 

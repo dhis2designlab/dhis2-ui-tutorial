@@ -78,7 +78,6 @@ function App() {
           <Route path="/course/:id" component={Course} />
         </Switch>
         <footer className={classes.footer}>
-      
           <Copyright />
         </footer>
       </BrowserRouter>
