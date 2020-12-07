@@ -1,18 +1,19 @@
 import React, { useCallback, useContext, useState } from "react";
 
-import Signup from "./pages/Signup.js";
-import Login from "./pages/Login.js";
-import Home from "./pages/Home.js";
-import Course from "./pages/Course.js";
+import Signup from "./Signup";
+import Login from "./Login";
+import Home from "./Home";
+import Course from "./Course";
 
-import Settings from "./pages/Settings.js";
+import Settings from "./Settings";
 
 import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
 
-import NavBar from "./parts/NavBar.js";
-import Footer from "./parts/Footer.js";
-import Copyright from "./components/Copyright";
+import GlobalStyle from "./theme/globalStyles";
+
+import NavBar from "./Shared/NavBar.js";
+import Copyright from "./Shared/Copyright.js";
 import { UserContext } from "./userContext";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -45,6 +46,7 @@ function App() {
   return (
     <React.Fragment>
       <BrowserRouter>
+        <GlobalStyle />
         <NavBar
           user={currentUser}
           nrCourses={7}
@@ -76,7 +78,7 @@ function App() {
           <Route path="/course/:id" component={Course} />
         </Switch>
         <footer className={classes.footer}>
-          <Footer />
+      
           <Copyright />
         </footer>
       </BrowserRouter>

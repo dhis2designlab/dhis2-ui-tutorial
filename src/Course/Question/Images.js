@@ -4,8 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
 import { colors } from "@dhis2/ui";
-import CheckCircleIcon from "@material-ui/icons/CheckCircle";
-import CancelIcon from "@material-ui/icons/Cancel";
+
 import Solution from "./Solution.js";
 
 const useStyles = makeStyles((theme) => ({

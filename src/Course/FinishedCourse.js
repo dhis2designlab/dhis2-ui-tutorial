@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function FinishQuiz({ points, setIndex }) {
+function FinishedCourse({ points, setIndex }) {
   const classes = useStyles();
   return (
     <div className={classes.text}>
@@ -32,4 +32,4 @@ function FinishQuiz({ points, setIndex }) {
   );
 }
 
-export default FinishQuiz;
+export default FinishedCourse;

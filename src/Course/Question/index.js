@@ -3,14 +3,14 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 import QuizUiComponents from "./QuizUiComponents.js";
-import ShowCode from "../components/ShowCode.js";
-import Hints from "../components/Hints.js";
+import ShowCode from "./ShowCode.js";
+import Hints from "./Hints.js";
 
-import BreadCrumb from "../components/BreadCrumb.js";
-import Sections from "../components/Sections";
-import RadioButtons from "../components/RadioButtons";
-import Images from "../components/Images";
-import Image from "../components/Image";
+import BreadCrumb from "./BreadCrumb.js";
+import Sections from "./Sections";
+import RadioButtons from "./RadioButtons";
+import Images from "./Images";
+import Image from "./Image";
 
 const useStyles = makeStyles((theme) => ({
   question: {
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Questions({
+function Question({
   setPoints,
   points,
   images,
@@ -101,4 +101,4 @@ function Questions({
   );
 }
 
-export default Questions;
+export default Question;

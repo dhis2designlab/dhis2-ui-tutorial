@@ -1,9 +1,9 @@
 import React from "react";
 
 import Grid from "@material-ui/core/Grid";
-import CourseCard from "../parts/CourseCard.js";
-import Header from "../parts/Header.js";
-import Links from "../parts/Links.js";
+import CourseCard from "./CourseCard.js";
+import Header from "./Header.js";
+import Links from "./Links.js";
 
 import styled from "styled-components";
 

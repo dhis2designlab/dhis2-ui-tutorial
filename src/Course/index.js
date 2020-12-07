@@ -5,12 +5,11 @@ import { useParams } from "react-router-dom";
 import { quiz_data } from "../quiz.js";
 import { UserContext } from "../userContext";
 
-import FinishQuiz from "./FinishQuiz.js";
+import FinishedCourse from "./FinishedCourse.js";
 import CourseOverview from "./CourseOverview.js";
-import Questions from "../parts/Questions.js";
+import Question from "./Question";
 import { Button } from "@dhis2/ui";
 
-import main from "../styles.module.css";
 
 import { db } from "../firebase";
 
@@ -173,7 +172,7 @@ function Course() {
   };
 
   return (
-    <main className={main.container}>
+    <main>
       <p>go back to mainpage</p>
       <>
         {indexState == 0 ? (
@@ -188,10 +187,10 @@ function Course() {
         ) : (
           <>
             {finished ? (
-              <FinishQuiz setIndex={handleStartOver} points={points} />
+              <FinishedCourse setIndex={handleStartOver} points={points} />
             ) : (
               <>
-                <Questions
+                <Question
                   setPoints={setPoints}
                   points={points}
                   images={images}
