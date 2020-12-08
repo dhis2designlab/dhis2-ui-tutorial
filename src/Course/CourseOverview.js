@@ -34,7 +34,8 @@ const ListElement = styled.li`
   padding-bottom: 16px;
 `;
 
-function CourseOverview({ handleNextClick, title, topics, about, status }) {
+function CourseOverview({ handleNextClick, title, topics, about, status, totalPoints }) {
+  const p = 10;
   return (
     <Main>
       <Grid container spacing={5}>
@@ -55,13 +56,7 @@ function CourseOverview({ handleNextClick, title, topics, about, status }) {
                   <b>Expected duration:</b> 20 minutes
                 </ListElement>
                 <ListElement>
-                  <b>Key:</b> Blabla
-                </ListElement>
-                <ListElement>
-                  <b>Key:</b> Blabla
-                </ListElement>
-                <ListElement>
-                  <b>Key:</b> Blabla
+                  <b>Possible points:</b> {p}
                 </ListElement>
               </List>
             </CardContent>

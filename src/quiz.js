@@ -81,6 +81,9 @@ import tagImgCorrect from "./images/tagImgCorrect.png";
 import highContrast from "./images/highContrast.png";
 import lowContrast from "./images/lowContrast.png";
 
+//Icon
+import firstCourse from "./images/firstCourse1.png";
+
 const chipSingleSelectSol = `import React, { useState } from "react";
 import "./styles.css";
 import { Chip } from "@dhis2/ui";
@@ -457,6 +460,7 @@ export const quiz_data = [
     title: "Content and communication",
     quizId: "ContentCommunication",
     courseImg: ContentCommunication,
+    totalPoints: 10,
     status: "under development",
     about:
       "Communicating consistently helps DHIS2 users understand, use and extend DHIS2. In this tutorial you will learn how to communicate effectively in DHIS2",
@@ -511,6 +515,7 @@ export const quiz_data = [
     title: "Layout, Spacing and Stacking",
     quizId: "LayoutSpacingStacking",
     courseImg: Layout,
+    totalPoints: 8,
     status: "under development",
     about:
       "The visual architecture of an application is made up of layout, spacing and stacking. The visual architecture of DHIS2 application should follow some basic rules to provide a consistent user experience across different types of apps",
@@ -646,6 +651,7 @@ export const quiz_data = [
     title: "Icons",
     quizId: "Icons",
     courseImg: Icon,
+    totalPoints: 12,
     status: "under development",
     about:
       "Icons are simple images used in context to communicate something. They are easily recognizable and easy to remember. In DHIS2 there are some icons that are recommended to use, which you will learn more about in this tutorial",
@@ -679,6 +685,7 @@ export const quiz_data = [
     title: "Typography",
     quizId: "Typography",
     courseImg: Typography,
+    totalPoints: 12,
     status: "under development",
     about:
       "Typography, the selection and use of fonts, colors and sizes, is an effective way to communicate information to users. In this tutorial, you will learn the right way to use typography in DHIS2.",
@@ -738,6 +745,7 @@ export const quiz_data = [
   {
     title: "Color",
     quizId: "Color",
+    totalPoints: 5,
     courseImg: Color,
     about:
       "In section we will take you through how to use colors when developing applications for DHIS2. Some examples and explanations will be given as well as some coding tasks for you to try out, and some quizzes to check that you have understood the topics correctly",
@@ -984,6 +992,7 @@ export const quiz_data = [
     title: "DHIS2 Components",
     quizId: "Components",
     courseImg: Components,
+    totalPoints: 17,
     about:
       "DHIS2 has a collection of UI elements that can be, and should be, reused across all DHIS2 applications. The components have been designed with DHIS2 use cases in mind. Using these components means more time spent focusing on building a positive user experience and less time redesigning and rebuilding common components. Each component has its guidelines for use. In this tutorial you will learn how and when to use the different components",
     topics: [

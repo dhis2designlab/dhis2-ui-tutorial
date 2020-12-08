@@ -34,6 +34,7 @@ function Course() {
     status,
     courseImg,
     subtopics,
+    totalPoints
   } = quizData[id];
   const [chosenImg, setChosenImg] = useState("");
   const [chosenValue, setChosenValue] = useState(-1);
@@ -56,6 +57,7 @@ function Course() {
     hints,
     imageWidth,
     solutionImg,
+    
   } = quizData[id].steps[indexState];
 
   const handleStartOver = () => {
@@ -130,11 +132,12 @@ function Course() {
             topics={topics}
             about={about}
             subtopics={subtopics}
+            totalPoints={totalPoints}
           />
         ) : (
           <>
             {finished ? (
-              <FinishedCourse setIndex={handleStartOver} points={points} />
+              <FinishedCourse completedCourses={completedCourses} setIndex={handleStartOver} points={points} />
             ) : (
               <>
                 <Question
@@ -161,6 +164,7 @@ function Course() {
                   solutionImg={solutionImg}
                 />
                 <Grid container justify="center" spacing={6}>
+                  <div style={{marginTop: '26px', paddingTop: '12px', marginRight: '12px'}}>
                     <Button
                       dataTest="dhis2-uicore-button"
                       onClick={handleBackClick}
@@ -169,6 +173,8 @@ function Course() {
                     >
                       Back
                     </Button>
+                  </div>
+                  <div style={{marginTop: '26px', paddingTop: '12px'}}>
                     <Button
                       dataTest="dhis2-uicore-button"
                       onClick={handleNextClick}
@@ -177,6 +183,7 @@ function Course() {
                     >
                       Next
                     </Button>
+                    </div>
                   </Grid>
               </>
             )}{" "}
