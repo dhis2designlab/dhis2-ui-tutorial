@@ -41,7 +41,7 @@ function Settings({ onClick }) {
  
   const firstCourse = completedCourses?.length >= 1
   const fourthCourse = completedCourses?.length >= 4
-  const finishedAll = completedCourses?.length >= 8
+  const finishedAll = completedCourses?.length >= 7
   console.log("finished " + finishedAll)
   console.log(completedCourses.length)
   const allCorrect = false
