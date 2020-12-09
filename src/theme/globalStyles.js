@@ -13,6 +13,10 @@ const GlobalStyle = createGlobalStyle`
     text-align: center;
     color: #212934;
   }
+
+  h2 {
+    padding-top: 48px;
+  }
   
   h3 {
     text-align: left;

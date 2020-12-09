@@ -10,6 +10,7 @@ function Sections({ sections }) {
         return (
           <>
             {value.heading && <h3>{value.heading}</h3>}
+            {value.subheading && <h5>{value.subheading}</h5>}
             {value.text && (
               <p>
                 {value.text}{" "}
@@ -24,7 +25,7 @@ function Sections({ sections }) {
                 )}
               </p>
             )}
-            {value.subheading && <h5>{value.subheading}</h5>}
+            
             {value.image && (
               <img
                 src={value.image}

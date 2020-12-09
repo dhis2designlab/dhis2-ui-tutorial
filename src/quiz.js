@@ -81,8 +81,7 @@ import tagImgCorrect from "./images/tagImgCorrect.png";
 import highContrast from "./images/highContrast.png";
 import lowContrast from "./images/lowContrast.png";
 
-//Icon
-import firstCourse from "./images/firstCourse1.png";
+import tagApi from "./images/tagApi.png";
 
 const chipSingleSelectSol = `import React, { useState } from "react";
 import "./styles.css";
@@ -454,6 +453,8 @@ const flyoutMenuExample =
 
 const simpleTableExample =
   '<iframe src="https://codesandbox.io/embed/festive-bhabha-nsi75?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="festive-bhabha-nsi75" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>';
+
+const tagsExample = '<iframe src="https://codesandbox.io/embed/kind-cache-mn3ji?fontsize=14&hidenavigation=1&theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="kind-cache-mn3ji" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>'
 
 export const quiz_data = [
   {
@@ -1128,7 +1129,7 @@ export const quiz_data = [
             <p>
               <LibraryBooksIcon />
               <span style={{ marginLeft: "15px" }}>
-                Lesson: Data table filterint
+                Lesson: Data table filtering
               </span>
             </p>
             <p>
@@ -1154,6 +1155,14 @@ export const quiz_data = [
             <p>
               <LibraryBooksIcon />
               <span style={{ marginLeft: "15px" }}>Lesson: Tooltip</span>
+            </p>
+            <p>
+              <LibraryBooksIcon />
+              <span style={{ marginLeft: "15px" }}>Lesson: Tag Api</span>
+            </p>
+            <p>
+              <CodeIcon />
+              <span style={{ marginLeft: "15px" }}>Code example: Tag</span>
             </p>
             <p>Quiz</p>
             <p>
@@ -1710,7 +1719,7 @@ export const quiz_data = [
               "Lesson: usage of the Data table",
               "Lesson: composition of the Data table",
               "Lesson: the Data table Api",
-              "Coding exercise: Here is a simple DHIS2 table. See if you can add a table to reflect the image",
+              "Example: the DHIS2 table component",
               "Lesson: Data table search",
               "Lesson: Data table filtering",
               "Lesson: Data table actions",
@@ -1723,14 +1732,9 @@ export const quiz_data = [
               "Lesson: Tag Api",
               "Lesson: Tag options",
               "Quiz: Tag",
+              "Coding exercise: Tag",
+
             ],
-          },
-          {
-            subheading: "Tooltip:",
-            list: ["Lesson: Tooltip"],
-          },
-          {
-            subheading: "Coding exercise",
           },
           {
             subheading: "End of section quiz",
@@ -1762,6 +1766,8 @@ export const quiz_data = [
       },
       {
         question: "Lesson: composition of the Data table",
+        section: "Data display components",
+        breadcrumb: "Data table",
         sections: [
           {
             heading: "Composition",
@@ -1782,6 +1788,8 @@ export const quiz_data = [
       },
       {
         question: "Lesson: the Data table Api",
+        section: "Data display components",
+        breadcrumb: "Data table",
         sections: [
           {
             heading: "Table",
@@ -1819,9 +1827,10 @@ export const quiz_data = [
       },
       {
         question:
-          "Coding exercise: Here you will see a simple DHIS2 table without a header or footer. Try if you can add the header and footer",
+          "Code example: the DHIS2 table component with a header",
         iframe: simpleTableExample,
-        showCode: exerciseTable,
+        section: "Data display components",
+        breadcrumb: "Data table",
       },
       {
         question: "Lesson: Data table search",
@@ -1916,6 +1925,8 @@ export const quiz_data = [
       },
       {
         question: "Lesson: Data table actions",
+        section: "Data display components",
+        breadcrumb: "Data table",
         sections: [
           {
             image: tableActions,
@@ -1947,8 +1958,10 @@ export const quiz_data = [
           "A tag is used to display categorizing labels or information for other elements in a collection.",
         section: "Data display components",
         breadcrumb: "Tag",
-        image: tag,
         sections: [
+          {
+            image: tag,
+          },
           {
             heading: "Usage",
             text:
@@ -1962,21 +1975,37 @@ export const quiz_data = [
             text:
               "Tags are never used for primary interaction and should not be used as buttons. Clicking a tag could sort a collection by that tag, or open a page to display all elements that have that tag type. Tags should not be used as navigation elements.",
           },
+         
+        ],
+      },
+      {
+        question: "Lesson: Tag options",
+        section: "Data display components",
+        breadcrumb: "Tag",
+        sections: [
           {
-            heading: "Composition",
-            image: composition,
+            heading: "Color",
             text:
-              "A data table is made up of multiple elements, some of which are optional",
-            list: [
-              "Toolbar, optional",
-              "Data rows and header, required",
-              "Footer, optional",
-            ],
+              "Tags are available in four different colors. The color of a tag depends on its content and the meaning of that tag. The following system is used for tag coloring:",
+            image: tagTable,
           },
           {
-            heading: "Options",
+            heading: "Icons",
+            text:
+              "Tags can contain icons. Use icons where they will help users easily identify the content of the tag. Tags must have a text label and cannot display only an icon.",
+            image: tagIcons,
+          },
+          {
+            heading: "Bold",
+            text:
+              "Tags have an optional bold property. Use bold tags where it is important that the tag is seen by the user in an information dense interface. Bold tags should be reserved for edge cases and not overused.",
+          },
+          {
+            heading: "Example in use",
+            image: tagExample,
           },
         ],
+        
       },
       {
         question:
@@ -1986,117 +2015,62 @@ export const quiz_data = [
         images: [tagImgIncorrect, tagImgCorrect],
         correct: 1,
         solutionImg:
-          "Tags should not be used to display unique info like names",
+          "Tags should not be used to display unique information like names",
       },
+  
       {
-        question: "Lesson: Tag options",
-        sections: [
-          {
-            header: "Color",
-            text:
-              "Tags are available in four different colors. The color of a tag depends on its content and the meaning of that tag. The following system is used for tag coloring:",
-            image: tagTable,
-          },
-          {
-            header: "Icons",
-            text:
-              "Tags can contain icons. Use icons where they will help users easily identify the content of the tag. Tags must have a text label and cannot display only an icon.",
-            image: tagIcons,
-          },
-          {
-            header: "Bold",
-            text:
-              "Tags have an optional bold property. Use bold tags where it is important that the tag is seen by the user in an information dense interface. Bold tags should be reserved for edge cases and not overused.",
-          },
-          {
-            header: "Example in use",
-            image: tagExample,
-          },
-        ],
-      },
-      {
-        question: "Lesson: Tooltip",
-        information:
-          "A tooltip is a container for displaying information about an element, it is displayed when a user hovers over the element.",
+        question: "Lesson: Tag API",
+        information: "Here is the API for the tag component. You will find an example of the tag in use on the next page",
+        image: tagApi,
         section: "Data display components",
-        breadcrumb: "Tooltip",
-        sections: [
-          {
-            header: "Usage",
-            text:
-              "Tooltips only display when a user hovers over an element. Do not use tooltips for critical or important information, users may not find the information or it may completely unavailable to mobile users. Information provided in tooltips should be supplementary or provide helpful context. Icon buttons can use tooltips to inform the user of their action. Never put important information or actions inside a tooltip.",
-            list: [
-              "Common usage of a tooltip is to expand on the displayed information when the user hovers over the element.",
-              "Do not place actions inside a tooltip, they would be hidden from the user and difficult to click.",
-              "Only text can be displayed in a tooltip. A popover can be used for rich information.",
-              "Limit the text inside a tooltip to a single, short sentence",
-              "Do not repeat information in a tooltip, provide extra relevant, useful information",
-            ],
-          },
-          {
-            header: "Options",
-          },
-          {
-            header: "Placement",
-            text:
-              "By default the tooltip should display above the hovered element. Alternatively, a tooltip may be displayed underneath or to the side of an element if there is limited space.",
-          },
-          {
-            header: "Example in use",
-            text:
-              "This tooltip gives the user some more context for the upwards arrow inside the cell: the percentage positive growth and the previous value.",
-            image: tooltipExample,
-          },
-          {
-            text:
-              "This tooltip gives extra information for new users about the action attributed to this icon used in an information dense environment.",
-            image: tooltipExample2,
-          },
-          {
-            text:
-              "Hovering over the selected period elements displays extra information, which period is selected. The tooltip is positioned down to avoid overlapping the information above.",
-            image: tooltipExample3,
-          },
-        ],
+        breadcrumb: "Tag",
+      },
+      {
+        question: "Code example: Tags",
+        iframe: tagsExample,
+        section: "Data display components",
+        breadcrumb: "Tag",
       },
       {
         question: "Coding exercise: add more functionality to the table",
         information:
-          "In the sandbox below, you will see an example for how you can use the Data table and the chips together to create filterable table. Your task is to create a new row for 'status' and use the tag component with proper usage of color",
+          "In the code sandbox below, you will see an example for how you can use the Data table and the chips together to create a filterable table. Your task is to create a new row for 'status' and use the tag component.",
         section: "Full Examples",
         iframe: chipTableExample,
+        section: "Data display components",
+        breadcrumb: "Tag",
       },
       {
         question: "End of section quiz: Data display components",
+        section: "Data display components",
+        breadcrumb: "End of section quiz",
         questions: [
           {
             question: "When should you use the data table",
             answers: [
               {
                 a:
-                  "Chips should be displayed in a horizontal list, where space permits",
-                b: "Chips should always be stacked on top of each other",
+                  "When you want to control the page layout instead of using Cascading Style Sheets (CSS)",
+                b: "When you want to get an overview of your numerical data and show a pattern",
                 c:
-                  "Chips should have horizontal scrolling when a large number of chips are used",
+                  "When the user needs to see all the available data",
               },
             ],
-            correct: 1,
-            solutionQuiz: "blbal fdsfsfdsf fdsfsfd fdsfsdf",
+            correct: 2,
+            solutionQuiz: "You want to use the data table when the user needs to see all the available data. Data tables should only be presented to the user when needed. Consider using a chart when you want to get an overview of numerical data. Tables are read in a sequential way, and if the tabl is long, readers might give up before they get the to the most important information. Charts will give a better overall picture. Tables should not be used for layout purposes, instead use CSS",
           },
           {
-            question: "How should you use Chips?",
+            question: "When should you use standalone over inline filters in a table?",
             answers: [
               {
-                a: "When you want to trigger an action, like  'Save' or 'Open'",
-                b: "When you want to be able to filter or select an option",
+                a: "When filtering is not one of the main actions on a page'",
+                b: "When filtering is one of the main actions available on the page.",
                 c:
-                  "Chips should only be used as a way of describing an element, and should not be interactive",
-                d:
-                  "A group of chips should all have the same icon to show that they belong together",
-              },
+                  "When filtering in data-heavy and compact tables",
+              }
             ],
             correct: 1,
-            solutionQuiz: "blbal fdsfsfdsf fdsfsfd fdsfsdf",
+            solutionQuiz: "Standalone filters should be used over inline filters when filtering is one of the main actions available on the page. Inline filters should be used in data-heavy, compact tables where standalone filters would take too much space and it is not one of the main actions on a page",
           },
           {
             question:
@@ -2200,132 +2174,11 @@ export const quiz_data = [
         section: "Data display components",
       },
       {
-        question: "Section 4: Data entry components (COMING SOON)",
-        information:
-          "Data entry components consist of components that based on the input from the user will have a set state",
-        section: "Data entry components",
-        sections: [
-          {
-            text: "Some of the topics that will be covered includes:",
-          },
-          {
-            subheading: "Checkbox:",
-            list: [
-              "Lesson: The different types buttons and its usage",
-              "Example: The different types of buttons in action",
-              "Try it yourself: Change the button to a big secondary button",
-              "Quiz: Buttons",
-              "Quiz: Which image uses the correct button type",
-              "Lesson: Different button options",
-            ],
-          },
-          {
-            subheading: "Organization Unit tree (NO INFO):",
-            list: ["Lesson: How to import components"],
-          },
-          {
-            subheading: "Radio:",
-            list: ["Lesson: How to import components"],
-          },
-          {
-            subheading: "Select:",
-            list: ["Lesson: How to import components"],
-          },
-          {
-            subheading: "Switch:",
-            list: ["Lesson: How to import components"],
-          },
-          {
-            subheading: "Transfer:",
-            list: ["Lesson: How to import components"],
-          },
-        ],
+        question: "Section 4, 5, 6, 7, 8 are coming soon",
+        information: "The sections regarding Data entry components, Feedback components, Layout components, Navigation components and utilities are coming soon",
       },
       {
-        question: "Section 5: Feedback components (COMING SOON)",
-        information:
-          "Lorem ipsum gnfgdgdf ndkfjdsljfkdslf fndskfjdsklfjsdlk jkfjdsklfjdkl fdksfjdklfj jfkdsljlf lkll jklkdsad klajdsksjf fkldjfls",
-        section: "Data display components",
-        sections: [
-          {
-            text: "Some of the topics that will be covered includes:",
-          },
-          {
-            text: "Alertbar:",
-            list: [
-              "Lesson: The different types buttons and its usage",
-              "Example: The different types of buttons in action",
-              "Try it yourself: Change the button to a big secondary button",
-              "Quiz: Buttons",
-              "Quiz: Which image uses the correct button type",
-              "Lesson: Different button options",
-            ],
-          },
-          {
-            text: "Loading indicators:",
-            list: ["Lesson: How to import components"],
-          },
-        ],
-      },
-      {
-        question: "Section 6: Layout components (COMING SOON)",
-        information:
-          "Lorem ipsum gnfgdgdf ndkfjdsljfkdslf fndskfjdsklfjsdlk jkfjdsklfjdkl fdksfjdklfj jfkdsljlf lkll jklkdsad klajdsksjf fkldjfls",
-        section: "Data display components",
-        sections: [
-          {
-            text: "Some of the topics that will be covered includes:",
-          },
-          {
-            text: "Card:",
-            list: ["Lesson: The different types buttons and its usage"],
-          },
-          {
-            text: "Modal:",
-            list: ["Lesson: How to import components"],
-          },
-        ],
-      },
-      {
-        question: "Section 7: Navigation components (COMING SOON)",
-        information:
-          "Lorem ipsum gnfgdgdf ndkfjdsljfkdslf fndskfjdsklfjsdlk jkfjdsklfjdkl fdksfjdklfj jfkdsljlf lkll jklkdsad klajdsksjf fkldjfls",
-        section: "Navigation components",
-        sections: [
-          {
-            text: "Some of the topics that will be covered includes:",
-          },
-          {
-            text: "Pagination:",
-            list: ["Lesson: The different types buttons and its usage"],
-          },
-          {
-            text: "Tabs:",
-            list: ["Lesson: How to import components"],
-          },
-        ],
-      },
-      {
-        question: "Section 8: Utilites (COMING SOON)",
-        information:
-          "Lorem ipsum gnfgdgdf ndkfjdsljfkdslf fndskfjdsklfjsdlk jkfjdsklfjdkl fdksfjdklfj jfkdsljlf lkll jklkdsad klajdsksjf fkldjfls",
-        section: "Data display components",
-        sections: [
-          {
-            text: "Some of the topics that will be covered includes:",
-          },
-          {
-            text: "Elevation:",
-            list: ["Lesson: The different types buttons and its usage"],
-          },
-          {
-            text: "Headerbar:",
-            list: ["Lesson: How to import components"],
-          },
-        ],
-      },
-      {
-        question: "Section 10: General",
+        question: "Section 9: General",
         information: "Some general tips that is related to all the components",
         section: "General",
         sections: [
@@ -2333,7 +2186,7 @@ export const quiz_data = [
             text: "Some of the topics that will be covered includes:",
             list: [
               "Lesson: The difference between normal and FF components",
-              "Information: How can you contribute?",
+              "Information: Further resources",
             ],
           },
         ],

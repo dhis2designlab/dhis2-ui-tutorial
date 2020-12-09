@@ -11,6 +11,10 @@ const Container = styled.div`
   margin-bottom: 16px;
 `;
 
+const Main = styled.div`
+  margin-bottom: 32px;
+`;
+
 const useStyles = makeStyles((theme) => ({
   incorrect: {
     color: "red !important",
@@ -47,7 +51,7 @@ function RadioButtons({ questions, setPoints, points }) {
 
   return questions.map((value, id) => {
     return (
-      <div>
+      <Main>
         {value.question && <h4>{value.question}</h4>}
         {value.answers &&
           value.answers.map((val, i) => {
@@ -83,7 +87,7 @@ function RadioButtons({ questions, setPoints, points }) {
               );
             });
           })}
-      </div>
+      </Main>
     );
   });
 }

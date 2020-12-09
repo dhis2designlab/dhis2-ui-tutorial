@@ -11,7 +11,7 @@ function Dropdownbutton() {
         <Grid item xs={12} sm={12} md={12}>
           <h4>DropdownButton</h4>
         </Grid>
-        <Grid item xs={4} sm={4} md={4}>
+        <Grid item xs={6} sm={6} md={6}>
           <p>Default</p>
           <DropdownButton
             component={<span>Simplest thing</span>}
@@ -22,7 +22,7 @@ function Dropdownbutton() {
             Label me!
           </DropdownButton>
         </Grid>
-        <Grid item xs={4} sm={4} md={4}>
+        <Grid item xs={6} sm={6} md={6}>
           <p>Primary</p>
           <DropdownButton
             component={<span>Simplest thing</span>}
@@ -34,7 +34,7 @@ function Dropdownbutton() {
             Label me!
           </DropdownButton>
         </Grid>
-        <Grid item xs={4} sm={4} md={4}>
+        <Grid item xs={6} sm={6} md={6}>
           <p>Secondary</p>
           <DropdownButton
             component={<span>Simplest thing</span>}
@@ -46,7 +46,7 @@ function Dropdownbutton() {
             Label me!
           </DropdownButton>
         </Grid>
-        <Grid item xs={4} sm={4} md={4}>
+        <Grid item xs={6} sm={6} md={6}>
           <p>Destructive</p>
           <DropdownButton
             component={<span>Simplest thing</span>}
@@ -58,7 +58,7 @@ function Dropdownbutton() {
             Label me!
           </DropdownButton>
         </Grid>
-        <Grid item xs={4} sm={4} md={4}>
+        <Grid item xs={6} sm={6} md={6}>
           <p>Disabled</p>
           <DropdownButton
             component={<span>Simplest thing</span>}
@@ -70,7 +70,7 @@ function Dropdownbutton() {
             Label me!
           </DropdownButton>
         </Grid>
-        <Grid item xs={4} sm={4} md={4}>
+        <Grid item xs={6} sm={6} md={6}>
           <p>Small</p>
           <DropdownButton
             component={<span>Simplest thing</span>}
@@ -82,7 +82,7 @@ function Dropdownbutton() {
             Label me!
           </DropdownButton>
         </Grid>
-        <Grid item xs={4} sm={4} md={4}>
+        <Grid item xs={6} sm={6} md={6}>
           <p>Large</p>
           <DropdownButton
             component={<span>Simplest thing</span>}

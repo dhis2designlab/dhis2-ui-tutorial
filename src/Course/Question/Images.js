@@ -34,6 +34,7 @@ function Images({
   solutionImg,
 }) {
   const classes = useStyles();
+  console.log("isCorrect " + isCorrect)
 
   return (
     <Grid spacing={4} container>
@@ -59,7 +60,7 @@ function Images({
       })}
       {chosenValue !== -1 && (
         <Solution
-          isCorrect={isCorrect ? isCorrect : isIncorrect}
+          isCorrect={isCorrect}
           solutionQuiz={solutionImg}
         />
       )}

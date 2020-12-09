@@ -22,7 +22,7 @@ import { UserContext } from "../userContext";
 import styled from "styled-components";
 
 const Main = styled.main`
-  max-width: 60%;
+  max-width: 80%;
   margin-left: auto;
   margin-right: auto;
   padding-top: 128px;
@@ -42,19 +42,18 @@ function Settings({ onClick }) {
   const firstCourse = completedCourses?.length >= 1
   const fourthCourse = completedCourses?.length >= 4
   const finishedAll = completedCourses?.length >= 7
-  console.log("finished " + finishedAll)
-  console.log(completedCourses.length)
   const allCorrect = false
   const hasReceivedBadge = firstCourse || fourthCourse || finishedAll || allCorrect
   
   return (
     <Main>
-      <Grid container spacing={6}>
-        <Grid item xs={12}>
+      <Grid container  spacing={6}>
+        <Grid item xs={12} >
           <div>
             <h1>Settings</h1>
           </div>
         </Grid>
+        <Grid container spacing={6} direction="column" alignContent="center">
         <Grid item xs={12} sm={12}>
           <div>
             <p>
@@ -75,6 +74,7 @@ function Settings({ onClick }) {
               Log out
             </Button>
           </div>
+        </Grid>
         </Grid>
         <Grid item xs={12} sm={12} md={12}>
             <h2>Completed courses</h2>
@@ -103,31 +103,32 @@ function Settings({ onClick }) {
             <h2>Received badges</h2>
         </Grid>
         {!hasReceivedBadge && <p>You have not received any badges yet.</p>}
+        <Grid container spacing={6}>
         {firstCourse && 
           <Grid  item xs={12} sm={6} md={4}>
           <img width='100%' src={firstCourseBadge} alt="first course badge"/>
-          <h5>Your first course</h5>
+          <h4>Your first course</h4>
           <p>Badge for completing your first course</p>
           </Grid>
         } 
         {fourthCourse &&
           <Grid item xs={12} sm={6} md={4}>
             <img width='100%' src={fourthCourseBadge} alt="fourth course badge"/>
-            <h5>Your fourth course</h5>
+            <h4>Your fourth course</h4>
             <p>Badge for having completed more than four courses</p>
           </Grid>
         }
         {allCorrect &&
           <Grid item xs={12} sm={6} md={4}>
             <img width='100%' src={allCorrectBadge} alt="first course badge"/>
-            <h5>All correct</h5>
+            <h4>All correct</h4>
             <p>Badge for getting all correct on a course</p>
           </Grid>
         }
         {finishedAll && 
         <Grid item xs={12} sm={6} md={4}>
           <img width='100%' src={finishedAll ? finishedAllBadge : finishedAllGrayscale} alt="first course badge"/>
-          <h5>Completing all courses</h5>
+          <h4>Completing all courses</h4>
           <p>Badge for completing all the courses</p>
         </Grid>
         }
@@ -137,31 +138,32 @@ function Settings({ onClick }) {
       {!firstCourse &&
       <Grid  item xs={12} sm={6} md={4}>
          <img width='100%' src={firstCourseGrayscale} alt="first course badge"/>
-         <h5>Your first course</h5>
+         <h4>Your first course</h4>
          <p>Badge for completing your first course</p>
         </Grid>
       }
       {!fourthCourse &&
         <Grid item xs={12} sm={6} md={4}>
           <img width='100%' src={fourthCourse ? fourthCourseBadge : fourthCourseGrayscale} alt="fourth course badge"/>
-          <h5>Your fourth course</h5>
+          <h4>Your fourth course</h4>
           <p>Badge for having completed more than four courses</p>
         </Grid>
        }
       {!allCorrect &&
         <Grid item xs={12} sm={6} md={4}>
           <img width='100%' src={allCorrect ? allCorrectBadge : allCorrectGrayscale} alt="first course badge"/>
-          <h5>All correct</h5>
+          <h4>All correct</h4>
           <p>Badge for getting all correct on a course</p>
         </Grid>
       }
       {!finishedAll &&
         <Grid item xs={12} sm={6} md={4}>
           <img width='100%' src={finishedAll ? finishedAllBadge : finishedAllGrayscale} alt="first course badge"/>
-          <h5>Completing all courses</h5>
+          <h4>Completing all courses</h4>
           <p>Badge for completing all the courses</p>
       </Grid>
       }
+      </Grid>
       </Grid>
     </Main>
   );
