@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 
 function Fileinput() {
   return (
-    <Grid container xs={12} sm={12} md={12}>
+    <Grid container spacing={3}>
       <Grid item xs={12} sm={12} md={12}>
         <h4>Fileinput</h4>
       </Grid>

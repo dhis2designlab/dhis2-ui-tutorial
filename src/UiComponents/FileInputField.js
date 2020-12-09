@@ -3,11 +3,10 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { Button } from "@dhis2/ui";
 
-import styles from "./styles.module.css";
 
 function FileInputField() {
   return (
-    <Grid styles={styles.box} container xs={12} sm={12} md={12}>
+    <Grid container spacing={3}>
       <Grid item xs={12} sm={12} md={12}>
         <h4>FileInputField</h4>
       </Grid>

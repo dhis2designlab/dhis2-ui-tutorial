@@ -2,12 +2,10 @@ import React from "react";
 
 import Grid from "@material-ui/core/Grid";
 import { LinearLoader } from "@dhis2/ui";
-import styles from "./styles.module.css";
 
 function Linearloader() {
   return (
-    <Grid className={styles.container} xs={12} sm={12} md={12}>
-      <div className={styles.box}>
+    <Grid container spacing={3}>
         <Grid item xs={12} sm={12} md={12}>
           <h4>LinearLoader</h4>
         </Grid>
@@ -19,7 +17,6 @@ function Linearloader() {
             width="300px"
           />
         </Grid>
-      </div>
     </Grid>
   );
 }

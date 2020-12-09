@@ -3,12 +3,11 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { ButtonStrip, Button, SplitButton } from "@dhis2/ui";
 
-import styles from "./styles.module.css";
+
 
 function Buttonstrip() {
   return (
-    <div>
-      <div className={styles.box}>
+    <Grid container spacing={3}>
         <Grid item xs={12} sm={12} md={12}>
           <h4>ButtonStrip</h4>
         </Grid>
@@ -35,20 +34,12 @@ function Buttonstrip() {
             >
               Save
             </Button>
-            <Button
-              onClick={console.log("click")}
-              dataTest="dhis2-uicore-button"
-              type="button"
-            >
-              Save
-            </Button>
             <SplitButton dataTest="dhis2-uicore-splitbutton">
               Label?
             </SplitButton>
           </ButtonStrip>
         </Grid>
-      </div>
-    </div>
+      </Grid>
   );
 }
 

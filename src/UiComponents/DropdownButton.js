@@ -7,8 +7,7 @@ import styles from "./styles.module.css";
 
 function Dropdownbutton() {
   return (
-    <Grid className={styles.container} xs={12} sm={12} md={12}>
-      <div className={styles.box}>
+    <Grid container spacing={3}>
         <Grid item xs={12} sm={12} md={12}>
           <h4>DropdownButton</h4>
         </Grid>
@@ -95,7 +94,6 @@ function Dropdownbutton() {
             Label me!
           </DropdownButton>
         </Grid>
-      </div>
     </Grid>
   );
 }

@@ -994,7 +994,7 @@ export const quiz_data = [
     courseImg: Components,
     totalPoints: 17,
     about:
-      "DHIS2 has a collection of UI elements that can be, and should be, reused across all DHIS2 applications. The components have been designed with DHIS2 use cases in mind. Using these components means more time spent focusing on building a positive user experience and less time redesigning and rebuilding common components. Each component has its guidelines for use. In this tutorial you will learn how and when to use the different components",
+      "DHIS2 has a collection of UI elements that should be reused across all DHIS2 applications. The components have been designed with DHIS2 use cases in mind. Using these components means more time spent focusing on building a positive user experience and less time redesigning and rebuilding common components. Each component has its guidelines for use. In this tutorial, you will learn how and when to use the different components.",
     topics: [
       {
         title: "Section 1: Introduction",
@@ -1174,7 +1174,7 @@ export const quiz_data = [
         ),
       },
       {
-        title: "Section 5: Feecback components (coming soon)",
+        title: "Section 5: Feedback components (coming soon)",
         content: (
           <div>
             <p>No information. Coming soon</p>
@@ -1224,7 +1224,7 @@ export const quiz_data = [
       {
         question: "Section 1: Introduction",
         information:
-          "In this section you will get a general to how you can use all the components in DHIS2.",
+          "In this section you will get an overview of how you can use all the components in DHIS2.",
         breadcrumb: "Introduction",
         sections: [
           {
@@ -1244,7 +1244,7 @@ export const quiz_data = [
           {
             heading: "@dhis2/ui",
             text:
-              "To be able to use the components, you need to import them. Until recently, there have been different ways to import the components, depending on the type of component you want to import. @dhis2/ui unifies all of the dhis2 ui libraries, and you can now import everything that you imported previously from ui-core, ui-widgets and ui-forms directly from @dhis2/ui",
+              "To be able to use the components, you need to import them. There have been different ways to import the components until recently, depending on the type of component you want to import. @dhis2/ui unifies all of the dhis2 ui libraries, and you can now import everything that you imported previously from ui-core, ui-widgets and ui-forms directly from @dhis2/ui",
             image: importComponents,
           },
         ],
@@ -1273,7 +1273,7 @@ export const quiz_data = [
           },
           {
             text:
-              "Here you can see the API for the dhis2 Checkbox component. In the first column named 'Name,' you can see what type of properties the Checkbox component can take. Each of the properties has a type, as specified in the 'Type' column. ",
+              "Below you can see the API for the dhis2 Checkbox component. In the first column named 'Name,' you can see what type of properties the Checkbox component can take. Each of the properties has a type, as specified in the 'Type' column. ",
           },
         ],
         section: "Introduction",
@@ -1524,7 +1524,7 @@ export const quiz_data = [
             image: FlyoutMenuExampleInUse,
           },
         ],
-        breadcrumb: "Menu",
+        breadcrumb: "FlyoutMenu",
         section: "Action component",
       },
       {
@@ -1574,7 +1574,7 @@ export const quiz_data = [
         image: flyoutMenuImage,
         imageWidth: "50%",
         iframe: flyoutMenuExample,
-        breadcrumb: "Menu",
+        breadcrumb: "FlyoutMenu",
         section: "Action component",
         showCode: flyoutMenuSolution,
       },
@@ -1597,7 +1597,7 @@ export const quiz_data = [
               },
             ],
             correct: 1,
-            solutionQuiz: "Blablablabla",
+            solutionQuiz: "Primary buttons should be used to highlight the most important/main action on the page, and there should rarely be more than one primary button. One example of when you would use a primary button would be a 'save' button on a form page.",
           },
           {
             question: "When should you use the destructive button?",
@@ -1614,7 +1614,7 @@ export const quiz_data = [
               },
             ],
             correct: 2,
-            solutionQuiz: "Blablablabla",
+            solutionQuiz: "Destructive buttons are used to highlight the seriousness of the action. Destructive buttons must only be used for destructive actions. One example for when you could use the destructive button could be a 'delete' action, like 'delete account'.",
           },
           {
             question: "When should you use the secondary button?",
@@ -1627,11 +1627,11 @@ export const quiz_data = [
                 c:
                   "Secondary buttons should be used when you want to highlight to the user the seriousness of the action",
                 d:
-                  "Secondary buttons should be used for passive actions, often as an alternative to the primary action. If 'Save' is primary, 'Cancel could be secondary. Do not use as the only action on a page",
+                  "Secondary buttons should be used for passive actions, often as an alternative to the primary action.",
               },
             ],
             correct: 3,
-            solutionQuiz: "Blablablabla",
+            solutionQuiz: "Secondary buttons should be used for passive actions, often as an alternative to the primary action. If 'Save' is primary, 'Cancel could be secondary. Do not use as the only action on a page",
           },
           {
             question: "When should you use the toggle button?",
@@ -1645,7 +1645,7 @@ export const quiz_data = [
               },
             ],
             correct: 1,
-            solutionQuiz: "Blablablabla",
+            solutionQuiz: "A toggle button can represent an on/off state. Use a toggle button when the user can enable or disable an option, and a checkbox or switch is not suitable. This will f.ex often be the case in a text editing toolbar when you want to disable or enable bold and italic options",
           },
           {
             question: "How should you display Chips?",
@@ -1659,7 +1659,7 @@ export const quiz_data = [
               },
             ],
             correct: 0,
-            solutionQuiz: "gdgdfgfdgdfg",
+            solutionQuiz: "Chips should be displayed in a horizontal list, where space permits. If there are not enough space to display the chips horizontally, they should be stacked on top of each other.",
           },
           {
             question: "How should you use Chips?",
@@ -1674,7 +1674,7 @@ export const quiz_data = [
               },
             ],
             correct: 1,
-            solutionQuiz: "dsfsdfsgdfgf",
+            solutionQuiz: "Chips should be used when you want to be able to filter or select an option. Chips should not be used to trigger an action, use buttons for that.",
           },
           {
             question:
@@ -1688,7 +1688,7 @@ export const quiz_data = [
               },
             ],
             correct: 2,
-            solutionQuiz: "fsfdfsfds",
+            solutionQuiz: "Single-selection chips should be used for selecting the active dashboard. You may chose to allow a user to select multiple chips, or filters, for a table displaying data",
           },
         ],
         breadcrumb: "End of section quiz",

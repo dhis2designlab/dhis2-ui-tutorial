@@ -7,8 +7,7 @@ import styles from "./styles.module.css";
 
 function Input() {
   return (
-    <div>
-      <div className={styles.box}>
+    <Grid container spacing={3}>
         <Grid item xs={12} sm={12} md={12}>
           <h4>InputField</h4>
         </Grid>
@@ -82,8 +81,7 @@ function Input() {
             value="This field is disabled"
           />
         </Grid>
-      </div>
-    </div>
+    </Grid>
   );
 }
 

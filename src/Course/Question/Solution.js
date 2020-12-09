@@ -17,6 +17,7 @@ const CorrectDiv = styled.div`
   border: solid;
   border-radius: 6px;
   border-width: thin;
+  padding: 12px;
 `;
 const IncorrectDiv = styled.div`
   background-color: ${colors.red100};
@@ -24,6 +25,7 @@ const IncorrectDiv = styled.div`
   border: solid;
   border-radius: 6px;
   border-width: thin;
+  padding: 12px;
 `;
 const Correct = styled.p`
   color: ${colors.green700};

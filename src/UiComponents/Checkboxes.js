@@ -3,12 +3,9 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { Checkbox } from "@dhis2/ui";
 
-import styles from "./styles.module.css";
-
 function Checkboxes() {
   return (
-    <div>
-      <div className={styles.box}>
+    <Grid container spacing={3}>
         <Grid item xs={12} sm={12} md={12}>
           <h4>Checkboxes</h4>
         </Grid>
@@ -29,43 +26,6 @@ function Checkboxes() {
             value="default"
           />
         </Grid>
-        <Grid item xs={4} sm={4} md={4}>
-          <p>Valid</p>
-          <Checkbox
-            checked
-            dataTest="dhis2-uicore-checkbox"
-            initialFocus
-            label="Checkbox"
-            name="Ex"
-            value="default"
-            valid
-          />
-        </Grid>
-        <Grid item xs={4} sm={4} md={4}>
-          <p>Warning</p>
-          <Checkbox
-            checked
-            dataTest="dhis2-uicore-checkbox"
-            initialFocus
-            label="Checkbox"
-            name="Ex"
-            value="default"
-            warning
-          />
-        </Grid>
-        <Grid item xs={4} sm={4} md={4}>
-          <p>Error</p>
-          <Checkbox
-            checked
-            dataTest="dhis2-uicore-checkbox"
-            label="Checkbox"
-            name="Ex2"
-            value="default2"
-            error
-            danger
-          />
-        </Grid>
-
         <Grid item xs={4} sm={4} md={4}>
           <p>Densed checked</p>
           <Checkbox
@@ -89,8 +49,7 @@ function Checkboxes() {
             value="error"
           />
         </Grid>
-      </div>
-    </div>
+      </Grid>
   );
 }
 

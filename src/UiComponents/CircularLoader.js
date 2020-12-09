@@ -5,7 +5,7 @@ import { Button } from "@dhis2/ui";
 
 function CircularLoader() {
   return (
-    <Grid className={styles.container} container xs={12} sm={12} md={12}>
+    <Grid container xs={12} spacing={3}>
       <Grid item xs={12} sm={12} md={12}>
         <h4>CircularLoader</h4>
       </Grid>
