@@ -20,7 +20,10 @@ const Code = styled.div`
 const Content = styled.div`
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 50%;
+  @media (max-width: 959px) {
+    width: 80%
+  }
 `;
 
 const Container = styled.div`

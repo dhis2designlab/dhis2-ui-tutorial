@@ -6,6 +6,7 @@ import Home from "./Home";
 import Course from "./Course";
 
 import Settings from "./Settings";
+import ScrollToTop from "./scrollToTop.js";
 
 import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
@@ -53,6 +54,7 @@ function App() {
           nrCompletedCourses={completedCourses.length}
           loggedIn={user}
         />
+        <ScrollToTop>
         <Switch>
           <PublicRoute
             isLoggedIn={user}
@@ -77,6 +79,7 @@ function App() {
           />
           <Route path="/course/:id" component={Course} />
         </Switch>
+        </ScrollToTop>
         <footer className={classes.footer}>
           <Copyright />
         </footer>

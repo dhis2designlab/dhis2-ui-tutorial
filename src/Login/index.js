@@ -13,11 +13,14 @@ import { auth } from "../firebase.js";
 import styled from "styled-components";
 
 const Main = styled.main`
-  max-width: 40%;
+  width: 40%;
   margin-left: auto;
   margin-right: auto;
   background-color: "blue";
   padding-top: 128px;
+  @media (max-width: 959px) {
+    width: 80%
+  }
 `;
 
 const Loader = styled.div`

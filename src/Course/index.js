@@ -65,14 +65,12 @@ function Course() {
     setPoints(0);
     setFinished(false);
     setChosenValue(-1);
-    window.scrollTo(0, 0);
   };
 
   const handleBackClick = () => {
     if (indexState - 1 >= 0) {
       setFinished(false);
       setIndex(indexState - 1);
-      window.scrollTo(0, 0);
       setChosenValue(-1);
     }
   };
@@ -91,10 +89,6 @@ function Course() {
 
   const handleNextClick = () => {
     setChosenValue(-1);
-    // if (isChecked.includes(correct) || isChosenRadio === correct) {
-    //  setPoints(points + 1);
-    //  }
-
     if (indexState + 1 < quizData[id].steps.length) {
       setIndex(indexState + 1);
     } else {
@@ -117,8 +111,6 @@ function Course() {
       }
       setFinished(true);
     }
-
-    window.scrollTo(0, 0);
   };
 
   return (

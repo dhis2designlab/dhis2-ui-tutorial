@@ -16,10 +16,13 @@ import styled from "styled-components";
 import { colors } from "@dhis2/ui";
 
 const Main = styled.main`
-  max-width: 60%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
   padding-top: 128px;
+  @media (max-width: 959px) {
+    width: 80%
+  }
 `;
 
 const List = styled.ul`
@@ -56,7 +59,7 @@ function CourseOverview({ handleNextClick, title, topics, about, status, totalPo
                   <b>Expected duration:</b> 20 minutes
                 </ListElement>
                 <ListElement>
-                  <b>Possible points:</b> {p}
+                  <b>Possible points:</b> {p} points
                 </ListElement>
               </List>
             </CardContent>

@@ -11,11 +11,25 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Main = styled.main`
-  max-width: 40%;
+  width: 40%;
   margin-left: auto;
   margin-right: auto;
   background-color: "blue";
   padding-top: 128px;
+  @media (max-width: 959px) {
+    width: 80%
+  }
+`;
+
+const Loader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px;
+`;
+
+const Error = styled.p`
+  color: #b71c1c;
 `;
 
 function Signup() {
@@ -27,7 +41,6 @@ function Signup() {
   const signup = (username, password) => {
     auth.createUserWithEmailAndPassword(username, password).catch((error) => {
       let errorMessage = error.message;
-      console.log("error " + errorMessage);
       setErrorMessage(errorMessage);
     });
   };
@@ -40,7 +53,9 @@ function Signup() {
   return (
     <Main>
       {signupState === "signing in" && errorMessage === "" ? (
-        <CircularLoader large />
+         <Loader>
+            <CircularLoader large />
+        </Loader>
       ) : (
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={12}>
@@ -83,7 +98,7 @@ function Signup() {
           </Grid>
          
           <Grid item spacing={3} xs={12} sm={12} md={12}>
-          {errorMessage !== "" && <p>{errorMessage}</p>}
+          {errorMessage !== "" && <Error>{errorMessage}</Error>}
           <p>
             Do you already have an account? Sign in{" "}
             <Link to={`/login`}>here</Link>
