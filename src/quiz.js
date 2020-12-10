@@ -363,6 +363,7 @@ export const quiz_data = [
     title: "Forms",
     quizId: "Forms",
     courseImg: Forms,
+    totalPoints: "9",
     status: "under development",
     about:
       "Forms are one of the most common ways an application collects user input. DHIS2 applications should follow some common form of guidelines to make sure users are not unnecessarily challenged when working with forms. This tutorial is not ready to be tested and the start button is therefore disabled",
@@ -605,14 +606,14 @@ export const quiz_data = [
         breadcrumb: "DHIS2 color scale",
       },
       {
-        question: "Quiz: Which of the images uses colors correctly?",
+        question: "Quiz: Which of the images uses colors correctly? Click on the correct image",
         images: [colorCorrect1, colorIncorrect1],
         solutionImg:
           "Use neutral colors to make the information easy to understand and parse. Using unnecessary colors makes the user question: what does this color mean?",
         correct: 0,
       },
       {
-        question: "Quiz: Which of the images uses colors correctly?",
+        question: "Quiz: Which of the images uses colors correctly? Click on the correct image",
         images: [colorIncorrect2, colorCorrect2],
         correct: 1,
         solutionImg:
@@ -696,7 +697,7 @@ export const quiz_data = [
     title: "DHIS2 Components",
     quizId: "Components",
     courseImg: Components,
-    totalPoints: 17,
+    totalPoints: 12,
     about:
       "DHIS2 has a collection of UI elements that should be reused across all DHIS2 applications. The components have been designed with DHIS2 use cases in mind. Using these components means more time spent focusing on building a positive user experience and less time redesigning and rebuilding common components. Each component has its guidelines for use. In this tutorial, you will learn how and when to use the different components.",
     topics: [

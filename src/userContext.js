@@ -18,6 +18,8 @@ const UserProvider = ({ children }) => {
               email: user.email,
               uid: user.uid,
               loggedIn: true,
+              allCorrect: doc.data().allCorrect,
+              
             });
             let fetchedCourses = [];
             userReference
@@ -29,6 +31,7 @@ const UserProvider = ({ children }) => {
                     points: doc.data().points,
                     name: doc.data().name,
                     courseImg: doc.data().courseImg,
+                    badges: doc.data().badge
                   });
                 });
 
@@ -40,6 +43,7 @@ const UserProvider = ({ children }) => {
               email: user.email,
               uid: user.uid,
               loggedIn: true,
+              allCorrect: false,
             });
           }
         });

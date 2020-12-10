@@ -107,6 +107,9 @@ function Course() {
             courseImg: courseImg,
           });
 
+          db.collection("users").doc(currentUser.uid).update({allCorrect: true})
+
+         
         setCompletedCourses([
           ...completedCourses,
           { points: points, name: title, courseImg: courseImg },
@@ -134,7 +137,7 @@ function Course() {
         ) : (
           <>
             {finished ? (
-              <FinishedCourse completedCourses={completedCourses} setIndex={handleStartOver} points={points} />
+              <FinishedCourse totalPoints={totalPoints} setIndex={handleStartOver} points={points} />
             ) : (
               <>
                 <Question

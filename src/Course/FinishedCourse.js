@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 
 
 import Grid from "@material-ui/core/Grid";
@@ -10,6 +10,9 @@ import firstCourseBadge from "../images/firstCourseBadge.png"
 import fourthCourseBadge from "../images/fourthCourseBadge.png"
 
 
+import { UserContext } from "../userContext";
+
+
 const Container = styled.div`
   max-width: 60%;
   margin-left: auto;
@@ -17,14 +20,12 @@ const Container = styled.div`
   padding-top: 128px;
 `;
 
-function FinishedCourse({ points, setIndex, completedCourses }) {
- // const firstCourse = completedCourses?.length === 1
- // const fourthCourse = completedCourses?.length === 4
- // const finishedAll = completedCourses?.length >= 7
-  const allCorrect = true
-  const firstCourse = true
-  const fourthCourse = true
-  const finishedAll = true
+function FinishedCourse({ points, setIndex,totalPoints }) {
+  const { currentUser, completedCourses  } = useContext(UserContext);
+  const firstCourse = completedCourses?.length === 1 && currentUser?.loggedIn === true
+  const fourthCourse = completedCourses?.length === 4 && currentUser?.loggedIn === true
+  const finishedAll = completedCourses?.length >= 7 && currentUser?.loggedIn === true
+  const allCorrect = totalPoints === points && currentUser?.loggedIn === true && currentUser?.allCorrect !== true
 
   return (
     <Container>

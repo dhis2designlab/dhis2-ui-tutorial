@@ -38,7 +38,7 @@ const ListElement = styled.li`
 `;
 
 function CourseOverview({ handleNextClick, title, topics, about, status, totalPoints }) {
-  const p = 10;
+
   return (
     <Main>
       <Grid container spacing={5}>
@@ -59,7 +59,7 @@ function CourseOverview({ handleNextClick, title, topics, about, status, totalPo
                   <b>Expected duration:</b> 20 minutes
                 </ListElement>
                 <ListElement>
-                  <b>Possible points:</b> {p} points
+                  <b>Possible points:</b> {totalPoints} points
                 </ListElement>
               </List>
             </CardContent>
