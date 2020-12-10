@@ -26,7 +26,6 @@ import menuSectionHeader from "./images/menuSectionHeader.png";
 
 import flyoutMenuImage from "./images/flyoutMenuImage.png";
 import FlyoutMenuExampleInUse from "./images/FlyoutMenuExampleInUse.png";
-import fileInputFieldFF from "./images/fileInputFieldFF.png";
 import flyoutMenuApi from "./images/flyoutMenuApi.png";
 
 //Table
@@ -58,9 +57,6 @@ import tag from "./images/tag.png";
 import tagTable from "./images/tagTable.png";
 import tagIcons from "./images/tagIcons.png";
 import tagExample from "./images/tagExample.png";
-import tooltipExample from "./images/tooltipExample.png";
-import tooltipExample2 from "./images/tooltipExample2.png";
-import tooltipExample3 from "./images/tooltipExample3.png";
 
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import EmojiObjectsIcon from "@material-ui/icons/EmojiObjects";
@@ -128,193 +124,6 @@ export default function App() {
     </div>
   );
 }`;
-
-const exerciseTable = `import React from "react";
-import "./styles.css";
-import {
-  Table,
-  TableHead,
-  TableRowHead,
-  TableCellHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  DropdownButton
-} from "@dhis2/ui";
-
-export default function App() {
-  return (
-    <Table>
-      <TableHead>
-        <TableRowHead>
-          <TableCellHead>Patients on your watchlist</TableCellHead>
-          <TableCellHead colSpan="9"></TableCellHead>
-        </TableRowHead>
-        <TableRowHead>
-          <TableCellHead>
-            <DropdownButton
-              dataTest="dhis2-uicore-dropdownbutton"
-              name="default"
-              value="nothing"
-            >
-              First name
-            </DropdownButton>
-          </TableCellHead>
-          <TableCellHead>
-            <DropdownButton
-              dataTest="dhis2-uicore-dropdownbutton"
-              name="default"
-              value="nothing"
-            >
-              Last name
-            </DropdownButton>
-          </TableCellHead>
-          <TableCellHead>
-            <DropdownButton
-              dataTest="dhis2-uicore-dropdownbutton"
-              name="default"
-              value="nothing"
-            >
-              Incident date
-            </DropdownButton>
-          </TableCellHead>
-          <TableCellHead>
-            <DropdownButton
-              dataTest="dhis2-uicore-dropdownbutton"
-              name="default"
-              value="nothing"
-            >
-              Last updated
-            </DropdownButton>
-          </TableCellHead>
-          <TableCellHead>
-            <DropdownButton
-              dataTest="dhis2-uicore-dropdownbutton"
-              name="default"
-              value="nothing"
-            >
-              Age
-            </DropdownButton>
-          </TableCellHead>
-          <TableCellHead colSpan="9"></TableCellHead>
-        </TableRowHead>
-        <TableRowHead>
-          <TableCellHead>First name</TableCellHead>
-          <TableCellHead>Last name</TableCellHead>
-          <TableCellHead>Incident date</TableCellHead>
-          <TableCellHead>Last updated</TableCellHead>
-          <TableCellHead>Age</TableCellHead>
-          <TableCellHead>Registering unit</TableCellHead>
-          <TableCellHead>Assigned user</TableCellHead>
-          <TableCellHead>Status</TableCellHead>
-        </TableRowHead>
-      </TableHead>
-      <TableBody>
-        <TableRow>
-          <TableCell>Onyekachukwu</TableCell>
-          <TableCell>Kariuki</TableCell>
-          <TableCell>02/06/2007</TableCell>
-          <TableCell>05/25/1972</TableCell>
-          <TableCell>66</TableCell>
-          <TableCell>Jawi</TableCell>
-          <TableCell>Sofie Hubert</TableCell>
-          <TableCell>Incomplete</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Kwasi</TableCell>
-          <TableCell>Okafor</TableCell>
-          <TableCell>08/11/2010</TableCell>
-          <TableCell>02/26/1991</TableCell>
-          <TableCell>38</TableCell>
-          <TableCell>Mokassie MCHP</TableCell>
-          <TableCell>Dashonte Clarke</TableCell>
-          <TableCell>Complete</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Siyabonga</TableCell>
-          <TableCell>Abiodun</TableCell>
-          <TableCell>07/21/1981</TableCell>
-          <TableCell>02/06/2007</TableCell>
-          <TableCell>98</TableCell>
-          <TableCell>Bathurst MCHP</TableCell>
-          <TableCell>Unassigned</TableCell>
-          <TableCell>Incomplete</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Chiyembekezo</TableCell>
-          <TableCell>Okeke</TableCell>
-          <TableCell>01/23/1982</TableCell>
-          <TableCell>07/15/2003</TableCell>
-          <TableCell>2</TableCell>
-          <TableCell>Mayolla MCHP</TableCell>
-          <TableCell>Wan Gengxin</TableCell>
-          <TableCell>Incomplete</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Mtendere</TableCell>
-          <TableCell>Afolayan</TableCell>
-          <TableCell>08/12/1994</TableCell>
-          <TableCell>05/12/1972</TableCell>
-          <TableCell>37</TableCell>
-          <TableCell>Gbangadu MCHP</TableCell>
-          <TableCell>Gvozden Boskovsky</TableCell>
-          <TableCell>Complete</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Inyene</TableCell>
-          <TableCell>Okonkwo</TableCell>
-          <TableCell>04/01/1971</TableCell>
-          <TableCell>03/16/2000</TableCell>
-          <TableCell>70</TableCell>
-          <TableCell>Kunike Barina</TableCell>
-          <TableCell>Oscar de la Cavallería</TableCell>
-          <TableCell>Complete</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Amaka</TableCell>
-          <TableCell>Pretorius</TableCell>
-          <TableCell>01/25/1996</TableCell>
-          <TableCell>09/15/1986</TableCell>
-          <TableCell>32</TableCell>
-          <TableCell>Bargbo</TableCell>
-          <TableCell>Alberto Raya</TableCell>
-          <TableCell>Incomplete</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Meti</TableCell>
-          <TableCell>Abiodun</TableCell>
-          <TableCell>10/24/2010</TableCell>
-          <TableCell>07/26/1989</TableCell>
-          <TableCell>8</TableCell>
-          <TableCell>Majihun MCHP</TableCell>
-          <TableCell>Unassigned</TableCell>
-          <TableCell>Complete</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Eshe</TableCell>
-          <TableCell>Okeke</TableCell>
-          <TableCell>01/31/1995</TableCell>
-          <TableCell>01/31/1995</TableCell>
-          <TableCell>63</TableCell>
-          <TableCell>Mambiama CHP</TableCell>
-          <TableCell>Shadrias Pearson</TableCell>
-          <TableCell>Incomplete</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Obi</TableCell>
-          <TableCell>Okafor</TableCell>
-          <TableCell>06/07/1990</TableCell>
-          <TableCell>01/03/2006</TableCell>
-          <TableCell>28</TableCell>
-          <TableCell>Dalakuru CHP</TableCell>
-          <TableCell>Anatoliy Shcherbatykh</TableCell>
-          <TableCell>Incomplete</TableCell>
-        </TableRow>
-      </TableBody>
-    </Table>
-  );
-}
-`;
 
 const flyoutMenuSolution = `
 import React, { useState } from "react";
@@ -1106,15 +915,6 @@ export const quiz_data = [
           <div>
             <p>No information. Coming soon</p>
           </div>
-        ),
-      },
-      {
-        title: "Section 9: General",
-        content: (
-          <ul>
-            <li>info</li>
-            <li>Contributing</li>
-          </ul>
         ),
       },
     ],
@@ -1929,18 +1729,15 @@ export const quiz_data = [
         question: "Coding exercise: add more functionality to the table",
         information:
           "In the code sandbox below, you will see an example for how you can use the Data table and the chips together to create a filterable table. Your task is to use the tag component to display status.",
-        section: "Full Examples",
         iframe: chipTableExample,
         section: "Data display components",
         breadcrumb: "Tag",
       },
       {
         question: "End of section quiz: Data display components",
-        section: "Data display components",
-        breadcrumb: "End of section quiz",
         questions: [
           {
-            question: "When should you use the data table",
+            question: "When should you use the data table?",
             answers: [
               {
                 a:
@@ -1951,13 +1748,13 @@ export const quiz_data = [
               },
             ],
             correct: 2,
-            solutionQuiz: "You want to use the data table when the user needs to see all the available data. Data tables should only be presented to the user when needed. Consider using a chart when you want to get an overview of numerical data. Tables are read in a sequential way, and if the tabl is long, readers might give up before they get the to the most important information. Charts will give a better overall picture. Tables should not be used for layout purposes, instead use CSS",
+            solutionQuiz: "You want to use the data table when the user needs to see all the available data. Data tables should only be presented to the user when needed. Consider using a chart when you want to get an overview of numerical data. Tables are read in a sequential way, and if the table is long, readers might give up before they get the to the most important information. Charts will give a better overall picture. Tables should not be used for layout purposes, instead use CSS",
           },
           {
             question: "When should you use standalone over inline filters in a table?",
             answers: [
               {
-                a: "When filtering is not one of the main actions on a page'",
+                a: "When filtering is not one of the main actions on a page",
                 b: "When filtering is one of the main actions available on the page.",
                 c:
                   "When filtering in data-heavy and compact tables",
@@ -1968,100 +1765,37 @@ export const quiz_data = [
           },
           {
             question:
-              "When should you use single selection chips over multipleselection chips?",
+              "When should you use the Tag component?",
             answers: [
               {
-                a: "When you want to use chips for filtering",
-                b: "When you want to use the chip as a button",
+                a: "When you know that the element will always be the same",
+                b: "When you want a button with more subtle colors than the button component provides",
                 c:
-                  "When you want to use chips for selecting the active dashboard",
-              },
-            ],
-            correct: 2,
-            solutionQuiz: "blbal fdsfsfdsf fdsfsfd fdsfsdf",
-          },
-          {
-            question: "When should you use the destructive button?",
-            answers: [
-              {
-                a:
-                  "Destructive buttons should be the default choice for the majority of actions. Several destructive buttons can be used in the same area",
-                b:
-                  "Destructive buttons should be used to highlight the most importent/main action on the page. Should rarerly be more than one primary button",
-                c:
-                  "Destructive buttons should be used when you want to highlight to the user the seriousness of the action",
+                  "When you need a component for navigation",
                 d:
-                  "Destructive buttons should be used for passive actions, often as an alternative to the primary action. If 'Save' is primary, 'Cancel could be destructive. Do not use as the only action on a page",
+                "Whenever an element in a collection needs to display its category or status",
+                e: "When you want to display one-off, unique information"
               },
             ],
-            correct: 0,
-            solutionQuiz: "blbal fdsfsfdsf fdsfsfd fdsfsdf",
+            correct: 3,
+            solutionQuiz: "Whenever an element in a collection needs to display its category or status. Tags should not be used for unique information or as a button",
           },
           {
-            question: "When should you use the secondary button?",
+            question: "When should you use the color blue for the tag component?",
             answers: [
               {
                 a:
-                  "Secondary buttons are the most often used button that will suit the majority of actions. Should be the default choice for the majority of actions. Several secondary buttons can be used in the same area",
+                  "The color blue tags should be used for content that displays an error",
                 b:
-                  "Destructive buttons should be used to highlight the most importent/main action on the page. Should rarerly be more than one primary button",
+                  "The color blue for tags should be used for neutral information",
                 c:
-                  "Destructive buttons should be used when you want to highlight to the user the seriousness of the action",
+                  "The color blue for tags should be used to indicate validity or success",
                 d:
-                  "Secondary buttons should be used for passive actions, often as an alternative to the primary action. If 'Save' is primary, 'Cancel could be secondary. Do not use as the only action on a page",
-              },
-            ],
-            correct: 0,
-            solutionQuiz: "blbal fdsfsfdsf fdsfsfd fdsfsdf",
-          },
-          {
-            question:
-              "What is the difference between basic buttons and secondary buttons?",
-            answers: [{ a: "Blablabla", b: "Blabbalba", c: "blablabla" }],
-            correct: 0,
-          },
-
-          {
-            question: "When should you use the Chip component?",
-            answers: [
-              {
-                a:
-                  "When you want to trigger some action, like 'Save' or 'Exit'",
-                b:
-                  "When you want to display categorizing labels or information for other elements in a collection",
-                c:
-                  "Whenever an element in a collection needs to display its category or status",
+                  "The color blue for tags should be used as the default color that should not imply meaning",
               },
             ],
             correct: 1,
-          },
-          {
-            question:
-              "When should you use the multiple select for the Chip component?",
-            answers: [
-              {
-                a:
-                  "When you want to trigger some action, like 'Save' or 'Exit'",
-                b:
-                  "When you want to display categorizing labels or information for other elements in a collection",
-                c:
-                  "Whenever an element in a collection needs to display its category or status",
-              },
-            ],
-            correct: 1,
-          },
-          {
-            question: "When should you use the Flyoutmenu component?",
-            answers: [
-              {
-                a:
-                  "When space is limited and displaying all the options would be impractical",
-                b:
-                  "When you want to be able to choose multiple options at once",
-                c: "When you....",
-              },
-            ],
-            correct: 0,
+            solutionQuiz: "The color blue for tags should be used for neutral information. Red should be used for error, green for validity and grey should be the default choice that does not have a special meaning",
           },
         ],
         breadcrumb: "End of section quiz",
@@ -2071,42 +1805,7 @@ export const quiz_data = [
         question: "Section 4, 5, 6, 7, 8 are coming soon",
         information: "The sections regarding Data entry components, Feedback components, Layout components, Navigation components and utilities are coming soon",
       },
-      {
-        question: "Section 9: General",
-        information: "Some general tips that is related to all the components",
-        section: "General",
-        sections: [
-          {
-            text: "Some of the topics that will be covered includes:",
-            list: [
-              "Lesson: The difference between normal and FF components",
-              "Information: Further resources",
-            ],
-          },
-        ],
-      },
-      {
-        question: "What is the difference between normal and FF components",
-        information:
-          "If you go to storybook that lists all the components, you will find that some of the different components exists as normal components and FF components",
-        link: "https://ui.dhis2.nu/demo/",
-        sections: [
-          {
-            text:
-              "One example is the FileInputField. In storybook, you will see the FileInputField as a normal component and FF component:",
-            image: fileInputFieldFF,
-          },
-          {
-            text: "So what is the difference?",
-          },
-          {
-            text:
-              "All the final-form enabled components are suffixed with 'FieldFF'. The Field suffix indicates the relation with our regular Field components and FF stands for final-form......... ",
-          },
-        ],
-        breadcrumb: "Normal vs FF components",
-        section: "General",
-      },
+   
     ],
   },
 ];

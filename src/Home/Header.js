@@ -3,7 +3,6 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import HeaderImg from "../images/header_img.png";
 
-import { Button } from "@dhis2/ui";
 
 import styled from "styled-components";
 
