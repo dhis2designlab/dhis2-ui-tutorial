@@ -2,17 +2,18 @@ import React from "react";
 
 import Typography from "@material-ui/core/Typography";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
-import Link from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
+
 
 function BreadCrumb({ title, breadcrumb, section }) {
   return (
     <Breadcrumbs aria-label="breadcrumb">
-      <Link color="inherit" href="/home">
+      <Link to={{pathname: `/home`}}>
         Home
       </Link>
-      <Link color="inherit" href="/course/6">
+      <Typography color="textPrimary">
         {title}
-      </Link>
+      </Typography>
       {section && <Typography color="textPrimary">{section}</Typography>}
       {breadcrumb && <Typography color="textPrimary">{breadcrumb}</Typography>}
     </Breadcrumbs>
