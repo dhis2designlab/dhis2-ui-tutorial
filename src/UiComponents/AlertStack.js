@@ -5,7 +5,7 @@ import { Button } from "@dhis2/ui";
 
 function AlertStack() {
   return (
-    <Grid container xs={12} sm={12} md={6}>
+    <Grid style={{backgroundColor: '#F8F9FA', borderRadius: '12px'}} container xs={12} sm={12} md={6}>
       <Grid item xs={12} sm={12} md={12}>
         <h4>AlertStack</h4>
       </Grid>

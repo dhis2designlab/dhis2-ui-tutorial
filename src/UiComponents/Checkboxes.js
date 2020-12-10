@@ -3,8 +3,16 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { Checkbox } from "@dhis2/ui";
 
+import styled from "styled-components";
+
+const Container = styled.div`
+  background-color: #F3F5F7;
+  border-radius: 6px;
+  padding: 16px;
+`;
 function Checkboxes() {
   return (
+    <Container>
     <Grid container spacing={3}>
         <Grid item xs={12} sm={12} md={12}>
           <h4>Checkboxes</h4>
@@ -50,6 +58,7 @@ function Checkboxes() {
           />
         </Grid>
       </Grid>
+      </Container>
   );
 }
 

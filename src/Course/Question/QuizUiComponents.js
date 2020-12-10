@@ -21,8 +21,8 @@ function QuizUiComponents() {
   return (
     <Grid
       container
-      spacing={6}
-      style={{width: '80%', marginLeft: 'auto', marginRight: 'auto'}}
+      spacing={3}
+      style={{width: '80%', marginLeft: 'auto', marginRight: 'auto', marginTop: "36px"}}
     >
       <Grid item xs={12} sm={12} md={6}>
         <Buttons />
