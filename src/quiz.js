@@ -453,7 +453,7 @@ export const quiz_data = [
     totalPoints: 5,
     courseImg: Color,
     about:
-      "In section we will take you through how to use colors when developing applications for DHIS2. Some examples and explanations will be given as well as some coding tasks for you to try out, and some quizzes to check that you have understood the topics correctly",
+      "In this section you will be taken through how to use colors when developing applications for DHIS2. Some examples and explanations will be given as well as some coding tasks for you to try out, and some quizzes to check that you have understood the topics correctly",
     topics: [
       {
         title: "DHIS2 Color scale",
@@ -629,7 +629,7 @@ export const quiz_data = [
       {
         question: "Lesson: How to import and use the colors",
         information:
-          "The use the colors in DHIS2, you can either use the colors hex value or you can import colors from @dhis2/ui",
+          "To use the colors in DHIS2, you can either use the colors hex value or you can import colors from @dhis2/ui",
         sections: [
           {
             codeSnippet: importColors,

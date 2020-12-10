@@ -35,7 +35,7 @@ function Header() {
             <h1>DHIS2 UI tutorial</h1>
             <p>
               In these tutorials you will get design knowledge about how to
-              develop applications in align with the UI guidelines. In addition
+              develop applications in alignment with the UI guidelines. In addition
               to some theoretical material, you will also be given real life
               code examples that you can try out directly in the browser. 
               Most of the content used in these tutorials are taken/inspired by <a rel="noopener noreferrer" target="_blank" href="https://github.com/dhis2/design-system" alt="DHIS2 Design system on Github">this Github account about the DHIS2 design system </a>
