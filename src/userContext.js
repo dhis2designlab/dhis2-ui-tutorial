@@ -7,8 +7,10 @@ export const UserContext = createContext();
 const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [completedCourses, setCompletedCourses] = useState([]);
+  const [allCorrect, setAllCorrect] = useState(false);
 
   useEffect(() => {
+    
     const fetchData = auth.onAuthStateChanged((user) => {
       if (user) {
         let userReference = db.collection("users").doc(user.uid);
@@ -18,9 +20,9 @@ const UserProvider = ({ children }) => {
               email: user.email,
               uid: user.uid,
               loggedIn: true,
-              allCorrect: doc.data().allCorrect,
-              
             });
+
+            setAllCorrect(doc.data().allCorrect)
             let fetchedCourses = [];
             userReference
               .collection("points")
@@ -43,7 +45,6 @@ const UserProvider = ({ children }) => {
               email: user.email,
               uid: user.uid,
               loggedIn: true,
-              allCorrect: false,
             });
           }
         });
@@ -62,6 +63,8 @@ const UserProvider = ({ children }) => {
         setCurrentUser,
         completedCourses,
         setCompletedCourses,
+        allCorrect,
+        setAllCorrect,
       }}
     >
       {children}

@@ -677,7 +677,7 @@ export const quiz_data = [
       {
         header: "",
         question: "Quiz: accessibility",
-        information: "Which image uses correct usage of color?",
+        information: "Which image uses correct usage of color? Click on the correct image",
         images: [color1, color2],
         correct: 0,
         breadcrumb: "Quiz: accessibility",

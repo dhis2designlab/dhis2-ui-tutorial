@@ -16,7 +16,7 @@ import { db } from "../firebase";
 function Course() {
   let { id } = useParams();
 
-  const { currentUser, completedCourses, setCompletedCourses } = useContext(
+  const { currentUser, completedCourses, setCompletedCourses, setAllCorrect } = useContext(
     UserContext
   );
 
@@ -89,6 +89,7 @@ function Course() {
     }
   };
 
+  //TODO: Rewrite this a bit neater
   const handleNextClick = () => {
     setChosenValue(-1);
 
@@ -107,9 +108,10 @@ function Course() {
             courseImg: courseImg,
           });
 
-          db.collection("users").doc(currentUser.uid).update({allCorrect: true})
-
-         
+          if(totalPoints === points && currentUser?.allCorrect !== true) {
+            setAllCorrect(true)
+            db.collection("users").doc(currentUser.uid).update({allCorrect: true})
+          }
         setCompletedCourses([
           ...completedCourses,
           { points: points, name: title, courseImg: courseImg },

@@ -30,19 +30,19 @@ const Main = styled.main`
 
 // TODO: Simplify code
 function Settings({ onClick }) {
-  const { currentUser, completedCourses, setCompletedCourses } = useContext(
+  const { currentUser, completedCourses, setCompletedCourses, allCorrect, setAllCorrect } = useContext(
     UserContext
   );
 
   function logout() {
     setCompletedCourses([]);
+    setAllCorrect(false)
     onClick();
   }
  
   const firstCourse = completedCourses?.length >= 1
   const fourthCourse = completedCourses?.length >= 4
   const finishedAll = completedCourses?.length >= 7
-  const allCorrect = currentUser?.allCorrect === true
   const hasReceivedBadge = firstCourse || fourthCourse || finishedAll || allCorrect
   
   return (

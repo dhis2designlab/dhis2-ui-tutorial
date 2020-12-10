@@ -4,7 +4,7 @@ import React, {useContext} from "react";
 import Grid from "@material-ui/core/Grid";
 import { Button } from "@dhis2/ui";
 import styled from "styled-components";
-import allCorrectBadge from "../images/allCorrectBadge.png";
+import allCorrectImage from "../images/allCorrectBadge.png";
 import finishedAllBadge from "../images/finishedAllBadge.png";
 import firstCourseBadge from "../images/firstCourseBadge.png"
 import fourthCourseBadge from "../images/fourthCourseBadge.png"
@@ -21,11 +21,11 @@ const Container = styled.div`
 `;
 
 function FinishedCourse({ points, setIndex,totalPoints }) {
-  const { currentUser, completedCourses  } = useContext(UserContext);
-  const firstCourse = completedCourses?.length === 1 && currentUser?.loggedIn === true
-  const fourthCourse = completedCourses?.length === 4 && currentUser?.loggedIn === true
-  const finishedAll = completedCourses?.length >= 7 && currentUser?.loggedIn === true
-  const allCorrect = totalPoints === points && currentUser?.loggedIn === true && currentUser?.allCorrect !== true
+  const { currentUser, completedCourses } = useContext(UserContext);
+  const firstCourse = completedCourses?.length === 1 && currentUser?.loggedIn
+  const fourthCourse = completedCourses?.length === 4 && currentUser?.loggedIn
+  const finishedAll = completedCourses?.length >= 7 && currentUser?.loggedIn
+  const allCorrectBadge = totalPoints === points && currentUser?.loggedIn
 
   return (
     <Container>
@@ -56,9 +56,9 @@ function FinishedCourse({ points, setIndex,totalPoints }) {
           <p>You get a medal for completing all the available course</p>
         </Grid>
         }
-        {allCorrect && 
+        {allCorrectBadge && 
           <Grid item xs={12} sm={6} md={6}>
-              <img width="100%" src={allCorrectBadge} alt="medal for getting all correct" />
+              <img width="100%" src={allCorrectImage} alt="medal for getting all correct" />
               <h5>Getting all correct</h5>
               <p>You get a badge for getting all correct on a course</p>
           </Grid>
