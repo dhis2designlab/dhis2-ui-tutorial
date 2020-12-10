@@ -464,45 +464,7 @@ export const quiz_data = [
     totalPoints: 10,
     status: "under development",
     about:
-      "Communicating consistently helps DHIS2 users understand, use and extend DHIS2. In this tutorial you will learn how to communicate effectively in DHIS2",
-    topics: [
-      {
-        title: "Communcation",
-        info: "learn about blablabla",
-        taskType: "text",
-        breadcrumb: "breadcrumb",
-      },
-      {
-        title: "Building a conceptual model",
-        info: "learn about blablabla",
-        taskType: "coding",
-        breadcrumb: "breadcrumb",
-      },
-      {
-        title: "Error messages",
-        info: "learn about blablabla",
-        taskType: "quiz",
-        breadcrumb: "breadcrumb",
-      },
-      {
-        title: "Keeping the user informed",
-        info: "learn about blablabla",
-        taskType: "quiz",
-        breadcrumb: "breadcrumb",
-      },
-      {
-        title: "Tone of voice",
-        info: "learn about blablabla",
-        taskType: "quiz",
-        breadcrumb: "breadcrumb",
-      },
-      {
-        title: "Referring to the user",
-        info: "learn about blablabla",
-        taskType: "quiz",
-        breadcrumb: "breadcrumb",
-      },
-    ],
+      "Communicating consistently helps DHIS2 users understand, use and extend DHIS2. In this tutorial you will learn how to communicate effectively in DHIS2. This tutorial is not ready to be tested and the start button is therefore disabled",
     steps: [
       {
         header: "header1",
@@ -519,29 +481,8 @@ export const quiz_data = [
     totalPoints: 8,
     status: "under development",
     about:
-      "The visual architecture of an application is made up of layout, spacing and stacking. The visual architecture of DHIS2 application should follow some basic rules to provide a consistent user experience across different types of apps",
-    topics: [
-      {
-        title: "About layout",
-        info: "learn about blablabla",
-        taskType: "text",
-      },
-      {
-        title: "Choosing the right layout",
-        info: "learn about blablabla",
-        taskType: "coding",
-      },
-      {
-        title: "Spacing",
-        info: "learn about blablabla",
-        taskType: "quiz",
-      },
-      {
-        title: "Stacking",
-        info: "learn about blablabla",
-        taskType: "quiz",
-      },
-    ],
+      "The visual architecture of an application is made up of layout, spacing and stacking. The visual architecture of DHIS2 application should follow some basic rules to provide a consistent user experience across different types of apps. This tutorial is not ready to be tested and the start button is therefore disabled",
+   
     steps: [
       {
         header: "header",
@@ -551,7 +492,6 @@ export const quiz_data = [
         image: "../images/colours.png",
         breadcrumb: "breadcrumb",
       },
-
       {
         header: "header",
         question: "Layout",
@@ -616,24 +556,7 @@ export const quiz_data = [
     courseImg: Forms,
     status: "under development",
     about:
-      "Forms are one of the most common ways an application collects user input. DHIS2 applications should follow some common form of guidelines to make sure users are not unnecessarily challenged when working with forms",
-    topics: [
-      {
-        title: "title 1",
-        info: "learn about blablabla",
-        taskType: "text",
-      },
-      {
-        title: "title 2",
-        info: "learn about blablabla",
-        taskType: "coding",
-      },
-      {
-        title: "title 3",
-        info: "learn about blablabla",
-        taskType: "quiz",
-      },
-    ],
+      "Forms are one of the most common ways an application collects user input. DHIS2 applications should follow some common form of guidelines to make sure users are not unnecessarily challenged when working with forms. This tutorial is not ready to be tested and the start button is therefore disabled",
     steps: [
       {
         header: "header1",
@@ -655,19 +578,7 @@ export const quiz_data = [
     totalPoints: 12,
     status: "under development",
     about:
-      "Icons are simple images used in context to communicate something. They are easily recognizable and easy to remember. In DHIS2 there are some icons that are recommended to use, which you will learn more about in this tutorial",
-    topics: [
-      {
-        title: "The Icon library",
-        info: "Learn about the color scale in DHIS2",
-        taskType: "text",
-      },
-      {
-        title: "Using icons",
-        info: "learn about blablabla",
-        taskType: "coding",
-      },
-    ],
+      "Icons are simple images used in context to communicate something. They are easily recognizable and easy to remember. In DHIS2 there are some icons that are recommended to use, which you will learn more about in this tutorial. This tutorial is not ready to be tested and the start button is therefore disabled",
     steps: [
       {
         header: "header1",
@@ -689,24 +600,7 @@ export const quiz_data = [
     totalPoints: 12,
     status: "under development",
     about:
-      "Typography, the selection and use of fonts, colors and sizes, is an effective way to communicate information to users. In this tutorial, you will learn the right way to use typography in DHIS2.",
-    topics: [
-      {
-        title: "DHIS2 application typeface",
-        info: "learn about blablabla",
-        taskType: "text",
-      },
-      {
-        title: "Communicating with typography",
-        info: "learn about blablabla",
-        taskType: "coding",
-      },
-      {
-        title: "Guidelines",
-        info: "learn about blablabla",
-        taskType: "quiz",
-      },
-    ],
+      "Typography, the selection and use of fonts, colors and sizes, is an effective way to communicate information to users. In this tutorial, you will learn the right way to use typography in DHIS2. This tutorial is not ready to be tested and the start button is therefore disabled",
     steps: [
       {
         header: "header1",
@@ -1697,7 +1591,7 @@ export const quiz_data = [
               },
             ],
             correct: 2,
-            solutionQuiz: "Single-selection chips should be used for selecting the active dashboard. You may chose to allow a user to select multiple chips, or filters, for a table displaying data",
+            solutionQuiz: "Single-selection chips should be used for selecting the active dashboard. You may choose to allow a user to select multiple chips, or filters, for a table displaying data",
           },
         ],
         breadcrumb: "End of section quiz",
@@ -1827,7 +1721,7 @@ export const quiz_data = [
       },
       {
         question:
-          "Code example: the DHIS2 table component with a header",
+          "Code example: the DHIS2 table component",
         iframe: simpleTableExample,
         section: "Data display components",
         breadcrumb: "Data table",
@@ -2034,7 +1928,7 @@ export const quiz_data = [
       {
         question: "Coding exercise: add more functionality to the table",
         information:
-          "In the code sandbox below, you will see an example for how you can use the Data table and the chips together to create a filterable table. Your task is to create a new row for 'status' and use the tag component.",
+          "In the code sandbox below, you will see an example for how you can use the Data table and the chips together to create a filterable table. Your task is to use the tag component to display status.",
         section: "Full Examples",
         iframe: chipTableExample,
         section: "Data display components",
